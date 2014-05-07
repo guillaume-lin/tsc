@@ -1,0 +1,57 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.os_primitives%b  s-osprim.adb		97b97850 NE PK
+W system%s		system.ads		system.ali
+
+U system.os_primitives%s  s-osprim.ads		5561b8a1 NE PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-osprim.ads		20020507105124 171b3898
+D s-osprim.adb		20021115132201 80a240c8
+X 1 system.ads
+41K9*System 150e11 2|44r9 85r5 3|38r14 155r5
+X 2 s-osprim.ads
+44K16*OS_Primitives 85r12 85e25 3|38b21 155r12 155t25
+46o4*Max_Sensible_Delay
+54V13*Clock 55r19 3|78b13 85r8 85t13 91r53 132r32 146r27
+60V13*Monotonic_Clock 61r19 3|91b13
+66N4*Relative 3|134r17
+67N4*Absolute_Calendar
+68N4*Absolute_RT
+73U14*Timed_Delay 3|123b14 153r8 153t19
+73o27 Time 3|124b7 135r22 136r22 138r22 139r22
+73i44 Mode 3|125b7 134r10
+X 3 s-osprim.adb
+45R9 struct_timezone 48e14 49r26 50r43
+46i7*tz_minuteswest
+47i7*tz_dsttime
+50P9 struct_timezone_ptr 62r12
+52I9 time_t 55r22 66r17 100r11 104r12
+54R9 struct_timeval 57e14 58r26 61r19 79r24
+55i7*tv_sec 84r27
+56i7*tv_usec 84r50
+60V13 gettimeofday 63m22 83r17
+61p7 tv
+62p7 tz
+65R9 timespec 68e14 69r26 71r44 97r47 99r47 115r14 127r25 128r25
+66i7*tv_sec
+67i7*tv_nsec
+71V13 nanosleep 72m22 145r23
+71p24 rqtp
+71p30 rmtp
+79r7 TV 83m31 84r24 84r47
+80i7 Result 83m7
+97V13 To_Timespec 99b13 117r8 117t19 144r24
+97o26 D 99b26 104r39 105r12
+100i7 S 104m7 105r26 111m10 111r15 115r35
+101o7 F 105m7 110r10 112m10 112r15 116r53
+127r7 Request 144m13 145m34
+128r7 Remaind 145m50
+129i7 Result 145m13
+130o7 Rel_Time 135m10 138m10 142r10 144r37 150m13
+131o7 Abs_Time 136m10 139m10 148r23 150r25
+132o7 Check_Time 136r29 138r29 146m13 148r35 150r36
+

@@ -1,0 +1,124 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U ada.text_io.enumeration_aux%b  a-tienau.adb	8f52b090 NE PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.generic_aux%s  a-tigeau.adb	a-tigeau.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+
+U ada.text_io.enumeration_aux%s  a-tienau.ads	38a5248d NE PK
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tienau.ads		20020507104858 a07287f1
+D a-tienau.adb		20020507104858 39dd417d
+D a-tigeau.ads		20020507104900 f602cde1
+D interfac.ads		20020507105017 6e859da6
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 17|39r17 73r5 18|36r6 36r35 37r6 37r35 42r14 300r5
+X 2 a-charac.ads
+19K13*Characters 22e19 18|37r10 37r39
+X 3 a-chahan.ads
+41K24*Handling 136e28 18|37r21 37r50
+50V13*Is_Letter 18|103r17 120r27 253r17 265r27
+54V13*Is_Digit 18|121r28 266r28
+X 16 a-textio.ads
+51K13*Text_IO 442e16 17|39r21 73r9 18|36r10 36r39 42r18 300r9
+54P9*File_Type 17|42r16 59r15 18|60r16 137r15
+66I9*Count 18|142r31 142r40 142r51
+76I12*Field 17|61r15 18|139r15
+83E9*Type_Set 17|62r15 69r15 18|140r15 173r15
+83n22*Lower_Case 18|145r16 184r22
+210U14*Put 18|162r10
+295X4*Data_Error 18|224r19 233r22 244r16 254r19
+296X4*Layout_Error 18|179r16
+416V13 Getc 18|70r13 79r16 84r19 116r19
+436U14 Ungetc 18|89r16 93r13 104r13 128r10
+X 17 a-tienau.ads
+39K29*Enumeration_Aux 73r17 73e32 18|42b26 300r17 300t32
+41U14*Get_Enum_Lit 18|59b14 130r8 130t20
+42P7 File 18|60b7 69r18 70r19 77r22 79r22 82r25 84r25 87r28 89r28 93r25 104r25
+. 114r25 116r25 128r22
+43s7 Buf 18|61b7 77m32 82m35 87m38 114m61 125r24
+44i7 Buflen 18|62b7 68m7 77m37 82m40 87m43 114m66 125r29
+50U14*Scan_Enum_Lit 18|204b14 276r8 276t21
+51s7 From 18|205b7 214r20 220r10 223r20 229r13 230r20 232r23 237r19 253r28
+. 262r23 263r18 270r24
+52i7 Start 18|206b7 214m26 220r16 221r18 253r34 261r18
+53i7 Stop 18|207b7 221m10 223r13 226m13 226r21 229r19 230r26 232r16 235m16
+. 235r24 237r25 243m10 243r18 261m10 262r16 263r24 270r30 272m13 272r21
+58U14*Put 18|136b14 164r8 164t11
+59P7 File 18|137b7 154r23 158r20 162r15
+60s7 Item 18|138b7 142r66 145r36 147r29 147r43 150r22 151r39 158r26 161r36
+61i7 Width 18|139b7 142r58
+62e7 Set 18|140b7 145r10
+66U14*Puts 18|170b14 198r8 198t12
+67s7 To 18|171b7 178r24 182r17 185m16 187m16 193r23 194m13
+68s7 Item 18|172b7 178r10 183r19 184r42 185r38 187r28
+69e7 Set 18|173b7 184r16
+X 18 a-tienau.adb
+52V13 To_Lower 151r29 185r28 282b13 289r8 289t16
+52e23 C 282b23 284r10 285r47 287r17
+53V13 To_Upper 114r46 291b13 298r8 298t16
+53e23 C 291b23 293r10 294r47 296r17
+64i7 ch 70m7 71r27 77r28 79m10 81r13 81r44 82r31 84m13 86r16 87r34 89r24
+. 93r21 104r21 113r33 116m13 117r23 118r33 128r18
+65e7 C 71m7 76r10 103r28 113m13 114r56 118m13 120r38 121r38 122r24 124r23
+142i7 Actual_Width 161r21
+147a13 Iteml 151m16 154r29
+150i17 J 151r23 151r45
+161i11 J
+175i7 Ptr 182m10 185r20 187r20 190m13 190r20 193r16 194r17 195m13 195r20
+183i14 J 185r44 187r34
+209e7 C 263m13 265r38 266r38 267r24 269r23
+X 19 a-tigeau.ads
+39K29*Generic_Aux 18|36r18 36r47 19|191e28
+91U14*Load_Skip 18|69r7
+162U14*Put_Item 18|154r13 158r10
+167U14*Store_Char 18|77r10 82r13 87r16 114r13
+176U14*String_Skip 18|214r7
+X 20 interfac.ads
+23K9*Interfaces 18|38r6 38r35 20|168e15
+X 21 i-cstrea.ads
+44K20*C_Streams 18|38r17 38r46 21|346e25
+59I12*int 18|64r13
+82i4*EOF 18|117r28
+

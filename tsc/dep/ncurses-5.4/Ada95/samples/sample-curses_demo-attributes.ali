@@ -1,0 +1,113 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnvvvnnnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U sample.curses_demo.attributes%b  sample-curses_demo-attributes.adb  b1d1c4f6 NE PK
+W sample%s		sample.adb		sample.ali
+W sample.curses_demo%s	sample-curses_demo.adb	sample-curses_demo.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.function_key_setting%s  sample-function_key_setting.adb  sample-function_key_setting.ali
+W sample.keyboard_handler%s  sample-keyboard_handler.adb  sample-keyboard_handler.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+U sample.curses_demo.attributes%s  sample-curses_demo-attributes.ads  d58cfdd9 EE NE PK
+W sample%s		sample.adb		sample.ali
+W sample.curses_demo%s	sample-curses_demo.adb	sample-curses_demo.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-curses_demo.ads  20031025153918 0f81a466
+D sample-curses_demo-attributes.ads  20031025153918 da0d59bf
+D sample-curses_demo-attributes.adb  20031025153918 84c772a7
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-keyboard_handler.ads  20031025153918 c5f0a79f
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D unchconv.ads		20020507105303 1b7a14c5
+X 15 sample.ads
+41K9*Sample 43e11 17|41r9 45r5 18|44r6 44r27 45r6 45r39 46r6 46r35 47r6 47r30
+. 49r14 122r5
+X 16 sample-curses_demo.ads
+41K16*Curses_Demo 45e23 17|41r16 45r12 18|49r21 122r12
+X 17 sample-curses_demo-attributes.ads
+41K28*Attributes 45r24 45e34 18|49b33 122r24 122t34
+43U14*Demo 18|51b14 120r8 120t12
+X 18 sample-curses_demo-attributes.adb
+53M7 P 59r12 117m15
+54i7 K 103m10 104r13 105r18
+X 19 sample-explanation.ads
+45K16*Explanation 18|47r13 47r37 19|59e23
+47U14*Explain 18|108r38
+50U14*Explain_Context 18|107r38
+53U14*Notepad 18|63r7
+X 20 sample-function_key_setting.ads
+46K16*Function_Key_Setting 18|45r13 45r46 20|82e32
+48U14*Push_Environment 18|61r7
+56U14*Pop_Environment 18|114r7
+76U14*Default_Labels 18|62r7
+X 21 sample-keyboard_handler.ads
+47K16*Keyboard_Handler 18|46r13 46r42 21|55e28
+49V13*Get_Key 18|103r15
+X 22 sample-manifest.ads
+43K16*Manifest 18|44r13 44r34 22|67e20
+49i4*HELP_CODE 18|107r21
+51i4*EXPLAIN_CODE 18|108r21
+53i4*QUIT_CODE 18|106r21
+X 32 terminal_interface.ads
+41K9*Terminal_Interface 18|41r6 41r37 42r6 42r45 32|46e23
+X 33 terminal_interface-curses.ads
+48K28*Curses 18|41r25 41r56 42r25 42r64 33|1933e30
+71I12*Real_Key_Code 18|54r11
+76I12*Special_Key_Code 18|104r18
+414V13*Columns 18|66r33 71r33 76r33 81r33 86r33 91r33 96r33
+474V13*Standard_Window 18|53r28
+655U14*Add 18|66r7 71r7 76r7 81r7 86r7 91r7 96r7
+656i19 Line 18|66r12 71r12 76r12 81r12 86r12 91r12 96r12
+657i19 Column 18|66r23 71r23 76r23 81r23 86r23 91r23 96r23
+658s19 Str 18|67r12 72r12 77r12 82r12 87r12 92r12 97r12
+810U14*Set_Character_Attributes 18|65r7 69r7 74r7 79r7 84r7 89r7 94r7
+812r7 Attr 18|65r33 69r33 74r33 79r33 84r33 89r33 94r33
+897U14*Set_Meta_Mode 18|56r7
+903U14*Set_KeyPad_Mode 18|57r7
+1033U14*Update_Screen 18|100r22 118r22
+1045U14*Refresh_Without_Update 18|99r7 116r7
+1073U14*Clear 18|115r7
+X 36 terminal_interface-curses-panels.ads
+43K35*Panels 18|42r32 42r71 36|146e37
+48M9*Panel 18|53r11
+66V13*Create 18|53r20
+81U14*Top 18|59r7
+91U14*Update_Panels 18|100r7 118r7
+138U14*Delete 18|117r7
+

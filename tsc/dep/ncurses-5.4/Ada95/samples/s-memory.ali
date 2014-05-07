@@ -1,0 +1,63 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnvnnnnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.memory%b	s-memory.adb		eac08eae NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W system%s		system.ads		system.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U system.memory%s	s-memory.ads		4f885689 EB NE PK
+W system%s		system.ads		system.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D system.ads		20020507104801 427a8039
+D s-memory.ads		20020507105124 0df2d6b0
+D s-memory.adb		20020507105123 fb33445e
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 5|52r6 57r8
+X 2 a-except.ads
+47K13*Exceptions 346e19 5|52r10 57r12
+62U14*Raise_Exception 5|80r10 97r10 128r10 136r10
+X 3 system.ads
+41K9*System 150e11 4|48r9 53r42 57r26 61r14 63r14 72r5 5|53r6 55r14 58r8
+. 60r45 63r28 67r13 67r51 74r42 75r21 96r19 107r26 119r14 121r14 123r21 135r19
+. 142r5
+67M9*Address 4|53r49 57r33 61r21 63r21 5|60r52 63r35 67r20 67r58 74r49 75r28
+. 107r33 119r21 121r21 123r28
+68M4*Null_Address 5|96r26 135r26
+80V13*"=" 5|96r17 135r17
+X 4 s-memory.ads
+48K16*Memory 72r12 72e18 5|55b21 142r12 142t18
+51M9*size_t 53r27 62r14 5|60r30 67r36 74r27 76r21 79r17 120r14 124r21 127r17
+53V13*Alloc 68m22 5|74b13 101r8 101t13
+53m20 Size 5|74b20 76r31 79r10 88r10
+57U14*Free 69m22 5|107b14 112r8 112t12
+57M20 Ptr 5|107b20 110r15
+60V13*Realloc 70m22 5|118b13 140r8 140t15
+61M7 Ptr 5|119b7 132r28
+62m7 Size 5|120b7 124r31 127r10
+X 5 s-memory.adb
+60V13 c_malloc 61m22 93r17
+60m23 Size
+63U14 c_free 64m22 110r7
+63M22 Ptr
+66V13 c_realloc 68m22 132r17
+67M7 Ptr
+67m29 Size
+75M7 Result 93m7 96r10 100r14
+76m7 Actual_Size 89m10 93r27
+123M7 Result 132m7 135r10 139r14
+124m7 Actual_Size 132r33
+X 6 s-soflin.ads
+47K16*Soft_Links 5|53r13 58r15 6|365e22
+143p4*Abort_Defer 5|92r7 109r7 131r7
+147p4*Abort_Undefer 5|94r7 111r7 133r7
+

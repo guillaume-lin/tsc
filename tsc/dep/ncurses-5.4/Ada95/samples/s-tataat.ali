@@ -1,0 +1,152 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvnvnvvvnnnnnnnnnnvnnnnnnvvnvnn
+
+U system.tasking.task_attributes%b  s-tataat.adb  680f8f28 NE PK
+W system%s		system.ads		system.ali
+W system.exp_uns%s	s-expuns.adb		s-expuns.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.task_primitives%s  s-taspri.ads	s-taspri.ali
+W system.task_primitives.operations%s  s-taprop.adb  s-taprop.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.initialization%s  s-tasini.adb	s-tasini.ali
+W unchecked_conversion%s
+
+U system.tasking.task_attributes%s  s-tataat.ads  b1e9c44e EE PK
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-expuns.ads		20020507105108 28466e32
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-intman.ads		20020507105121 e6cbadb4
+D s-inmaop.ads		20020507105121 bb5e23d2
+D s-osinte.ads		20020507104759 8f433951
+D s-osinte.adb		20011011175953 ee9233b2
+D s-osprim.ads		20020507105124 171b3898
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stoele.adb		20020507105159 792079f8
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-tasinf.ads		20020507105203 bbbd2b69
+D s-taspri.ads		20020507104759 26c755ad
+D s-taprop.ads		20020507105202 157f77e3
+D s-taprop.adb		20011218002815 cec3b385
+D s-taskin.ads		20020507105204 36912069
+D s-tasdeb.ads		20020507105203 0206f9fb
+D s-tasini.ads		20020507105203 2bd7ac60
+D s-tataat.ads		20011002143018 95783a0d
+D s-tataat.adb		20011002143018 1e1b8ace
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+D unchdeal.ads		20020507105303 8ac9d15e
+X 1 ada.ads
+18K9*Ada 21e8 37|39r6 63r25
+X 3 a-finali.ads
+42K13*Finalization 68e21 37|39r10 63r29
+51R9*Limited_Controlled 37|63r42
+X 12 system.ads
+41K9*System 150e11 37|42r6 45r9 65r31 101r26 121r5 38|37r6 40r6 45r6 51r14
+. 54r8 112r17 212r15 225r5
+X 27 s-stoele.ads
+26K16*Storage_Elements 91e28 37|42r13 65r38 38|37r13 212r22
+79M9*Integer_Address 37|65r55
+81V13*To_Address 38|212r39
+X 31 s-taspri.ads
+49K16*Task_Primitives 98e27 37|101r33 38|40r13 53r8
+54R9*RTS_Lock 37|101r49
+X 32 s-taprop.ads
+48K32*Operations 475e38 38|40r29 53r24
+178U14*Write_Lock 38|73r7 204r7
+179U14*Write_Lock 38|117r16
+223U14*Unlock 38|149r7 218r7
+224U14*Unlock 38|141r16
+467U14*Lock_All_Tasks_List 38|109r10
+468U14*Unlock_All_Tasks_List 38|146r10
+X 34 s-taskin.ads
+59K16*Tasking 982e19 37|45r16 121r12 38|45r13 51r21 54r15 112r24 225r12
+125P9*Task_ID 37|108r41 114r39 38|112r32 172r39 200r41
+469p7*All_Tasks_Link 38|142r30
+559p4*All_Tasks_List 38|112r43
+735P9*Access_Address 38|57r7 61r20
+748I12*Direct_Index 37|67r15
+757M9*Direct_Index_Vector 37|94r13
+765r7*Common 38|142r23
+935a7*Direct_Attributes 38|211r15
+939p7*Indirect_Attributes 38|119r39 129r24 174r44 184r9
+X 36 s-tasini.ads
+40K24*Initialization 219e34 38|45r21 54r23
+145U14*Defer_Abortion 38|72r7
+146U14*Undefer_Abortion 38|157r7
+X 37 s-tataat.ads
+45K24*Task_Attributes 121r20 121e35 38|51b29 225r20 225t35
+47I9*Attribute 90r23
+51R9*Node 52r35 77c9 88r22
+52P9*Access_Node 56r53 80r18 38|57r23 61r7 69r24 113r17 173r11 174r11
+53R9*Dummy_Wrapper 54r44 87c9
+54P9*Access_Dummy_Wrapper 78r18
+56P9*Deallocator 64r23
+56p42 P
+59R9*Instance 61r39 63c9 75r35 38|68r35
+61P9*Access_Instance 71r14 79r18 97r21 38|78r14 79r14 201r11
+64p7*Deallocate 38|154r12 181r34
+65m7*Initial_Value 38|212r53
+67i7*Index 38|95r12 99r50 210r15 211r36
+71p7*Next 38|83r28 89r33 91r15 91r25 215r17
+75U14*Finalize 38|68b14 163r8 163t16
+75r24 X 38|68b24 82m40 95r10 99r48 121m41 154r10
+77R9*Node 81e14
+78p7*Wrapper
+79p7*Instance 38|121r29 181r25
+80p7*Next 38|124r26 129r68 131r24 131r34 137r21 153r37 181r17
+87R9*Dummy_Wrapper 92e14
+88r7*Noed
+90i7*Value
+94m4*In_Use 38|99m10 99r20
+97p4*All_Attributes 38|79r33 89m13 208r12
+101R4*All_Attrs_L 38|73m19 149m15 204m19 218m15
+108U14*Initialize_Attributes 38|200b14 223r8 223t29
+108p37 T 38|200b37 211m13
+114U14*Finalize_Attributes 38|172b14 190r8 190t27
+114p35 T 38|172b35 174r42 184m7
+X 38 s-tataat.adb
+56V13 To_Access_Node 119r21 174r26
+60V13 To_Access_Address 129r47
+69p7 Q 119m16 120r22 121r27 123r24 124m19 124r24 127r19 129r66 131r32 137m19
+. 138r34 152m10 154m28
+69p10 To_Be_Freed 137r29 138m19 151r13 152r15 153m10 153r25
+78p10 P 83m13 88r13 91m13
+79p10 Q 82r16 82r35 83r18 83m21 83r26 86r25 89r31 91r23
+112p13 C 116r19 117r28 119r37 129m22 141r24 142m16 142r21
+113p13 P 123m19 128r22 131m22
+173p7 P 180m10 181r23 181m50
+174p7 Q 179r13 180r15 181m10 181r15
+201p7 P 208m7 209r13 210r13 211r34 212r51 215m10 215r15
+X 40 unchconv.ads
+22v10*Unchecked_Conversion 38|49r6 56r35 60r38
+

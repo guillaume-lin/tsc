@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3687"
+   name=""
+   committed-date="2009-02-24T03:30:25.637850Z"
+   url="http://192.168.0.200/svn/signal_machine/old/src/ncurses"
+   last-author="pony_fx@sina.com"
+   kind="dir"
+   uuid="bb11895a-0a80-49e8-a201-d944e284a252"
+   repos="http://192.168.0.200/svn"
+   revision="3719"/>
+<entry
+   committed-rev="2271"
+   name="PhasePlanForm.cpp"
+   text-time="2008-07-03T07:59:28.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="f8e16c999b0e6fe534b6638b75cab8d0"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="basemenu.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="e33d9c4060a69461d0f74cca84b0e09a"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2271"
+   name="DetectorSettingForm.hpp"
+   text-time="2008-05-15T08:56:48.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="efd2c770bba4cf96c23709158d22eb36"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="SchedulePlanForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="b5983aabc520e5e59ffc402bf8639376"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="detectorstatusform.cpp"
+   text-time="2008-05-12T01:52:24.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="ba1f8a4275b4b19e2a3b71b7b53609b7"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="ActuateControlParamForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="e2ecb9d45bdb5ca91f9be180ff4c43e5"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="tsc_ui"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="edc9a1f43bc61f4967bcd78134a82f22"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="TimmingPlanForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="1ed80393a1b658638e03ade53bf20374"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="terminalstatusform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="19191b6706bc823fc7c37da2b5a08627"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="MultipleScheduleControlParamForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="bbe099666f6f9b3ab975eab543d8bc55"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="ncurses_ui.h"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6dda7acbf4046f0a365559fb87acbd44"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="ControlModeSelectionForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="fd32fd7547eb169810e2505edff289bd"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2539"
+   name="uc_profile.cpp"
+   text-time="2008-09-04T06:40:26.000000Z"
+   committed-date="2008-09-05T08:38:26.808184Z"
+   checksum="f477aef26bca36b04a470ca595cf14f1"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="simpleini.c"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="538bf2afe121f97b1ca5f6df9c4ec939"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="取值范围说明.txt"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="546319bc630a04f93f982184ded4123a"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name=".cvsignore"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="11545c7a6551c24eccdfd607d115099d"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3118"
+   name="ShowSystemTimeform.hpp"
+   text-time="2008-11-19T06:51:12.000000Z"
+   committed-date="2008-11-19T08:10:19.140429Z"
+   checksum="c448212f8e323c92198773111793d67d"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1675"
+   name="settimeform.cpp"
+   text-time="2008-04-04T05:40:08.000000Z"
+   committed-date="2008-04-11T05:50:56.163017Z"
+   checksum="d9dfdfbfe78ca8c43c4f098b6c967b33"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="hzk.t.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="3d8e8318d795fc5e30093b7521f016cf"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="simpleini.h"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="9a8fa768680b6d8f381e876887ad3f54"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2300"
+   name="LoadDefaultParamform.hpp"
+   text-time="2008-07-10T03:00:04.000000Z"
+   committed-date="2008-07-10T03:46:02.009707Z"
+   checksum="5a2d1c158a68fcb0ce47eb48816a6e2c"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="2539"
+   name="uc_ErrorInfo.h"
+   text-time="2008-09-04T06:42:10.000000Z"
+   committed-date="2008-09-05T08:38:26.808184Z"
+   checksum="2caab30381566384a3888a6ce39825fe"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="baseform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="46ef146dca38c57903e09a8e8bbf482e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2286"
+   name="greenconflictform.cpp"
+   text-time="2008-07-07T01:28:12.000000Z"
+   committed-date="2008-07-07T05:11:08.919459Z"
+   checksum="0befda8cfa11e6ebcd81f437312584f1"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="SpecialDayForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="11de9e1e0893d46c285d0dd24ee1d989"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2300"
+   name="PassValidateForm.hpp"
+   text-time="2008-07-10T02:43:32.000000Z"
+   committed-date="2008-07-10T03:46:02.009707Z"
+   checksum="df6851d25021f8ba0e49e198ebe173cb"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="3118"
+   name="LampSettingForm.cpp"
+   text-time="2008-11-19T05:51:12.000000Z"
+   committed-date="2008-11-19T08:10:19.140429Z"
+   checksum="18053a882539bc272b375efd9e695fde"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="3516"
+   name="mainmenu.hpp"
+   text-time="2008-12-26T08:12:38.000000Z"
+   committed-date="2008-12-26T09:33:08.497598Z"
+   checksum="b1a1885738ea3fea389fe947a13ff8bc"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="label.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="008a5b9f7080c351808244493d0fc41e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="keyboardtestform.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="c62574a00c19391c8374c6a5fc650090"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossingstatusform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d0f1f524c7d91857254a3633290a31cf"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="crossingbitmap.c"
+   text-time="2008-04-17T01:12:02.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="574a09f948e313e13b0aa2cfd972d646"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="integerchecker.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a7b1a5e4765d70a4d81d9e9d4ea22ce0"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossingbitmap.h"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6d99b0cb0b12490b36d39d9322581bbc"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2271"
+   name="DetectorSettingForm.cpp"
+   text-time="2008-05-16T05:50:30.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="e5ab212a8b354767320b98b4db838cb2"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3574"
+   name="SchedulePlanForm.cpp"
+   text-time="2009-01-07T08:15:58.000000Z"
+   committed-date="2009-01-07T09:30:25.337383Z"
+   checksum="b2ef329363124a4a99c00e1b0b7f0087"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="ActuateControlParamForm.cpp"
+   text-time="2008-05-08T09:18:12.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="a046a4edd411484aea77e14996cd7fb7"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2271"
+   name="LampGroupSettingForm.hpp"
+   text-time="2008-05-15T07:32:04.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="f9a61029f08104d94320083c159c549e"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="SystemParamForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="759adf52bc534932ed410fac8f265855"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3118"
+   name="systemparammenu.hpp"
+   text-time="2008-11-19T03:58:56.000000Z"
+   committed-date="2008-11-19T08:10:19.140429Z"
+   checksum="1c76e7408097df075335c477455002dc"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="fieldmonitor.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="c5d7ecaf1e809650207659dd5b02cb37"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="hzk.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="9ba673adf3106284ae650b89f9c04e78"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="CordlessCoordinateControlParamForm.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="da05c60f9392209bc2b2e487863b8864"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2286"
+   name="messagebox.hpp"
+   text-time="2008-07-07T02:22:06.000000Z"
+   committed-date="2008-07-07T05:11:08.919459Z"
+   checksum="cf618bcdccf9ccf88058887c0cb8ec97"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2271"
+   name="TimmingPlanForm.cpp"
+   text-time="2008-07-03T07:59:50.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="c936c0aa1bfaaf0f53c0db0c47f6440a"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="terminalstatusform.cpp"
+   text-time="2008-05-07T03:26:12.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="1d1f34d8e03cbb4c4d4f7c566aedd822"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2271"
+   name="PhasePlanForm.hpp"
+   text-time="2008-05-15T06:27:12.000000Z"
+   committed-date="2008-07-03T09:36:06.195760Z"
+   checksum="b6cf5b3dc98f07ec7319baad084e9ffb"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="basemenu.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="1b0cc8bbfa955a355c192c0f2394df22"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="key_translate.c"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="9f92a17c7ec90d5430b4cb6dc14e26f0"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="detectorstatusform.hpp"
+   text-time="2008-05-08T09:16:10.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="a5c24c4a6fa409d90c6e01f6bfabebef"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="menu.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="3d661b8e077ed2cd07859811dec37359"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="key_translate.h"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="f7a0658f64ce1a4b248559ceb9e645b7"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="statusmenu.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a9b68727402459f1e5ae211248d24a76"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="MultipleScheduleControlParamForm.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="97b7f91a6943bec35f4ac8baed4b43aa"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="ControlModeSelectionForm.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="59b249d9612da986dc958e9cd8af94ad"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossing.bmp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="91ebb0504039c0540df7be89accfd8db"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3516"
+   name="main.cpp"
+   text-time="2008-12-26T07:28:36.000000Z"
+   committed-date="2008-12-26T09:33:08.497598Z"
+   checksum="d90e5eb54c2adc11e1919e02815069f6"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossing.txt"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a3888848d3d8122d2134a681b2c1aed1"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossingbitmap.t.c"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="0a6655c6f33dbb5f2b6837e7f42defd7"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3516"
+   name="Jamfile"
+   text-time="2008-12-26T07:46:58.000000Z"
+   committed-date="2008-12-26T09:33:08.497598Z"
+   checksum="bded481ac28d8493317c003025b86f03"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="field.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="f8ca8eccbeffe2724b229a207eaa5727"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3118"
+   name="ShowSystemTimeform.cpp"
+   text-time="2008-11-19T07:12:04.000000Z"
+   committed-date="2008-11-19T08:10:19.140429Z"
+   checksum="f6b1307b43a94ec521665230b76ffe3e"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="4419"
+   name="LoadDefaultParamform.cpp"
+   text-time="2009-07-08T07:10:22.000000Z"
+   committed-date="2009-07-09T02:02:18.219878Z"
+   checksum="063d062bbe775bfc9c0008b042416a53"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   revision="4419"/>
+<entry
+   committed-rev="3570"
+   name="HardwareStatusMenu.hpp"
+   text-time="2008-12-29T01:37:18.000000Z"
+   committed-date="2009-01-07T06:00:22.228444Z"
+   checksum="7240051b6f8298c00cac2b76f1906491"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="basicparammenu.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="63d6ab2a8792f669592beba7c53a61bc"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2539"
+   name="uc_profile.hpp"
+   text-time="2008-09-04T06:40:22.000000Z"
+   committed-date="2008-09-05T08:38:26.808184Z"
+   checksum="81c0a136cab6af8f892a80be0cb24569"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1876"
+   name="baseform.cpp"
+   text-time="2008-05-07T06:38:04.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="1a79bc08241fc5482ccf496014a1b5ee"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="ncurses_programming_howto.txt"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="fa2bdb41ded225df2cca91b2da1eac8e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="SpecialDayForm.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6fb39170ac441f0beca2632c25448b3e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="settimeform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d44df74b9f1d8ff4f4d6088c44cdcd20"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="2300"
+   name="PassValidateForm.cpp"
+   text-time="2008-07-10T03:29:30.000000Z"
+   committed-date="2008-07-10T03:46:02.009707Z"
+   checksum="3697d2ce4d83aa22d86a648455d74d7b"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="greenconflictform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="3464a2ecb88582253dc78f8508a55a05"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="crossingstatusform.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d8a4457240602f8e09154c865760a804"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   committed-rev="3118"
+   name="LampSettingForm.hpp"
+   text-time="2008-11-19T03:13:38.000000Z"
+   committed-date="2008-11-19T08:10:19.140429Z"
+   checksum="c07d4fa00d098d60dd520197de407abb"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="1081"
+   name="integerchecker.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="5a60f17e5959ae0f405503202b47552b"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:04.000000Z"/>
+<entry
+   name="font"
+   kind="dir"/>
+<entry
+   committed-rev="2300"
+   name="LampGroupSettingForm.cpp"
+   text-time="2008-07-07T06:39:56.000000Z"
+   committed-date="2008-07-10T03:46:02.009707Z"
+   checksum="83010c34ee6f1e85fc489134844cd8ae"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="keyboardtestform.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d3fe3d3a6779737aa13246cea973c3ae"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="3687"
+   name="SystemParamForm.cpp"
+   text-time="2009-02-24T03:21:36.000000Z"
+   committed-date="2009-02-24T03:30:25.637850Z"
+   checksum="6c90e377ec0ed783c3c266a58ef52e64"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="4419"
+   name="VersionInfoForm.hpp"
+   text-time="2009-06-25T07:04:14.000000Z"
+   committed-date="2009-07-09T02:02:18.219878Z"
+   checksum="cecdb63e98b9b288e62042819d9ec251"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   revision="4419"/>
+<entry
+   committed-rev="1081"
+   name="fieldmonitor.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a0bfcf81726bf05aef2f226449798aca"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="controlparammenu.hpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="61ae86499056fff816919a8ccd430edd"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="simpleini.t.c"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="72c4a6709d0830e6f4255f5bc87a73e0"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="hzk.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="da7cfe508c2bba90e56e545e2b88d05a"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="CordlessCoordinateControlParamForm.cpp"
+   text-time="2008-04-03T00:55:06.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="160b663be1992dd59cd6a74b07d98c44"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+<entry
+   committed-rev="2539"
+   name="uc_ErrorInfo.cpp"
+   text-time="2008-09-04T07:14:22.000000Z"
+   committed-date="2008-09-05T08:38:26.808184Z"
+   checksum="deca9fe8fe8acfdb2b4106d4404dcf9e"
+   last-author="pony_fx@sina.com"
+   kind="file"/>
+<entry
+   committed-rev="2286"
+   name="messagebox.cpp"
+   text-time="2008-07-07T02:21:54.000000Z"
+   committed-date="2008-07-07T05:11:08.919459Z"
+   checksum="781c040eade236012ab637ce30bae172"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:06.000000Z"/>
+</wc-entries>

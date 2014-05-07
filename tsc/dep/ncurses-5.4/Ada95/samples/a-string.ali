@@ -1,0 +1,48 @@
+V "GNAT Lib v3.15a"
+P
+R nnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnvnnnnnnnnnvnn
+
+U ada.strings%s		a-string.ads		c4504387 EE PU PK
+W ada%s			ada.ads			ada.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20020507104909 a0108083
+D a-string.ads		20020507104847 6440c304
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-stalib.ads		20020507105159 76713122
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 2|18r9 32r5
+X 2 a-string.ads
+18K13*Strings 19r14 32r9 32e16
+21e4*Space
+22e4*Wide_Space
+24X4*Length_Error
+24X18*Pattern_Error
+24X33*Index_Error
+24X46*Translation_Error
+26E9*Alignment
+26n24*Left
+26n30*Right
+26n37*Center
+27E9*Truncation
+27n24*Left
+27n30*Right
+27n37*Error
+28E9*Membership
+28n24*Inside
+28n32*Outside
+29E9*Direction
+29n24*Forward
+29n33*Backward
+30E9*Trim_End
+30n24*Left
+30n30*Right
+30n37*Both
+

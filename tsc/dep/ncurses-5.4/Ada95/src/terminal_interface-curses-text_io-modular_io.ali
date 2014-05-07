@@ -1,0 +1,93 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U terminal_interface.curses.text_io.modular_io%b  terminal_interface-curses-text_io-modular_io.adb  cdb8c505 NE PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.modular_aux%s  a-timoau.adb	a-timoau.ali
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.aux%s  terminal_interface-curses-text_io-aux.adb  terminal_interface-curses-text_io-aux.ali
+
+U terminal_interface.curses.text_io.modular_io%s  terminal_interface-curses-text_io-modular_io.ads  b0579bdf EE NE PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-timoau.ads		20020507104901 596262d1
+D a-timoio.ads		20020507104901 2d589caf
+D a-timoio.adb		20020507104901 182d4f8f
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-modular_io.ads  20031025153918 dbec370d
+D terminal_interface-curses-text_io-modular_io.adb  20031025153918 6860af3a
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 33|41r6 47r23
+X 8 a-textio.ads
+51K13*Text_IO 442e16 33|41r10 47r27
+X 10 a-timoio.ads
+49k21*Modular_IO 88e27 33|47r35
+79U14 Put 33|57r11
+X 28 terminal_interface.ads
+41K9*Terminal_Interface 46e23 32|44r9 63r5 33|42r6 44r14 46r24 70r5
+X 29 terminal_interface-curses.ads
+48K28*Curses 1933e30 32|44r28 63r24 33|42r25 44r33 46r43 70r24
+56M9*Window 32|50r18 33|50r18
+X 30 terminal_interface-curses-text_io.ads
+44K35*Text_IO 136e38 32|44r35 63r31 33|42r32 44r40 46r50 70r31
+50I12*Field 32|46r20 52r18 57r18 33|52r18 55r26 63r18
+51I12*Number_Base 32|47r20 53r18 58r18 33|53r18 64r18
+62V13*Get_Window 33|67r12
+X 31 terminal_interface-curses-text_io-aux.ads
+41K51*Aux 54e42 33|42r40 46r58
+47U14*Put_Buf 33|58r11
+X 32 terminal_interface-curses-text_io-modular_io.ads
+42M9 Num 46r29 51r18 56r18 33|47r47 51r18 62r18
+44k43*Modular_IO 63r39 63e49 33|44b48 70r39 70t49
+46i4 Default_Width 52r27 57r27 33|52r27 63r27
+47i4 Default_Base 53r33 58r33 33|53r33 64r33
+49U14 Put 33|49b14 59r8 59t11 67r7
+50M7 Win 33|50b7 58r20
+51m7 Item 33|51b7 57r21
+52i7 Width 33|52b7 58r30
+53i7 Base 33|53b7 57r27
+55U14 Put 33|61b14 68r8 68t11
+56m7 Item 33|62b7 67r24
+57i7 Width 33|63b7 67r30
+58i7 Base 33|64b7 67r37
+X 33 terminal_interface-curses-text_io-modular_io.adb
+46K12 Aux 58r7
+47K12 MIO 57r7
+55a7 Buf 57m16 58r25
+

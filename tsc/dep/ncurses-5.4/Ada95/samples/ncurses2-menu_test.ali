@@ -1,0 +1,171 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U ncurses2.menu_test%b	ncurses2-menu_test.adb	fe8145ab NE SU IL
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+W terminal_interface.curses.mouse%s  terminal_interface-curses-mouse.adb  terminal_interface-curses-mouse.ali
+
+U ncurses2.menu_test%s	ncurses2-menu_test.ads	4200c416 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-menu_test.ads  20001202223104 13f73de2
+D ncurses2-menu_test.adb  20001202223104 824484ce
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-expuns.ads		20020507105108 28466e32
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-menus.adb  20031025153918 c955c37c
+D terminal_interface-curses-mouse.ads  20140426095555 73bb89fb
+D terminal_interface-curses-mouse.adb  20031025153918 ec79f2ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 26 ncurses2.ads
+42K9*ncurses2 44e13 27|41r11 28|41r6 41r25 47r11 165r5
+X 27 ncurses2-menu_test.ads
+41U20*menu_test 28|47b20 165r14 165t23
+X 28 ncurses2-menu_test.adb
+48V13 menu_virtualize 51b13 76r8 76t23 141r12
+48i30 c 51b30 53r12 71r20 74r20
+49U14 xAdd 95b14 98r8 98t12 113r4 114r4 115r4 116r4 117r4
+49i20 l 95b20 97r20
+49i39 c 95b39 97r33
+49s60 s 95b60 97r43
+78i4 MENU_Y 130r45
+79i4 MENU_X 130r53
+81P9 String_Access 83r52
+83a4 animals 92r56 120r13 121r32 123r13 127r34
+92p4 items_a 121m7 123m4 125r19
+94M4 tmp 112m4 164m4
+100i4 mrows 128m14 130r23 135r48
+101i4 mcols 128m21 130r34 135r55
+103M4 menuwin 130m4 131r19 132r21 133r9 135r39 140r22 158m15
+105M4 m 125m4 127r16 128r11 131r16 135r20 137r10 142r20 152r31 156r10 162m12
+107i4 c1 140m7 141r29
+109e4 c 142m7 143r17 144r10
+110i4 r 141m7 142r23
+120i8 i 121r16 121r41
+X 29 ncurses2-util.ads
+44K18*util 28|41r15 41r34 29|78e18
+51e4*newl 28|54r30 153r15
+57V13*Getchar 28|140r13
+61U14*Pause 28|154r4
+X 44 terminal_interface.ads
+41K9*Terminal_Interface 28|43r6 43r37 44r6 44r43 45r6 45r43 44|46e23
+X 45 terminal_interface-curses.ads
+48K28*Curses 28|43r25 43r56 44r25 44r62 45r25 45r62 45|1933e30
+56M9*Window 28|103r14
+59I9*Line_Position 28|49r24 95r24 127r19
+60I9*Column_Position 28|49r43 95r43
+62I12*Line_Count 28|78r22 100r12
+64I12*Column_Count 28|79r22 101r12
+67I9*Key_Code 28|48r34 51r34 107r9
+90i4*Key_Cursor_Down 28|64r39
+91i4*Key_Cursor_Up 28|66r39
+131i4*Key_Next_Page 28|60r39
+132i4*Key_Previous_Page 28|62r39
+154i4*Key_Exit 28|54r38
+202i4*Key_Mouse 28|70r16
+382X4*Curses_Exception 28|159r19
+411V13*Lines 28|150r25
+504U14*Move_Cursor 28|150r4
+505i27 Line 28|150r17
+506i27 Column 28|150r36
+521U14*Add 28|153r4
+522e19 Ch 28|153r9
+562V13*Create 28|130r15
+581U14*Delete 28|158r7
+597V13*Derived_Window 28|135r23
+646U14*Add 28|151r4 152r4
+647s19 Str 28|151r9 152r9
+655U14*Add 28|97r7
+656i19 Line 28|97r12
+657i19 Column 28|97r23
+658s19 Str 28|97r36
+713U14*Box 28|133r4
+863U14*Beep 28|73r13 145r10
+903U14*Set_KeyPad_Mode 28|132r4
+1038U14*Refresh 28|118r4
+X 48 terminal_interface-curses-menus.ads
+48K35*Menus 28|44r32 44r69 48|676e36
+56M9*Menu 28|105r8
+61M4*Null_Item 28|123r34
+64I12*Menu_Request_Code 28|48r51 51r51 55r20 110r8
+72i4*M_ScrollUp_Line 28|57r20
+73i4*M_ScrollDown_Line 28|59r20
+74i4*M_ScrollDown_Page 28|63r20
+75i4*M_ScrollUp_Page 28|61r20
+78i4*M_Next_Item 28|65r20
+79i4*M_Previous_Item 28|67r20
+80i4*M_Toggle_Item 28|69r20
+176A9*Item_Array 28|92r39
+179P9*Item_Array_Access 28|92r14
+198V13*New_Item 28|121r22
+269V14*Name 28|152r16
+295V13*Current 28|152r22
+323U14*Post 28|137r4 156r4
+362U14*Set_Window 28|131r4
+373U14*Set_Sub_Window 28|135r4
+384U14*Scale 28|128r4
+538U14*Set_Format 28|127r4
+643V13*New_Menu 28|125r9
+646U14*Delete 28|162r4
+655E9*Driver_Result 28|109r8
+656n27*Request_Denied 28|144r14
+657n27*Unknown_Request 28|143r21
+661V13*Driver 28|142r12
+X 50 terminal_interface-curses-mouse.ads
+47K35*Mouse 28|45r32 45r69 50|230e36
+63M9*Event_Mask 28|94r10
+64M4*No_Events 28|164r24
+122V13*Start_Mouse 28|112r11 164r11
+

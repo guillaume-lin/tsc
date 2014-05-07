@@ -1,0 +1,40 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.streams%s		a-stream.ads		30f54674 EE PU PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-secsta.ads		20020507105154 e384df23
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 3|41r9 73r5
+X 3 a-stream.ads
+41K13*Streams 42r14 73r9 73e16
+44R9*Root_Stream_Type 59r23 65r23 71c9
+46M9*Stream_Element 56r49
+48I9*Stream_Element_Offset 53r7 53r40 56r14 61r20
+52I12*Stream_Element_Count
+55A9*Stream_Element_Array 60r20 66r19
+58U14*Read
+59r7 Stream
+60a7 Item
+61i7 Last
+64U14*Write
+65r7 Stream
+66a7 Item
+

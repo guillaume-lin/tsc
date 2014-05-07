@@ -1,0 +1,10 @@
+   for Mouse_Event use
+      record
+         Id      at 0 range   0 ..  15;
+         X       at 0 range  32 ..  63;
+         Y       at 0 range  64 ..  95;
+         Z       at 0 range  96 .. 127;
+         Bstate  at 0 range 128 .. 159;
+      end record;
+      --  Please note: this rep. clause is generated and may be
+      --               different on your system.

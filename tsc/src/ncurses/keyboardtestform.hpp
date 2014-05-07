@@ -1,0 +1,21 @@
+/* @(#)keyboardtestform.hpp
+ */
+
+#ifndef _KEYBOARDTESTFORM_H
+#define _KEYBOARDTESTFORM_H 1
+
+
+#include <stddef.h>
+#include "baseform.hpp"
+
+
+class CKeyboardTestForm : public CBaseForm {
+public:
+	CKeyboardTestForm();
+	virtual int doGet();
+	virtual int doSet();
+	virtual int virtualize(int c);
+};
+
+#endif /* _KEYBOARDTESTFORM_H */
+

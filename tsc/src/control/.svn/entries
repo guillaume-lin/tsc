@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4324"
+   name=""
+   committed-date="2009-06-23T03:42:41.482115Z"
+   url="http://192.168.0.200/svn/signal_machine/old/src/control"
+   last-author="pony_fx@sina.com"
+   kind="dir"
+   uuid="bb11895a-0a80-49e8-a201-d944e284a252"
+   repos="http://192.168.0.200/svn"
+   revision="4324"/>
+<entry
+   committed-rev="1081"
+   name="flash.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="7a7cfe5c48fd11522a3948604086b144"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="multiple_schedule_control.c"
+   text-time="2009-06-23T07:25:30.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="5577569ea1fb2090b194f7039837953f"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="traffic_stat.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="e07695d9b2c5e315654cf3fc0c214188"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="multiple_schedule_control.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="4497c1568fc2bd2a7242157c267a6058"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="manual_control.c"
+   text-time="2009-06-25T06:49:58.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="272859e201554975377785f203aaf609"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="codec.c"
+   text-time="2009-06-25T08:29:50.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="7b1a7fd4e710704faec57ffcb58aa98d"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1876"
+   name="util.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="69d0ff8ac2df12a653b5fed2c5e25634"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="traffic_stat.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="4b06b013f1a264f6841d673097414d02"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="io_pc104.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="f1c140e0e2c3fa66a67a13ec999d7e93"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="key_buffer.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="ba0fce44b7df4dff1cce6501e2184d9b"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="manual_control.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="eea4a763928a03947deb3ccb00ce0350"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="codec.h"
+   text-time="2009-06-24T02:46:30.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="37d6af0b69864ee38d273dc8231268c7"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="util.h"
+   text-time="2009-06-23T02:29:58.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="2ad21cb4910fa519c66606dbdff1f590"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="io_pc104.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="7cc265df5906d45f3d8e7e64e7005dfa"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="isr_adc0.C"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="4878543715489c60e801c3be14bc8f1f"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:56.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="key_buffer.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="97fdb6d9aef4d4d708e67a87be254531"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="isr_int0.C"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="cca0dc1122d76d626beef78cfe7cf868"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_uart.C"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a384c3cb321950409dad65cfa714abff"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_adc0.H"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="26e75c6e06f5ab39ec51338bed3d2a67"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_int0.H"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6aa1fa2c6897955dfbc05cfabeceb9e5"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name=".cvsignore"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="77601be1ee0f99e9f1dc12c79dc048c3"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_uart.H"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="cb7783e02dde31271f9e220531e64498"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="如何集成一个新的控制算法.txt"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="83063cd769d111efe9e699810b770b22"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="controller.Uv2"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="0ca0852526388c18438b8abb856bb16a"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="io_tsc.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="bf7f1c54608f19299927c2dc21eaa7f1"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="vm.c"
+   text-time="2009-06-25T07:02:16.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="aae5fcd2145e46a0160ced40e4540374"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="error_code.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="f8da13a0e110145197c85a651fadc0b9"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld_fifo.c"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="faa9734c33fda9b61d6fe37790b7d662"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="actuate_control.c"
+   text-time="2009-07-03T06:23:44.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="04eb7940dd3e8f5a2e52b1a6ee764e48"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="vm.h"
+   text-time="2009-06-24T08:21:20.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="0d3706fb47d9fed063a3d3a9cbadf04a"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="error_code.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="1e8ee71b1d847427aea916afdc2d6c1d"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld_fifo.h"
+   text-time="2009-07-02T10:10:58.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="242cd8a512e05c4195ae4f3b0128f8dd"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4276"
+   name="actuate_control.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2009-06-10T09:26:49.254446Z"
+   checksum="f0ffcf7b75a3b23f6370b413b0f9bfb4"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="io_mfc.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="4f9800d30245183b40d022b31f2541ad"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="command_reactor.c"
+   text-time="2009-06-25T06:28:48.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="aa7c6316a4f7d2d27db23d98461e30bf"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="c8051F020.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="f896dd21879c52bce1c073877f20e474"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="io_mfc.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="5f4722d97f4e78bff0d51d7c536e6533"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="controller"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="d95c2ad0b9534dc8a401a474280419bd"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="command_reactor.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="20813db85c67c3a16cb8d22b007ea786"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="test.wsp"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="e2362b421451b4567be606a51315a62f"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_smbus.C"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="1d77a7787663caa7d814b9accf049583"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="STARTUP.A51"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="708dfbdfdf0bd80dc9898b1170223747"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="io.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="e25200c492ffe4a4d0a3c92674f47b83"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="io_ncurses.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="7b81aa158ace0d52bbc8a0f2c1b11986"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="isr_smbus.H"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="42272e197350a9f7cbc2138df0c9c947"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="io.h"
+   text-time="2009-06-22T08:12:44.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="a5ba7280f53e2c1b1702ed0d1b8a85c6"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1876"
+   name="datastruct.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="c3f9cbf6bbf56ecff1cda2098b75f355"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="kernel.c"
+   text-time="2009-07-08T01:50:34.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="86bc0acf5a664a297d9bbdf32c5d010f"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="datastruct.h"
+   text-time="2009-07-08T01:42:44.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="3b1d129cfc61f0f4f48a832cb6c45c84"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1876"
+   name="detector_set.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="dae52cf75dd82f3962a6b0a3182ad913"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="vm.t.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d44affbced3770314c1f9cca04ee08e9"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="kernel.h"
+   text-time="2009-06-25T01:08:32.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="8015864d81eecf204f258714b1ce0c9b"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="cordless_coordinate_control.c"
+   text-time="2009-07-03T08:15:38.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="5b463e835647206c283788634eb476f6"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="Jamfile"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="ef07fee7f3b13dfbc58026de77236ff8"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="3099"
+   name="smbus.C"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-11-18T08:25:48.507562Z"
+   checksum="fa041cbc7f8cb4b345ed3daa21f413bc"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="main.H"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="4768aec00d89984f4d9a1dfdec625f8e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="detector_set.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="d7dd4246831834d20b38ff537226484e"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cordless_coordinate_control.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="36b32eebb9401eeb094e9bd4780bdb35"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="3099"
+   name="smbus.H"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-11-18T08:25:48.507562Z"
+   checksum="308fa09393ffbc1e6cfa306463d31555"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="config.ini"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="5deedbfe686e70a909385ff200ee6275"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="initialize_mcu.C"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="79040205ff302fe7def43a6645274c13"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="io_sim.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6b003358b8a087f093da2ea07337492c"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="isr_timer3.C"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="228b581a024813f74e5df3bc876f529b"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="mcu.c"
+   text-time="2009-07-08T03:08:52.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="761a9888382bc96f9d749638029de698"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="4421"
+   name="main.c"
+   text-time="2009-06-23T06:37:36.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="95c64a294bc6ad68e632f9fb485999ef"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1876"
+   name="isr_timer3.H"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="8e77454a49c1d9b3b2d8a486d71323da"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="executive_machine_control.c"
+   text-time="2009-07-08T01:50:34.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="e660bbe3029f35f9d491573d3099202f"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+<entry
+   committed-rev="1081"
+   name="detector_set.t.c"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6611b25a1f02e8ef18e5c31fa1e85c50"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="1876"
+   name="mcu.h"
+   text-time="2009-07-02T10:11:00.000000Z"
+   committed-date="2008-05-13T03:58:37.025199Z"
+   checksum="15309a2ed35458dcfee53f89a762bd18"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"/>
+<entry
+   committed-rev="4421"
+   name="executive_machine_control.h"
+   text-time="2009-06-25T02:42:02.000000Z"
+   committed-date="2009-07-09T03:30:36.826338Z"
+   checksum="d0f562fed36360610c3f38ab0e1c0b6d"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2009-07-02T10:10:58.000000Z"
+   revision="4421"/>
+</wc-entries>

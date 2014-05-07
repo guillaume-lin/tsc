@@ -1,0 +1,24 @@
+
+1. 帧缓冲设置
+
+a. linux源代码的文档目录Documentation/fb/vesafb.txt给出了如何给linux添加命令行
+   使linux支持帧缓冲的方法。当然，前提是你要把帧缓冲的支持加入内核里面。
+
+
+2. 帧缓冲编程。
+
+帧缓冲编程遵循传统的unix文件操作，open/read/write/ioctl/close
+a. open
+   打开帧缓冲设备，帧缓冲设备名称为/dev/fb0,/dev/fb1 ...
+b. read
+   读帧缓冲
+c. write
+   写帧缓冲
+d.ioctl
+   对帧缓冲进行ioctl操作,主要用到的命令有FBIOGET_FSCREENINFO,FBIOGET_VSCREENINFO,
+   FBIOPUT_VSCREENINFO,FBIOPAN_DISPLAY
+e. 为了对帧缓冲进行直接操作，一般通过mmap系统调用把帧缓冲的地址空间映射到进程的地址空间，然后
+通过指针直接操作帧缓冲。
+
+3. 操作示例代码
+具体的操作示例代码详见fb_util.c文件，里面包含了对帧缓冲的各种操作。

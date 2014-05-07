@@ -1,0 +1,146 @@
+C51 COMPILER V7.09   ISR_TIMER3                                                            04/25/2008 16:22:15 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ISR_TIMER3
+OBJECT MODULE PLACED IN isr_timer3.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE isr_timer3.C LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "isr_timer3.h"
+   2          
+   3          /*********************************************************************************************
+   4          *       Ô­ÐÍ£ºvoid timer3_isr(void) interrupt 14
+   5          *       ¹¦ÄÜ: ¶¨Ê±Æ÷ 3 ²úÉú 0.5ms µÄ¶¨Ê±ÖÐ¶ÏÀ´Æô¶¯ ADC0£¬Í¬Ê±²úÉú 2.5ms¡¢100ms µÄÏµÍ³Ê±ÖÓ 
+   6          *       ËµÃ÷£ºÎÞ
+   7          *       ²ÎÊý£ºÎÞ
+   8          *       ·µ»Ø£ºÎÞ
+   9          *********************************************************************************************/
+  10          void timer3_isr(void) interrupt 14 
+  11          {
+  12   1      static unsigned char data SYStime_count,ii = 0x00;
+  13   1      unsigned char data i,j;
+  14   1      unsigned char xdata * data pp;
+  15   1              EIE1 = EIE1 & 0xfb;                                     // ²»ÔÊÐíADC0 ´°¿Ú±È½ÏÖÐ¶Ï
+  16   1              EIE2 = EIE2 & 0xfd;                             // ²»ÔÊÐíADC0 ×ª»»½áÊø²úÉúµÄÖÐ¶Ï
+  17   1              AD0INT = 0;                                                     // clear adc0int interrupt flag
+  18   1              AD0WINT = 0;                                            // clear adc0win interrupt flag
+  19   1              SYStime_count++;
+  20   1              if ((SYStime_count % 5) == 0x00) {
+  21   2                      SYS5ms = 1;
+  22   2                      AMX0SL++;
+  23   2                      switch (AMX0SL){
+  24   3                              case 0x01: {
+  25   4                                      ADC0GT = ADC0GT_BAK1;
+  26   4                                      ADC0LT = ADC0LT_BAK1;
+  27   4                                      break;
+  28   4                                      }
+  29   3                              case 0x02: {
+  30   4                                      ADC0GT = ADC0GT_BAK2;
+  31   4                                      ADC0LT = ADC0LT_BAK2;
+  32   4                                      break;
+  33   4                                      }
+  34   3                              case 0x03: {
+  35   4                                      ADC0GT = ADC0GT_BAK3;
+  36   4                                      ADC0LT = ADC0LT_BAK3;
+  37   4                                      break;
+  38   4                                      }
+  39   3                              case 0x04: {
+  40   4                                      ADC0GT = ADC0GT_BAK4;
+  41   4                                      ADC0LT = ADC0LT_BAK4;
+  42   4                                      break;
+  43   4                                      }
+  44   3                              case 0x05: {
+  45   4                                      ADC0GT = ADC0GT_BAK5;
+  46   4                                      ADC0LT = ADC0LT_BAK5;
+  47   4                                      break;
+  48   4                                      }
+  49   3                              case 0x06: {
+  50   4                                      ADC0GT = ADC0GT_BAK6;
+  51   4                                      ADC0LT = ADC0LT_BAK6;
+  52   4                                      break;
+  53   4                                      }
+  54   3                              case 0x07: {
+  55   4                                      ADC0GT = ADC0GT_BAK7;
+C51 COMPILER V7.09   ISR_TIMER3                                                            04/25/2008 16:22:15 PAGE 2   
+
+  56   4                                      ADC0LT = ADC0LT_BAK7;
+  57   4                                      break;
+  58   4                                      }
+  59   3                              default: {
+  60   4                                      if (AMX0SL > 0x08) {
+  61   5                                              AMX0SL = 0x00;                                                  // Ñ¡Ôñ Ain0 ×÷ÎªA/DÊäÈë
+  62   5                                              ADC0CF = ADC0CF & 0xfe;                                 // ÄÚ²¿·Å´óÆ÷ÔöÒæÎª 1 £¨Page 55£©
+  63   5                                              ADC0CN = 0x85;                                                  // A/D×ª»»Êý¾Ý×ó¶ÔÆë
+  64   5                                              EIE2 = EIE2 & 0xfd;                                     // ²»ÔÊÐíADC0 ×ª»»½áÊø²úÉúµÄÖÐ¶Ï
+  65   5                                              ADC0GT = ADC0GT_BAK0;
+  66   5                                              ADC0LT = ADC0LT_BAK0;
+  67   5                                              
+  68   5      //1219                                  if (f_key2_int) f_manual_use = 1;               // ÊÖ¶¯/×Ô¶¯Ñ¡Ôñ¿ª¹Ø±ÕºÏ
+  69   5      //1219                                  else f_manual_use = 0;                                  // ÊÖ¶¯/×Ô¶¯Ñ¡Ôñ¿ª¹Ø´ò¿ª
+  70   5      //1219                                  f_key2_int = 0;
+  71   5                                              
+  72   5                                              }
+  73   4                                      else {
+  74   5                                              AMX0SL = 0x08;                                                  // Ñ¡ÔñÎÂ¶È´«¸ÐÆ÷×÷ÎªA/DÊäÈë
+  75   5                                              ADC0CF = ADC0CF | 0x01;                                 // ÄÚ²¿·Å´óÆ÷ÔöÒæÎª 2 £¨Page 55£©
+  76   5                                              EIE1 = EIE1 & 0xfb;                                             // ²»ÔÊÐíADC0 ´°¿Ú±È½ÏÖÐ¶Ï
+  77   5                                              }                                                       
+  78   4                                      }                                                       
+  79   3                              }                                                               
+  80   2                      AD0INT = 0;                                                                                     // clear adc interrupt flag
+  81   2                      AD0WINT = 0;
+  82   2                      }
+  83   1              else {
+  84   2                      if ((SYStime_count % 5) == 0x01) {
+  85   3                              if (AMX0SL == 0x08) EIE2 = EIE2 | 0x02;                 // ÔÊÐíADC0 ×ª»»½áÊø²úÉúµÄÖÐ¶Ï                  
+  86   3                              else EIE1 = EIE1 | 0x04;                                                // ÔÊÐíADC0 ´°¿Ú±È½ÏÖÐ¶Ï
+  87   3                              }
+  88   2                      }
+  89   1              
+  90   1              if (((SYStime_count % 4) == 0x00) & !f_rd_lamp_input_now) {             // ¶¨Ê±2ms ¶ÁÈëµÆ×´Ì¬£¨±£´æ×î½ü 10 ´Î¶ÁÈëÖµ£
+             -©
+  91   2                      j = 0x00;
+  92   2      //              pp = ADDRESS_74HC244A;
+  93   2                      pp = ADDRESS_74HC244K;
+  94   2                      for (i=0x00;i<(MAX_LAMP_NUM - 1)/12 + 1;i++) {
+  95   3                              lamp_input_buffer[ii][j] = *pp;                                 // 
+  96   3                              j++;
+  97   3                              pp = pp + 0x200;
+  98   3                              lamp_input_buffer[ii][j] = *pp;                                 // 
+  99   3                              j++;
+ 100   3      //                      pp = pp + 0x200;
+ 101   3                              pp = pp - 0x600;
+ 102   3                              }
+ 103   2                      ii++;
+ 104   2                      if (ii == 10) ii = 0x00;
+ 105   2                      }
+ 106   1      
+ 107   1              if ((SYStime_count % 50) == 0x00) SYS25ms = 1;
+ 108   1              
+ 109   1              if ((SYStime_count % 100) == 0x00) {
+ 110   2                      SYS100ms = 1;                                                                           // ÆäÊµÊÇ 50 ms
+ 111   2                      SYStime_count = 0x00;
+ 112   2                      }
+ 113   1      //      if (SYStime_count == 200) {
+ 114   1      //              SYS200ms = 1;
+ 115   1      //              SYStime_count = 0x00;
+ 116   1      //              }
+C51 COMPILER V7.09   ISR_TIMER3                                                            04/25/2008 16:22:15 PAGE 3   
+
+ 117   1              TMR3CN = TMR3CN & 0x07;                                                                 // clear timer3 interrupt flag   
+ 118   1              }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    392    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

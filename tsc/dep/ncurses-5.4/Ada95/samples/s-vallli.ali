@@ -1,0 +1,46 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.val_lli%b	s-vallli.adb		4824fe2c NE PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W system.val_llu%s	s-valllu.adb		s-valllu.ali
+W system.val_util%s	s-valuti.adb		s-valuti.ali
+
+U system.val_lli%s	s-vallli.ads		53a043ee NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-unstyp.ads		20020507105208 05ad3732
+D s-vallli.ads		20020507105212 11dac3d7
+D s-vallli.adb		20020507105212 a5a9ae86
+D s-valllu.ads		20020507105213 0936eeef
+D s-valuti.ads		20020507105214 f0cc4aa0
+X 1 system.ads
+41K9*System 150e11 3|39r9 78r5 4|36r6 36r33 37r6 37r33 38r6 38r33 40r14 103r5
+X 2 s-unstyp.ads
+42K16*Unsigned_Types 234e26 4|36r13 36r40
+49M9*Long_Long_Unsigned 4|52r14 67r17 69r28
+X 3 s-vallli.ads
+39K16*Val_LLI 40r14 78r12 78e19 4|40b21 103r12 103t19
+42V13*Scan_Long_Long_Integer 4|46b13 86r8 86t30 97r12
+43s7 Str 4|47b7 62r18 63r40
+44p7 Ptr 4|48b7 62r23 63r45
+45i7 Max 4|49b7 62r28 63r50
+72V13*Value_Long_Long_Integer 4|92b13 101r8 101t31
+72s38 Str 4|92b38 94r30 97r36 97r51 98r29
+X 4 s-vallli.adb
+52m7 Uval 63m7 67r10 69r21 78r38 83r36
+55b7 Minus 62m33 68r13 77r13
+58i7 Start 62m40
+93i7 V 97m7 99r14
+94i7 P 97m41 98r34
+X 5 s-valllu.ads
+41K16*Val_LLU 4|37r13 37r40 5|83e19
+44V13*Scan_Long_Long_Unsigned 4|63r15
+X 6 s-valuti.ads
+38K16*Val_Util 4|38r13 38r40 6|110e20
+52U14*Scan_Sign 4|62r7
+92U14*Scan_Trailing_Blanks 4|98r7
+

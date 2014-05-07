@@ -1,0 +1,108 @@
+C51 COMPILER V7.09   ISR_ADC0                                                              04/25/2008 16:22:15 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ISR_ADC0
+OBJECT MODULE PLACED IN isr_adc0.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE isr_adc0.C LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "isr_adc0.h"
+   2          
+   3          char bdata flag_adc0win;                
+   4          sbit f_key0_int         = flag_adc0win^0;               // 键盘 0 由按键按下标志位
+   5          sbit f_key1_int         = flag_adc0win^1;               // 键盘 1 由按键按下标志位
+   6          sbit f_key2_int         = flag_adc0win^2;               // 键盘 2 由按键按下标志位
+   7          sbit f_out0_int         = flag_adc0win^3;               // 信号机柜门打开标志位         
+   8          sbit f_out1_int         = flag_adc0win^4;               // 信号机柜震动检测标志位
+   9          sbit f_out2_int         = flag_adc0win^5;               //      
+  10          sbit f_out3_int         = flag_adc0win^6;               // 
+  11          sbit f_key3_int         = flag_adc0win^7;               // 键盘 3 由按键按下标志位
+  12          
+  13          
+  14          bit f_temperature;                                                      // 获得一次温度转换值标志位  
+  15          bit f_adc0win;                                                          // ADC0 窗口比较
+  16                                                  
+  17          unsigned char key0_adc0,key1_adc0,key2_adc0,key3_adc0;                          
+  18          unsigned long result;                                                   // ADC0 decimated value
+  19          
+  20          
+  21          /*********************************************************************************************
+  22          *       原型：void adc0_isr(void) interrupt 15 using 1
+  23          *       功能: ADC0 中断子程序
+  24          *       说明：温度传感器
+  25          *       参数：无
+  26          *       返回：无
+  27          *********************************************************************************************/
+  28          void adc0_isr(void) interrupt 15 using 3
+  29          {
+  30   1      static unsigned char int_dec = INT_DEC; // integrate/decimate counter
+  31   1                                                                                      // we post a new result when
+  32   1                                                                                      // int_dec = 0
+  33   1      static unsigned long accumulator=0L;    // here's where we integrate the adc samples  
+  34   1      
+  35   1              AD0WINT = 0;
+  36   1              if (AMX0SL == 0x08) {                   
+  37   2                      accumulator += ADC0;                    // read adc value and add to running total
+  38   2                      int_dec--;                                              // update decimation counter
+  39   2                      if (int_dec == 0) {                             // if zero, then post result
+  40   3                              f_temperature = 1;       
+  41   3                              int_dec = INT_DEC;                      // reset counter
+  42   3                              result = accumulator >> 5;
+  43   3                              accumulator = 0L;                       // reset accumulator
+  44   3                              }
+  45   2                      }
+  46   1              AD0INT = 0;                                                     // clear adc interrupt flag
+  47   1              }
+  48                  
+  49          /*********************************************************************************************
+  50          *       原型：void adc0win_isr(void) interrupt 8 using 1
+  51          *       功能: ADC0 窗口比较中断子程序
+  52          *       说明：以后按下的键为处理按键
+  53          *       参数：无
+  54          *       返回：无
+  55          *********************************************************************************************/
+C51 COMPILER V7.09   ISR_ADC0                                                              04/25/2008 16:22:15 PAGE 2   
+
+  56          void adc0win_isr(void)interrupt 8                               // using 1
+  57          {
+  58   1              switch (AMX0SL){
+  59   2                      case 0x00: 
+  60   2                              f_key0_int = 1;
+  61   2                              key0_adc0 = ADC0H;                                      // 保存键盘 0 按键 AD 值
+  62   2                              break;
+  63   2                      case 0x01: 
+  64   2                              f_key1_int = 1;
+  65   2                              key1_adc0 = ADC0H;                                      // 保存键盘 1 按键 AD 值
+  66   2                              break;
+  67   2                      case 0x02:                                                              // 手动/自动选择
+  68   2                              f_key2_int = 1;
+  69   2                              key2_adc0 = ADC0H;                                      // 保存键盘 2 按键 AD 值
+  70   2                              break;
+  71   2                      case 0x03: f_out0_int = 1;break;
+  72   2                      case 0x04: f_out1_int = 1;break;
+  73   2                      case 0x05: f_out2_int = 1;break;
+  74   2                      case 0x06: f_out3_int = 1;break;
+  75   2                      case 0x07:                                                              // 步进按键
+  76   2                              f_key3_int = 1;
+  77   2                              key3_adc0 = ADC0H;                                      // 保存键盘 2 按键 AD 值
+  78   2                              break;
+  79   2                      default: f_adc0win = 0;break;
+  80   2                      }
+  81   1              AD0WINT = 0;                                                            // clear adc0win interrupt flag
+  82   1              AD0INT = 0;
+  83   1              }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    238    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     13    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,16 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.powten_table%s	s-powtab.ads		c6c4b860 NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-powtab.ads		20020507105152 84be3859
+X 1 system.ads
+41K9*System 150e11 2|38r9 74r5
+X 2 s-powtab.ads
+38K16*Powten_Table 39r14 74r12 74e24
+41N4*Maxpow 49r34
+49a4*Powten
+

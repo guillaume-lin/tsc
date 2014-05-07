@@ -1,0 +1,11 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U terminal_interface%s	terminal_interface.ads	a3b0a934 NE PU PK
+
+D system.ads		20020507104801 427a8039
+D terminal_interface.ads  20031025153918 a3b0a934
+X 2 terminal_interface.ads
+41K9*Terminal_Interface 42r17 46r5 46e23
+

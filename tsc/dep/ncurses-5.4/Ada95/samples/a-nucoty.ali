@@ -1,0 +1,53 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnvvvvnnnvvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.numerics.complex_types%b  a-nucoty.ads	897483d5 NE PU PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.generic_complex_types%s
+W system.exn_flt%s	s-exnflt.ads		s-exnflt.ali
+W system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U ada.numerics.complex_types%s  a-nucoty.ads	9bdf7c81 EB NE PU PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.generic_complex_types%s
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-numeri.ads		20020507104840 24750733
+D a-numaux.ads		20020507104820 a59c15c5
+D a-numaux.adb		20020507104820 b66d40cb
+D a-nucoty.ads		20020507104839 897483d5
+D a-nucoty.ads		20020507104839 897483d5
+D a-ngcoty.ads		20020507104836 36def867
+D a-ngcoty.adb		20020507104835 210f8ed7
+D a-unccon.ads		20020507104903 5b55fe29
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exnflt.ads		20020507105103 3b4236b8
+D s-exngen.ads		20020507105103 8326a4b5
+D s-fatflt.ads		20020507105109 485be067
+D s-fatgen.ads		20020507105109 176a60c7
+D s-fatgen.adb		20020507105109 f7d45ad0
+D s-fatllf.ads		20020507105110 301be279
+D s-maccod.ads		20020507105122 f1886293
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 7|18r6 20r9 21r8
+X 3 a-numeri.ads
+19K13*Numerics 30e17 7|18r10 20r13 21r12
+X 7 a-nucoty.ads
+20K22*Complex_Types 23r14
+X 8 a-ngcoty.ads
+43k22*Generic_Complex_Types 7|18r19 21r21 8|161e39
+

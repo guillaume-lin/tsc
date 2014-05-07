@@ -1,0 +1,155 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnvvvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnvvnvnn
+
+U sample.header_handler%b  sample-header_handler.adb  b34d376f NE PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W sample%s		sample.adb		sample.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.integer_io%s  terminal_interface-curses-text_io-integer_io.adb  terminal_interface-curses-text_io-integer_io.ali  ED
+
+U sample.header_handler%s  sample-header_handler.ads  6f290775 EE NE PK
+W sample%s		sample.adb		sample.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-calend.ads		20020507104823 83015fd2
+D a-calend.adb		20020507104823 3a8f29bc
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D sample.ads		20031025153918 f29d090b
+D sample-header_handler.ads  20031025153918 2c0afe4c
+D sample-header_handler.adb  20031025153918 f335fc9d
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-arit64.ads		20020507105057 be646b3c
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-osprim.ads		20020507105124 171b3898
+D s-osprim.adb		20021115132201 80a240c8
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-integer_io.ads  20031025153918 abfe0229
+D terminal_interface-curses-text_io-integer_io.adb  20031025153918 3513da4d
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 29|41r6 41r24
+X 2 a-calend.ads
+40K13*Calendar 119e17 29|41r10 41r28
+42O9*Time 29|114r13
+49I12*Month_Number 29|98r17 98r39 118r16
+50I12*Day_Number 29|119r16
+54V13*Clock 29|114r21
+57V13*Month 29|118r32
+58V13*Day 29|119r32
+59V13*Seconds 29|115r33
+X 27 sample.ads
+41K9*Sample 43e11 28|45r9 53r5 29|43r6 43r27 47r14 180r5
+X 28 sample-header_handler.ads
+45K16*Header_Handler 53r12 53e26 29|47b21 180r12 180t26
+47U14*Init_Header_Handler 29|72b14 76r8 76t27
+50U14*Update_Header_Window 29|144b14 148r8 148t28
+X 29 sample-header_handler.adb
+49K12 Int_IO 51r8
+53M4 Header_Window 86r15 87r15 89r15 121r10 124r26 125r29 126r18 127r26 128r32
+. 134r37 156m7
+55i4 Display_Hour 122r51 131m13
+56i4 Display_Min 122r23 130m13
+57i4 Display_Day 123r20 133m13
+58i4 Display_Month 123r45 132m13
+63V13 Init_Header_Window 65r26 75r25 150b13 178r8 178t26
+63M33 Win 150b33 156r24 157r10 159r36 163r48 166r20 168r37 170r15
+64i33 Columns 151b33 169r17
+67U14 Internal_Update_Header_Window 95b14 140r8 140t37 147r7 173r10
+67b45 Do_Update 95b45 135r16
+78U14 N_Out 82b14 91r8 91t13 125r13 128r13 129r13
+78i21 N 82b21 85r10 87r30 89r30
+97A12 Month_Name_Array 100r30
+100a7 Month_Names 126r33
+114O7 Now 115r42 118r39 119r37
+115i7 Sec 116r27 117r28
+116i7 Hour 117r34 122r43 128r20 131r30
+117i7 Minute 122r13 129r20 130r30
+118i7 Mon 123r62 126r46 132r30
+119i7 D 123r35 125r20 133r30
+153a7 Title 169r44 170r32
+154i7 Pos 169m10 170r23
+X 30 sample-manifest.ads
+43K16*Manifest 29|43r13 43r34 30|67e20
+65i4*Header_Color 29|161r46 165r48
+X 47 terminal_interface.ads
+41K9*Terminal_Interface 28|41r6 41r37 29|42r6 50r6 47|46e23
+X 48 terminal_interface-curses.ads
+48K28*Curses 28|41r25 41r56 29|42r25 50r25 48|1933e30
+56M9*Window 29|53r20 63r43 150r43
+57M4*Null_Window 29|53r30 121r27 157r17
+60I9*Column_Position 29|154r16 169r27
+64I12*Column_Count 29|64r43 151r43
+349r4*Normal_Video 29|162r46 164r48
+504U14*Move_Cursor 29|124r13 127r13
+521U14*Add 29|86r10 125r24 128r27
+646U14*Add 29|126r13
+655U14*Add 29|170r10
+810U14*Set_Character_Attributes 29|163r13
+811M7 Win 29|163r39
+812r7 Attr 29|164r39
+813i7 Color 29|165r39
+995U14*Leave_Cursor_After_Update 29|168r10
+1033U14*Update_Screen 29|136r16
+1045U14*Refresh_Without_Update 29|134r13
+1067U14*Erase 29|166r13
+1101U14*Set_Background 29|159r13
+1102M7 Win 29|159r29
+1103r7 Ch 29|160r29
+1719V13*Has_Colors 29|158r13
+1782U14*Rip_Off_Lines 29|75r7
+X 51 terminal_interface-curses-text_io.ads
+44K35*Text_IO 29|42r32 50r32 51|136e38
+X 53 terminal_interface-curses-text_io-integer_io.ads
+44k43*Integer_IO 29|42r40 50r40 53|63e49
+49U14*Put 29|87r10 89r10
+

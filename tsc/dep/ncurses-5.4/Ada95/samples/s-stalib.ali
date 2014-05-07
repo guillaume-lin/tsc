@@ -1,0 +1,74 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnvnnnnnvnnnnnnnnnnnvnnnnnnnvnnnn
+
+U system.standard_library%b  s-stalib.adb	c0e50ac3 NE PK
+W system%s		system.ads		system.ali
+W system.memory%s	s-memory.adb		s-memory.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U system.standard_library%s  s-stalib.ads	6d0b25e7 NE PK
+W system%s		system.ads		system.ali
+W unchecked_conversion%s
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D system.ads		20020507104801 427a8039
+D s-memory.ads		20020507105124 0df2d6b0
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stalib.adb		20020507105158 0eac5a67
+D s-stoele.ads		20020507105159 c6bef0ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 system.ads
+41K9*System 150e11 7|55r6 58r9 69r32 250r5 8|48r6 56r6 61r14 78r7 89r10 93r5
+67M9*Address 7|69r39
+X 4 s-memory.ads
+48K16*Memory 72e18 8|56r13
+X 5 s-soflin.ads
+47K16*Soft_Links 365e22 8|48r13 78r14 89r17
+147p4*Abort_Undefer 8|78r25
+197p4*Adafinal 8|89r28
+X 7 s-stalib.ads
+58K16*Standard_Library 250r12 250e28 8|61b21 93r12 93t28
+65P9*Big_String_Ptr 69r48 125r19
+68V13*To_Ptr 160r32 168r32 176r32 184r32 192r32 200r32
+81A9*Image_Index_Table_8
+83A9*Image_Index_Table_16
+85A9*Image_Index_Table_32
+95R9*Exception_Data 96r42 109c9 156r35 164r32 172r32 180r32 188r32 196r31
+96P9*Exception_Data_Ptr 128r20
+109R9*Exception_Data 139e14
+110b7*Not_Handled_By_Others
+117e7*Lang
+122i7*Name_Length
+125p7*Full_Name
+128p7*HTable_Ptr
+133i7*Import_Code
+146a4*Constraint_Error_Name 159r32 160r40
+147a4*Program_Error_Name 175r32 176r40
+148a4*Storage_Error_Name 183r32 184r40
+149a4*Tasking_Error_Name 191r32 192r40
+150a4*Abort_Signal_Name 199r32 200r40
+152a4*Numeric_Error_Name 167r32 168r40
+156r4*Constraint_Error_Def 204m22
+164r4*Numeric_Error_Def 205m22
+172r4*Program_Error_Def 206m22
+180r4*Storage_Error_Def 207m22
+188r4*Tasking_Error_Def 208m22
+196r4*Abort_Signal_Def 209m22
+211i4*Local_Partition_ID
+216E9*Exception_Trace_Kind 233r22
+217n7*RM_Convention 233r46
+222n7*Every_Raise
+226n7*Unhandled_Raise
+233e4*Exception_Trace 234r19
+241U14*Abort_Undefer_Direct 242r19 8|76b14 79r8 79t28
+246U14*Adafinal 8|85b14 91r8 91t16
+X 8 s-stalib.adb
+63b4 Runtime_Finalized 87r14 88m10
+67i4 Inside_Elab_Final_Code 68m22
+X 10 unchconv.ads
+22v10*Unchecked_Conversion 7|56r6 69r10
+

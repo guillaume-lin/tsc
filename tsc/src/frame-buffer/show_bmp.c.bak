@@ -1,0 +1,156 @@
+/**
+ * show_jpeg.c
+ * 
+ * use jpeg lib to show jpeg file on frame buffer
+ * 
+ * Company: Xiamen Uni-Creative Technology Corporation
+ * Author:  Lin Jingxian(林景贤)
+ * E-Mail:  cckk_lin@yahoo.ie
+ * Date:    2005-07-25 18:01:29 中国标准时间
+ * 
+ * $log$
+ *
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <setjmp.h>
+#include <assert.h>
+#include <errno.h>
+#include "show_bmp.h"
+int BGRFromRGB(unsigned char *buf, unsigned int  widthPix, unsigned int height)
+{
+	if (!buf)
+		return -1;
+
+	unsigned int col, row;
+	for (row=0;row<height;row++)
+	{
+		for (col=0;col<widthPix;col++) 
+		{
+			unsigned char * pRed;
+			unsigned char * pGrn;
+			unsigned char * pBlu;
+			pRed = buf + row * widthPix * 3 + col * 3;
+			pGrn = buf + row * widthPix * 3 + col * 3 + 1;
+			pBlu = buf + row * widthPix * 3 + col * 3 + 2;
+
+			// swap red and blue
+			unsigned char tmp;
+			tmp = *pRed;
+			*pRed = *pBlu;
+			*pBlu = tmp;
+		}
+	}
+	return 0;
+}
+int load_bmp_file(const char* file,s_ImageInfo* image)
+{
+	BITMAPFILEHEADER fh;
+	BITMAPINFOHEADER ih;	
+	FILE * infile;
+	int    nSize;
+	if((infile = fopen(file, "rb")) == NULL)
+	{
+		// can not open file
+		printf("use rb mode open %s file fail，errorNo:%d",file,errno);
+		return -1;
+	}
+	printf("unsigned long=%d,unsigned short=%d,long=%d\n\r",	
+				 sizeof(unsigned long),sizeof(unsigned short),sizeof(long));
+	printf("sizeof(BITMAPFILEHEADER)=%d,sizeof(BITMAPINFOHEADER)=%d\n\r",
+					sizeof(BITMAPFILEHEADER),
+					sizeof(BITMAPINFOHEADER));
+	fread((void*)&fh,14,1,infile);	
+	fread((void*)&ih,sizeof(BITMAPINFOHEADER),1,infile);	
+	printf("Height=%ld,Width=%ld\n\r",ih.biHeight,ih.biWidth);
+	if(fh.bfType != 0x4d42)	// BM
+	{
+		printf("%s not is  bmp file，DataTiltle not 0x4d42 flag",file);
+		fclose(infile);
+		return -1;
+	}	
+	if(ih.biBitCount != 24 || ih.biCompression != 0)
+	{
+		// unsupported file format
+		printf("%s file not is bmp format\n\r",file);
+//		printf("biBitCount=%x,biCompression=%x\n\r",
+//					 ih.biBitCount,ih.biCompression);
+
+		fclose(infile);
+		return -1;
+	}
+	nSize = ih.biWidth * ih.biHeight * 3;
+	image->ldata_len=nSize;
+	image->nHeight=ih.biHeight;
+	image->nWidth=ih.biWidth;
+	image->pData = (unsigned char *)malloc(nSize);
+	if(image->pData == NULL)
+	{
+		printf("load_bmp_file menory fail,errorNo:%d",errno);
+		fclose(infile);
+		return -1;
+	}
+	fread((void*)image->pData,sizeof(unsigned char)*nSize,1,infile);
+	fclose(infile);
+	BGRFromRGB(image->pData,image->nWidth,image->nHeight);
+	printf("read bmp file %s success!!",file);	
+	return 0;
+}
+int fb_bitblt(fb_device_t *pDev,s_ImageInfo *pImageInfo)
+{
+	int i=0;
+	int j=0;
+	int nWidth=0;
+	int nHeight=0;
+	unsigned char uRed;
+	unsigned char uBlue;
+	unsigned char uYellow;
+	int which;
+	printf("%d,%d\n\r",fb_get_width(pDev),pImageInfo->nWidth);
+	printf("%d,%d\n\r",fb_get_height(pDev),pImageInfo->nHeight);	
+	if(fb_get_width(pDev)>pImageInfo->nWidth)
+			nWidth=pImageInfo->nWidth;
+	else
+		  nWidth=fb_get_width(pDev);
+	if(fb_get_height(pDev)>pImageInfo->nHeight)
+			nHeight=pImageInfo->nHeight;
+	else
+		  nHeight=fb_get_height(pDev);
+//	fb_switch_to_screen(pDev,2);
+	for(i=0;i<nHeight;i++)
+	{
+		for(j=0;j<nWidth;j++)
+		{
+			which= (i*pImageInfo->nWidth +j)*3;
+			uRed=pImageInfo->pData[which];
+			uYellow=pImageInfo->pData[which+1];
+			uBlue=pImageInfo->pData[which+2];
+			short pixel;
+			Encode565(MakeColor(uRed,uYellow,uBlue),&pixel);
+			int ny=abs(i-nHeight);
+			fb_put_pixel(pDev,j,ny,pixel);
+		}
+	}
+//	fb_show_screen(pDev,2);
+	return 0;
+}	
+int show_bmp(const char* strImageName)
+{
+	fb_device_t dev;
+	s_ImageInfo ImageInfo;
+	if(fb_open(&dev,"/dev/fb0")!=0)
+		return -1;
+	if(load_bmp_file(strImageName,&ImageInfo)!=0)
+	{
+		fb_close(&dev);	
+		return -1;
+	}
+	fb_switch_to_screen(&dev,2);	
+	fb_bitblt(&dev,&ImageInfo);
+	fb_show_screen(&dev,2);
+	sleep(10);
+	fb_close(&dev);
+	free(ImageInfo.pData);
+	return 0;
+}

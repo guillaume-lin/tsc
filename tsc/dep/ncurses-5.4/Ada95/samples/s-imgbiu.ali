@@ -1,0 +1,48 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnn
+
+U system.img_biu%b	s-imgbiu.adb		3acc2294 NE PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+U system.img_biu%s	s-imgbiu.ads		18c747d9 NE PU PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D system.ads		20020507104801 427a8039
+D s-imgbiu.ads		20020507105115 5f10f0d2
+D s-imgbiu.adb		20020507105115 6071e574
+D s-unstyp.ads		20020507105208 05ad3732
+X 1 system.ads
+41K9*System 150e11 2|40r6 42r9 62r11 76r5 3|36r6 36r33 38r14 158r5
+X 2 s-imgbiu.ads
+42K16*Img_BIU 43r14 76r12 76e19 3|38b21 158r12 158t19
+45U14*Set_Image_Based_Integer 3|44b14 84r8 84t31
+46i7 V 3|45b7 56r10 57r46 71r50
+47i7 B 3|46b7 57r50 71r54
+48i7 W 3|47b7 57r53 71r57
+49s7 S 3|48b7 57m56 64m10 71m64 77r16 81m10
+50i7 P 3|49b7 57m59 63m10 63r15 64r13 65r19 71m67
+61U14*Set_Image_Based_Unsigned 3|57r10 71r13 90b14 156r8 156t32
+62m7 V 3|91b7 133r19
+63i7 B 3|92b7 99r46 122r10 128r53
+64i7 W 3|93b7 140r22 142r23
+65s7 S 3|94b7 111m13 114m13 124m10 128m7 131m7 136m7 146m13 146r22 152m13
+66i7 P 3|95b7 97r35 110m13 110r18 111r16 113m13 113r18 114r16 123m10 123r15
+. 124r13 127m7 127r12 128r10 130m7 130r12 131r10 135m7 135r12 136r10 140r10
+. 141r15 142m10 143r15
+X 3 s-imgbiu.adb
+51i7 Start 65m10 77r19 78m13 78r22 81r13
+97i7 Start 140r14 142r15 145r20 151r19
+98i7 F 141m10 145r16 146r25 148m13 148r18
+98i10 T 143m10 146r16 147m13 147r18 151r32
+99m7 BU 108r18 109r29 111r33
+100a7 Hex 111r22 114r22
+103U17 Set_Digits 106b17 109r13 116r11 116t21 133r7
+103m29 T 106b29 108r13 109r25 111r27 114r27
+151i14 J 152r16
+X 4 s-unstyp.ads
+42K16*Unsigned_Types 2|40r13 62r18 3|36r13 36r40 4|234e26
+47M9*Unsigned 2|62r33 3|57r36 71r39 91r11 99r24 99r36 101r18 103r33 106r33
+

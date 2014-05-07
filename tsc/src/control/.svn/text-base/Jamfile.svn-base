@@ -1,0 +1,58 @@
+#
+# compile with Jamfile
+#
+
+
+if $(MINGW) || $(UNIX)
+{
+CC	    = gcc ;
+CCFLAGS   = -g -Wall ;
+LINK      = gcc ;
+}
+else
+{
+	
+	MSVCNT = "\"E:\Program\ Files\Microsoft Visual Studio .NET 2003\Vc7\"" ;
+	CC = cl ;
+	CCFLAGS = /nologo ;
+	LINK = LINK ;
+	LINKFLAGS = /nologo ;
+	LINKLIBS = ;
+	LOCATE_TARGET = build.w ;
+}
+
+CHMOD = ;
+SRC =  	main.c
+	kernel.c
+	datastruct.c
+	multiple_schedule_control.c
+	manual_control.c
+	cordless_coordinate_control.c
+	actuate_control.c
+	executive_machine_control.c
+	codec.c
+	vm.c
+	command_reactor.c
+	key_buffer.c
+	detector_set.c
+	util.c
+	error_code.c
+	cpld_fifo.c
+	;
+if $(MINGW)
+{
+	echo "Mingw" ;
+	LOCATE_TARGET = build.m ;
+	SRC += io_pc104.c ;
+}
+
+if $(UNIX)
+{
+	echo "Unix" ;
+	SRC += io_ncurses.c ;
+	LOCATE_TARGET = build.u ;
+	LINKLIBS = /usr/lib/libcurses.a ;
+}
+
+Main controller.exe :	$(SRC) ;
+

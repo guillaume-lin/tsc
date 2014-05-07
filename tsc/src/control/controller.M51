@@ -1,0 +1,1956 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        04/25/2008  16:22:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE kernel.obj, main.obj, multiple_schedule_control.obj, datastruct.obj, mcu.obj, manual_control.ob
+>> j, actuate_control.obj, executive_machine_control.obj, command_reactor.obj, codec.obj, cordless_coordinate_control.ob
+>> j, STARTUP.obj, isr_uart.obj, isr_int0.obj, isr_adc0.obj, isr_timer3.obj, isr_smbus.obj, smbus.obj, detector_set.obj,
+>>  util.obj, key_buffer.obj, error_code.obj, cpld_fifo.obj TO controller NOLINES, NOSYMBOLS, NOPUBLICS IXREF (NOGENERAT
+>> ED, NOLIBRARIES) RAMSIZE (256)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  kernel.obj (KERNEL)
+  main.obj (MAIN)
+  multiple_schedule_control.obj (MULTIPLE_SCHEDULE_CONTROL)
+  datastruct.obj (DATASTRUCT)
+  mcu.obj (MCU)
+  manual_control.obj (MANUAL_CONTROL)
+  actuate_control.obj (ACTUATE_CONTROL)
+  executive_machine_control.obj (EXECUTIVE_MACHINE_CONTROL)
+  command_reactor.obj (COMMAND_REACTOR)
+  codec.obj (CODEC)
+  cordless_coordinate_control.obj (CORDLESS_COORDINATE_CONTROL)
+  STARTUP.obj (?C_STARTUP)
+  isr_uart.obj (ISR_UART)
+  isr_int0.obj (ISR_INT0)
+  isr_adc0.obj (ISR_ADC0)
+  isr_timer3.obj (ISR_TIMER3)
+  isr_smbus.obj (ISR_SMBUS)
+  smbus.obj (SMBUS)
+  detector_set.obj (DETECTOR_SET)
+  util.obj (UTIL)
+  key_buffer.obj (KEY_BUFFER)
+  error_code.obj (ERROR_CODE)
+  cpld_fifo.obj (CPLD_FIFO)
+  D:\KEIL\C51\LIB\C51L.LIB (?C_INIT)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?COPY)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?CLDPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?CLDOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?CSTPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?CSTOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?IMUL)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?UIDIV)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?SIDIV)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ILDIX)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ILDPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ILDIPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ILDOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ILDIOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ISTPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ISTOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?LMUL)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ULDIV)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?SLDIV)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ULSHR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?LSTXDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?LSTKXDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?OFFXADD)
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 2
+
+
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PSTOPTR)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?ICALL)
+  D:\KEIL\C51\LIB\C51L.LIB (PRINTF)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?MEMSET)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDIDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PSTIDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDXDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDIXDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PSTXDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDPDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PSTPDATA)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?PLDCODE)
+  D:\KEIL\C51\LIB\C51L.LIB (?C?CCASE)
+  D:\KEIL\C51\LIB\C51L.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  controller (KERNEL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            REG     0008H     0008H     ABSOLUTE     "REG BANK 1"
+            REG     0010H     0008H     ABSOLUTE     "REG BANK 2"
+            REG     0018H     0008H     ABSOLUTE     "REG BANK 3"
+            DATA    0020H     0001H     BIT_ADDR     ?BA?MCU
+            DATA    0021H     0002H     BIT_ADDR     ?BA?ISR_UART
+            DATA    0023H     0001H     BIT_ADDR     ?BA?ISR_ADC0
+            DATA    0024H     0001H     BIT_ADDR     ?BA?ISR_SMBUS
+            DATA    0025H     0002H     BIT_ADDR     ?BA?SMBUS
+            BIT     0027H.0   0003H.5   UNIT         ?BI?MCU
+            BIT     002AH.5   0001H.3   UNIT         _BIT_GROUP_
+            BIT     002CH.0   0001H.0   UNIT         ?BI?SMBUS
+            BIT     002DH.0   0000H.2   UNIT         ?BI?ACTUATE_CONTROL
+            BIT     002DH.2   0000H.2   UNIT         ?BI?ISR_ADC0
+            BIT     002DH.4   0000H.1   UNIT         ?BI?ISR_SMBUS
+                    002DH.5   0000H.3                *** GAP ***
+            DATA    002EH     0013H     UNIT         _DATA_GROUP_
+            DATA    0041H     000BH     UNIT         ?DT?ISR_SMBUS
+            DATA    004CH     0002H     UNIT         ?DT?MCU
+            DATA    004EH     0002H     UNIT         ?DT?ISR_TIMER3
+            IDATA   0050H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     15E2H     UNIT         ?XD?ISR_UART
+            XDATA   15E2H     106DH     UNIT         ?XD?KERNEL
+            XDATA   264FH     0844H     UNIT         ?XD?COMMAND_REACTOR
+            XDATA   2E93H     0600H     UNIT         ?XD?CODEC
+            XDATA   3493H     0221H     UNIT         _XDATA_GROUP_
+            XDATA   36B4H     017FH     UNIT         ?XD?MCU
+            XDATA   3833H     0101H     UNIT         ?XD?ISR_SMBUS
+            XDATA   3934H     006BH     UNIT         ?XD?SMBUS
+            XDATA   399FH     0058H     UNIT         ?XD?ACTUATE_CONTROL
+            XDATA   39F7H     000DH     UNIT         ?XD?_GREEN_CONFLICT_SET_CONFLICT?DATASTRUCT
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 3
+
+
+            XDATA   3A04H     000DH     UNIT         ?XD?ISR_ADC0
+            XDATA   3A11H     000CH     UNIT         ?XD?_ENCODE_SET_PHASE_PLAN_REQ?CODEC
+            XDATA   3A1DH     000BH     UNIT         ?XD?_GREEN_CONFLICT_IS_CONFLICT?DATASTRUCT
+            XDATA   3A28H     000AH     UNIT         ?XD?_IS_PHASE_GREEN_CONFLICT?DATASTRUCT
+            XDATA   3A32H     0009H     UNIT         ?XD?_PHASE_SET_OUTPUT?DATASTRUCT
+            XDATA   3A3BH     0009H     UNIT         ?XD?_LAMP_HEALTH_SET_HEALTH?DATASTRUCT
+            XDATA   3A44H     0009H     UNIT         ?XD?_DETECTOR_HEALTH_SET_HEALTH?DATASTRUCT
+            XDATA   3A4DH     0009H     UNIT         ?XD?_DETECTOR_STATUS_SET_STATUS?DATASTRUCT
+            XDATA   3A56H     0009H     UNIT         ?XD?_DECODE_GET_PHASE_PLAN_RES?CODEC
+            XDATA   3A5FH     0008H     UNIT         ?XD?_ENCODE_SET_TIMMING_PLAN_REQ?CODEC
+            XDATA   3A67H     0008H     UNIT         ?XD?_ENCODE_SET_SCHEDULE_PLAN_REQ?CODEC
+            XDATA   3A6FH     0008H     UNIT         ?XD?_ENCODE_SET_COMM_PARAM_REQ?CODEC
+            XDATA   3A77H     0007H     UNIT         ?XD?_LAMP_GROUP_SETTING_GET_TERMINAL?DATASTRUCT
+            XDATA   3A7EH     0006H     UNIT         ?XD?_ENCODE_SET_SYSTEM_TIME_REQ?CODEC
+            XDATA   3A84H     0006H     UNIT         ?XD?_DECODE_GET_SYSTEM_TIME_RES?CODEC
+            XDATA   3A8AH     0006H     UNIT         ?XD?_ENCODE_SET_SYSTEM_PARAM_REQ?CODEC
+            XDATA   3A90H     0006H     UNIT         ?XD?_DECODE_GET_SYSTEM_PARAM_RES?CODEC
+            XDATA   3A96H     0006H     UNIT         ?XD?_ENCODE_SET_LAMP_GROUP_SETTING_REQ?CODEC
+            XDATA   3A9CH     0006H     UNIT         ?XD?_ENCODE_SET_DETECTOR_SETTING_REQ?CODEC
+            XDATA   3AA2H     0006H     UNIT         ?XD?_DECODE_GET_DETECTOR_SETTING_RES?CODEC
+            XDATA   3AA8H     0006H     UNIT         ?XD?_DECODE_GET_TIMMING_PLAN_RES?CODEC
+            XDATA   3AAEH     0006H     UNIT         ?XD?_DECODE_GET_SCHEDULE_PLAN_RES?CODEC
+            XDATA   3AB4H     0006H     UNIT         ?XD?_ENCODE_SET_SPECIAL_DAY_TABLE_REQ?CODEC
+            XDATA   3ABAH     0006H     UNIT         ?XD?_ENCODE_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM_REQ?CODEC
+            XDATA   3AC0H     0006H     UNIT         ?XD?_ENCODE_SET_CORDLESS_COORDINATE_CONTROL_PARAM_REQ?CODEC
+            XDATA   3AC6H     0006H     UNIT         ?XD?_ENCODE_SET_CURRENT_CONTROL_MODE_REQ?CODEC
+            XDATA   3ACCH     0006H     UNIT         ?XD?_DECODE_SYSTEM_TIME?CODEC
+            XDATA   3AD2H     0006H     UNIT         ?XD?_DECODE_SYSTEM_PARAM?CODEC
+            XDATA   3AD8H     0006H     UNIT         ?XD?_DECODE_GET_LAMP_GROUP_SETTING_RES?CODEC
+            XDATA   3ADEH     0006H     UNIT         ?XD?_DECODE_GET_SPECIAL_DAY_TABLE_RES?CODEC
+            XDATA   3AE4H     0006H     UNIT         ?XD?_DECODE_GET_COMM_PARAM_RES?CODEC
+            XDATA   3AEAH     0006H     UNIT         ?XD?_DECODE_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM_RES?CODEC
+            XDATA   3AF0H     0006H     UNIT         ?XD?_DECODE_GET_ACTUATE_CONTROL_PARAM_RES?CODEC
+            XDATA   3AF6H     0006H     UNIT         ?XD?_ENCODE_SET_ACTUATE_CONTROL_PARAM_REQ?CODEC
+            XDATA   3AFCH     0006H     UNIT         ?XD?_DECODE_GET_CORDLESS_COORDINATE_CONTROL_PARAM_RES?CODEC
+            XDATA   3B02H     0006H     UNIT         ?XD?_DECODE_GET_CURRENT_CONTROL_MODE_RES?CODEC
+            XDATA   3B08H     0006H     UNIT         ?XD?_DECODE_GET_MACHINE_STATUS_RES?CODEC
+            XDATA   3B0EH     0006H     UNIT         ?XD?_ENCODE_DO_LAMP_STATUS_REQ?CODEC
+            XDATA   3B14H     0006H     UNIT         ?XD?_DECODE_DO_LAMP_STATUS_REQ?CODEC
+            XDATA   3B1AH     0006H     UNIT         ?XD?_DECODE_GET_DETECTOR_COUNTER_RES?CODEC
+            XDATA   3B20H     0006H     UNIT         ?XD?_DECODE_GET_DETECTOR_STATUS_RES?CODEC
+            XDATA   3B26H     0006H     UNIT         ?XD?_DECODE_GET_LAMP_HEALTH_RES?CODEC
+            XDATA   3B2CH     0006H     UNIT         ?XD?_DECODE_GET_DETECTOR_HEALTH_RES?CODEC
+            XDATA   3B32H     0006H     UNIT         ?XD?_DECODE_GET_VOLUME_OCCUPY_RES?CODEC
+            XDATA   3B38H     0006H     UNIT         ?XD?_DEL_SET?DETECTOR_SET
+            XDATA   3B3EH     0005H     UNIT         ?XD?_LAMP_GROUP_SETTING_GET_LAMP_GROUP_COUNT?DATASTRUCT
+            XDATA   3B43H     0005H     UNIT         ?XD?_PHASE_GET_OUTPUT?DATASTRUCT
+            XDATA   3B48H     0005H     UNIT         ?XD?_LAMP_HEALTH_GET_HEALTH?DATASTRUCT
+            XDATA   3B4DH     0005H     UNIT         ?XD?_DETECTOR_HEALTH_GET_HEALTH?DATASTRUCT
+            XDATA   3B52H     0005H     UNIT         ?XD?_DETECTOR_STATUS_GET_STATUS?DATASTRUCT
+            XDATA   3B57H     0005H     UNIT         ?XD?_ENCODE_GET_PHASE_PLAN_REQ?CODEC
+            XDATA   3B5CH     0004H     UNIT         ?XD?_DO_WAIT?KERNEL
+            XDATA   3B60H     0003H     UNIT         ?XD?_HANDLE_DO_LAMP_STATUS?COMMAND_REACTOR
+            XDATA   3B63H     0003H     UNIT         ?XD?_ENCODE_GET_TIMMING_PLAN_REQ?CODEC
+            XDATA   3B66H     0003H     UNIT         ?XD?_ENCODE_GET_SCHEDULE_PLAN_REQ?CODEC
+            XDATA   3B69H     0003H     UNIT         ?XD?_ENCODE_GET_COMM_PARAM_REQ?CODEC
+            XDATA   3B6CH     0003H     UNIT         ?XD?CORDLESS_COORDINATE_CONTROL
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 4
+
+
+            XDATA   3B6FH     0003H     UNIT         ?XD?SAVE_ERR?SMBUS
+            XDATA   3B72H     0003H     UNIT         ?XD?_CPLD_FIFO_IS_WILL_FULL?CPLD_FIFO
+            XDATA   3B75H     0002H     UNIT         ?XD?MULTIPLE_SCHEDULE_CONTROL
+            XDATA   3B77H     0002H     UNIT         ?XD?EXECUTIVE_MACHINE_CONTROL
+            XDATA   3B79H     0001H     UNIT         ?XD?MANUAL_CONTROL
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     001DH     UNIT         ?PR?_FRAME_GET_DATA_LEN?CODEC
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0015H     UNIT         ?PR?_HANDLE_DO_STEP_FORWARD?COMMAND_REACTOR
+            CODE    003BH     0003H     ABSOLUTE     
+            CODE    003EH     0005H     UNIT         ?PR?_GET_RESPONSE_CMD?CODEC
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     002DH     UNIT         ?CO?ISR_SMBUS
+            CODE    0073H     0003H     ABSOLUTE     
+            CODE    0076H     0005H     UNIT         ?PR?SAVE_CONTROL_MODE_SELECTION?SMBUS
+            CODE    007BH     0003H     ABSOLUTE     
+            CODE    007EH     0013H     UNIT         ?PR?_INIT_KEY_BUFFER?KEY_BUFFER
+                    0091H     0002H                  *** GAP ***
+            CODE    0093H     0003H     ABSOLUTE     
+            CODE    0096H     000DH     UNIT         ?PR?_EMPTY_SET?DETECTOR_SET
+            CODE    00A3H     0003H     ABSOLUTE     
+            CODE    00A6H     0606H     UNIT         ?C?LIB_CODE
+            CODE    06ACH     04A8H     UNIT         ?PR?GET_LAMP_HEALTH_STATUS?MCU
+            CODE    0B54H     0426H     UNIT         ?PR?_HANDLE_GET_MACHINE_STATUS?COMMAND_REACTOR
+            CODE    0F7AH     03FCH     UNIT         ?PR?FUN_SMBUS?SMBUS
+            CODE    1376H     03CBH     UNIT         ?PR?DECODE_KEY?MCU
+            CODE    1741H     0365H     UNIT         ?PR?PRINTF?PRINTF
+            CODE    1AA6H     031FH     UNIT         ?PR?_SIMPLE_HALF_ACTUATE_CONTROL?ACTUATE_CONTROL
+            CODE    1DC5H     0302H     UNIT         ?PR?_SIMPLE_FULL_ACTUATE_CONTROL?ACTUATE_CONTROL
+            CODE    20C7H     02EFH     UNIT         ?PR?_READ_FRAME?CODEC
+            CODE    23B6H     02ECH     UNIT         ?PR?_INIT_SPECIAL_SCHEDULE_DATA?KERNEL
+            CODE    26A2H     027DH     UNIT         ?PR?_GET_CURRENT_SCHEDULE?KERNEL
+            CODE    291FH     0264H     UNIT         ?PR?_CORDLESS_COORDINATE_CONTROL?CORDLESS_COORDINATE_CONTROL
+            CODE    2B83H     0243H     UNIT         ?PR?_SET_PHASE_STATE?KERNEL
+            CODE    2DC6H     023BH     UNIT         ?PR?_WRITE_COMM?MCU
+            CODE    3001H     0207H     UNIT         ?PR?INITIALIZE?MCU
+            CODE    3208H     01D1H     UNIT         ?PR?_SET_TERM_STATUS?MCU
+            CODE    33D9H     01C6H     UNIT         ?PR?SMBUS_ISR?ISR_SMBUS
+            CODE    359FH     01C2H     UNIT         ?PR?_WRITE_FRAME?CODEC
+            CODE    3761H     01BEH     UNIT         ?PR?CONTROLLER_MAIN?KERNEL
+            CODE    391FH     01B7H     UNIT         ?PR?_OPEN_COMM?MCU
+            CODE    3AD6H     0188H     UNIT         ?PR?TIMER3_ISR?ISR_TIMER3
+            CODE    3C5EH     016DH     UNIT         ?PR?SCANKEY?MCU
+            CODE    3DCBH     0141H     UNIT         ?PR?_GREEN_CONFLICT_SET_CONFLICT?DATASTRUCT
+            CODE    3F0CH     0131H     UNIT         ?PR?WAIT_FOR_100MS?MCU
+            CODE    403DH     012EH     UNIT         ?PR?_MULTIPLE_SCHEDULE_CONTROL?MULTIPLE_SCHEDULE_CONTROL
+            CODE    416BH     011EH     UNIT         ?PR?_HANDLE_GET_PHASE_PLAN?COMMAND_REACTOR
+            CODE    4289H     011BH     UNIT         ?PR?JUDGE_DETECTOR?MCU
+            CODE    43A4H     0117H     UNIT         ?PR?_GREEN_CONFLICT_IS_CONFLICT?DATASTRUCT
+            CODE    44BBH     00FEH     UNIT         ?PR?UART0_ISR?ISR_UART
+            CODE    45B9H     00F6H     UNIT         ?PR?INT0_ISR?ISR_INT0
+            CODE    46AFH     00EFH     UNIT         ?PR?SAVE_ERR?SMBUS
+            CODE    479EH     00EDH     UNIT         ?PR?INT6_ISR?ISR_INT0
+            CODE    488BH     00E9H     UNIT         ?PR?_READ_BYTE?CODEC
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 5
+
+
+            CODE    4974H     00E7H     UNIT         ?PR?_DO_SCHEDULE?KERNEL
+            CODE    4A5BH     00E6H     UNIT         ?PR?IS_TODAY_SPECIAL_DAY?KERNEL
+            CODE    4B41H     00D7H     UNIT         ?PR?FUN_WRITE_EEPROM?SMBUS
+            CODE    4C18H     00D0H     UNIT         ?PR?_LAMP_GROUP_SETTING_GET_TERMINAL?DATASTRUCT
+            CODE    4CE8H     00CDH     UNIT         ?PR?_HANDLE_SET_PHASE_PLAN?COMMAND_REACTOR
+            CODE    4DB5H     00C6H     UNIT         ?PR?_IS_PHASE_GREEN_CONFLICT?DATASTRUCT
+            CODE    4E7BH     00C4H     UNIT         ?PR?_SET_LAMP_STATE?KERNEL
+            CODE    4F3FH     00C3H     UNIT         ?PR?_READ_COMM?MCU
+            CODE    5002H     00C3H     UNIT         ?PR?_MANUAL_CONTROL?MANUAL_CONTROL
+            CODE    50C5H     00C2H     UNIT         ?PR?_HANDLE_GET_TIMMING_PLAN?COMMAND_REACTOR
+            CODE    5187H     00C0H     UNIT         ?PR?_HANDLE_GET_COMM_PARAM?COMMAND_REACTOR
+            CODE    5247H     00BFH     UNIT         ?PR?GET_SYSTEM_TIME?SMBUS
+            CODE    5306H     00BDH     UNIT         ?PR?_DECODE_SET_PHASE_PLAN_REQ?CODEC
+            CODE    53C3H     00BCH     UNIT         ?PR?_SET_SYSTEM_TIME?SMBUS
+            CODE    547FH     00B9H     UNIT         ?PR?_GET_BIT_VALUE?UTIL
+            CODE    5538H     00B5H     UNIT         ?PR?_EXECUTIVE_MACHINE_CONTROL?EXECUTIVE_MACHINE_CONTROL
+            CODE    55EDH     00AEH     UNIT         ?PR?_REACTOR_HANDLE_COMMAND?COMMAND_REACTOR
+            CODE    569BH     00A6H     UNIT         ?PR?_IS_IN_SET?DETECTOR_SET
+            CODE    5741H     00A5H     UNIT         ?PR?_ENCODE_SET_PHASE_PLAN_REQ?CODEC
+            CODE    57E6H     00A4H     UNIT         ?PR?UART1_ISR?ISR_UART
+            CODE    588AH     00A1H     UNIT         ?PR?_COMPUTE_CHECKSUM?CODEC
+            CODE    592BH     00A1H     UNIT         ?PR?_DEL_SET?DETECTOR_SET
+            CODE    59CCH     00A0H     UNIT         ?PR?_ADD_SET?DETECTOR_SET
+            CODE    5A6CH     009FH     UNIT         ?PR?_HANDLE_SET_TIMMING_PLAN?COMMAND_REACTOR
+            CODE    5B0BH     009FH     UNIT         ?PR?_HANDLE_SET_COMM_PARAM?COMMAND_REACTOR
+            CODE    5BAAH     009DH     UNIT         ?PR?_HANDLE_GET_SCHEDULE_PLAN?COMMAND_REACTOR
+            CODE    5C47H     009BH     UNIT         ?PR?_GET_CONTROL_MODE?KERNEL
+            CODE    5CE2H     009BH     UNIT         ?PR?_GET_BACKUP_CONTROL_MODE?KERNEL
+            CODE    5D7DH     009AH     UNIT         ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+            CODE    5E17H     009AH     UNIT         ?PR?_HANDLE_GET_SYSTEM_TIME?COMMAND_REACTOR
+            CODE    5EB1H     0098H     UNIT         ?CO?COMMAND_REACTOR
+            CODE    5F49H     0098H     UNIT         ?PR?GET_SAVE_PHASE_PLAN?SMBUS
+            CODE    5FE1H     0097H     UNIT         ?PR?_PHASE_SET_OUTPUT?DATASTRUCT
+            CODE    6078H     0096H     UNIT         ?PR?_LAMP_HEALTH_SET_HEALTH?DATASTRUCT
+            CODE    610EH     0096H     UNIT         ?PR?_DETECTOR_HEALTH_SET_HEALTH?DATASTRUCT
+            CODE    61A4H     0096H     UNIT         ?PR?_DETECTOR_STATUS_SET_STATUS?DATASTRUCT
+            CODE    623AH     0096H     UNIT         ?PR?_GET_CYCLE?CORDLESS_COORDINATE_CONTROL
+            CODE    62D0H     0095H     UNIT         ?PR?_SWITCHING_WITH_YELLOW_FLASH_ALL_RED?KERNEL
+            CODE    6365H     0091H     UNIT         ?PR?_HANDLE_GET_KEY_VAL?COMMAND_REACTOR
+            CODE    63F6H     008CH     UNIT         ?PR?CONFLICT_DETECT?MCU
+            CODE    6482H     008CH     UNIT         ?C_C51STARTUP
+            CODE    650EH     008AH     UNIT         ?PR?_FIND_LAMP_GROUP?KERNEL
+            CODE    6598H     0085H     UNIT         ?PR?SET_PHASE_TIME?KERNEL
+            CODE    661DH     0085H     UNIT         ?PR?REFRASH_LAMP?MCU
+            CODE    66A2H     0084H     UNIT         ?PR?MANUAL_LOAD_MULTIPLE_SCHEDULE?MANUAL_CONTROL
+            CODE    6726H     007EH     UNIT         ?PR?_GET_MODE?KERNEL
+            CODE    67A4H     007CH     UNIT         ?PR?_FRONT_PANEL_DIS?MCU
+            CODE    6820H     007CH     UNIT         ?PR?_DECODE_TERM_STATUS?UTIL
+            CODE    689CH     007AH     UNIT         ?PR?_HANDLE_SET_SCHEDULE_PLAN?COMMAND_REACTOR
+            CODE    6916H     0078H     UNIT         ?PR?ADC0WIN_ISR?ISR_ADC0
+            CODE    698EH     0077H     UNIT         ?PR?_GET_PHASE_DETECTOR?UTIL
+            CODE    6A05H     0076H     UNIT         ?PR?_HANDLE_MCU_SEND_KEY?COMMAND_REACTOR
+            CODE    6A7BH     0076H     UNIT         ?PR?ADC0_ISR?ISR_ADC0
+            CODE    6AF1H     0076H     UNIT         ?PR?_CPLD_FIFO_READ?CPLD_FIFO
+            CODE    6B67H     0076H     UNIT         ?PR?_CPLD_FIFO_WRITE?CPLD_FIFO
+            CODE    6BDDH     0073H     UNIT         ?PR?_IN_GETCHAR?MCU
+            CODE    6C50H     0073H     UNIT         ?PR?_OUT_GETCHAR?MCU
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 6
+
+
+            CODE    6CC3H     0073H     UNIT         ?PR?_INIT_FRAME?CODEC
+            CODE    6D36H     0072H     UNIT         ?PR?_FRAME_SET_DATA_LEN?CODEC
+            CODE    6DA8H     0071H     UNIT         ?PR?_PHASE_GET_OUTPUT?DATASTRUCT
+            CODE    6E19H     0071H     UNIT         ?PR?_HANDLE_GET_GREEN_CONFLICT?COMMAND_REACTOR
+            CODE    6E8AH     006DH     UNIT         ?PR?_INIT_COMMAND_REACTOR?COMMAND_REACTOR
+            CODE    6EF7H     006BH     UNIT         ?PR?_GET_DETECTOR_COUNTER?MCU
+            CODE    6F62H     006BH     UNIT         ?PR?_DECODE_GET_PHASE_PLAN_RES?CODEC
+            CODE    6FCDH     006BH     UNIT         ?PR?_DECODE_SET_TIMMING_PLAN_REQ?CODEC
+            CODE    7038H     006BH     UNIT         ?PR?_DECODE_SET_SCHEDULE_PLAN_REQ?CODEC
+            CODE    70A3H     006BH     UNIT         ?PR?_DECODE_SET_COMM_PARAM_REQ?CODEC
+            CODE    710EH     006AH     UNIT         ?PR?_LAMP_HEALTH_GET_HEALTH?DATASTRUCT
+            CODE    7178H     006AH     UNIT         ?PR?_DETECTOR_HEALTH_GET_HEALTH?DATASTRUCT
+            CODE    71E2H     006AH     UNIT         ?PR?_DETECTOR_STATUS_GET_STATUS?DATASTRUCT
+            CODE    724CH     006AH     UNIT         ?PR?_IN_PUTCHAR?MCU
+            CODE    72B6H     006AH     UNIT         ?PR?_OUT_PUTCHAR?MCU
+            CODE    7320H     0069H     UNIT         ?PR?_LAMP_GROUP_SETTING_GET_LAMP_GROUP_COUNT?DATASTRUCT
+            CODE    7389H     0067H     UNIT         ?PR?SET_CURRENT_STAGE?KERNEL
+            CODE    73F0H     0067H     UNIT         ?PR?_GET_LAMP_GROUP_DETECTOR?UTIL
+            CODE    7457H     0066H     UNIT         ?PR?_IS_SCHEDULE_VALID?KERNEL
+            CODE    74BDH     0064H     UNIT         ?CO?DETECTOR_SET
+            CODE    7521H     0063H     UNIT         ?PR?INIT_GM8125?MCU
+            CODE    7584H     0063H     UNIT         ?PR?_HANDLE_GET_DETECTOR_COUNTER?COMMAND_REACTOR
+            CODE    75E7H     0063H     UNIT         ?PR?_HANDLE_GET_DETECTOR_STATUS?COMMAND_REACTOR
+            CODE    764AH     0063H     UNIT         ?PR?_HANDLE_GET_DETECTOR_HEALTH?COMMAND_REACTOR
+            CODE    76ADH     0063H     UNIT         ?PR?_HANDLE_GET_LAMP_HEALTH?COMMAND_REACTOR
+            CODE    7710H     0062H     UNIT         ?PR?_ENCODE_GET_PHASE_PLAN_RES?CODEC
+            CODE    7772H     0062H     UNIT         ?PR?_ENCODE_SET_TIMMING_PLAN_REQ?CODEC
+            CODE    77D4H     0062H     UNIT         ?PR?_ENCODE_SET_SCHEDULE_PLAN_REQ?CODEC
+            CODE    7836H     0062H     UNIT         ?PR?_ENCODE_SET_COMM_PARAM_REQ?CODEC
+            CODE    7898H     005EH     UNIT         ?PR?SET_INIT_STATE?KERNEL
+            CODE    78F6H     005EH     UNIT         ?PR?_DECODE_GET_PHASE_PLAN_REQ?CODEC
+            CODE    7954H     005EH     UNIT         ?PR?_GET_BUFFER_KEY?KEY_BUFFER
+            CODE    79B2H     005AH     UNIT         ?PR?_HANDLE_GET_SYSTEM_PARAM?COMMAND_REACTOR
+            CODE    7A0CH     005AH     UNIT         ?PR?_HANDLE_GET_LAMP_GROUP_SETTING?COMMAND_REACTOR
+            CODE    7A66H     005AH     UNIT         ?PR?_HANDLE_GET_DETECTOR_SETTING?COMMAND_REACTOR
+            CODE    7AC0H     005AH     UNIT         ?PR?_HANDLE_GET_SPECIAL_DAY_TABLE?COMMAND_REACTOR
+            CODE    7B1AH     005AH     UNIT         ?PR?_HANDLE_GET_CURRENT_CONTROL_MODE?COMMAND_REACTOR
+            CODE    7B74H     005AH     UNIT         ?PR?_HANDLE_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    7BCEH     005AH     UNIT         ?PR?_HANDLE_GET_VOLUME_OCCUPY?COMMAND_REACTOR
+            CODE    7C28H     005AH     UNIT         ?PR?_HANDLE_GET_ACTUATE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    7C82H     005AH     UNIT         ?PR?_HANDLE_GET_CORDLESS_COORDINATE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    7CDCH     0059H     UNIT         ?PR?_CPLD_FIFO_GETCHAR?CPLD_FIFO
+            CODE    7D35H     0055H     UNIT         ?PR?IS_PHASE_STEP?ACTUATE_CONTROL
+            CODE    7D8AH     0054H     UNIT         ?PR?_PUT_BUFFER_KEY?KEY_BUFFER
+            CODE    7DDEH     0052H     UNIT         ?PR?_FIND_HANDLER?COMMAND_REACTOR
+            CODE    7E30H     0050H     UNIT         ?PR?_ENCODE_GET_PHASE_PLAN_REQ?CODEC
+            CODE    7E80H     004FH     UNIT         ?PR?MANUAL_CHANGE_STEP_DISPOSE?MANUAL_CONTROL
+            CODE    7ECFH     004DH     UNIT         ?PR?_DO_WAIT?KERNEL
+            CODE    7F1CH     004CH     UNIT         ?PR?_CPLD_FIFO_PUTCHAR?CPLD_FIFO
+            CODE    7F68H     004BH     UNIT         ?PR?_IS_OUT_FULL?MCU
+            CODE    7FB3H     004BH     UNIT         ?PR?_HANDLE_SET_SYSTEM_TIME?COMMAND_REACTOR
+            CODE    7FFEH     0049H     UNIT         ?PR?PHASE_COUNT?ACTUATE_CONTROL
+            CODE    8047H     0049H     UNIT         ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+            CODE    8090H     0048H     UNIT         ?PR?_HANDLE_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    80D8H     0048H     UNIT         ?PR?_COMPUTE_BUFFER_CHECKSUM?CODEC
+            CODE    8120H     0047H     UNIT         ?PR?FUN_WRITE_RTC?SMBUS
+            CODE    8167H     0045H     UNIT         ?PR?_CPLD_FIFO_CAPACITY?CPLD_FIFO
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 7
+
+
+            CODE    81ACH     0044H     UNIT         ?C?LDIV
+            CODE    81F0H     0041H     UNIT         ?PR?_GET_DETECTOR_STATUS?MCU
+            CODE    8231H     0040H     UNIT         ?PR?_ENCODE_GET_SYSTEM_PARAM_RES?CODEC
+            CODE    8271H     0040H     UNIT         ?PR?_ENCODE_SET_LAMP_GROUP_SETTING_REQ?CODEC
+            CODE    82B1H     0040H     UNIT         ?PR?_ENCODE_SET_DETECTOR_SETTING_REQ?CODEC
+            CODE    82F1H     0040H     UNIT         ?PR?_ENCODE_GET_DETECTOR_SETTING_RES?CODEC
+            CODE    8331H     0040H     UNIT         ?PR?_ENCODE_GET_TIMMING_PLAN_RES?CODEC
+            CODE    8371H     0040H     UNIT         ?PR?_ENCODE_GET_SCHEDULE_PLAN_RES?CODEC
+            CODE    83B1H     0040H     UNIT         ?PR?_ENCODE_SET_SPECIAL_DAY_TABLE_REQ?CODEC
+            CODE    83F1H     0040H     UNIT         ?PR?_ENCODE_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM_REQ?CODEC
+            CODE    8431H     0040H     UNIT         ?PR?_ENCODE_SET_CORDLESS_COORDINATE_CONTROL_PARAM_REQ?CODEC
+            CODE    8471H     0040H     UNIT         ?PR?_ENCODE_SET_CURRENT_CONTROL_MODE_REQ?CODEC
+            CODE    84B1H     0040H     UNIT         ?PR?_ENCODE_GET_LAMP_GROUP_SETTING_RES?CODEC
+            CODE    84F1H     0040H     UNIT         ?PR?_ENCODE_GET_SPECIAL_DAY_TABLE_RES?CODEC
+            CODE    8531H     0040H     UNIT         ?PR?_ENCODE_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM_RES?CODEC
+            CODE    8571H     0040H     UNIT         ?PR?_ENCODE_GET_CORDLESS_COORDINATE_CONTROL_PARAM_RES?CODEC
+            CODE    85B1H     0040H     UNIT         ?PR?_ENCODE_GET_CURRENT_CONTROL_MODE_RES?CODEC
+            CODE    85F1H     0040H     UNIT         ?PR?_ENCODE_GET_MACHINE_STATUS_RES?CODEC
+            CODE    8631H     0040H     UNIT         ?PR?_ENCODE_DO_LAMP_STATUS_REQ?CODEC
+            CODE    8671H     0040H     UNIT         ?PR?_ENCODE_GET_DETECTOR_COUNTER_RES?CODEC
+            CODE    86B1H     0040H     UNIT         ?PR?_ENCODE_GET_DETECTOR_STATUS_RES?CODEC
+            CODE    86F1H     0040H     UNIT         ?PR?_ENCODE_GET_LAMP_HEALTH_RES?CODEC
+            CODE    8731H     0040H     UNIT         ?PR?_ENCODE_GET_DETECTOR_HEALTH_RES?CODEC
+            CODE    8771H     0040H     UNIT         ?PR?_ENCODE_GET_VOLUME_OCCUPY_RES?CODEC
+            CODE    87B1H     003FH     UNIT         ?PR?_ACTUATE_CONTROL?ACTUATE_CONTROL
+            CODE    87F0H     003FH     UNIT         ?PR?_HANDLE_DO_LAMP_STATUS?COMMAND_REACTOR
+            CODE    882FH     003EH     UNIT         ?PR?_ALL_OFF_CONTROL?KERNEL
+            CODE    886DH     003DH     UNIT         ?PR?_IS_BUFFER_FULL?KEY_BUFFER
+            CODE    88AAH     003DH     UNIT         ?PR?_CPLD_FIFO_IS_WILL_FULL?CPLD_FIFO
+            CODE    88E7H     003DH     UNIT         ?PR?_CPLD_FIFO_IS_FULL?CPLD_FIFO
+            CODE    8924H     003CH     UNIT         ?PR?_HANDLE_SET_SYSTEM_PARAM?COMMAND_REACTOR
+            CODE    8960H     003CH     UNIT         ?PR?_HANDLE_SET_LAMP_GROUP_SETTING?COMMAND_REACTOR
+            CODE    899CH     003CH     UNIT         ?PR?_HANDLE_SET_DETECTOR_SETTING?COMMAND_REACTOR
+            CODE    89D8H     003CH     UNIT         ?PR?_HANDLE_SET_SPECIAL_DAY_TABLE?COMMAND_REACTOR
+            CODE    8A14H     003CH     UNIT         ?PR?_HANDLE_SET_CURRENT_CONTROL_MODE?COMMAND_REACTOR
+            CODE    8A50H     003CH     UNIT         ?PR?_HANDLE_SET_ACTUATE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    8A8CH     003CH     UNIT         ?PR?_HANDLE_SET_CORDLESS_COORDINATE_CONTROL_PARAM?COMMAND_REACTOR
+            CODE    8AC8H     003CH     UNIT         ?PR?_DECODE_SET_SYSTEM_TIME_REQ?CODEC
+            CODE    8B04H     003CH     UNIT         ?PR?_DECODE_GET_SYSTEM_TIME_RES?CODEC
+            CODE    8B40H     003CH     UNIT         ?PR?_DECODE_SET_SYSTEM_PARAM_REQ?CODEC
+            CODE    8B7CH     003CH     UNIT         ?PR?_DECODE_GET_SYSTEM_PARAM_RES?CODEC
+            CODE    8BB8H     003CH     UNIT         ?PR?_DECODE_SET_LAMP_GROUP_SETTING_REQ?CODEC
+            CODE    8BF4H     003CH     UNIT         ?PR?_DECODE_SET_DETECTOR_SETTING_REQ?CODEC
+            CODE    8C30H     003CH     UNIT         ?PR?_DECODE_GET_DETECTOR_SETTING_RES?CODEC
+            CODE    8C6CH     003CH     UNIT         ?PR?_DECODE_GET_TIMMING_PLAN_RES?CODEC
+            CODE    8CA8H     003CH     UNIT         ?PR?_DECODE_GET_SCHEDULE_PLAN_RES?CODEC
+            CODE    8CE4H     003CH     UNIT         ?PR?_DECODE_SET_SPECIAL_DAY_TABLE_REQ?CODEC
+            CODE    8D20H     003CH     UNIT         ?PR?_DECODE_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM_REQ?CODEC
+            CODE    8D5CH     003CH     UNIT         ?PR?_DECODE_SET_CORDLESS_COORDINATE_CONTROL_PARAM_REQ?CODEC
+            CODE    8D98H     003CH     UNIT         ?PR?_DECODE_SET_CURRENT_CONTROL_MODE_REQ?CODEC
+            CODE    8DD4H     003CH     UNIT         ?PR?_DECODE_SYSTEM_TIME?CODEC
+            CODE    8E10H     003CH     UNIT         ?PR?_DECODE_SYSTEM_PARAM?CODEC
+            CODE    8E4CH     003CH     UNIT         ?PR?_DECODE_GET_LAMP_GROUP_SETTING_RES?CODEC
+            CODE    8E88H     003CH     UNIT         ?PR?_DECODE_GET_SPECIAL_DAY_TABLE_RES?CODEC
+            CODE    8EC4H     003CH     UNIT         ?PR?_DECODE_GET_COMM_PARAM_RES?CODEC
+            CODE    8F00H     003CH     UNIT         ?PR?_DECODE_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM_RES?CODEC
+            CODE    8F3CH     003CH     UNIT         ?PR?_DECODE_GET_ACTUATE_CONTROL_PARAM_RES?CODEC
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 8
+
+
+            CODE    8F78H     003CH     UNIT         ?PR?_DECODE_SET_ACTUATE_CONTROL_PARAM_REQ?CODEC
+            CODE    8FB4H     003CH     UNIT         ?PR?_DECODE_GET_CORDLESS_COORDINATE_CONTROL_PARAM_RES?CODEC
+            CODE    8FF0H     003CH     UNIT         ?PR?_DECODE_GET_CURRENT_CONTROL_MODE_RES?CODEC
+            CODE    902CH     003CH     UNIT         ?PR?_DECODE_GET_MACHINE_STATUS_RES?CODEC
+            CODE    9068H     003CH     UNIT         ?PR?_DECODE_DO_LAMP_STATUS_REQ?CODEC
+            CODE    90A4H     003CH     UNIT         ?PR?_DECODE_GET_DETECTOR_COUNTER_RES?CODEC
+            CODE    90E0H     003CH     UNIT         ?PR?_DECODE_GET_DETECTOR_STATUS_RES?CODEC
+            CODE    911CH     003CH     UNIT         ?PR?_DECODE_GET_LAMP_HEALTH_RES?CODEC
+            CODE    9158H     003CH     UNIT         ?PR?_DECODE_GET_DETECTOR_HEALTH_RES?CODEC
+            CODE    9194H     003CH     UNIT         ?PR?_DECODE_GET_VOLUME_OCCUPY_RES?CODEC
+            CODE    91D0H     003CH     UNIT         ?PR?_SAVE_PHASE_PLAN?SMBUS
+            CODE    920CH     003AH     UNIT         ?PR?_YELLOW_FLASH_CONTROL?KERNEL
+            CODE    9246H     003AH     UNIT         ?PR?_ALL_RED_CONTROL?KERNEL
+            CODE    9280H     003AH     UNIT         ?CO?MCU
+            CODE    92BAH     0039H     UNIT         ?PR?_SWITCHING_WITH_MULTIPLE_SCHEDULE?KERNEL
+            CODE    92F3H     0038H     UNIT         ?CO?KERNEL
+            CODE    932BH     0038H     UNIT         ?PR?_IS_IN_EMPTY?MCU
+            CODE    9363H     0038H     UNIT         ?PR?_IS_OUT_EMPTY?MCU
+            CODE    939BH     0037H     UNIT         ?PR?_OUT_INIT?MCU
+            CODE    93D2H     0036H     UNIT         ?PR?RUN_CURRENT_STEP?KERNEL
+            CODE    9408H     0036H     UNIT         ?PR?_HANDLE_SET_GREEN_CONFLICT?COMMAND_REACTOR
+            CODE    943EH     0036H     UNIT         ?PR?_ENCODE_SET_SYSTEM_PARAM_REQ?CODEC
+            CODE    9474H     0035H     UNIT         ?PR?GET_FRONT_PANEL_CONTROL_MODE?MCU
+            CODE    94A9H     0035H     UNIT         ?PR?_IS_TERM_CONNECT_TO_GREEN?UTIL
+            CODE    94DEH     0035H     UNIT         ?PR?_IS_TERM_CONNECT_TO_YELLOW?UTIL
+            CODE    9513H     0034H     UNIT         ?PR?_ENCODE_SET_SYSTEM_TIME_REQ?CODEC
+            CODE    9547H     0034H     UNIT         ?PR?_ENCODE_GET_SYSTEM_TIME_RES?CODEC
+            CODE    957BH     0034H     UNIT         ?PR?_ENCODE_GET_COMM_PARAM_RES?CODEC
+            CODE    95AFH     0034H     UNIT         ?PR?_ENCODE_GET_ACTUATE_CONTROL_PARAM_RES?CODEC
+            CODE    95E3H     0034H     UNIT         ?PR?_ENCODE_SET_ACTUATE_CONTROL_PARAM_REQ?CODEC
+            CODE    9617H     0033H     UNIT         ?PR?_DECODE_GET_TIMMING_PLAN_REQ?CODEC
+            CODE    964AH     0033H     UNIT         ?PR?_DECODE_GET_SCHEDULE_PLAN_REQ?CODEC
+            CODE    967DH     0033H     UNIT         ?PR?_DECODE_GET_COMM_PARAM_REQ?CODEC
+            CODE    96B0H     0031H     UNIT         ?PR?MAIN?MAIN
+            CODE    96E1H     0030H     UNIT         ?PR?_ERR_DATA?SMBUS
+            CODE    9711H     002FH     UNIT         ?C_INITSEG
+            CODE    9740H     002EH     UNIT         ?PR?_SM_SEND?SMBUS
+            CODE    976EH     002BH     UNIT         ?PR?_DELAY_200US?MCU
+            CODE    9799H     002BH     UNIT         ?PR?_ENCODE_GET_TIMMING_PLAN_REQ?CODEC
+            CODE    97C4H     002BH     UNIT         ?PR?_ENCODE_GET_SCHEDULE_PLAN_REQ?CODEC
+            CODE    97EFH     002BH     UNIT         ?PR?_ENCODE_GET_COMM_PARAM_REQ?CODEC
+            CODE    981AH     002AH     UNIT         ?PR?_SM_RECEIVE?SMBUS
+            CODE    9844H     0029H     UNIT         ?PR?_GET_DETECTOR_HEALTH?MCU
+            CODE    986DH     0028H     UNIT         ?PR?IS_LAST_STEP?KERNEL
+            CODE    9895H     0028H     UNIT         ?PR?_IN_INIT?MCU
+            CODE    98BDH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    98E4H     0025H     UNIT         ?PR?_GET_LAMP_HEALTH?MCU
+            CODE    9909H     001FH     UNIT         ?PR?POWER_CHECK?MCU
+            CODE    9928H     001EH     UNIT         ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+            CODE    9946H     001DH     UNIT         ?PR?_IS_BUFFER_EMPTY?KEY_BUFFER
+            CODE    9963H     001DH     UNIT         ?PR?_CPLD_FIFO_IS_EMPTY?CPLD_FIFO
+            CODE    9980H     001AH     UNIT         ?PR?MANUAL_STEP_DISPOSE?MANUAL_CONTROL
+            CODE    999AH     001AH     UNIT         ?PR?_IS_CMD_RESPONSE_OK?CODEC
+            CODE    99B4H     0018H     UNIT         ?PR?IS_DOOR_ILLEGAL_OPEN?MCU
+            CODE    99CCH     0018H     UNIT         ?PR?_HANDLE_UNSUPPORT_COMMAND?COMMAND_REACTOR
+            CODE    99E4H     0012H     UNIT         ?PR?IS_STEP_END?KERNEL
+            CODE    99F6H     000FH     UNIT         ?PR?IS_NEED_CHANGE_STAGE?MCU
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 9
+
+
+            CODE    9A05H     000FH     UNIT         ?PR?_CPLD_FIFO_INIT?CPLD_FIFO
+            CODE    9A14H     000EH     UNIT         ?PR?_HANDLE_DO_STEP_KEEP?COMMAND_REACTOR
+            CODE    9A22H     000CH     UNIT         ?PR?IS_MANUAL_CONTROL_STATE?MCU
+            CODE    9A2EH     000CH     UNIT         ?PR?IS_STEP_FORWARD_BUTTON_PRESSED?MCU
+            CODE    9A3AH     000AH     UNIT         ?PR?_CLEAR_ERROR?ERROR_CODE
+            CODE    9A44H     0009H     UNIT         ?PR?GET_TEMPERATURE?MCU
+            CODE    9A4DH     0008H     UNIT         ?PR?GET_MANUAL_NEXT_STAGE_COUNT?MCU
+            CODE    9A55H     0008H     UNIT         ?PR?_SAVE_TIMMING_PLAN?SMBUS
+            CODE    9A5DH     0008H     UNIT         ?PR?_SAVE_SCHEDULE_PLAN?SMBUS
+            CODE    9A65H     0008H     UNIT         ?PR?_SAVE_COMM_PARAM?SMBUS
+            CODE    9A6DH     0008H     UNIT         ?PR?LOAD_CONFIG_DATA?SMBUS
+            CODE    9A75H     0007H     UNIT         ?PR?GET_RUN_MODE?MCU
+            CODE    9A7CH     0007H     UNIT         ?PR?_SET_ERROR?ERROR_CODE
+            CODE    9A83H     0006H     UNIT         ?PR?CLEAR_STEP_FORWARD_BUTTON_STATE?MCU
+            CODE    9A89H     0006H     UNIT         ?PR?CLEAR_NEED_CHANGE_STAGE_FLAG?MCU
+            CODE    9A8FH     0006H     UNIT         ?PR?SAVE_CONFIG_DATA?SMBUS
+            CODE    9A95H     0004H     UNIT         ?PR?_EMPTY_KEY_BUFFER?KEY_BUFFER
+            CODE    9A99H     0003H     UNIT         ?PR?SAVE_SYSTEM_PARAM?SMBUS
+            CODE    9A9CH     0003H     UNIT         ?PR?SAVE_LAMP_GROUP_SETTING?SMBUS
+            CODE    9A9FH     0003H     UNIT         ?PR?SAVE_DETECTOR_SETTING?SMBUS
+            CODE    9AA2H     0003H     UNIT         ?PR?SAVE_SPECIAL_DAY?SMBUS
+            CODE    9AA5H     0003H     UNIT         ?PR?SAVE_MULTIPLE_SCHEDULE_CONTROL_PARAM?SMBUS
+            CODE    9AA8H     0003H     UNIT         ?PR?SAVE_ACTUATE_CONTROL_PARAM?SMBUS
+            CODE    9AABH     0003H     UNIT         ?PR?SAVE_CORDLESS_COORDINATE_CONTROL_PARAM?SMBUS
+            CODE    9AAEH     0003H     UNIT         ?PR?SAVE_GREEN_CONFLICT?SMBUS
+
+
+
+OVERLAY MAP OF MODULE:   controller (KERNEL)
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP          XDATA_GROUP
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                    -----    -----      -----    -----      3493H    0004H
+  +--> ?PR?INITIALIZE?MCU
+  +--> ?PR?CONTROLLER_MAIN?KERNEL
+
+?PR?INITIALIZE?MCU                               -----    -----      002EH    0002H      3497H    0001H
+  +--> ?PR?_DELAY_200US?MCU
+  +--> ?PR?_SM_SEND?SMBUS
+  +--> ?PR?_SM_RECEIVE?SMBUS
+  +--> ?PR?LOAD_CONFIG_DATA?SMBUS
+  +--> ?PR?WAIT_FOR_100MS?MCU
+  +--> ?PR?INIT_GM8125?MCU
+
+?PR?_SM_SEND?SMBUS                               002AH.5  0000H.1    -----    -----      -----    -----
+
+?PR?_SM_RECEIVE?SMBUS                            002AH.5  0000H.1    -----    -----      -----    -----
+
+?PR?WAIT_FOR_100MS?MCU                           -----    -----      0030H    0002H      -----    -----
+  +--> ?PR?SCANKEY?MCU
+  +--> ?PR?DECODE_KEY?MCU
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 10
+
+
+  +--> ?PR?GET_SAVE_PHASE_PLAN?SMBUS
+  +--> ?PR?FUN_SMBUS?SMBUS
+  +--> ?PR?POWER_CHECK?MCU
+  +--> ?PR?JUDGE_DETECTOR?MCU
+  +--> ?PR?_FRONT_PANEL_DIS?MCU
+  +--> ?PR?_REACTOR_HANDLE_COMMAND?COMMAND_R...
+  +--> ?PR?GET_LAMP_HEALTH_STATUS?MCU
+  +--> ?PR?CONFLICT_DETECT?MCU
+  +--> ?PR?REFRASH_LAMP?MCU
+
+?PR?SCANKEY?MCU                                  -----    -----      -----    -----      34A2H    0002H
+  +--> ?CO?MCU
+
+?PR?DECODE_KEY?MCU                               -----    -----      0032H    0001H      -----    -----
+  +--> ?PR?SAVE_CONTROL_MODE_SELECTION?SMBUS
+
+?PR?FUN_SMBUS?SMBUS                              -----    -----      -----    -----      34A2H    0002H
+  +--> ?PR?FUN_WRITE_RTC?SMBUS
+  +--> ?PR?_SM_SEND?SMBUS
+  +--> ?PR?FUN_WRITE_EEPROM?SMBUS
+  +--> ?PR?_SM_RECEIVE?SMBUS
+  +--> ?PR?GET_SYSTEM_TIME?SMBUS
+
+?PR?FUN_WRITE_RTC?SMBUS                          -----    -----      -----    -----      -----    -----
+  +--> ?PR?_SM_SEND?SMBUS
+
+?PR?FUN_WRITE_EEPROM?SMBUS                       -----    -----      -----    -----      34A4H    0002H
+  +--> ?PR?_SM_SEND?SMBUS
+
+?PR?GET_SYSTEM_TIME?SMBUS                        -----    -----      -----    -----      -----    -----
+  +--> ?PR?_SM_RECEIVE?SMBUS
+
+?PR?JUDGE_DETECTOR?MCU                           -----    -----      -----    -----      34A2H    0023H
+  +--> ?PR?_GET_DETECTOR_COUNTER?MCU
+  +--> ?PR?_SET_ERROR?ERROR_CODE
+
+?PR?_GET_DETECTOR_COUNTER?MCU                    -----    -----      0032H    0004H      3512H    0003H
+
+?PR?_FRONT_PANEL_DIS?MCU                         -----    -----      0032H    0002H      -----    -----
+
+?PR?_REACTOR_HANDLE_COMMAND?COMMAND_R...         -----    -----      -----    -----      34A2H    000BH
+  +--> ?PR?_READ_FRAME?CODEC
+  +--> ?PR?_FIND_HANDLER?COMMAND_REACTOR
+  +--> ?PR?_WRITE_FRAME?CODEC
+
+?PR?_READ_FRAME?CODEC                            -----    -----      -----    -----      34ADH    0009H
+  +--> ?PR?_READ_BYTE?CODEC
+  +--> ?PR?_COMPUTE_BUFFER_CHECKSUM?CODEC
+
+?PR?_READ_BYTE?CODEC                             -----    -----      -----    -----      34B6H    0108H
+  +--> ?PR?_CPLD_FIFO_INIT?CPLD_FIFO
+  +--> ?PR?_CPLD_FIFO_CAPACITY?CPLD_FIFO
+  +--> ?PR?_READ_COMM?MCU
+  +--> ?PR?_CPLD_FIFO_WRITE?CPLD_FIFO
+  +--> ?PR?_CPLD_FIFO_READ?CPLD_FIFO
+
+?PR?_READ_COMM?MCU                               -----    -----      -----    -----      35BEH    000AH
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 11
+
+
+  +--> ?PR?_IS_IN_EMPTY?MCU
+  +--> ?PR?_IN_GETCHAR?MCU
+
+?PR?_CPLD_FIFO_WRITE?CPLD_FIFO                   -----    -----      -----    -----      35BEH    000AH
+  +--> ?PR?_CPLD_FIFO_IS_FULL?CPLD_FIFO
+  +--> ?PR?_CPLD_FIFO_PUTCHAR?CPLD_FIFO
+
+?PR?_CPLD_FIFO_IS_FULL?CPLD_FIFO                 -----    -----      -----    -----      35C8H    0003H
+
+?PR?_CPLD_FIFO_PUTCHAR?CPLD_FIFO                 -----    -----      -----    -----      35C8H    0003H
+
+?PR?_CPLD_FIFO_READ?CPLD_FIFO                    -----    -----      -----    -----      35BEH    000AH
+  +--> ?PR?_CPLD_FIFO_IS_EMPTY?CPLD_FIFO
+  +--> ?PR?_CPLD_FIFO_GETCHAR?CPLD_FIFO
+
+?PR?_CPLD_FIFO_GETCHAR?CPLD_FIFO                 -----    -----      -----    -----      35C8H    0003H
+
+?PR?_COMPUTE_BUFFER_CHECKSUM?CODEC               -----    -----      -----    -----      34B6H    0005H
+
+?PR?_FIND_HANDLER?COMMAND_REACTOR                -----    -----      -----    -----      34ADH    0001H
+  +--> ?CO?COMMAND_REACTOR
+  +--> ?PR?_HANDLE_UNSUPPORT_COMMAND?COMMAND...
+
+?CO?COMMAND_REACTOR                              -----    -----      -----    -----      -----    -----
+  +--> ?PR?_HANDLE_SET_SYSTEM_TIME?COMMAND_R...
+  +--> ?PR?_HANDLE_SET_SYSTEM_PARAM?COMMAND_...
+  +--> ?PR?_HANDLE_SET_LAMP_GROUP_SETTING?CO...
+  +--> ?PR?_HANDLE_SET_DETECTOR_SETTING?COMM...
+  +--> ?PR?_HANDLE_SET_PHASE_PLAN?COMMAND_RE...
+  +--> ?PR?_HANDLE_SET_TIMMING_PLAN?COMMAND_...
+  +--> ?PR?_HANDLE_SET_SCHEDULE_PLAN?COMMAND...
+  +--> ?PR?_HANDLE_SET_SPECIAL_DAY_TABLE?COM...
+  +--> ?PR?_HANDLE_SET_CURRENT_CONTROL_MODE?...
+  +--> ?PR?_HANDLE_SET_MULTIPLE_SCHEDULE_CON...
+  +--> ?PR?_HANDLE_SET_COMM_PARAM?COMMAND_RE...
+  +--> ?PR?_HANDLE_SET_ACTUATE_CONTROL_PARAM...
+  +--> ?PR?_HANDLE_SET_CORDLESS_COORDINATE_C...
+  +--> ?PR?_HANDLE_GET_SYSTEM_TIME?COMMAND_R...
+  +--> ?PR?_HANDLE_GET_SYSTEM_PARAM?COMMAND_...
+  +--> ?PR?_HANDLE_GET_LAMP_GROUP_SETTING?CO...
+  +--> ?PR?_HANDLE_GET_DETECTOR_SETTING?COMM...
+  +--> ?PR?_HANDLE_GET_PHASE_PLAN?COMMAND_RE...
+  +--> ?PR?_HANDLE_GET_TIMMING_PLAN?COMMAND_...
+  +--> ?PR?_HANDLE_GET_SCHEDULE_PLAN?COMMAND...
+  +--> ?PR?_HANDLE_GET_SPECIAL_DAY_TABLE?COM...
+  +--> ?PR?_HANDLE_GET_MACHINE_STATUS?COMMAN...
+  +--> ?PR?_HANDLE_GET_CURRENT_CONTROL_MODE?...
+  +--> ?PR?_HANDLE_GET_MULTIPLE_SCHEDULE_CON...
+  +--> ?PR?_HANDLE_GET_COMM_PARAM?COMMAND_RE...
+  +--> ?PR?_HANDLE_GET_DETECTOR_COUNTER?COMM...
+  +--> ?PR?_HANDLE_GET_DETECTOR_STATUS?COMMA...
+  +--> ?PR?_HANDLE_GET_DETECTOR_HEALTH?COMMA...
+  +--> ?PR?_HANDLE_GET_LAMP_HEALTH?COMMAND_R...
+  +--> ?PR?_HANDLE_GET_VOLUME_OCCUPY?COMMAND...
+  +--> ?PR?_HANDLE_GET_ACTUATE_CONTROL_PARAM...
+  +--> ?PR?_HANDLE_GET_CORDLESS_COORDINATE_C...
+  +--> ?PR?_HANDLE_DO_STEP_FORWARD?COMMAND_R...
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 12
+
+
+  +--> ?PR?_HANDLE_DO_STEP_KEEP?COMMAND_REACTOR
+  +--> ?PR?_HANDLE_MCU_SEND_KEY?COMMAND_REACTOR
+  +--> ?PR?_HANDLE_GET_KEY_VAL?COMMAND_REACTOR
+  +--> ?PR?_HANDLE_GET_GREEN_CONFLICT?COMMAN...
+  +--> ?PR?_HANDLE_SET_GREEN_CONFLICT?COMMAN...
+
+?PR?_HANDLE_SET_SYSTEM_TIME?COMMAND_R...         -----    -----      -----    -----      34AEH    000BH
+  +--> ?PR?_DECODE_SET_SYSTEM_TIME_REQ?CODEC
+  +--> ?PR?_SET_SYSTEM_TIME?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_SYSTEM_TIME_REQ?CODEC            -----    -----      -----    -----      34B9H    0006H
+
+?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR            -----    -----      -----    -----      3514H    0003H
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_FRAME_SET_DATA_LEN?CODEC                    -----    -----      -----    -----      3518H    0003H
+
+?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR         -----    -----      -----    -----      -----    -----
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_SET_SYSTEM_PARAM?COMMAND_...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_SYSTEM_PARAM_REQ?CODEC
+  +--> ?PR?SAVE_SYSTEM_PARAM?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_SYSTEM_PARAM_REQ?CODEC           -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_LAMP_GROUP_SETTING?CO...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_LAMP_GROUP_SETTING_RE...
+  +--> ?PR?SAVE_LAMP_GROUP_SETTING?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_LAMP_GROUP_SETTING_RE...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_DETECTOR_SETTING?COMM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_DETECTOR_SETTING_REQ?...
+  +--> ?PR?SAVE_DETECTOR_SETTING?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_DETECTOR_SETTING_REQ?...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_PHASE_PLAN?COMMAND_RE...         -----    -----      -----    -----      34AEH    0015H
+  +--> ?PR?_DECODE_SET_PHASE_PLAN_REQ?CODEC
+  +--> ?PR?_SAVE_PHASE_PLAN?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_PHASE_PLAN_REQ?CODEC             -----    -----      -----    -----      34C3H    000FH
+
+?PR?_HANDLE_SET_TIMMING_PLAN?COMMAND_...         -----    -----      -----    -----      34AEH    0026H
+  +--> ?PR?_DECODE_SET_TIMMING_PLAN_REQ?CODEC
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_SAVE_TIMMING_PLAN?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 13
+
+
+?PR?_DECODE_SET_TIMMING_PLAN_REQ?CODEC           -----    -----      -----    -----      34D4H    0009H
+
+?PR?_HANDLE_SET_SCHEDULE_PLAN?COMMAND...         -----    -----      -----    -----      34AEH    0066H
+  +--> ?PR?_DECODE_SET_SCHEDULE_PLAN_REQ?CODEC
+  +--> ?PR?_SAVE_SCHEDULE_PLAN?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_SCHEDULE_PLAN_REQ?CODEC          -----    -----      -----    -----      3514H    0009H
+
+?PR?_HANDLE_SET_SPECIAL_DAY_TABLE?COM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_SPECIAL_DAY_TABLE_REQ...
+  +--> ?PR?SAVE_SPECIAL_DAY?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_SPECIAL_DAY_TABLE_REQ...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_CURRENT_CONTROL_MODE?...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_CURRENT_CONTROL_MODE_...
+  +--> ?PR?SAVE_CONTROL_MODE_SELECTION?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_CURRENT_CONTROL_MODE_...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_MULTIPLE_SCHEDULE_CON...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_MULTIPLE_SCHEDULE_CON...
+  +--> ?PR?SAVE_MULTIPLE_SCHEDULE_CONTROL_PA...
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_MULTIPLE_SCHEDULE_CON...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_COMM_PARAM?COMMAND_RE...         -----    -----      -----    -----      34AEH    000DH
+  +--> ?PR?_DECODE_SET_COMM_PARAM_REQ?CODEC
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_SAVE_COMM_PARAM?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_COMM_PARAM_REQ?CODEC             -----    -----      -----    -----      34BBH    0009H
+
+?PR?_HANDLE_SET_ACTUATE_CONTROL_PARAM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_ACTUATE_CONTROL_PARAM...
+  +--> ?PR?SAVE_ACTUATE_CONTROL_PARAM?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_ACTUATE_CONTROL_PARAM...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_SET_CORDLESS_COORDINATE_C...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_DECODE_SET_CORDLESS_COORDINATE_C...
+  +--> ?PR?SAVE_CORDLESS_COORDINATE_CONTROL_...
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_DECODE_SET_CORDLESS_COORDINATE_C...         -----    -----      -----    -----      34B1H    0006H
+
+?PR?_HANDLE_GET_SYSTEM_TIME?COMMAND_R...         -----    -----      -----    -----      34AEH    000BH
+  +--> ?PR?_ENCODE_GET_SYSTEM_TIME_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_SYSTEM_TIME_RES?CODEC            -----    -----      -----    -----      34B9H    0006H
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 14
+
+
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_SYSTEM_PARAM?COMMAND_...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_SYSTEM_PARAM_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_SYSTEM_PARAM_RES?CODEC           -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_LAMP_GROUP_SETTING?CO...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_LAMP_GROUP_SETTING_RE...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_LAMP_GROUP_SETTING_RE...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_DETECTOR_SETTING?COMM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_DETECTOR_SETTING_RES?...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_DETECTOR_SETTING_RES?...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_PHASE_PLAN?COMMAND_RE...         -----    -----      -----    -----      34AEH    000AH
+  +--> ?PR?_DECODE_GET_PHASE_PLAN_REQ?CODEC
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_ENCODE_GET_PHASE_PLAN_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_DECODE_GET_PHASE_PLAN_REQ?CODEC             -----    -----      -----    -----      34B8H    0009H
+
+?PR?_ENCODE_GET_PHASE_PLAN_RES?CODEC             -----    -----      -----    -----      34B8H    0008H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_TIMMING_PLAN?COMMAND_...         -----    -----      -----    -----      34AEH    0005H
+  +--> ?PR?_DECODE_GET_TIMMING_PLAN_REQ?CODEC
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_ENCODE_GET_TIMMING_PLAN_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_DECODE_GET_TIMMING_PLAN_REQ?CODEC           -----    -----      -----    -----      34B3H    0006H
+
+?PR?_ENCODE_GET_TIMMING_PLAN_RES?CODEC           -----    -----      -----    -----      34B3H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_SCHEDULE_PLAN?COMMAND...         -----    -----      -----    -----      34AEH    0005H
+  +--> ?PR?_DECODE_GET_SCHEDULE_PLAN_REQ?CODEC
+  +--> ?PR?_ENCODE_GET_SCHEDULE_PLAN_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_DECODE_GET_SCHEDULE_PLAN_REQ?CODEC          -----    -----      -----    -----      34B3H    0006H
+
+?PR?_ENCODE_GET_SCHEDULE_PLAN_RES?CODEC          -----    -----      -----    -----      34B3H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_SPECIAL_DAY_TABLE?COM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_SPECIAL_DAY_TABLE_RES...
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 15
+
+
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_SPECIAL_DAY_TABLE_RES...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_MACHINE_STATUS?COMMAN...         -----    -----      -----    -----      34AEH    0064H
+  +--> ?PR?_GET_DETECTOR_STATUS?MCU
+  +--> ?PR?_GET_DETECTOR_COUNTER?MCU
+  +--> ?PR?_GET_DETECTOR_HEALTH?MCU
+  +--> ?PR?_GET_LAMP_HEALTH?MCU
+  +--> ?PR?_ENCODE_GET_MACHINE_STATUS_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_GET_DETECTOR_STATUS?MCU                     -----    -----      0032H    0001H      3512H    0003H
+
+?PR?_ENCODE_GET_MACHINE_STATUS_RES?CODEC         -----    -----      -----    -----      3512H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_CURRENT_CONTROL_MODE?...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_CURRENT_CONTROL_MODE_...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_CURRENT_CONTROL_MODE_...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_MULTIPLE_SCHEDULE_CON...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_MULTIPLE_SCHEDULE_CON...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_MULTIPLE_SCHEDULE_CON...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_COMM_PARAM?COMMAND_RE...         -----    -----      -----    -----      34AEH    0005H
+  +--> ?PR?_DECODE_GET_COMM_PARAM_REQ?CODEC
+  +--> ?PR?_FILL_ERROR_RESPONSE?COMMAND_REACTOR
+  +--> ?PR?_ENCODE_GET_COMM_PARAM_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_DECODE_GET_COMM_PARAM_REQ?CODEC             -----    -----      -----    -----      34B3H    0006H
+
+?PR?_ENCODE_GET_COMM_PARAM_RES?CODEC             -----    -----      -----    -----      34B3H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_DETECTOR_COUNTER?COMM...         -----    -----      -----    -----      34AEH    0023H
+  +--> ?PR?_GET_DETECTOR_COUNTER?MCU
+  +--> ?PR?_ENCODE_GET_DETECTOR_COUNTER_RES?...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_DETECTOR_COUNTER_RES?...         -----    -----      -----    -----      34D1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_DETECTOR_STATUS?COMMA...         -----    -----      -----    -----      34AEH    0007H
+  +--> ?PR?_GET_DETECTOR_STATUS?MCU
+  +--> ?PR?_ENCODE_GET_DETECTOR_STATUS_RES?C...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_DETECTOR_STATUS_RES?C...         -----    -----      -----    -----      34B5H    0006H
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 16
+
+
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_DETECTOR_HEALTH?COMMA...         -----    -----      -----    -----      34AEH    0007H
+  +--> ?PR?_GET_DETECTOR_HEALTH?MCU
+  +--> ?PR?_ENCODE_GET_DETECTOR_HEALTH_RES?C...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_DETECTOR_HEALTH_RES?C...         -----    -----      -----    -----      34B5H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_LAMP_HEALTH?COMMAND_R...         -----    -----      -----    -----      34AEH    000CH
+  +--> ?PR?_GET_LAMP_HEALTH?MCU
+  +--> ?PR?_ENCODE_GET_LAMP_HEALTH_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_LAMP_HEALTH_RES?CODEC            -----    -----      -----    -----      34BAH    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_VOLUME_OCCUPY?COMMAND...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_VOLUME_OCCUPY_RES?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_VOLUME_OCCUPY_RES?CODEC          -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_ACTUATE_CONTROL_PARAM...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_ACTUATE_CONTROL_PARAM...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_ACTUATE_CONTROL_PARAM...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_GET_CORDLESS_COORDINATE_C...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_ENCODE_GET_CORDLESS_COORDINATE_C...
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_ENCODE_GET_CORDLESS_COORDINATE_C...         -----    -----      -----    -----      34B1H    0006H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_HANDLE_DO_STEP_FORWARD?COMMAND_R...         -----    -----      -----    -----      -----    -----
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_HANDLE_DO_STEP_KEEP?COMMAND_REACTOR         -----    -----      -----    -----      -----    -----
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_HANDLE_MCU_SEND_KEY?COMMAND_REACTOR         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_IS_BUFFER_FULL?KEY_BUFFER
+  +--> ?PR?_GET_BUFFER_KEY?KEY_BUFFER
+  +--> ?PR?_PUT_BUFFER_KEY?KEY_BUFFER
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_IS_BUFFER_FULL?KEY_BUFFER                   -----    -----      -----    -----      34B1H    0003H
+
+?PR?_GET_BUFFER_KEY?KEY_BUFFER                   -----    -----      -----    -----      34B1H    0003H
+
+?PR?_PUT_BUFFER_KEY?KEY_BUFFER                   -----    -----      -----    -----      34B1H    0003H
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 17
+
+
+?PR?_HANDLE_GET_KEY_VAL?COMMAND_REACTOR          -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_HANDLE_GET_GREEN_CONFLICT?COMMAN...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+  +--> ?PR?_GET_RESPONSE_CMD?CODEC
+
+?PR?_HANDLE_SET_GREEN_CONFLICT?COMMAN...         -----    -----      -----    -----      34AEH    0003H
+  +--> ?PR?SAVE_GREEN_CONFLICT?SMBUS
+  +--> ?PR?_FILL_OK_RESPONSE?COMMAND_REACTOR
+
+?PR?_HANDLE_UNSUPPORT_COMMAND?COMMAND...         -----    -----      -----    -----      -----    -----
+  +--> ?PR?_FRAME_SET_DATA_LEN?CODEC
+
+?PR?_WRITE_FRAME?CODEC                           -----    -----      -----    -----      34ADH    01FBH
+  +--> ?PR?_COMPUTE_CHECKSUM?CODEC
+  +--> ?PR?_FRAME_GET_DATA_LEN?CODEC
+  +--> ?PR?_WRITE_COMM?MCU
+
+?PR?_COMPUTE_CHECKSUM?CODEC                      -----    -----      -----    -----      36A8H    0006H
+  +--> ?PR?_FRAME_GET_DATA_LEN?CODEC
+
+?PR?_WRITE_COMM?MCU                              -----    -----      0032H    0002H      36A8H    000AH
+  +--> ?PR?_IS_OUT_FULL?MCU
+  +--> ?PR?_OUT_PUTCHAR?MCU
+
+?PR?GET_LAMP_HEALTH_STATUS?MCU                   -----    -----      -----    -----      34A2H    000AH
+
+?PR?CONFLICT_DETECT?MCU                          -----    -----      -----    -----      34A2H    0004H
+  +--> ?PR?_IS_TERM_CONNECT_TO_YELLOW?UTIL
+
+?PR?INIT_GM8125?MCU                              -----    -----      -----    -----      -----    -----
+  +--> ?PR?_DELAY_200US?MCU
+
+?PR?CONTROLLER_MAIN?KERNEL                       -----    -----      -----    -----      3497H    000BH
+  +--> ?PR?SET_INIT_STATE?KERNEL
+  +--> ?PR?_INIT_COMMAND_REACTOR?COMMAND_REA...
+  +--> ?PR?_OPEN_COMM?MCU
+  +--> ?PR?_DO_SCHEDULE?KERNEL
+  +--> ?PR?_GET_MODE?KERNEL
+  +--> ?PR?_REACTOR_HANDLE_COMMAND?COMMAND_R...
+  +--> ?PR?WAIT_FOR_100MS?MCU
+  +--> ?PR?SAVE_CONFIG_DATA?SMBUS
+  +--> ?PR?GET_TEMPERATURE?MCU
+  +--> ?PR?IS_DOOR_ILLEGAL_OPEN?MCU
+
+?PR?SET_INIT_STATE?KERNEL                        -----    -----      -----    -----      -----    -----
+  +--> ?PR?_YELLOW_FLASH_CONTROL?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+
+?PR?_YELLOW_FLASH_CONTROL?KERNEL                 -----    -----      -----    -----      34C8H    0002H
+  +--> ?PR?_INIT_SPECIAL_SCHEDULE_DATA?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_SET_TERM_STATUS?MCU
+
+?PR?_INIT_SPECIAL_SCHEDULE_DATA?KERNEL           -----    -----      -----    -----      34CAH    000FH
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 18
+
+
+
+?PR?_SET_TERM_STATUS?MCU                         002AH.6  0000H.1    002EH    0009H      34E0H    0003H
+
+?PR?_INIT_COMMAND_REACTOR?COMMAND_REA...         -----    -----      -----    -----      34A2H    0003H
+  +--> ?PR?_INIT_FRAME?CODEC
+  +--> ?PR?_INIT_KEY_BUFFER?KEY_BUFFER
+
+?PR?_INIT_FRAME?CODEC                            -----    -----      -----    -----      34A5H    0006H
+
+?PR?_OPEN_COMM?MCU                               -----    -----      -----    -----      34A2H    0003H
+  +--> ?PR?_OUT_INIT?MCU
+  +--> ?PR?_DELAY_200US?MCU
+
+?PR?_OUT_INIT?MCU                                -----    -----      -----    -----      -----    -----
+  +--> ?PR?_IN_INIT?MCU
+
+?PR?_DO_SCHEDULE?KERNEL                          002AH.5  0000H.1    -----    -----      34A2H    000AH
+  +--> ?PR?IS_MANUAL_CONTROL_STATE?MCU
+  +--> ?PR?GET_RUN_MODE?MCU
+  +--> ?PR?GET_FRONT_PANEL_CONTROL_MODE?MCU
+  +--> ?PR?_GET_MODE?KERNEL
+  +--> ?PR?_GET_CONTROL_MODE?KERNEL
+  +--> ?PR?_GET_BACKUP_CONTROL_MODE?KERNEL
+
+?PR?_GET_MODE?KERNEL                             -----    -----      -----    -----      34ACH    0005H
+  +--> ?CO?KERNEL
+
+?CO?KERNEL                                       -----    -----      -----    -----      -----    -----
+  +--> ?PR?_ALL_OFF_CONTROL?KERNEL
+  +--> ?PR?_ALL_RED_CONTROL?KERNEL
+  +--> ?PR?_YELLOW_FLASH_CONTROL?KERNEL
+  +--> ?PR?_MULTIPLE_SCHEDULE_CONTROL?MULTIP...
+  +--> ?PR?_ACTUATE_CONTROL?ACTUATE_CONTROL
+  +--> ?PR?_CORDLESS_COORDINATE_CONTROL?CORD...
+  +--> ?PR?_EXECUTIVE_MACHINE_CONTROL?EXECUT...
+  +--> ?PR?_MANUAL_CONTROL?MANUAL_CONTROL
+
+?PR?_ALL_OFF_CONTROL?KERNEL                      -----    -----      -----    -----      34B2H    0002H
+  +--> ?PR?_INIT_SPECIAL_SCHEDULE_DATA?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_SET_TERM_STATUS?MCU
+
+?PR?_ALL_RED_CONTROL?KERNEL                      -----    -----      -----    -----      34C8H    0002H
+  +--> ?PR?_INIT_SPECIAL_SCHEDULE_DATA?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_SET_TERM_STATUS?MCU
+
+?PR?_MULTIPLE_SCHEDULE_CONTROL?MULTIP...         -----    -----      -----    -----      34B2H    0005H
+  +--> ?PR?_SWITCHING_WITH_MULTIPLE_SCHEDULE...
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?IS_LAST_STEP?KERNEL
+  +--> ?PR?_GET_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_IS_SCHEDULE_VALID?KERNEL
+  +--> ?PR?_SET_ERROR?ERROR_CODE
+  +--> ?PR?_CLEAR_ERROR?ERROR_CODE
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?SET_CURRENT_STAGE?KERNEL
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 19
+
+
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+  +--> ?PR?_GET_LAMP_HEALTH?MCU
+
+?PR?_SWITCHING_WITH_MULTIPLE_SCHEDULE...         -----    -----      -----    -----      34B7H    0002H
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?IS_LAST_STEP?KERNEL
+  +--> ?PR?SET_CURRENT_STAGE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+
+?PR?SET_CURRENT_STAGE?KERNEL                     -----    -----      -----    -----      -----    -----
+  +--> ?PR?IS_LAST_STEP?KERNEL
+
+?PR?RUN_CURRENT_STEP?KERNEL                      -----    -----      -----    -----      -----    -----
+  +--> ?PR?SET_PHASE_TIME?KERNEL
+  +--> ?PR?_SET_PHASE_STATE?KERNEL
+  +--> ?PR?_SET_TERM_STATUS?MCU
+
+?PR?_SET_PHASE_STATE?KERNEL                      -----    -----      -----    -----      34E0H    0037H
+  +--> ?PR?_FIND_LAMP_GROUP?KERNEL
+  +--> ?PR?_SET_LAMP_STATE?KERNEL
+
+?PR?_FIND_LAMP_GROUP?KERNEL                      -----    -----      -----    -----      3517H    0006H
+
+?PR?_SET_LAMP_STATE?KERNEL                       -----    -----      -----    -----      3517H    000FH
+
+?PR?_GET_CURRENT_SCHEDULE?KERNEL                 -----    -----      -----    -----      34B9H    0074H
+  +--> ?PR?IS_TODAY_SPECIAL_DAY?KERNEL
+
+?PR?IS_TODAY_SPECIAL_DAY?KERNEL                  -----    -----      -----    -----      352DH    000BH
+
+?PR?_ACTUATE_CONTROL?ACTUATE_CONTROL             -----    -----      -----    -----      34B2H    0004H
+  +--> ?PR?_SIMPLE_FULL_ACTUATE_CONTROL?ACTU...
+  +--> ?PR?_SIMPLE_HALF_ACTUATE_CONTROL?ACTU...
+
+?PR?_SIMPLE_FULL_ACTUATE_CONTROL?ACTU...         -----    -----      -----    -----      34B6H    002AH
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_EMPTY_SET?DETECTOR_SET
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?SET_CURRENT_STAGE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+  +--> ?PR?IS_PHASE_STEP?ACTUATE_CONTROL
+  +--> ?PR?_GET_PHASE_DETECTOR?UTIL
+  +--> ?PR?_GET_DETECTOR_HEALTH?MCU
+  +--> ?PR?_IS_IN_SET?DETECTOR_SET
+  +--> ?PR?_GET_BIT_VALUE?UTIL
+  +--> ?PR?_GET_DETECTOR_STATUS?MCU
+  +--> ?PR?_GET_DETECTOR_COUNTER?MCU
+
+?PR?IS_PHASE_STEP?ACTUATE_CONTROL                -----    -----      -----    -----      34E0H    0003H
+
+?PR?_GET_PHASE_DETECTOR?UTIL                     -----    -----      -----    -----      34E0H    0008H
+  +--> ?PR?_DECODE_TERM_STATUS?UTIL
+  +--> ?PR?_IS_TERM_CONNECT_TO_GREEN?UTIL
+  +--> ?PR?_GET_LAMP_GROUP_DETECTOR?UTIL
+
+?PR?_DECODE_TERM_STATUS?UTIL                     -----    -----      -----    -----      34E8H    0004H
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 20
+
+
+?PR?_GET_LAMP_GROUP_DETECTOR?UTIL                -----    -----      -----    -----      34E8H    0007H
+  +--> ?PR?_ADD_SET?DETECTOR_SET
+
+?PR?_ADD_SET?DETECTOR_SET                        -----    -----      -----    -----      34EFH    0006H
+  +--> ?CO?DETECTOR_SET
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTF?PRINTF                                002AH.6  0001H.1    002EH    0005H      34F5H    0028H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?_IS_IN_SET?DETECTOR_SET                      -----    -----      -----    -----      34E0H    0006H
+  +--> ?CO?DETECTOR_SET
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?_GET_BIT_VALUE?UTIL                          -----    -----      -----    -----      34E0H    000AH
+
+?PR?_SIMPLE_HALF_ACTUATE_CONTROL?ACTU...         -----    -----      -----    -----      34B6H    002AH
+  +--> ?PR?PHASE_COUNT?ACTUATE_CONTROL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_EMPTY_SET?DETECTOR_SET
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?SET_CURRENT_STAGE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+  +--> ?PR?IS_PHASE_STEP?ACTUATE_CONTROL
+  +--> ?PR?_GET_PHASE_DETECTOR?UTIL
+  +--> ?PR?_IS_IN_SET?DETECTOR_SET
+  +--> ?PR?_GET_DETECTOR_HEALTH?MCU
+  +--> ?PR?_GET_BIT_VALUE?UTIL
+  +--> ?PR?_GET_DETECTOR_STATUS?MCU
+  +--> ?PR?_GET_DETECTOR_COUNTER?MCU
+
+?PR?PHASE_COUNT?ACTUATE_CONTROL                  -----    -----      -----    -----      34E0H    0003H
+
+?PR?_CORDLESS_COORDINATE_CONTROL?CORD...         -----    -----      -----    -----      34B2H    000EH
+  +--> ?PR?_IS_SCHEDULE_VALID?KERNEL
+  +--> ?PR?_GET_CYCLE?CORDLESS_COORDINATE_CO...
+  +--> ?PR?_SWITCHING_WITH_YELLOW_FLASH_ALL_...
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?IS_LAST_STEP?KERNEL
+
+?PR?_GET_CYCLE?CORDLESS_COORDINATE_CO...         -----    -----      -----    -----      34C0H    0004H
+
+?PR?_SWITCHING_WITH_YELLOW_FLASH_ALL_...         -----    -----      -----    -----      34C0H    0008H
+  +--> ?PR?_YELLOW_FLASH_CONTROL?KERNEL
+  +--> ?PR?_ALL_RED_CONTROL?KERNEL
+
+?PR?_EXECUTIVE_MACHINE_CONTROL?EXECUT...         -----    -----      -----    -----      34B2H    0005H
+  +--> ?PR?_GET_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_SET_TERM_STATUS?MCU
+
+?PR?_MANUAL_CONTROL?MANUAL_CONTROL               -----    -----      -----    -----      34B2H    0004H
+  +--> ?PR?MANUAL_LOAD_MULTIPLE_SCHEDULE?MAN...
+  +--> ?PR?CLEAR_STEP_FORWARD_BUTTON_STATE?MCU
+  +--> ?PR?CLEAR_NEED_CHANGE_STAGE_FLAG?MCU
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 21
+
+
+  +--> ?PR?IS_STEP_FORWARD_BUTTON_PRESSED?MCU
+  +--> ?PR?MANUAL_STEP_DISPOSE?MANUAL_CONTROL
+  +--> ?PR?IS_NEED_CHANGE_STAGE?MCU
+  +--> ?PR?GET_MANUAL_NEXT_STAGE_COUNT?MCU
+  +--> ?PR?MANUAL_CHANGE_STEP_DISPOSE?MANUAL...
+
+?PR?MANUAL_LOAD_MULTIPLE_SCHEDULE?MAN...         -----    -----      -----    -----      34B6H    0003H
+  +--> ?PR?_GET_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?_IS_SCHEDULE_VALID?KERNEL
+  +--> ?PR?_LOAD_CURRENT_SCHEDULE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+
+?PR?MANUAL_STEP_DISPOSE?MANUAL_CONTROL           -----    -----      -----    -----      -----    -----
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?SET_CURRENT_STAGE?KERNEL
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+  +--> ?PR?CLEAR_STEP_FORWARD_BUTTON_STATE?MCU
+
+?PR?MANUAL_CHANGE_STEP_DISPOSE?MANUAL...         -----    -----      -----    -----      -----    -----
+  +--> ?PR?IS_STEP_END?KERNEL
+  +--> ?PR?CLEAR_NEED_CHANGE_STAGE_FLAG?MCU
+  +--> ?PR?RUN_CURRENT_STEP?KERNEL
+
+?PR?_GET_CONTROL_MODE?KERNEL                     -----    -----      -----    -----      34ACH    0006H
+  +--> ?CO?KERNEL
+  +--> ?PR?_MULTIPLE_SCHEDULE_CONTROL?MULTIP...
+
+?PR?_GET_BACKUP_CONTROL_MODE?KERNEL              -----    -----      -----    -----      34ACH    0006H
+  +--> ?CO?KERNEL
+  +--> ?PR?_MULTIPLE_SCHEDULE_CONTROL?MULTIP...
+
+*** NEW ROOT ***************************************************
+
+?PR?UART0_ISR?ISR_UART                           -----    -----      -----    -----      36B2H    0002H
+  +--> ?PR?_IS_OUT_EMPTY?MCU
+  +--> ?PR?_OUT_GETCHAR?MCU
+  +--> ?PR?_IN_PUTCHAR?MCU
+
+*** NEW ROOT ***************************************************
+
+?PR?INT0_ISR?ISR_INT0                            002BH.7  0000H.1    0037H    0002H      -----    -----
+
+*** NEW ROOT ***************************************************
+
+?PR?INT6_ISR?ISR_INT0                            -----    -----      0039H    0002H      -----    -----
+
+*** NEW ROOT ***************************************************
+
+?PR?TIMER3_ISR?ISR_TIMER3                        -----    -----      003BH    0004H      -----    -----
+
+*** NEW ROOT ***************************************************
+
+?PR?SMBUS_ISR?ISR_SMBUS                          -----    -----      003FH    0002H      -----    -----
+  +--> ?CO?ISR_SMBUS
+
+
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 22
+
+
+INTER-MODULE CROSS-REFERENCE LISTING
+------------------------------------
+
+
+NAME . . . . . . . . . . . . . . . . . . . USAGE    MODULE NAMES
+----------------------------------------------------------------
+
+ADC0WIN_ISR. . . . . . . . . . . . . . . . CODE;    ISR_ADC0  
+ADC0_ISR . . . . . . . . . . . . . . . . . CODE;    ISR_ADC0  
+ADDR_NUMBER. . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+BUFF_SMB_RD. . . . . . . . . . . . . . . . XDATA;   ISR_SMBUS  MCU  SMBUS  
+BUFF_SMB_TR. . . . . . . . . . . . . . . . XDATA;   ISR_SMBUS  MCU  SMBUS  
+BUZZ_DELAY . . . . . . . . . . . . . . . . XDATA;   MCU  
+CLEAR_NEED_CHANGE_STAGE_FLAG . . . . . . . CODE;    MCU  MANUAL_CONTROL  
+CLEAR_STEP_FORWARD_BUTTON_STATE. . . . . . CODE;    MCU  MANUAL_CONTROL  
+COMMAND. . . . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+COMM_BAUD. . . . . . . . . . . . . . . . . DATA;    MCU  
+COMM_PARAM_NO. . . . . . . . . . . . . . . XDATA;   SMBUS  
+CONFLICT_DETECT. . . . . . . . . . . . . . CODE;    MCU  
+CONTROLLER_MAIN. . . . . . . . . . . . . . CODE;    KERNEL  MAIN  
+CPLD_COUNT . . . . . . . . . . . . . . . . XDATA;   MCU  ISR_INT0  
+CPLD_TRANS_BAK . . . . . . . . . . . . . . XDATA;   MCU  ISR_INT0  
+CRC_TA . . . . . . . . . . . . . . . . . . CODE;    MCU  
+DECODE_KEY . . . . . . . . . . . . . . . . CODE;    MCU  
+DETECTOR_COUNT_BAK0. . . . . . . . . . . . XDATA;   MCU  
+DETECTOR_ERR . . . . . . . . . . . . . . . XDATA;   MCU  
+DETECTOR_FLAG. . . . . . . . . . . . . . . XDATA;   MCU  
+DETECTOR_TIME. . . . . . . . . . . . . . . XDATA;   MCU  
+DIS_TABLE. . . . . . . . . . . . . . . . . CODE;    ISR_SMBUS  
+ERR_BUF. . . . . . . . . . . . . . . . . . XDATA;   SMBUS  
+ERR_COUNT. . . . . . . . . . . . . . . . . XDATA;   SMBUS  
+FLAG0_SMBUS. . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  
+FLAG0_UART0. . . . . . . . . . . . . . . . DATA;    ISR_UART  MCU  
+FLAG1_UART0. . . . . . . . . . . . . . . . DATA;    ISR_UART  MCU  
+FLAG_ADC0WIN . . . . . . . . . . . . . . . DATA;    ISR_ADC0  
+FLAG_EEPROM0 . . . . . . . . . . . . . . . DATA;    SMBUS  
+FLAG_EEPROM1 . . . . . . . . . . . . . . . DATA;    SMBUS  
+FLAG_KEY0. . . . . . . . . . . . . . . . . DATA;    MCU  
+FLICK_COUNT. . . . . . . . . . . . . . . . DATA;    MCU  
+FLICK_MARK . . . . . . . . . . . . . . . . BIT;     MCU  
+FUN_SMBUS. . . . . . . . . . . . . . . . . CODE;    SMBUS  MCU  
+FUN_WRITE_EEPROM . . . . . . . . . . . . . CODE;    SMBUS  
+FUN_WRITE_RTC. . . . . . . . . . . . . . . CODE;    SMBUS  
+F_ACTUATE_CONTROL. . . . . . . . . . . . . BIT;     ACTUATE_CONTROL  
+F_ADC0WIN. . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  
+F_AUTO_BUZZ. . . . . . . . . . . . . . . . BIT;     MCU  
+F_BOOT . . . . . . . . . . . . . . . . . . BIT;     MCU  
+F_BUZZ . . . . . . . . . . . . . . . . . . BIT;     MCU  COMMAND_REACTOR  
+F_CHANL_NO . . . . . . . . . . . . . . . . BIT;     ISR_UART  
+F_CPLD_CHANL0_USING. . . . . . . . . . . . BIT;     MCU  ISR_INT0  
+F_CPLD_CHANL1_USING. . . . . . . . . . . . BIT;     MCU  ISR_INT0  
+F_CPLD_TRANS_ED. . . . . . . . . . . . . . BIT;     MCU  ISR_INT0  
+F_CPLD_TRANS_NUM . . . . . . . . . . . . . BIT;     MCU  ISR_INT0  
+F_EEPROM_RD. . . . . . . . . . . . . . . . BIT;     SMBUS  ISR_SMBUS  
+F_EPPROM_ERR . . . . . . . . . . . . . . . BIT;     ISR_SMBUS  
+F_KEY. . . . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY0_ED. . . . . . . . . . . . . . . . . BIT;     MCU  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 23
+
+
+F_KEY0_ERR . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY0_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+F_KEY0_INT_BAK . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY1_ED. . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY1_ERR . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY1_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+F_KEY1_INT_BAK . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY2_ED. . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY2_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+F_KEY2_INT_BAK . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY3_ED. . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY3_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+F_KEY3_INT_BAK . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY_NOW. . . . . . . . . . . . . . . . . BIT;     MCU  
+F_KEY_VAL. . . . . . . . . . . . . . . . . BIT;     MCU  
+F_LAMP_ERR . . . . . . . . . . . . . . . . BIT;     MCU  
+F_LAMP_GREEN_OR_RED_ERR. . . . . . . . . . BIT;     MCU  
+F_LAMP_YELLOW_ERR. . . . . . . . . . . . . BIT;     MCU  
+F_LCD. . . . . . . . . . . . . . . . . . . BIT;     ISR_SMBUS  SMBUS  
+F_LOAD_CONFIG_DATA . . . . . . . . . . . . BIT;     SMBUS  
+F_MANUAL . . . . . . . . . . . . . . . . . BIT;     MCU  SMBUS  
+F_MANUAL_AUTO. . . . . . . . . . . . . . . BIT;     MCU  
+F_MANUAL_STEP. . . . . . . . . . . . . . . BIT;     MCU  
+F_MODE_SWITCH. . . . . . . . . . . . . . . BIT;     MCU  
+F_OUT0_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+F_OUT1_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  
+F_OUT2_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  
+F_OUT3_INT . . . . . . . . . . . . . . . . BIT;     ISR_ADC0  
+F_PAGE_WR. . . . . . . . . . . . . . . . . BIT;     SMBUS  
+F_RD_EEPROM_NOW. . . . . . . . . . . . . . BIT;     SMBUS  ISR_SMBUS  
+F_RD_LAMP_INPUT_NOW. . . . . . . . . . . . BIT;     MCU  ISR_TIMER3  
+F_RD_RTC_NOW . . . . . . . . . . . . . . . BIT;     SMBUS  
+F_RD_SMBUS_OK. . . . . . . . . . . . . . . BIT;     ISR_SMBUS  SMBUS  
+F_RETURN_ACTUATE_CONTROL . . . . . . . . . BIT;     MCU  
+F_RTC_ERR. . . . . . . . . . . . . . . . . BIT;     ISR_SMBUS  
+F_RUN_MODE . . . . . . . . . . . . . . . . BIT;     MCU  SMBUS  
+F_SAVE_ACTUATE_CONTROL_PARAM . . . . . . . BIT;     SMBUS  
+F_SAVE_COMM_PARAM. . . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_CONFIG_DATA . . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_CONTROL_MODE_SELECTION. . . . . . . BIT;     SMBUS  
+F_SAVE_CORDLESS_COORDINATE_CONTROL_PARAM . BIT;     SMBUS  
+F_SAVE_DETECTOR_SETTING. . . . . . . . . . BIT;     SMBUS  
+F_SAVE_ERR . . . . . . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_GREEN_CONFLICT. . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_LAMP_GROUP_SETTING. . . . . . . . . BIT;     SMBUS  
+F_SAVE_MULTIPLE_SCHEDULE_CONTROL_PARAM . . BIT;     SMBUS  
+F_SAVE_PHASE_PLAN. . . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_SCHEDULE_PLAN . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_SPECIAL_DAY . . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_SYSTEM_PARAM. . . . . . . . . . . . BIT;     SMBUS  
+F_SAVE_TIMMING_PLAN. . . . . . . . . . . . BIT;     SMBUS  
+F_SET_TIME . . . . . . . . . . . . . . . . BIT;     SMBUS  
+F_STEP . . . . . . . . . . . . . . . . . . BIT;     MCU  
+F_STEP_ALL . . . . . . . . . . . . . . . . BIT;     SMBUS  ISR_SMBUS  
+F_STEP_ALL_OK. . . . . . . . . . . . . . . BIT;     ISR_SMBUS  SMBUS  
+F_TEMP . . . . . . . . . . . . . . . . . . BIT;     ACTUATE_CONTROL  
+F_TEMPERATURE. . . . . . . . . . . . . . . BIT;     ISR_ADC0  MCU  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 24
+
+
+F_UART0_RECEIVED_NOW0. . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_NOW1. . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_NOW2. . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_NOW3. . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_NOW4. . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_OVER0 . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_OVER1 . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_OVER2 . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_OVER3 . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_RECEIVED_OVER4 . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_TRANSED_NOW0 . . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_TRANSED_NOW1 . . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_TRANSED_NOW2 . . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_TRANSED_NOW3 . . . . . . . . . . . BIT;     ISR_UART  
+F_UART0_TRANSED_NOW4 . . . . . . . . . . . BIT;     ISR_UART  
+F_UART1_USING. . . . . . . . . . . . . . . BIT;     MCU  ISR_UART  
+F_WR_EEPROM_NOW. . . . . . . . . . . . . . BIT;     ISR_SMBUS  MCU  SMBUS  
+GET_FRONT_PANEL_CONTROL_MODE . . . . . . . CODE;    MCU  KERNEL  
+GET_LAMP_HEALTH_STATUS . . . . . . . . . . CODE;    MCU  
+GET_MANUAL_NEXT_STAGE_COUNT. . . . . . . . CODE;    MCU  MANUAL_CONTROL  
+GET_RUN_MODE . . . . . . . . . . . . . . . CODE;    MCU  KERNEL  
+GET_SAVE_PHASE_PLAN. . . . . . . . . . . . CODE;    SMBUS  MCU  
+GET_SYSTEM_TIME. . . . . . . . . . . . . . CODE;    SMBUS  
+GET_TEMPERATURE. . . . . . . . . . . . . . CODE;    MCU  KERNEL  
+G_COMMAND_REACTOR128 . . . . . . . . . . . XDATA;   COMMAND_REACTOR  KERNEL  
+G_COMMAND_REACTOR2 . . . . . . . . . . . . XDATA;   COMMAND_REACTOR  KERNEL  MCU  
+G_COMMAND_REACTOR7 . . . . . . . . . . . . XDATA;   COMMAND_REACTOR  KERNEL  MCU  
+G_COMMAND_REACTOR8 . . . . . . . . . . . . XDATA;   COMMAND_REACTOR  KERNEL  MCU  
+G_CONFIG . . . . . . . . . . . . . . . . . XDATA;   KERNEL  ACTUATE_CONTROL  COMMAND_REACTOR  CORDLESS_COORDINATE_CONTRO
+                                                    L  MCU  SMBUS  UTIL  
+G_CONTROLLER_STATUS. . . . . . . . . . . . XDATA;   KERNEL  ACTUATE_CONTROL  COMMAND_REACTOR  CORDLESS_COORDINATE_CONTRO
+                                                    L  EXECUTIVE_MACHINE_CONTROL  MANUAL_CONTROL  MCU  MULTIPLE_SCHEDULE
+                                                    _CONTROL  SMBUS  
+G_IN_READ_P. . . . . . . . . . . . . . . . XDATA;   MCU  
+G_IN_WRITE_P . . . . . . . . . . . . . . . XDATA;   MCU  ISR_INT0  ISR_UART  
+G_OUT_READ_P . . . . . . . . . . . . . . . XDATA;   MCU  ISR_INT0  ISR_UART  
+G_OUT_WRITE_P. . . . . . . . . . . . . . . XDATA;   MCU  ISR_INT0  ISR_UART  
+G_SPECIAL_PHASE. . . . . . . . . . . . . . XDATA;   KERNEL  
+G_SPECIAL_PHASE_PLAN . . . . . . . . . . . XDATA;   KERNEL  
+G_SPECIAL_PHASE_TIMMING_PLAN . . . . . . . XDATA;   KERNEL  
+G_VOLUME_OCCUPY. . . . . . . . . . . . . . XDATA;   KERNEL  COMMAND_REACTOR  
+HIGH_ADD . . . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+INITIALIZE . . . . . . . . . . . . . . . . CODE;    MCU  MAIN  
+INIT_GM8125. . . . . . . . . . . . . . . . CODE;    MCU  
+INT0_ISR . . . . . . . . . . . . . . . . . CODE;    ISR_INT0  
+INT6_ISR . . . . . . . . . . . . . . . . . CODE;    ISR_INT0  
+IS_DOOR_ILLEGAL_OPEN . . . . . . . . . . . CODE;    MCU  KERNEL  
+IS_LAST_STEP . . . . . . . . . . . . . . . CODE;    KERNEL  CORDLESS_COORDINATE_CONTROL  MULTIPLE_SCHEDULE_CONTROL  
+IS_MANUAL_CONTROL_STATE. . . . . . . . . . CODE;    MCU  KERNEL  
+IS_NEED_CHANGE_STAGE . . . . . . . . . . . CODE;    MCU  MANUAL_CONTROL  
+IS_PHASE_STEP. . . . . . . . . . . . . . . CODE;    ACTUATE_CONTROL  
+IS_STEP_END. . . . . . . . . . . . . . . . CODE;    KERNEL  ACTUATE_CONTROL  CORDLESS_COORDINATE_CONTROL  MANUAL_CONTROL
+                                                      MULTIPLE_SCHEDULE_CONTROL  
+IS_STEP_FORWARD_BUTTON_PRESSED . . . . . . CODE;    MCU  MANUAL_CONTROL  
+JUDGE_DETECTOR . . . . . . . . . . . . . . CODE;    MCU  
+KEY0_ADC0. . . . . . . . . . . . . . . . . XDATA;   ISR_ADC0  MCU  
+KEY0_TABLE . . . . . . . . . . . . . . . . CODE;    MCU  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 25
+
+
+KEY0_VAL . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY0_VAL_BAK . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY1_ADC0. . . . . . . . . . . . . . . . . XDATA;   ISR_ADC0  MCU  
+KEY1_VAL . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY1_VAL_BAK . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY2_ADC0. . . . . . . . . . . . . . . . . XDATA;   ISR_ADC0  MCU  
+KEY3_ADC0. . . . . . . . . . . . . . . . . XDATA;   ISR_ADC0  MCU  
+KEY_BUF. . . . . . . . . . . . . . . . . . XDATA;   MCU  COMMAND_REACTOR  
+KEY_COUNT. . . . . . . . . . . . . . . . . XDATA;   MCU  COMMAND_REACTOR  
+KEY_TABLE. . . . . . . . . . . . . . . . . CODE;    MCU  
+KEY_TIME . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL. . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL0 . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL1 . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL2 . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL3 . . . . . . . . . . . . . . . . . XDATA;   MCU  
+KEY_VAL_TEMP . . . . . . . . . . . . . . . XDATA;   MCU  
+LAMP_FLICK_BUFFER. . . . . . . . . . . . . XDATA;   MCU  
+LAMP_HEALTH_STATUS . . . . . . . . . . . . XDATA;   MCU  
+LAMP_INPUT_BUFFER. . . . . . . . . . . . . XDATA;   MCU  ISR_TIMER3  
+LAMP_OUTPUT_BUFFER . . . . . . . . . . . . XDATA;   MCU  
+LAMP_OUTPUT_BUFFER1. . . . . . . . . . . . XDATA;   MCU  
+LED_BG_COUNT . . . . . . . . . . . . . . . XDATA;   MCU  
+LOAD_CONFIG_DATA . . . . . . . . . . . . . CODE;    SMBUS  MCU  
+LOW_ADD. . . . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+MAIN . . . . . . . . . . . . . . . . . . . CODE;    MAIN  ?C_INIT  
+MANUAL_CHANGE_STEP_DISPOSE . . . . . . . . CODE;    MANUAL_CONTROL  
+MANUAL_LOAD_MULTIPLE_SCHEDULE. . . . . . . CODE;    MANUAL_CONTROL  
+MANUAL_M_CONTROL_MODE_BAK. . . . . . . . . XDATA;   MCU  
+MANUAL_SET_STAGE . . . . . . . . . . . . . XDATA;   MCU  
+MANUAL_STEP_DISPOSE. . . . . . . . . . . . CODE;    MANUAL_CONTROL  
+M_HARD_ERROR_BAK . . . . . . . . . . . . . XDATA;   SMBUS  
+M_SOFT_ERROR_BAK . . . . . . . . . . . . . XDATA;   SMBUS  
+PHASE_COUNT. . . . . . . . . . . . . . . . CODE;    ACTUATE_CONTROL  
+PHASE_PLAN_NO. . . . . . . . . . . . . . . XDATA;   SMBUS  
+PHASE_PLAN_NO_STEP . . . . . . . . . . . . XDATA;   SMBUS  
+POWER_CHECK. . . . . . . . . . . . . . . . CODE;    MCU  
+PW_COUNT . . . . . . . . . . . . . . . . . XDATA;   MCU  
+RDT_NUM. . . . . . . . . . . . . . . . . . XDATA;   SMBUS  ISR_SMBUS  
+RDT_NUM_BAK. . . . . . . . . . . . . . . . XDATA;   SMBUS  ISR_SMBUS  
+READ_DETECTOR_TIME . . . . . . . . . . . . XDATA;   MCU  
+RECEIVEBUFF0 . . . . . . . . . . . . . . . XDATA;   ISR_UART  MCU  
+REFRASH_LAMP . . . . . . . . . . . . . . . CODE;    MCU  
+RESULT . . . . . . . . . . . . . . . . . . XDATA;   ISR_ADC0  MCU  
+RUN_CURRENT_STEP . . . . . . . . . . . . . CODE;    KERNEL  ACTUATE_CONTROL  CORDLESS_COORDINATE_CONTROL  MANUAL_CONTROL
+                                                      MULTIPLE_SCHEDULE_CONTROL  
+SAVE_ACTUATE_CONTROL_PARAM . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_CONFIG_DATA . . . . . . . . . . . . . CODE;    SMBUS  KERNEL  
+SAVE_CONTROL_MODE_SELECTION. . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  MCU  
+SAVE_CORDLESS_COORDINATE_CONTROL_PARAM . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_DETECTOR_SETTING. . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_ERR . . . . . . . . . . . . . . . . . CODE;    SMBUS  
+SAVE_GREEN_CONFLICT. . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_LAMP_GROUP_SETTING. . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_MULTIPLE_SCHEDULE_CONTROL_PARAM . . . CODE;    SMBUS  COMMAND_REACTOR  
+SAVE_PHASE_PLANE_TABLE . . . . . . . . . . XDATA;   SMBUS  
+SAVE_SPECIAL_DAY . . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 26
+
+
+SAVE_SYSTEM_PARAM. . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+SCANKEY. . . . . . . . . . . . . . . . . . CODE;    MCU  
+SCAN_TABLE . . . . . . . . . . . . . . . . CODE;    MCU  
+SCHEDULE_PLAN_NO . . . . . . . . . . . . . XDATA;   SMBUS  
+SET_CURRENT_STAGE. . . . . . . . . . . . . CODE;    KERNEL  ACTUATE_CONTROL  MANUAL_CONTROL  MULTIPLE_SCHEDULE_CONTROL  
+                                                    
+SET_INIT_STATE . . . . . . . . . . . . . . CODE;    KERNEL  
+SET_PHASE_TIME . . . . . . . . . . . . . . CODE;    KERNEL  
+SMBUS_COUNT. . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  
+SMBUS_ISR. . . . . . . . . . . . . . . . . CODE;    ISR_SMBUS  
+SMB_RD_NUM_BAK . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+SMB_RD_NUM_C . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+SMB_WR_NUM_BAK . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+SMB_WR_NUM_C . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  SMBUS  
+SM_BUSY. . . . . . . . . . . . . . . . . . BIT;     ISR_SMBUS  MCU  SMBUS  
+START_ADDR_EEPROM. . . . . . . . . . . . . XDATA;   SMBUS  
+START_ADDR_PHASE_PLAN_NO . . . . . . . . . XDATA;   SMBUS  
+START_ADDR_RAM . . . . . . . . . . . . . . XDATA;   SMBUS  ISR_SMBUS  
+STEP_ALL_FLASH . . . . . . . . . . . . . . XDATA;   ISR_SMBUS  SMBUS  
+STEP_ALL_RAM . . . . . . . . . . . . . . . XDATA;   SMBUS  
+SYS100MS . . . . . . . . . . . . . . . . . BIT;     MCU  ISR_TIMER3  
+SYS200MS . . . . . . . . . . . . . . . . . BIT;     MCU  
+SYS25MS. . . . . . . . . . . . . . . . . . BIT;     MCU  ISR_TIMER3  
+SYS5MS . . . . . . . . . . . . . . . . . . BIT;     MCU  ISR_TIMER3  
+TELECONTROL_BAK. . . . . . . . . . . . . . XDATA;   MCU  
+TEMPTURE . . . . . . . . . . . . . . . . . XDATA;   MCU  
+TIMER3_ISR . . . . . . . . . . . . . . . . CODE;    ISR_TIMER3  
+TIMMING_PLAN_NO. . . . . . . . . . . . . . XDATA;   SMBUS  
+UART0_CHANL_SEL. . . . . . . . . . . . . . XDATA;   ISR_UART  MCU  
+UART0_ISR. . . . . . . . . . . . . . . . . CODE;    ISR_UART  
+UART0_RECEIVE_BUFFER . . . . . . . . . . . XDATA;   ISR_UART  ISR_INT0  MCU  
+UART0_TRANS_BUFFER . . . . . . . . . . . . XDATA;   ISR_UART  ISR_INT0  MCU  
+UART1_ISR. . . . . . . . . . . . . . . . . CODE;    ISR_UART  
+WAIT_FOR_100MS . . . . . . . . . . . . . . CODE;    MCU  KERNEL  
+WORD . . . . . . . . . . . . . . . . . . . DATA;    ISR_SMBUS  
+WRITE_RTC_BUFF . . . . . . . . . . . . . . XDATA;   SMBUS  
+WRT_NUM. . . . . . . . . . . . . . . . . . XDATA;   SMBUS  
+WR_EEPROM_COUNT. . . . . . . . . . . . . . DATA;    ISR_SMBUS  MCU  SMBUS  
+_ACTUATE_CONTROL . . . . . . . . . . . . . CODE;    ACTUATE_CONTROL  KERNEL  
+_ADD_SET . . . . . . . . . . . . . . . . . CODE;    DETECTOR_SET  UTIL  
+_ALL_OFF_CONTROL . . . . . . . . . . . . . CODE;    KERNEL  
+_ALL_RED_CONTROL . . . . . . . . . . . . . CODE;    KERNEL  
+_CLEAR_ERROR . . . . . . . . . . . . . . . CODE;    ERROR_CODE  MULTIPLE_SCHEDULE_CONTROL  
+_COMPUTE_BUFFER_CHECKSUM . . . . . . . . . CODE;    CODEC  
+_COMPUTE_CHECKSUM. . . . . . . . . . . . . CODE;    CODEC  
+_CORDLESS_COORDINATE_CONTROL . . . . . . . CODE;    CORDLESS_COORDINATE_CONTROL  KERNEL  
+_CPLD_FIFO_CAPACITY. . . . . . . . . . . . CODE;    CPLD_FIFO  CODEC  
+_CPLD_FIFO_GETCHAR . . . . . . . . . . . . CODE;    CPLD_FIFO  
+_CPLD_FIFO_INIT. . . . . . . . . . . . . . CODE;    CPLD_FIFO  CODEC  
+_CPLD_FIFO_IS_EMPTY. . . . . . . . . . . . CODE;    CPLD_FIFO  
+_CPLD_FIFO_IS_FULL . . . . . . . . . . . . CODE;    CPLD_FIFO  
+_CPLD_FIFO_IS_WILL_FULL. . . . . . . . . . CODE;    CPLD_FIFO  
+_CPLD_FIFO_PUTCHAR . . . . . . . . . . . . CODE;    CPLD_FIFO  
+_CPLD_FIFO_READ. . . . . . . . . . . . . . CODE;    CPLD_FIFO  CODEC  
+_CPLD_FIFO_WRITE . . . . . . . . . . . . . CODE;    CPLD_FIFO  CODEC  
+_DECODE_DO_LAMP_STATUS_REQ . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_GET_ACTUATE_CONTROL_PARAM_RES. . . CODE;    CODEC  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 27
+
+
+_DECODE_GET_COMM_PARAM_REQ . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_GET_COMM_PARAM_RES . . . . . . . . CODE;    CODEC  
+_DECODE_GET_CORDLESS_COORDINATE_CONTR...œACODE;    CODEC  
+_DECODE_GET_CURRENT_CONTROL_MODE_RES . . . CODE;    CODEC  
+_DECODE_GET_DETECTOR_COUNTER_RES . . . . . CODE;    CODEC  
+_DECODE_GET_DETECTOR_HEALTH_RES. . . . . . CODE;    CODEC  
+_DECODE_GET_DETECTOR_SETTING_RES . . . . . CODE;    CODEC  
+_DECODE_GET_DETECTOR_STATUS_RES. . . . . . CODE;    CODEC  
+_DECODE_GET_LAMP_GROUP_SETTING_RES . . . . CODE;    CODEC  
+_DECODE_GET_LAMP_HEALTH_RES. . . . . . . . CODE;    CODEC  
+_DECODE_GET_MACHINE_STATUS_RES . . . . . . CODE;    CODEC  
+_DECODE_GET_MULTIPLE_SCHEDULE_CONTROL...CODE;    CODEC  
+_DECODE_GET_PHASE_PLAN_REQ . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_GET_PHASE_PLAN_RES . . . . . . . . CODE;    CODEC  
+_DECODE_GET_SCHEDULE_PLAN_REQ. . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_GET_SCHEDULE_PLAN_RES. . . . . . . CODE;    CODEC  
+_DECODE_GET_SPECIAL_DAY_TABLE_RES. . . . . CODE;    CODEC  
+_DECODE_GET_SYSTEM_PARAM_RES . . . . . . . CODE;    CODEC  
+_DECODE_GET_SYSTEM_TIME_RES. . . . . . . . CODE;    CODEC  
+_DECODE_GET_TIMMING_PLAN_REQ . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_GET_TIMMING_PLAN_RES . . . . . . . CODE;    CODEC  
+_DECODE_GET_VOLUME_OCCUPY_RES. . . . . . . CODE;    CODEC  
+_DECODE_SET_ACTUATE_CONTROL_PARAM_REQ. . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_COMM_PARAM_REQ . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_CORDLESS_COORDINATE_CONTR...œACODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_CURRENT_CONTROL_MODE_REQ . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_DETECTOR_SETTING_REQ . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_LAMP_GROUP_SETTING_REQ . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_MULTIPLE_SCHEDULE_CONTROL...CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_PHASE_PLAN_REQ . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_SCHEDULE_PLAN_REQ. . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_SPECIAL_DAY_TABLE_REQ. . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_SYSTEM_PARAM_REQ . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_SYSTEM_TIME_REQ. . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SET_TIMMING_PLAN_REQ . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_DECODE_SYSTEM_PARAM . . . . . . . . . . . CODE;    CODEC  
+_DECODE_SYSTEM_TIME. . . . . . . . . . . . CODE;    CODEC  
+_DECODE_TERM_STATUS. . . . . . . . . . . . CODE;    UTIL  
+_DELAY_200US . . . . . . . . . . . . . . . CODE;    MCU  
+_DEL_SET . . . . . . . . . . . . . . . . . CODE;    DETECTOR_SET  
+_DETECTOR_HEALTH_GET_HEALTH. . . . . . . . CODE;    DATASTRUCT  
+_DETECTOR_HEALTH_SET_HEALTH. . . . . . . . CODE;    DATASTRUCT  
+_DETECTOR_STATUS_GET_STATUS. . . . . . . . CODE;    DATASTRUCT  
+_DETECTOR_STATUS_SET_STATUS. . . . . . . . CODE;    DATASTRUCT  
+_EMPTY_KEY_BUFFER. . . . . . . . . . . . . CODE;    KEY_BUFFER  
+_EMPTY_SET . . . . . . . . . . . . . . . . CODE;    DETECTOR_SET  ACTUATE_CONTROL  
+_ENCODE_DO_LAMP_STATUS_REQ . . . . . . . . CODE;    CODEC  
+_ENCODE_GET_ACTUATE_CONTROL_PARAM_RES. . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_COMM_PARAM_REQ . . . . . . . . CODE;    CODEC  
+_ENCODE_GET_COMM_PARAM_RES . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_CORDLESS_COORDINATE_CONTR...œACODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_CURRENT_CONTROL_MODE_RES . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_DETECTOR_COUNTER_RES . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_DETECTOR_HEALTH_RES. . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_DETECTOR_SETTING_RES . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_DETECTOR_STATUS_RES. . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_LAMP_GROUP_SETTING_RES . . . . CODE;    CODEC  COMMAND_REACTOR  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 28
+
+
+_ENCODE_GET_LAMP_HEALTH_RES. . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_MACHINE_STATUS_RES . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_MULTIPLE_SCHEDULE_CONTROL...CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_PHASE_PLAN_REQ . . . . . . . . CODE;    CODEC  
+_ENCODE_GET_PHASE_PLAN_RES . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_SCHEDULE_PLAN_REQ. . . . . . . CODE;    CODEC  
+_ENCODE_GET_SCHEDULE_PLAN_RES. . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_SPECIAL_DAY_TABLE_RES. . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_SYSTEM_PARAM_RES . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_SYSTEM_TIME_RES. . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_TIMMING_PLAN_REQ . . . . . . . CODE;    CODEC  
+_ENCODE_GET_TIMMING_PLAN_RES . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_GET_VOLUME_OCCUPY_RES. . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_ENCODE_SET_ACTUATE_CONTROL_PARAM_REQ. . . CODE;    CODEC  
+_ENCODE_SET_COMM_PARAM_REQ . . . . . . . . CODE;    CODEC  
+_ENCODE_SET_CORDLESS_COORDINATE_CONTR...œACODE;    CODEC  
+_ENCODE_SET_CURRENT_CONTROL_MODE_REQ . . . CODE;    CODEC  
+_ENCODE_SET_DETECTOR_SETTING_REQ . . . . . CODE;    CODEC  
+_ENCODE_SET_LAMP_GROUP_SETTING_REQ . . . . CODE;    CODEC  
+_ENCODE_SET_MULTIPLE_SCHEDULE_CONTROL...CODE;    CODEC  
+_ENCODE_SET_PHASE_PLAN_REQ . . . . . . . . CODE;    CODEC  
+_ENCODE_SET_SCHEDULE_PLAN_REQ. . . . . . . CODE;    CODEC  
+_ENCODE_SET_SPECIAL_DAY_TABLE_REQ. . . . . CODE;    CODEC  
+_ENCODE_SET_SYSTEM_PARAM_REQ . . . . . . . CODE;    CODEC  
+_ENCODE_SET_SYSTEM_TIME_REQ. . . . . . . . CODE;    CODEC  
+_ENCODE_SET_TIMMING_PLAN_REQ . . . . . . . CODE;    CODEC  
+_ERR_DATA. . . . . . . . . . . . . . . . . CODE;    SMBUS  
+_EXECUTIVE_MACHINE_CONTROL . . . . . . . . CODE;    EXECUTIVE_MACHINE_CONTROL  KERNEL  
+_FIND_LAMP_GROUP . . . . . . . . . . . . . CODE;    KERNEL  
+_FRAME_GET_DATA_LEN. . . . . . . . . . . . CODE;    CODEC  
+_FRAME_SET_DATA_LEN. . . . . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_FRONT_PANEL_DIS . . . . . . . . . . . . . CODE;    MCU  
+_GET_BIT_VALUE . . . . . . . . . . . . . . CODE;    UTIL  ACTUATE_CONTROL  
+_GET_BUFFER_KEY. . . . . . . . . . . . . . CODE;    KEY_BUFFER  COMMAND_REACTOR  
+_GET_CURRENT_SCHEDULE. . . . . . . . . . . CODE;    KERNEL  EXECUTIVE_MACHINE_CONTROL  MANUAL_CONTROL  MULTIPLE_SCHEDULE
+                                                    _CONTROL  
+_GET_DETECTOR_COUNTER. . . . . . . . . . . CODE;    MCU  ACTUATE_CONTROL  COMMAND_REACTOR  
+_GET_DETECTOR_HEALTH . . . . . . . . . . . CODE;    MCU  ACTUATE_CONTROL  COMMAND_REACTOR  
+_GET_DETECTOR_STATUS . . . . . . . . . . . CODE;    MCU  ACTUATE_CONTROL  COMMAND_REACTOR  
+_GET_LAMP_GROUP_DETECTOR . . . . . . . . . CODE;    UTIL  
+_GET_LAMP_HEALTH . . . . . . . . . . . . . CODE;    MCU  COMMAND_REACTOR  MULTIPLE_SCHEDULE_CONTROL  
+_GET_PHASE_DETECTOR. . . . . . . . . . . . CODE;    UTIL  ACTUATE_CONTROL  
+_GET_RESPONSE_CMD. . . . . . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_GREEN_CONFLICT_IS_CONFLICT. . . . . . . . CODE;    DATASTRUCT  
+_GREEN_CONFLICT_SET_CONFLICT . . . . . . . CODE;    DATASTRUCT  
+_HANDLE_DO_LAMP_STATUS . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_DO_STEP_FORWARD. . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_DO_STEP_KEEP . . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_ACTUATE_CONTROL_PARAM. . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_COMM_PARAM . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_CORDLESS_COORDINATE_CONTR...œACODE;    COMMAND_REACTOR  
+_HANDLE_GET_CURRENT_CONTROL_MODE . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_DETECTOR_COUNTER . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_DETECTOR_HEALTH. . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_DETECTOR_SETTING . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_DETECTOR_STATUS. . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_GREEN_CONFLICT . . . . . . . . CODE;    COMMAND_REACTOR  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 29
+
+
+_HANDLE_GET_KEY_VAL. . . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_LAMP_GROUP_SETTING . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_LAMP_HEALTH. . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_MACHINE_STATUS . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_MULTIPLE_SCHEDULE_CONTROL...CODE;    COMMAND_REACTOR  
+_HANDLE_GET_PHASE_PLAN . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_SCHEDULE_PLAN. . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_SPECIAL_DAY_TABLE. . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_SYSTEM_PARAM . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_SYSTEM_TIME. . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_TIMMING_PLAN . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_GET_VOLUME_OCCUPY. . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_MCU_SEND_KEY . . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_ACTUATE_CONTROL_PARAM. . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_COMM_PARAM . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_CORDLESS_COORDINATE_CONTR...œACODE;    COMMAND_REACTOR  
+_HANDLE_SET_CURRENT_CONTROL_MODE . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_DETECTOR_SETTING . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_GREEN_CONFLICT . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_LAMP_GROUP_SETTING . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_MULTIPLE_SCHEDULE_CONTROL...CODE;    COMMAND_REACTOR  
+_HANDLE_SET_PHASE_PLAN . . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_SCHEDULE_PLAN. . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_SPECIAL_DAY_TABLE. . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_SYSTEM_PARAM . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_SYSTEM_TIME. . . . . . . . . . CODE;    COMMAND_REACTOR  
+_HANDLE_SET_TIMMING_PLAN . . . . . . . . . CODE;    COMMAND_REACTOR  
+_INIT_COMMAND_REACTOR. . . . . . . . . . . CODE;    COMMAND_REACTOR  KERNEL  
+_INIT_FRAME. . . . . . . . . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_INIT_KEY_BUFFER . . . . . . . . . . . . . CODE;    KEY_BUFFER  COMMAND_REACTOR  
+_INIT_SPECIAL_SCHEDULE_DATA. . . . . . . . CODE;    KERNEL  
+_IN_GETCHAR. . . . . . . . . . . . . . . . CODE;    MCU  
+_IN_INIT . . . . . . . . . . . . . . . . . CODE;    MCU  
+_IN_PUTCHAR. . . . . . . . . . . . . . . . CODE;    MCU  ISR_UART  
+_IS_BUFFER_EMPTY . . . . . . . . . . . . . CODE;    KEY_BUFFER  
+_IS_BUFFER_FULL. . . . . . . . . . . . . . CODE;    KEY_BUFFER  COMMAND_REACTOR  
+_IS_CMD_RESPONSE_OK. . . . . . . . . . . . CODE;    CODEC  
+_IS_IN_EMPTY . . . . . . . . . . . . . . . CODE;    MCU  
+_IS_IN_SET . . . . . . . . . . . . . . . . CODE;    DETECTOR_SET  ACTUATE_CONTROL  
+_IS_OUT_EMPTY. . . . . . . . . . . . . . . CODE;    MCU  ISR_UART  
+_IS_OUT_FULL . . . . . . . . . . . . . . . CODE;    MCU  
+_IS_PHASE_GREEN_CONFLICT . . . . . . . . . CODE;    DATASTRUCT  
+_IS_SCHEDULE_VALID . . . . . . . . . . . . CODE;    KERNEL  CORDLESS_COORDINATE_CONTROL  MANUAL_CONTROL  MULTIPLE_SCHEDU
+                                                    LE_CONTROL  
+_IS_TERM_CONNECT_TO_GREEN. . . . . . . . . CODE;    UTIL  
+_IS_TERM_CONNECT_TO_YELLOW . . . . . . . . CODE;    UTIL  MCU  
+_LAMP_GROUP_SETTING_GET_LAMP_GROUP_COUNT . CODE;    DATASTRUCT  
+_LAMP_GROUP_SETTING_GET_TERMINAL . . . . . CODE;    DATASTRUCT  
+_LAMP_HEALTH_GET_HEALTH. . . . . . . . . . CODE;    DATASTRUCT  
+_LAMP_HEALTH_SET_HEALTH. . . . . . . . . . CODE;    DATASTRUCT  
+_LOAD_CURRENT_SCHEDULE . . . . . . . . . . CODE;    KERNEL  ACTUATE_CONTROL  CORDLESS_COORDINATE_CONTROL  EXECUTIVE_MACH
+                                                    INE_CONTROL  MANUAL_CONTROL  MULTIPLE_SCHEDULE_CONTROL  
+_MANUAL_CONTROL. . . . . . . . . . . . . . CODE;    MANUAL_CONTROL  KERNEL  
+_MULTIPLE_SCHEDULE_CONTROL . . . . . . . . CODE;    MULTIPLE_SCHEDULE_CONTROL  KERNEL  
+_OPEN_COMM . . . . . . . . . . . . . . . . CODE;    MCU  KERNEL  
+_OUT_GETCHAR . . . . . . . . . . . . . . . CODE;    MCU  ISR_UART  
+_OUT_INIT. . . . . . . . . . . . . . . . . CODE;    MCU  
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 30
+
+
+_OUT_PUTCHAR . . . . . . . . . . . . . . . CODE;    MCU  
+_PHASE_GET_OUTPUT. . . . . . . . . . . . . CODE;    DATASTRUCT  
+_PHASE_SET_OUTPUT. . . . . . . . . . . . . CODE;    DATASTRUCT  
+_PUT_BUFFER_KEY. . . . . . . . . . . . . . CODE;    KEY_BUFFER  COMMAND_REACTOR  
+_REACTOR_HANDLE_COMMAND. . . . . . . . . . CODE;    COMMAND_REACTOR  KERNEL  MCU  
+_READ_BYTE . . . . . . . . . . . . . . . . CODE;    CODEC  
+_READ_COMM . . . . . . . . . . . . . . . . CODE;    MCU  CODEC  
+_READ_FRAME. . . . . . . . . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_SAVE_COMM_PARAM . . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+_SAVE_PHASE_PLAN . . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+_SAVE_SCHEDULE_PLAN. . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+_SAVE_TIMMING_PLAN . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+_SET_ERROR . . . . . . . . . . . . . . . . CODE;    ERROR_CODE  MCU  MULTIPLE_SCHEDULE_CONTROL  
+_SET_LAMP_STATE. . . . . . . . . . . . . . CODE;    KERNEL  
+_SET_PHASE_STATE . . . . . . . . . . . . . CODE;    KERNEL  
+_SET_SYSTEM_TIME . . . . . . . . . . . . . CODE;    SMBUS  COMMAND_REACTOR  
+_SET_TERM_STATUS . . . . . . . . . . . . . CODE;    MCU  EXECUTIVE_MACHINE_CONTROL  KERNEL  
+_SIMPLE_FULL_ACTUATE_CONTROL . . . . . . . CODE;    ACTUATE_CONTROL  
+_SIMPLE_HALF_ACTUATE_CONTROL . . . . . . . CODE;    ACTUATE_CONTROL  
+_SM_RECEIVE. . . . . . . . . . . . . . . . CODE;    SMBUS  MCU  
+_SM_SEND . . . . . . . . . . . . . . . . . CODE;    SMBUS  MCU  
+_SWITCHING_WITH_MULTIPLE_SCHEDULE. . . . . CODE;    KERNEL  MULTIPLE_SCHEDULE_CONTROL  
+_SWITCHING_WITH_YELLOW_FLASH_ALL_RED . . . CODE;    KERNEL  CORDLESS_COORDINATE_CONTROL  
+_WRITE_COMM. . . . . . . . . . . . . . . . CODE;    MCU  CODEC  
+_WRITE_FRAME . . . . . . . . . . . . . . . CODE;    CODEC  COMMAND_REACTOR  
+_YELLOW_FLASH_CONTROL. . . . . . . . . . . CODE;    KERNEL  
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DO_WAIT?KERNEL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LAMP_GROUP_SETTING_GET_LAMP_GROUP_COUNT?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GREEN_CONFLICT_SET_CONFLICT?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LAMP_GROUP_SETTING_GET_TERMINAL?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PHASE_SET_OUTPUT?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_IS_PHASE_GREEN_CONFLICT?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LAMP_HEALTH_GET_HEALTH?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LAMP_HEALTH_SET_HEALTH?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DETECTOR_HEALTH_GET_HEALTH?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DETECTOR_HEALTH_SET_HEALTH?DATASTRUCT
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 31
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DETECTOR_STATUS_GET_STATUS?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DETECTOR_STATUS_SET_STATUS?DATASTRUCT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_HANDLE_DO_LAMP_STATUS?COMMAND_REACTOR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_IS_CMD_RESPONSE_OK?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_SYSTEM_TIME_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_SYSTEM_TIME_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_SYSTEM_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_SYSTEM_PARAM_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_LAMP_GROUP_SETTING_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_DETECTOR_SETTING_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_DETECTOR_SETTING_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_PHASE_PLAN_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_GET_PHASE_PLAN_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_PHASE_PLAN_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_TIMMING_PLAN_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_TIMMING_PLAN_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_GET_TIMMING_PLAN_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_SCHEDULE_PLAN_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_GET_SCHEDULE_PLAN_REQ?CODEC
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 32
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_SCHEDULE_PLAN_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_SPECIAL_DAY_TABLE_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_COMM_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_CORDLESS_COORDINATE_CONTROL_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_CURRENT_CONTROL_MODE_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_SYSTEM_TIME?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_SYSTEM_PARAM?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_LAMP_GROUP_SETTING_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_SPECIAL_DAY_TABLE_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_GET_COMM_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_COMM_PARAM_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_ACTUATE_CONTROL_PARAM_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_SET_ACTUATE_CONTROL_PARAM_REQ?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_CORDLESS_COORDINATE_CONTROL_PARAM_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_CURRENT_CONTROL_MODE_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_MACHINE_STATUS_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ENCODE_DO_LAMP_STATUS_REQ?CODEC
+
+BL51 BANKED LINKER/LOCATER V5.03                                                      04/25/2008  16:22:20  PAGE 33
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_DETECTOR_COUNTER_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_DETECTOR_STATUS_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_LAMP_HEALTH_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_DETECTOR_HEALTH_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DECODE_GET_VOLUME_OCCUPY_RES?CODEC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SAVE_ERR?SMBUS
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DEL_SET?DETECTOR_SET
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_IS_BUFFER_EMPTY?KEY_BUFFER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_EMPTY_KEY_BUFFER?KEY_BUFFER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CPLD_FIFO_IS_WILL_FULL?CPLD_FIFO
+
+Program Size: data=80.5 xdata=15226 code=39599
+LINK/LOCATE RUN COMPLETE.  58 WARNING(S),  0 ERROR(S)

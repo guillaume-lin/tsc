@@ -1,0 +1,5 @@
+big5decoder.o big5decoder.o: big5decoder.cpp big5decoder.h hzdecoder.h
+
+big5decoder.h:
+
+hzdecoder.h:

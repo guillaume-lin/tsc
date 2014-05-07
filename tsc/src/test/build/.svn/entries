@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1675"
+   name=""
+   committed-date="2008-04-11T05:50:56.163017Z"
+   url="http://192.168.0.200/svn/signal_machine/old/src/NCurses%20Test/build"
+   last-author="pony_fx@sina.com"
+   kind="dir"
+   uuid="bb11895a-0a80-49e8-a201-d944e284a252"
+   repos="http://192.168.0.200/svn"
+   revision="3719"/>
+<entry
+   committed-rev="1675"
+   name="nc1.exe"
+   text-time="2008-04-03T17:20:00.000000Z"
+   committed-date="2008-04-11T05:50:56.163017Z"
+   checksum="ac1a977455a0c058f07bb8d347751cb1"
+   last-author="pony_fx@sina.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+</wc-entries>

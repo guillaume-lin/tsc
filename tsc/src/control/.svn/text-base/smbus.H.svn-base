@@ -1,0 +1,65 @@
+// 定义 EEPROM 数据存放地址
+#define ee_size0			sizeof(system_config_t) 
+#define ee_size1			sizeof(system_param_t)        				
+#define ee_size2			sizeof(lamp_group_setting_t)				
+#define ee_size3			sizeof(detector_setting_t)      			
+#define ee_size4			MAX_PHASE_PLAN_COUNT * sizeof(stage_plan_t) 
+#define ee_size4a			sizeof(stage_plan_t)  
+#define ee_size4b			sizeof(lamp_status_t)       			
+#define ee_size5			MAX_TIMMING_PLAN_COUNT * sizeof(timming_plan_t)	
+#define ee_size5a			sizeof(timming_plan_t)				
+#define ee_size6			MAX_SCHEDULE_PLAN_COUNT * sizeof(schedule_plan_t)
+#define ee_size6a			sizeof(schedule_plan_t)					
+#define ee_size7			sizeof(special_day_table_t)				
+#define ee_size8			sizeof(multiple_schedule_control_param_t)  
+#define ee_size9			sizeof(actuate_control_param_t)			
+#define ee_size10			sizeof(cordless_coordinate_control_param_t)
+#define ee_size11			MAX_COMM_COUNT * sizeof(comm_param_t)	
+#define ee_size11a			sizeof(comm_param_t)					
+#define ee_size12			sizeof(control_mode_selection_t)			
+#define ee_size13			sizeof(green_conflict_t)
+#define ee_size14     sizeof(lamp_setting_t)
+#define start_addr0									0x0000
+#define g_config_addr								start_addr0	// 共占用 15686 个字节
+#define m_system_param_addr        					start_addr0  
+#define m_lamp_group_setting_addr					start_addr0+ee_size1                   
+#define m_detector_setting_addr      				start_addr0+ee_size1+ee_size2            
+#define m_phase_table_addr           				start_addr0+ee_size1+ee_size2+ee_size3          
+#define m_timming_table_addr						start_addr0+ee_size1+ee_size2+ee_size3+ee_size4
+#define m_schedule_table_addr						start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5 
+#define m_special_day_table_addr					start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6                         
+#define m_multiple_schedule_control_param_addr  	start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7                           
+#define m_actuate_control_param_addr				start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8                                    
+#define m_cordless_coordinate_control_param_addr	start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8+ee_size9                                    
+#define m_comm_param_addr							start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8+ee_size9+ee_size10                          
+#define m_control_mode_selection_addr				start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8+ee_size9+ee_size10+ee_size11 
+#define m_green_conflict_addr						start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8+ee_size9+ee_size10+ee_size11+ee_size12 
+#define m_lamp_setting_addr						  start_addr0+ee_size1+ee_size2+ee_size3+ee_size4+ee_size5+ee_size6+ee_size7+ee_size8+ee_size9+ee_size10+ee_size11+ee_size12+ee_size13
+
+// 每个故障在 EEPROM 中占用 6 个字节，分别是 错误类型 月 日 时 分 秒
+#define err_count_addr								0x5ffe		// 已保存的故障数
+#define err_long									0x06		// 每个故障占用的字节数
+#define err_count_max								0x1AAA		// 最多可保存 6826 个
+#define err_save_start_addr							0x6000		// 故障在 EEPROM 中开始存放的地址
+
+extern bit f_run_mode;											// 以前面板上的设定运行
+extern bit f_wr_eeprom_now;
+extern unsigned char step_all_flash;							// 某相位表在 FLASH 中保存的总步数
+
+
+
+
+//#define g_config_addr								0x0000	// 共 15686 个字节
+//#define m_system_param_addr        				0x0000  // 占用 2 个字节
+//#define m_lamp_group_setting_addr					0x0002	// 占用 1 + 3 * 32  共 97 个字节                    
+//#define m_detector_setting_addr      				0x0063  // 占用 1 * 32 + 1 * 32 + 1 共 65 个字节            
+//#define m_phase_table_addr           				0x00a4  // 占用 6 * (1 + 18 * 96)  共 10374 个字节          
+//#define m_timming_table_addr						0x292a	// 占用 32 * (1 + 96) 共 3104 个字节                
+//#define m_schedule_table_addr						0x354a	// 占用 20 * (1 + 24 + 24 + 24 + 24) 共 1940 个字节 
+//#define m_special_day_table_addr					0x3cde	// 占用 4 * 10 共 40 个字节                         
+//#define m_multiple_schedule_control_param_addr  	0x3d06	// 占用 1 + 1 共 2 个字节                           
+//#define m_actuate_control_param_addr				0x3d08	// 占用 8 个字节                                    
+//#define m_cordless_coordinate_control_param_addr	0x3d10	// 占用 5 个字节                                    
+//#define m_comm_param_addr							0x3d15	// 占用 6 * 8 共 48 个字节                          
+//#define m_control_mode_selection_addr				0x3d45	// 占用 1 个字节                                    
+// 定义 EEPROM 数据存放地址		

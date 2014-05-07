@@ -1,0 +1,190 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnvnnvvvvnvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U sample.form_demo%b	sample-form_demo.adb	ef55834b PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W sample%s		sample.adb		sample.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.form_demo%s	sample-form_demo.adb	sample-form_demo.ali
+W sample.form_demo.aux%s  sample-form_demo-aux.adb  sample-form_demo-aux.ali
+W sample.form_demo.handler%s  sample-form_demo-handler.adb  sample-form_demo-handler.ali
+W sample.function_key_setting%s  sample-function_key_setting.adb  sample-function_key_setting.ali
+W sample.my_field_type%s  sample-my_field_type.adb  sample-my_field_type.ali
+W system%s		system.ads		system.ali
+W system.img_enum%s	s-imgenu.adb		s-imgenu.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+W terminal_interface.curses.forms.field_types.enumeration%s  terminal_interface-curses-forms-field_types-enumeration.adb  terminal_interface-curses-forms-field_types-enumeration.ali
+W terminal_interface.curses.forms.field_types.enumeration.ada%s  terminal_interface-curses-forms-field_types-enumeration-ada.adb  terminal_interface-curses-forms-field_types-enumeration-ada.ali
+W terminal_interface.curses.forms.field_types.intfield%s  terminal_interface-curses-forms-field_types-intfield.adb  terminal_interface-curses-forms-field_types-intfield.ali
+W terminal_interface.curses.forms.field_user_data%s  terminal_interface-curses-forms-field_user_data.adb  terminal_interface-curses-forms-field_user_data.ali
+W terminal_interface.curses.forms.form_user_data%s  terminal_interface-curses-forms-form_user_data.adb  terminal_interface-curses-forms-form_user_data.ali
+
+U sample.form_demo%s	sample-form_demo.ads	375e1d97 EE NE PK
+W sample%s		sample.adb		sample.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-form_demo.ads	20031025153918 c5c3149c
+D sample-form_demo.adb	20031025153918 cee14427
+D sample-form_demo-aux.ads  20031025153918 2d67eb44
+D sample-form_demo-handler.ads  20031025153918 7e1e7470
+D sample-form_demo-handler.adb  20031025153918 0142c71f
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-my_field_type.ads  20031025153918 c6cc1e48
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgenu.ads		20020507105115 20631dce
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D s-valenu.ads		20020507105211 87644494
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms.adb  20031025153918 04e92484
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-enumeration.ads  20031025153918 7ed009d9
+D terminal_interface-curses-forms-field_types-enumeration.adb  20031025153918 312b64e5
+D terminal_interface-curses-forms-field_types-enumeration-ada.ads  20031025153918 680e6ad9
+D terminal_interface-curses-forms-field_types-enumeration-ada.adb  20031025153918 3586847a
+D terminal_interface-curses-forms-field_types-intfield.ads  20031025153918 18c1529f
+D terminal_interface-curses-forms-field_types-intfield.adb  20031025153918 f263a18a
+D terminal_interface-curses-forms-field_types-user.ads  20031025153918 7359de83
+D terminal_interface-curses-forms-field_user_data.ads  20140426095555 5d91d7ef
+D terminal_interface-curses-forms-field_user_data.adb  20031025153918 422f2e48
+D terminal_interface-curses-forms-form_user_data.ads  20140426095555 ba095955
+D terminal_interface-curses-forms-form_user_data.adb  20031025153918 488f3e97
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D unchconv.ads		20020507105303 1b7a14c5
+X 23 sample.ads
+41K9*Sample 43e11 25|41r9 45r5 26|45r6 45r32 46r6 46r30 47r6 47r32 48r6 48r39
+. 49r6 57r14 108r25 134r5
+X 24 sample-explanation.ads
+45K16*Explanation 59e23 26|46r13 46r37
+53U14*Notepad 26|112r7
+X 25 sample-form_demo.ads
+41K16*Form_Demo 45r12 45e21 26|47r13 47r39 49r13 57b21 108r32 134r12 134t21
+43U14*Demo 26|82b14 132r8 132t12
+X 26 sample-form_demo.adb
+59R9 User_Data 62e17 63r31 66r55 70r54 119r17
+61i10*Data 126r25 126r35
+63P9 User_Access 67r55 71r54 106r16
+65K12 Fld_U 120r7 124r7
+69K12 Frm_U
+73E9 Weekday 77r67
+73n21 Sunday
+73n29 Monday
+73n37 Tuesday
+73n46 Wednesday
+73n57 Thursday
+74n21 Friday
+74n29 Saturday
+76K12 Weekday_Enum 80r6
+79r4 Enum_Field 115r31
+85r7 Mft 117r31
+87p7 FA 100r61 115r23 116r23 117r23 120r28 124r28 131m13
+100M7 Frm 122r20 129m15
+102r7 I_F 116r31
+106p7 F1 119m7 120r36 125r22 126r22
+106p11 F2 124m36 125r27 126r32
+108K15 Fh 122r7
+X 27 sample-form_demo-aux.ads
+45K26*Aux 26|47r23 47r49 27|92e25
+73V13*Make 26|88r10 89r10 90r10 91r10 92r10
+78V13*Make 26|93r10 94r10 95r10 96r10
+78i20 Height 26|96r50
+79i20 Width 26|93r16 94r16 95r16 96r16
+80i20 Top 26|93r29 94r29 95r29 96r29
+81i20 Left 26|93r39 94r39 95r39 96r39
+82i20 Off_Screen 26|96r63
+85V13*Default_Driver 26|108r51
+X 28 sample-form_demo-handler.ads
+52k26*Handler 26|49r23 108r42 28|64e29
+60U14 Drive_Me 26|122r10
+X 30 sample-function_key_setting.ads
+46K16*Function_Key_Setting 26|48r13 48r46 30|82e32
+48U14*Push_Environment 26|111r7
+56U14*Pop_Environment 26|128r7
+76U14*Default_Labels 26|113r7
+X 31 sample-my_field_type.ads
+48K16*My_Field_Type 26|45r13 45r39 31|61e25
+50R9*My_Data 26|85r13
+X 47 terminal_interface.ads
+41K9*Terminal_Interface 26|41r6 41r37 42r6 42r43 43r6 44r6 51r6 52r6 53r6
+. 54r6 55r6 66r6 70r6 77r6 100r13 47|46e23
+X 48 terminal_interface-curses.ads
+48K28*Curses 26|41r25 41r56 42r25 42r62 43r25 44r25 51r25 52r25 53r25 54r25
+. 55r25 66r25 70r25 77r25 100r32 48|1933e30
+X 51 terminal_interface-curses-forms.ads
+48K35*Forms 26|42r32 42r69 43r32 44r32 51r32 52r32 53r32 54r32 55r32 66r32
+. 70r32 77r32 100r39 51|782e36
+56M9*Form 26|100r45
+58M4*Null_Field 26|97r10
+132A9*Field_Array 26|87r38
+135P9*Field_Array_Access 26|87r12
+137U14*Free 26|131r7
+625V13*Create 26|100r53
+636U14*Delete 26|129r7
+X 53 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 26|51r38 52r38 53r38 54r38 55r38 77r38 53|239e48
+X 54 terminal_interface-curses-forms-field_types-enumeration.ads
+43K53*Enumeration 26|51r50 52r50 53r50 77r50 54|98e60
+62R9*Enumeration_Field 26|79r26
+84U14*Set_Field_Type 26|115r7
+X 56 terminal_interface-curses-forms-field_types-enumeration-ada.ads
+44k65*Ada 26|51r62 77r62 56|59e64
+48V13*Create 26|80r19
+X 58 terminal_interface-curses-forms-field_types-intfield.ads
+41K53*IntField 26|54r50 55r50 58|55e57
+44R9*Integer_Field 26|102r22
+51U14*Set_Field_Type 26|116r7
+X 60 terminal_interface-curses-forms-field_types-user.ads
+70U14*Set_Field_Type 26|117r7
+X 61 terminal_interface-curses-forms-field_user_data.ads
+45k41*Field_User_Data 26|43r38 66r38 61|69e52
+53U14*Set_User_Data 26|120r13
+59U14*Get_User_Data 26|124r13
+64V13*Get_User_Data 26|124r13
+X 63 terminal_interface-curses-forms-form_user_data.ads
+45k41*Form_User_Data 26|44r38 70r38 63|69e51
+

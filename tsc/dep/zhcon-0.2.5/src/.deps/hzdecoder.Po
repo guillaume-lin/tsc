@@ -1,0 +1,3 @@
+hzdecoder.o hzdecoder.o: hzdecoder.cpp hzdecoder.h
+
+hzdecoder.h:

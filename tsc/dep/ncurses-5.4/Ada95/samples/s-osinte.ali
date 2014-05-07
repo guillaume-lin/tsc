@@ -1,0 +1,310 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnvvnnnvnnnnnnnnnnnnvnnnnnnnnnvnn
+
+U system.os_interface%b	s-osinte.adb		9f26f4cb NE PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+
+U system.os_interface%s	s-osinte.ads		33ce4740 NE PR PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+
+L "-lpthread"
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-osinte.ads		20020507104759 8f433951
+D s-osinte.adb		20011011175953 ee9233b2
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 interfac.ads
+23K9*Interfaces 168e15 5|45r6 51r30 52r30 53r30 54r30 55r30 56r30 57r30 58r30
+. 59r30 60r30 6|47r6 47r24
+X 2 i-c.ads
+20K20*C 140e17 5|45r17 51r41 52r41 53r41 54r41 55r41 56r41 57r41 58r41 59r41
+. 60r41 6|47r17 47r35
+33I9*int 5|51r43
+34I9*short 5|53r43
+35I9*long 5|54r43
+41M9*unsigned 5|55r43
+42M9*unsigned_short 5|56r43
+43M9*unsigned_long 5|57r43
+45M9*unsigned_char 5|58r43
+48M12*plain_char 5|59r43
+54M9*size_t 5|60r43
+66E9*char 5|52r43
+X 3 system.ads
+41K9*System 150e11 5|46r9 183r22 186r22 236r12 236r30 264r22 264r45 418r23
+. 421r37 433r15 436r62 439r55 478r23 496r14 497r14 504r20 518r5 6|48r14 130r5
+67M9*Address 5|183r29 186r29 236r19 264r29 264r52 281r56 418r30 421r44 433r22
+. 436r69 439r62 478r30 496r21 497r21 504r27 6|54r56
+68M4*Null_Address 5|236r37 6|56r14
+X 5 s-osinte.ads
+46K16*OS_Interface 518r12 518e24 6|48b21 130r12 130t24
+51I12*int 66r26 81r23 82r24 158r68 161r68 164r55 167r70 170r56 175r18 176r18
+. 177r18 211r43 236r58 253r53 297r73 300r68 306r14 308r35 316r49 320r49 325r50
+. 328r75 331r72 334r74 338r48 342r48 347r48 350r72 353r71 358r46 364r41 372r24
+. 378r16 379r50 384r16 384r28 388r32 396r50 400r50 405r21 405r33 411r34 418r46
+. 433r38 443r47 454r22 471r23 472r23 474r23 475r23 477r23 484r15 489r19 502r20
+. 503r20 505r20 511r20
+52E12*char
+53I12*short
+54I12*long 456r23 460r17 6|103r34
+55M12*unsigned 516r30
+56M12*unsigned_short
+57M12*unsigned_long 185r22 192r13 193r13 194r13 195r13 196r13 197r13 448r40
+. 493r26
+58M12*unsigned_char
+59M12*plain_char
+60M12*size_t 411r19 476r23 479r23
+66V13*errno 67m22
+69N4*EAGAIN
+70N4*EINTR
+71N4*EINVAL
+72N4*ENOMEM
+73N4*EPERM
+74N4*ETIMEDOUT
+80N4*Max_Interrupt 81r38
+81I9*Signal<2|33I9> 82r8 127r51 158r53 161r53 167r55 209r14 253r38 297r58
+. 300r53
+84N4*SIGHUP
+85N4*SIGINT
+86N4*SIGQUIT
+87N4*SIGILL
+88N4*SIGTRAP 130r7
+89N4*SIGIOT
+90N4*SIGABRT 123r30
+91N4*SIGFPE
+92N4*SIGKILL 143r7
+93N4*SIGBUS 134r7
+94N4*SIGSEGV
+95N4*SIGPIPE
+96N4*SIGALRM
+97N4*SIGTERM
+98N4*SIGUSR1
+99N4*SIGUSR2
+100N4*SIGCLD
+101N4*SIGCHLD
+102N4*SIGPWR
+103N4*SIGWINCH
+104N4*SIGURG
+105N4*SIGPOLL
+106N4*SIGIO
+107N4*SIGLOST
+108N4*SIGSTOP 143r16
+109N4*SIGTSTP 136r25
+110N4*SIGCONT
+111N4*SIGTTIN 136r7
+112N4*SIGTTOU 136r16
+113N4*SIGVTALRM 154r7
+114N4*SIGPROF 140r7
+115N4*SIGXCPU
+116N4*SIGXFSZ
+117N4*SIGUNUSED 154r18
+118N4*SIGSTKFLT
+119N4*SIGLTHRRES 147r7
+120N4*SIGLTHRCAN 147r19
+121N4*SIGLTHRDBG 147r31
+123N4*SIGADAABORT
+127A9*Signal_Set 129r27 151r27
+129a4*Unmasked
+151a4*Reserved
+156A9*sigset_t 158r37 161r37 164r38 167r39 170r39 184r22 297r35 303r36 448c9
+. 449r26 450r8
+158V13*sigaddset 159m22
+158p24 set
+158i47 sig
+161V13*sigdelset 162m22
+161p24 set
+161i47 sig
+164V13*sigfillset 165m22
+164p25 set
+167V13*sigismember 168m22
+167p26 set
+167i49 sig
+170V13*sigemptyset 171m22
+170p26 set
+173A9*union_type_3 178r18
+174R9*siginfo_t 179e14 180r26
+175i7*si_signo
+176i7*si_code
+177i7*si_errno
+178a7*X_data
+182R9*struct_sigaction 187e14 188r26 189r44
+183M7*sa_handler
+184A7*sa_mask
+185m7*sa_flags
+186M7*sa_restorer
+189P9*struct_sigaction_ptr 210r14 211r14
+191R9*Machine_State 198e14 199r41
+192m7*eip
+193m7*ebx
+194m7*esp
+195m7*ebp
+196m7*esi
+197m7*edi
+199P9*Machine_State_Ptr
+201N4*SIG_BLOCK
+202N4*SIG_UNBLOCK
+203N4*SIG_SETMASK
+205N4*SIG_DFL
+206N4*SIG_IGN
+208V13*sigaction 212m22
+209i7 sig
+210p7 act
+211p7 oact
+218R9*timespec 220r31 223r47 364r24 458c9 461e14 462r26 6|72r31 86r47 102r14
+220V13*To_Duration 221r19 6|72b13 75r8 75t19
+220R26 TS 6|72b26 74r24 74r47
+223V13*To_Timespec 224r19 6|86b13 104r8 104t19
+223o26 D 6|86b26 91r39 92r12
+226R9*struct_timeval 228r31 231r46 235r19 464c9 467e14 468r26 6|77r31 110r46
+. 126r14
+228V13*To_Duration 6|77b13 80r8 80t19
+228R26 TV 6|77b26 79r24 79r47
+231V13*To_Timeval 232r19 6|110b13 128r8 128t18
+231o25 D 6|110b25 115r39 116r12
+234V13*gettimeofday 237m22
+235p7 tv
+236M7 tz
+243N4*SCHED_OTHER
+244N4*SCHED_FIFO
+245N4*SCHED_RR
+251I9*pid_t 253r25 256r27 454c9
+253V13*kill 254m22
+253I19 pid
+253i32 sig
+256V13*getpid 257m22
+263P9*Thread_Body 417r23
+264M16 arg
+265M9*pthread_t 266r32 281r38 300r36 377r16 415r30 424r33 493c9 6|54r38
+266M12*Thread_Id
+268R9*pthread_mutex_t 324r22 328r51 331r48 334r50 358r22 363r24 501c9 507e14
+. 508r26
+269R9*pthread_cond_t 346r21 350r49 353r48 357r22 362r24 510c9 513e14 514r26
+270R9*pthread_attr_t 383r23 396r27 400r27 404r28 410r26 416r30 470c9 480e14
+. 481r39
+271R9*pthread_mutexattr_t 316r21 320r21 325r22 488c9 490e14 491r26
+272R9*pthread_condattr_t 338r21 342r21 347r21 483c9 485e14 486r26
+273M9*pthread_key_t 432r15 436r40 442r27 516c9
+275N4*PTHREAD_CREATE_DETACHED
+281V13*Get_Stack_Base 282r19 6|54b13 57r8 57t22
+281M29 thread 6|54b29
+289U14*pthread_init 290r19 6|63b14 66r8 66t20
+297V13*sigwait 298m22
+297p22 set
+297p45 sig
+300V13*pthread_kill 301m22
+300M27 thread
+300i47 sig
+303P9*sigset_t_ptr 307r14 308r14
+305V13*pthread_sigmask 309m22
+306i7 how
+307p7 set
+308p7 oset
+315V13*pthread_mutexattr_init 317m22
+316p7 attr
+319V13*pthread_mutexattr_destroy 321m22
+320p7 attr
+323V13*pthread_mutex_init 326m22
+324p7 mutex
+325p7 attr
+328V13*pthread_mutex_destroy 329m22
+328p36 mutex
+331V13*pthread_mutex_lock 332m22
+331p33 mutex
+334V13*pthread_mutex_unlock 335m22
+334p35 mutex
+337V13*pthread_condattr_init 339m22
+338p7 attr
+341V13*pthread_condattr_destroy 343m22
+342p7 attr
+345V13*pthread_cond_init 348m22
+346p7 cond
+347p7 attr
+350V13*pthread_cond_destroy 351m22
+350p35 cond
+353V13*pthread_cond_signal 354m22
+353p34 cond
+356V13*pthread_cond_wait 359m22
+357p7 cond
+358p7 mutex
+361V13*pthread_cond_timedwait 365m22
+362p7 cond
+363p7 mutex
+364p7 abstime
+371R9*struct_sched_param 373e14 374r26 379r23 473r23
+372i7*sched_priority
+376V13*pthread_setschedparam 380m22
+377M7 thread
+378i7 policy
+379p7 param
+382V13*pthread_attr_setschedpolicy 386m10
+383p7 attr
+384i7 policy
+388V13*sched_yield 389m22
+395V13*pthread_attr_init 397m22
+396p7 attributes
+399V13*pthread_attr_destroy 401m22
+400p7 attributes
+403V13*pthread_attr_setdetachstate 407m10
+404p7 attr
+405i7 detachstate
+409V13*pthread_attr_setstacksize 412m22
+410p7 attr
+411m7 stacksize
+414V13*pthread_create 419m22
+415p7 thread
+416p7 attributes
+417p7 start_routine
+418M7 arg
+421U14*pthread_exit 422m22
+421M28 status
+424V13*pthread_self 425m22
+431V13*pthread_setspecific 434m22
+432M7 key
+433M7 value
+436V13*pthread_getspecific 437m22
+436M34 key
+439P9*destructor_pointer 443r20
+439M49 arg
+441V13*pthread_key_create 444m22
+442p7 key
+443p7 destructor
+456I9 time_t<2|35I9> 459r17 465r17 466r17 6|87r11 91r12 111r11 115r12 127r34
+459i7*tv_sec 6|74r27
+460i7*tv_nsec 6|74r50
+465i7*tv_sec 6|79r27
+466i7*tv_usec 6|79r50
+471i7*detachstate
+472i7*schedpolicy
+473r7*schedparam
+474i7*inheritsched
+475i7*scope
+476m7*guardsize
+477i7*stackaddr_set
+478M7*stackaddr
+479m7*stacksize
+484i7*dummy
+489i7*mutexkind
+495R9 struct_pthread_queue 498e14 499r26 506r20 512r20
+496M7*head
+497M7*tail
+502i7*m_spinlock
+503i7*m_count
+504M7*m_owner
+505i7*m_kind
+506r7*m_waiting
+511i7*c_spinlock
+512r7*c_waiting
+X 6 s-osinte.adb
+87i7 S 91m7 92r26 98m10 98r15 103r20
+88o7 F 92m7 97r10 99m10 99r15 103r59
+111i7 S 115m7 116r26 122m10 122r15 127r20
+112o7 F 116m7 121r10 123m10 123r15 127r61
+

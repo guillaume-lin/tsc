@@ -1,0 +1,33 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.parameters%b	s-parame.adb		38b39edd NE PK
+W system%s		system.ads		system.ali
+
+U system.parameters%s	s-parame.ads		aa78517a NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-parame.ads		20020507105150 e802d143
+D s-parame.adb		20020507105150 d0b14f9e
+X 1 system.ads
+41K9*System 150e11 2|54r9 136r5 3|36r14 73r5
+X 2 s-parame.ads
+54K16*Parameters 55r14 136r12 136e22 3|36b21 73r12 73t22
+61I9*Task_Storage_Size 64r26
+64I9*Size_Type<61I9> 67r32 67r45 70r21 71r23 84r39 87r39 90r41 90r59 3|42r41
+. 42r59 59r39 68r39
+67i4*Unspecified_Size 3|44r17
+70I12*Ratio 78r31
+71i4*Dynamic 78r40 81r62
+78i4*Sec_Stack_Ratio 81r44
+81b4*Sec_Stack_Dynamic
+84V13*Default_Stack_Size 3|45r17 59b13 62r8 62t26
+87V13*Minimum_Stack_Size 3|47r20 48r17 68b13 71r8 71t26
+90V13*Adjust_Storage_Size 3|42b13 53r8 53t27
+90i34 Size 3|42b34 44r10 47r13 51r17
+99b4*Stack_Grows_Down
+108N4*long_bits
+133b4*Garbage_Collected
+

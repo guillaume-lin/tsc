@@ -1,0 +1,110 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.unsigned_types%s  s-unstyp.ads		47d7b70b NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-unstyp.ads		20020507105208 05ad3732
+X 1 system.ads
+41K9*System 150e11 2|42r9 234r5
+X 2 s-unstyp.ads
+42K16*Unsigned_Types 43r14 234r12 234e26
+45M9*Short_Short_Unsigned 95r16 97r16 100r16 102r16 105r16 107r16 110r16
+. 112r16 115r16 117r16
+46M9*Short_Unsigned 120r16 122r16 125r16 127r16 130r16 132r16 135r16 137r16
+. 140r16 142r16
+47M9*Unsigned 145r16 147r16 150r16 152r16 155r16 157r16 160r16 162r16 165r16
+. 167r16
+48M9*Long_Unsigned 170r16 172r16 175r16 177r16 180r16 182r16 185r16 187r16
+. 190r16 192r16
+49M9*Long_Long_Unsigned 195r16 197r16 200r16 202r16 205r16 207r16 210r16
+. 212r16 215r16 217r16
+51M9*Float_Unsigned
+54M9*Packed_Byte 55r8 58r54
+58A9*Packed_Bytes1 59r8 66r30 76r30 232r38
+66A9*Packed_Bytes2<58A9> 67r8
+76A9*Packed_Bytes4<58A9> 77r8 91r23 231r38
+86M9*Bits_1
+87M9*Bits_2
+88M9*Bits_4
+91A12*Bytes_F
+94V13*Shift_Left
+95m7 Value
+96i7 Amount
+99V13*Shift_Right
+100m7 Value
+101i7 Amount
+104V13*Shift_Right_Arithmetic
+105m7 Value
+106i7 Amount
+109V13*Rotate_Left
+110m7 Value
+111i7 Amount
+114V13*Rotate_Right
+115m7 Value
+116i7 Amount
+119V13*Shift_Left
+120m7 Value
+121i7 Amount
+124V13*Shift_Right
+125m7 Value
+126i7 Amount
+129V13*Shift_Right_Arithmetic
+130m7 Value
+131i7 Amount
+134V13*Rotate_Left
+135m7 Value
+136i7 Amount
+139V13*Rotate_Right
+140m7 Value
+141i7 Amount
+144V13*Shift_Left
+145m7 Value
+146i7 Amount
+149V13*Shift_Right
+150m7 Value
+151i7 Amount
+154V13*Shift_Right_Arithmetic
+155m7 Value
+156i7 Amount
+159V13*Rotate_Left
+160m7 Value
+161i7 Amount
+164V13*Rotate_Right
+165m7 Value
+166i7 Amount
+169V13*Shift_Left
+170m7 Value
+171i7 Amount
+174V13*Shift_Right
+175m7 Value
+176i7 Amount
+179V13*Shift_Right_Arithmetic
+180m7 Value
+181i7 Amount
+184V13*Rotate_Left
+185m7 Value
+186i7 Amount
+189V13*Rotate_Right
+190m7 Value
+191i7 Amount
+194V13*Shift_Left 219m30
+195m7 Value
+196i7 Amount
+199V13*Shift_Right 220m30
+200m7 Value
+201i7 Amount
+204V13*Shift_Right_Arithmetic 221m30
+205m7 Value
+206i7 Amount
+209V13*Rotate_Left 222m30
+210m7 Value
+211i7 Amount
+214V13*Rotate_Right 223m30
+215m7 Value
+216i7 Amount
+231A12*Packed_Bytes
+232A12*Packed_Bytes_Unaligned
+

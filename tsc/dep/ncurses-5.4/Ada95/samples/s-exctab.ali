@@ -1,0 +1,80 @@
+V "GNAT Lib v3.15a"
+P
+R nnnvnnnnnnnnnnnnnnnnnvvnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.exception_table%b  s-exctab.adb	58c090c8 PK
+W gnat%s		gnat.ads		gnat.ali
+W gnat.htable%s		g-htable.adb		g-htable.ali
+W system%s		system.ads		system.ali
+
+U system.exception_table%s  s-exctab.ads	66f94edb EB EE NE PK
+W system%s		system.ads		system.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20020507104909 a0108083
+D a-uncdea.ads		20020507104903 5a774be9
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D g-htable.adb		20011002141531 fed31ace
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-stalib.ads		20020507105159 76713122
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 gnat.ads
+38K9*GNAT 41e9 8|36r6 51r36
+X 4 g-htable.ads
+43K14*HTable 192e16 8|36r11 51r41
+146k12*Static_HTable 180e21 8|51r48
+157U17*Set 8|169r24
+160V16*Get 8|139r31
+X 6 system.ads
+41K9*System 150e11 7|36r6 38r9 41r24 51r5 8|38r14 40r8 192r5
+X 7 s-exctab.ads
+38K16*Exception_Table 51r12 51e27 8|38b21 192r12 192t27
+41K12*SSL 43r38 47r52
+43U14*Register_Exception 44r19 8|157r10 167b14 170r8 170t26 185r4 186r4 187r4
+. 188r4 189r4 190r4
+43p34 X 8|167b34 169r29
+47V13*Internal_Exception 8|131b13 161r8 161t26
+47s33 X 8|131b33 132r34 132r45 137r13 137r25
+X 8 s-exctab.adb
+42I9 HTable_Headers 47r46 52r20 106r46 109r31 109r53 117r20 117r43
+44U14 Set_HT_Link 56r20 176b14 182r8 182t19
+44p27 T 177b7 181m7
+44p51 Next 178b7 181r23
+45V14 Get_HT_Link 57r20 88b14 91r8 91t19
+45p27 T 88b27 90r14
+47V13 Hash 60r20 106b13 123r8 123t12
+47p19 F 106b19 116r13 119r46
+48V13 Equal 61r20 67b13 82r8 82t13
+48p20 A 67b20 72r13 75r16
+48p23 B 67b23 72r22
+49V13 Get_Key 59r20 97b13 100r8 100t15
+49p22 T 97b22 99r14
+51K12 Exception_HTable 139r14 169r7
+68i7 J 72r16 72r25 75r19 79m13 79r18
+107M12 S 109r23 109r28 110r14 119r28
+109m7 Size 117r72
+110m7 Tmp 117r64 119m13 119r20
+111i7 J 114m7 116r16 119r49 121m10 121r15
+129P9 String_Ptr 134r18
+132a7 Copy 137m7 138m7 138r13 139m44 146r34 152r40
+133p7 Res 139m7 145r10 148m10 157r30 160r14
+134p7 Dyn_Copy 146m10 153r48
+X 9 s-stalib.ads
+58K16*Standard_Library 7|36r13 41r31 8|40r15 9|250e28
+65P9*Big_String_Ptr 8|47r23 48r27 49r53 58r20 67r27 97r53 106r23
+68V13*To_Ptr 8|139r36 153r40
+95R9*Exception_Data 8|53r20 149r16
+96P9*Exception_Data_Ptr 7|43r42 47r56 8|44r31 44r58 45r31 45r58 49r26 54r20
+. 88r31 88r58 97r26 131r52 133r18 167r38 177r14 178r14
+125p7*Full_Name 8|99r16
+128p7*HTable_Ptr 8|90r16 181r9
+156r4*Constraint_Error_Def 8|190m24
+164r4*Numeric_Error_Def 8|189m24
+172r4*Program_Error_Def 8|188m24
+180r4*Storage_Error_Def 8|187m24
+188r4*Tasking_Error_Def 8|186m24
+196r4*Abort_Signal_Def 8|185m24
+

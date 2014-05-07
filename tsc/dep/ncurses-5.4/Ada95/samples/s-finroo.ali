@@ -1,0 +1,62 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvnnvnnvnnnnnnnnnnnvvnnnnnnnnnnn
+
+U system.finalization_root%b  s-finroo.adb	2707dc21 NE PK
+W system%s		system.ads		system.ali
+
+U system.finalization_root%s  s-finroo.ads	acc141b5 EE PR PK
+W ada%s			ada.ads			ada.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finroo.ads		20020507105115 7e5e077b
+D s-finroo.adb		20020507105115 5959db5a
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 10|35r6 55r41 57r41 11|78r36 92r37
+X 3 a-stream.ads
+41K13*Streams 73e16 10|35r10 55r45 57r45 11|78r40 92r41
+44R9*Root_Stream_Type 10|55r53 57r53 11|78r48 92r49
+X 8 system.ads
+41K9*System 150e11 10|36r9 62r5 11|36r14 99r5
+X 10 s-finroo.ads
+36K16*Finalization_Root 37r22 62r12 62e29 11|36b21 99r12 99t29
+39R9*Root_Controlled 41r39 46c9 49r27 51r42 52r42 53r42 56r35 58r36 60r8
+. 61r8 11|44r38 53r40 62r42 79r31 93r31
+41P9*Finalizable_Ptr 47r20
+43R9*Empty_Root_Controlled 46r32
+47p7*Prev
+47p13*Next
+49C12*Finalizable<46R9>
+51U14*Initialize 11|62b14 65r8 65t18
+51r26 Object 11|62b26
+52U14*Finalize 11|53b14 56r8 56t16
+52r26 Object 11|53b24
+53U14*Adjust 11|44b14 47r8 47t14
+53r26 Object 11|44b22
+55U14*Write 61r34 11|92b14 97r8 97t13
+55p25 Stream 11|92b21
+56r25 Item 11|93b21
+57U14*Read 60r33 11|78b14 83r8 83t12
+57p25 Stream 11|78b20
+58r25 Item 11|79b20
+

@@ -1,0 +1,236 @@
+/**
+ * codec.h
+ *
+ * 编解码函数
+ * 
+ * Company: Xiamen Uni-Creative Technology Corporation
+ * Author:  Lin Jingxian(林景贤)
+ * E-Mail:  cckk_lin@yahoo.ie
+ * Date:    2005-07-07 09:10:32 中国标准时间
+ *
+ * $log$
+ *
+ */ 
+#ifndef INCLUDED_CODEC_H
+#define INCLUDED_CODEC_H
+#include "datastruct.h"
+
+#ifdef __cplusplus__
+extern "C" {
+#endif
+
+// 一帧的最大长度
+#define MAX_FRAME_SIZE  500
+#define MAX_FRAME_DATA_SIZE MAX_FRAME_SIZE - 5
+
+// 命令字ID定义
+#define CMD_SET_SYSTEM_TIME 							0x01
+#define CMD_SET_SYSTEM_PARAM							0x02
+#define CMD_SET_LAMP_GROUP_SETTING						0x03
+#define CMD_SET_DETECTOR_SETTING						0x04
+#define CMD_SET_PHASE_PLAN								0x05
+#define CMD_SET_TIMMING_PLAN							0x06
+#define CMD_SET_SCHEDULE_PLAN							0x07
+#define CMD_SET_SPECIAL_DAY_TABLE						0x08
+#define CMD_SET_COMM_PARAM								0x09
+#define CMD_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM			0x0a
+#define CMD_SET_ACTUATE_CONTROL_PARAM					0x0b
+#define CMD_SET_CORDLESS_COORDINATE_CONTROL_PARAM		0x0c
+#define CMD_SET_CURRENT_CONTROL_MODE					0x0d
+#define CMD_SET_LAMP_SETTING                            0x0e      
+#define CMD_SET_VERIFY_USERINFO                         0x0f
+#define CMD_GET_SYSTEM_TIME								0x11
+#define CMD_GET_SYSTEM_PARAM							0x12
+#define CMD_GET_LAMP_GROUP_SETTING						0x13
+#define CMD_GET_DETECTOR_SETTING						0x14
+#define CMD_GET_PHASE_PLAN								0x15
+#define CMD_GET_TIMMING_PLAN							0x16
+#define CMD_GET_SCHEDULE_PLAN							0x17
+#define CMD_GET_SPECIAL_DAY_TABLE						0x18
+#define CMD_GET_COMM_PARAM								0x19
+#define CMD_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM 		0x1a
+#define CMD_GET_ACTUATE_CONTROL_PARAM					0x1b
+#define CMD_GET_CORDLESS_COORDINATE_CONTROL_PARAM		0x1c
+#define CMD_GET_CURRENT_CONTROL_MODE					0x1d
+#define CMD_GET_DETECTOR_COUNTER						0x1e
+#define CMD_GET_MACHINE_STATUS							0x1f
+#define CMD_GET_DETECTOR_STATUS							0x20
+#define CMD_GET_LAMP_HEALTH								0x21
+#define CMD_GET_DETECTOR_HEALTH							0x22
+#define CMD_GET_LAMP_SETTING                            0x23                                        				
+#define CMD_GET_VOLUME_OCCUPY							0x24
+
+#define CMD_GET_KEY_VAL									0x28
+
+#define CMD_DO_STEP_KEEP								0x30
+#define CMD_DO_STEP_FORWARD								0x31
+#define CMD_DO_LAMP_STATUS								0x32
+                                    					
+#define CMD_MCU_SEND_KEY								0x41
+
+#define CMD_SET_GREEN_CONFLICT 	                        0x51
+#define CMD_SET_SETUP_CONTROL_MODE                      0x52
+#define CMD_GET_GREEN_CONFLICT                          0x61
+#define CMD_GET_SETUP_CONTROL_MODE                      0x62
+#define CMD_SEND_ONLINE_COMMAND                         0x71
+
+// 帧数据定义
+typedef struct {
+	byte m_data[MAX_FRAME_DATA_SIZE];
+} frame_data_t;
+
+// 帧定义
+typedef struct {
+	byte m_header;
+	byte m_command;
+	byte m_reserve;
+	byte m_data_len;
+	frame_data_t* m_data_p;
+	byte m_checksum;	
+} frame_t;
+
+int init_frame(frame_t* frame,frame_data_t* datum);
+int frame_set_data_len(frame_t* self,int len);
+int frame_get_data_len(frame_t* self);
+// 判断指定的命令ID是否指示正常应答
+int is_cmd_response_ok(byte cmd,byte response);
+// 返回指定的命令ID对应的应答ID
+byte get_response_cmd(byte cmd);
+
+/**
+ * @param frame 待写入的帧
+ * @param size  帧的长度
+ * @return 所写入帧的长度
+ */ 
+int write_frame(int fd,frame_t* frame);
+
+/**
+ * @param fd 文件描述符
+ * @param frame 存放读取帧的缓冲区
+ * @return = 0 表示没有读到完整的一帧, <0 表示帧校验错误或者帧数据不完整，
+ * > 0 表示所读到的帧的长度
+ */ 
+int read_frame(int fd,frame_t* frame);
+
+int decode_set_actuate_control_param_req(actuate_control_param_t* param, frame_t* frame);
+
+int encode_set_system_time_req(date_time_t* dt, frame_t* frame);
+int decode_set_system_time_req(date_time_t*dt, frame_t* frame);
+int encode_get_system_time_res(date_time_t* dt, frame_t* frame);
+int decode_get_system_time_res(date_time_t* dt, frame_t* frame);
+// 系统参数
+int encode_set_system_param_req(system_param_t* sp, frame_t* frame);
+int decode_set_system_param_req(system_param_t* sp, frame_t * frame);
+int encode_get_system_param_res(system_param_t* sp, frame_t* frame);
+int decode_get_system_param_res(system_param_t* sp, frame_t* frame);
+// 信号灯设置
+int encode_set_lamp_setting_req(lamp_setting_t* ls, frame_t* frame);
+int decode_set_lamp_setting_req(lamp_setting_t* ls, frame_t* frame);
+// 灯组设置
+int encode_set_lamp_group_setting_req(lamp_group_setting_t* lgs, frame_t* frame);
+int decode_set_lamp_group_setting_req(lamp_group_setting_t* lgs, frame_t* frame);
+// 检测器设置
+int encode_set_detector_setting_req(detector_setting_t* ds, frame_t* frame);
+int decode_set_detector_setting_req(detector_setting_t* ds, frame_t* frame);
+int encode_get_detector_setting_res(detector_setting_t* ds, frame_t* frame);
+int decode_get_detector_setting_res(detector_setting_t* ds, frame_t* frame);
+// 相位方案
+int encode_set_phase_plan_req(int planNo,int stepCount,int step, stage_t* phase,frame_t* frame);
+int decode_set_phase_plan_req(int* planNo,int* stepCount,int* step, stage_t* phase,frame_t* frame);
+int encode_get_phase_plan_req(int plan_no, int step, frame_t* frame);
+int decode_get_phase_plan_req(int* plan_no, int* step, frame_t* frame);
+int encode_get_phase_plan_res(int step_count, stage_t* phase, frame_t* frame);
+int decode_get_phase_plan_res(int* step_count, stage_t* phase, frame_t* frame);
+// 配时方案
+int decode_set_timming_plan_req(int* plan_no, timming_plan_t* p, frame_t* frame);
+int encode_get_timming_plan_res(timming_plan_t* plan, frame_t* frame);
+int decode_get_timming_plan_res(timming_plan_t* plan, frame_t* frame);
+int encode_get_timming_plan_req(int plan_no,frame_t* frame);
+int decode_get_timming_plan_req(int* plan_no, frame_t* frame);
+// 时段方案
+int encode_set_schedule_plan_req(int planNo, schedule_plan_t* p, frame_t* frame);
+int decode_set_schedule_plan_req(int* planNo, schedule_plan_t* p, frame_t* frame);
+int encode_get_schedule_plan_req(int planNo, frame_t* frame);
+int decode_get_schedule_plan_req(int* planNo, frame_t* frame);
+int encode_get_schedule_plan_res(schedule_plan_t* schedule, frame_t* frame);
+int decode_get_schedule_plan_res(schedule_plan_t* schedule, frame_t* frame);
+
+// 特殊日
+int encode_set_special_day_table_req(special_day_table_t* day,frame_t* frame);
+int decode_set_special_day_table_req(special_day_table_t* day, frame_t* frame);
+// 通信参数
+int encode_set_comm_param_req(int portNo,comm_param_t* param, frame_t* frame);
+int decode_set_comm_param_req(int* portNo,comm_param_t* param, frame_t* frame);
+int encode_set_multiple_schedule_control_param_req(multiple_schedule_control_param_t* control, frame_t* frame);
+int decode_set_multiple_schedule_control_param_req(multiple_schedule_control_param_t* control, frame_t* frame);
+
+int encode_set_actuate_control_param_req(actuate_control_param_t* control, frame_t* frame);
+int encode_set_cordless_coordinate_control_param_req(cordless_coordinate_control_param_t* control, frame_t* frame);
+int decode_set_cordless_coordinate_control_param_req(cordless_coordinate_control_param_t* control, frame_t* frame);
+int encode_set_current_control_mode_req(control_mode_selection_t* selection,frame_t* frame);
+
+int decode_set_current_control_mode_req(control_mode_selection_t* selection,frame_t* frame);
+// 解码函数
+// 系统时间
+int decode_system_time(date_time_t* dt, frame_t* frame);
+// 系统参数
+int decode_system_param(system_param_t* sp, frame_t* frame);
+
+int encode_get_lamp_setting_res(lamp_setting_t* ls, frame_t* frame);
+int decode_get_lamp_setting_res(lamp_setting_t* ls, frame_t* frame);
+int encode_get_lamp_group_setting_res(lamp_group_setting_t* lgs, frame_t* frame);
+int decode_get_lamp_group_setting_res(lamp_group_setting_t* lgs, frame_t* frame);
+int encode_get_special_day_table_res(special_day_table_t* day, frame_t* frame);
+int decode_get_special_day_table_res(special_day_table_t* day, frame_t* frame);
+int encode_get_comm_param_req(int port_no, frame_t* frame);
+int decode_get_comm_param_req(int* port_no, frame_t* frame);
+int encode_get_comm_param_res(comm_param_t* param, frame_t* frame);
+int decode_get_comm_param_res(comm_param_t* param, frame_t* frame);
+int encode_get_multiple_schedule_control_param_res(multiple_schedule_control_param_t*
+						   param, frame_t* frame);
+int decode_get_multiple_schedule_control_param_res(multiple_schedule_control_param_t*
+					             param, frame_t* frame);
+int encode_get_actuate_control_param_res(actuate_control_param_t* param, frame_t* frame);
+int decode_get_actuate_control_param_res(actuate_control_param_t* param, frame_t* frame);
+int encode_get_cordless_coordinate_control_param_res(cordless_coordinate_control_param_t* 							param, frame_t* frame);
+int decode_get_cordless_coordinate_control_param_res(cordless_coordinate_control_param_t*
+						      param, frame_t* frame);
+int encode_get_current_control_mode_res(control_mode_selection_t* param,frame_t* frame);
+int decode_get_current_control_mode_res(control_mode_selection_t* param,frame_t* frame);
+
+// 信号机状态
+int encode_get_machine_status_res(machine_status_t* status, frame_t* frame);
+int decode_get_machine_status_res(machine_status_t* status, frame_t* frame);
+int encode_set_timming_plan_req(int plan_no, timming_plan_t* p, frame_t* frame);
+int decode_set_timming_plan_req(int* plan_no, timming_plan_t* p, frame_t* frame);
+
+int encode_get_detector_counter_res(detector_counter_t* counter, frame_t* frame);
+int decode_get_detector_counter_res(detector_counter_t* counter, frame_t* frame);
+
+int encode_get_detector_status_res(detector_status_t* status,frame_t* frame);
+int decode_get_detector_status_res(detector_status_t* status,frame_t* frame);
+
+int encode_get_lamp_health_res(lamp_health_t* health, frame_t* frame);
+int decode_get_lamp_health_res(lamp_health_t* healtp, frame_t* frame);
+
+int encode_get_detector_health_res(detector_health_t* health, frame_t* frame);
+int decode_get_detector_health_res(detector_health_t* health, frame_t* frame);
+
+
+int encode_get_volume_occupy_req(volume_occupy_t* oc, frame_t* frame);
+int encode_get_volume_occupy_res(volume_occupy_time_t* oc, frame_t* frame);
+int decode_get_volume_occupy_req(volume_occupy_t* oc, frame_t* frame);
+int decode_get_volume_occupy_res(volume_occupy_time_t* oc, frame_t* frame);
+// 控制命令
+int encode_do_lamp_status_req(lamp_status_t* phase,frame_t* frame);
+int decode_do_lamp_status_req(lamp_status_t* phase,frame_t* frame);
+
+//中转信息
+int encode_set_checkpack_param_req(checkpack_t* sp, frame_t* frame);
+//联机命令
+int encode_send_online_command_req(online_control_command_t *sp,frame_t* frame);
+#ifdef __cplusplus__
+}
+#endif
+
+#endif

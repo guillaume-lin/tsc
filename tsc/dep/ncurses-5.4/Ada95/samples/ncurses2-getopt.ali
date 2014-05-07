@@ -1,0 +1,103 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnnnvnn
+
+U ncurses2.getopt%b	ncurses2-getopt.adb	d90d068b NE PK IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.string_ops_concat_3%s  s-sopco3.adb	s-sopco3.ali
+
+U ncurses2.getopt%s	ncurses2-getopt.ads	aecbd2e0 EE NE PK IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D interfac.ads		20020507105017 6e859da6
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-getopt.ads	20001202223102 ff3c2b14
+D ncurses2-getopt.adb	20040130235640 3492e4f3
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-sopco3.ads		20020507105157 fb5c3964
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 22|44r6 45r6 46r6 46r23 74r25 108r12
+X 9 a-string.ads
+18K13*Strings 32e16 22|44r10 45r10 74r29 108r16
+X 10 a-strbou.ads
+42K21*Bounded 467e24 22|45r18 74r37
+49k12*Generic_Bounded_Length 465e30 22|74r45
+53R12 Bounded_String 22|76r17
+65V16 To_Bounded_String 22|84r18 122r30 130r30 146r30
+70V16 To_String 22|161r32
+X 12 a-strfix.ads
+43K21*Fixed 256e22 22|44r18 108r24
+61V13*Index 22|108r30
+75V13*Index 22|108r30
+X 17 a-textio.ads
+51K13*Text_IO 442e16 22|46r10 46r27
+122V13*Standard_Error 22|111r23 134r29
+256U14*Put_Line 22|111r13 134r19
+X 20 ncurses2.ads
+42K9*ncurses2 44e13 21|41r9 59r5 22|48r14 166r5
+X 21 ncurses2-getopt.ads
+41K18*getopt 59r14 59e20 22|48b23 166r14 166t20
+43P9*stringa 56r39 22|70r36
+45P9*stringfunc 51r35 22|64r30
+46i16 n
+49U14*Qgetopt 22|62b14 164r8 164t15
+49i23 retval 22|62b23 80m10 90m13 97m13 160m10
+50i23 argc 22|63b23 79r10 133r31
+51p23 argv 22|64b23 88r13 94r13 94r40 96r35 106r27 112r23 121r31 123r22 123r49
+. 129r31 131r22 131r49 135r29 146r49 152r27
+52s23 optstring 22|66b23 108r37 118r13 119r16 138r22
+53i23 optind 22|67b23 79r17 88r19 94r19 94r46 95m13 95r23 96r41 106r33 112r29
+. 121r37 123r28 123r55 129r37 131r28 131r55 132m19 132r29 133r22 135r35 145m19
+. 145r29 146r55 147m19 147r29 152r33 153m16 153r26
+56p23 Optarg 22|70b23 96m13 125m19 161m10
+X 22 ncurses2-getopt.adb
+50e4 optopt 113m13 137m19
+52i4 nextchar 86r10 101m10 106r42 121r19 123r37 129r19 131r37 150m13 152r16
+. 154m16 156m16 156r28
+74K15 BS 75r11
+76R7 optargx 84m7 122m19 130m19 146m19 161r43
+106e10 c 108r61 110r25 112r64 113r23 114m13 136r67 137r29 139m22 141m22 160r35
+107i10 temp 110r13 118r24 119r27
+

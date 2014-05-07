@@ -1,0 +1,152 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvnvnnvvnnnnnnnnnnvnnnnnnnvvvnn
+
+U terminal_interface.curses.forms.field_types.enumeration%b  terminal_interface-curses-forms-field_types-enumeration.adb  4e6a60b7 NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.unchecked_deallocation%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+U terminal_interface.curses.forms.field_types.enumeration%s  terminal_interface-curses-forms-field_types-enumeration.ads  676f88f4 EE PR PK
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D a-uncdea.ads		20020507104903 5a774be9
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-stratt.adb		20020507105159 5475baa8
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-enumeration.ads  20031025153918 7ed009d9
+D terminal_interface-curses-forms-field_types-enumeration.adb  20031025153918 312b64e5
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 36|41r6 53r13
+X 11 a-uncdea.ads
+22u15*Unchecked_Deallocation 36|41r10 53r17
+X 14 interfac.ads
+23K9*Interfaces 168e15 35|41r6 89r30 36|42r6 42r24 43r6 43r32
+X 15 i-c.ads
+20K20*C 140e17 35|41r17 89r41 36|42r17 42r35 43r17 43r43
+54M9*size_t 36|56r20 56r34 61r37 66r17 78r11
+X 16 i-cstrin.ads
+42K22*Strings 105e25 35|41r19 89r43 36|43r19 43r45
+47M9*chars_ptr 36|79r11
+49A9*chars_ptr_array 35|89r51 36|61r20 99r37
+51M4*Null_Ptr 36|72r20 83r24 85r26
+60V13*New_String 36|66r32
+62U14*Free 36|84r10
+X 30 terminal_interface.ads
+41K9*Terminal_Interface 46e23 35|43r9 45r7 98r5 36|44r6 44r41 46r14 119r5
+X 31 terminal_interface-curses.ads
+48K28*Curses 1933e30 35|43r28 45r26 98r24 36|44r25 44r60 46r33 119r24
+X 32 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 36|44r32 44r67
+78I12*Eti_Error 36|104r13
+80i4*E_Ok 36|113r17
+96U14*Eti_Exception 36|114r10
+X 33 terminal_interface-curses-forms.ads
+48K35*Forms 782e36 35|43r35 45r33 98r31 36|46r40 119r31
+55M9*Field 35|84r39 36|91r39 97r37
+288X4*Form_Exception 36|64r19 107r16
+X 34 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 239e48 35|43r41 45r39 98r37 36|46r46 119r37
+46I12*C_Int 36|100r37 101r37 101r51 110r36 111r36
+52R9*Field_Type 35|62r34 91r34
+132P9 C_Field_Type 36|94r21 98r37
+149V13 C_Choice_Router 36|116r31
+151U14 Wrap_Builtin 36|116r7
+X 35 terminal_interface-curses-forms-field_types-enumeration.ads
+43K53*Enumeration 45r51 98r49 98e60 36|46b58 119r49 119t60
+47P9*String_Access 53r9 36|54r41 57r11
+50E9*Type_Set
+50n22*Lower_Case
+50n34*Upper_Case
+50n46*Mixed_Case
+52A9*Enum_Array 57r33
+55R9*Enumeration_Info 60e17 64r28 73r43 36|48r42
+55i27*C 57r50 36|56r47
+57a10*Names 36|63r18 66r49 68r23
+58b10*Case_Sensitive 36|59r38
+59b10*Match_Must_Be_Unique 36|60r38
+62R9*Enumeration_Field<34|52R9> 66r28 75r43 77r37 85r39 91c9 36|50r28 55r11
+. 76r37 92r39
+64V13*Create 75r69 36|48b13 74r8 74t14
+64r21 Info 36|48b21 56r42 59r33 60r33 63r13 66r44 68r18
+65b21 Auto_Release_Names 36|49b21 67r13
+73V13*Make_Enumeration_Type
+73r36 Info
+74b36 Auto_Release_Names
+77U14*Release 36|76b14 89r8 89t15
+77r23 Enum 36|76b23 82r15 85r10 88m7
+84U14*Set_Field_Type 36|91b14 117r8 117t22
+84M30 Fld 36|91b30 97r46 116r21
+85r30 Typ 36|92b30 106r10 109r36 110r56 112r44 116r26
+89P9 CPA_Access 95r33
+93b10*Case_Sensitive 36|59r9 110r60
+94b10*Match_Must_Be_Unique 36|60r9 112r48
+95p10*Arr 36|61r9 66r12 72r9 82r20 85r15 88r12 106r14 109r40
+X 36 terminal_interface-curses-forms-field_types-enumeration.adb
+52U17 Release_String 69r13
+55r7 E 59m7 60m7 61m7 66r10 72r7 73r14
+56m7 L 61r51 62r31 72r14
+57p7 S 68m13 69m29
+62i11 I 63r25 66r25 66r56 68r30
+78m7 I 82r25 85r20 86m10 86r15
+79M7 P 82m10 83r20 84m16
+94p7*C_Enum_Type 95m25 98r53
+97V16*Set_Fld_Type 102m25 109r14
+97M30 F
+98p30 Cft
+99a30 Arg1 109r28
+100i30 Arg2 110r28
+101i30 Arg3 111r28
+104i7 Res 109m7 113r10 114r25
+

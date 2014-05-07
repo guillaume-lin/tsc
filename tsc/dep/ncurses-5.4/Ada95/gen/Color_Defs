@@ -1,0 +1,9 @@
+   Default_Color    : constant Color_Number := -1;
+   Black            : constant Color_Number := 0;
+   Red              : constant Color_Number := 1;
+   Green            : constant Color_Number := 2;
+   Yellow           : constant Color_Number := 3;
+   Blue             : constant Color_Number := 4;
+   Magenta          : constant Color_Number := 5;
+   Cyan             : constant Color_Number := 6;
+   White            : constant Color_Number := 7;

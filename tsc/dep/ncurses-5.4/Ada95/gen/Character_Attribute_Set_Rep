@@ -1,0 +1,42 @@
+   type Character_Attribute_Set is
+      record
+         Stand_Out               : Boolean;
+         Under_Line              : Boolean;
+         Reverse_Video           : Boolean;
+         Blink                   : Boolean;
+         Dim_Character           : Boolean;
+         Bold_Character          : Boolean;
+         Alternate_Character_Set : Boolean;
+         Invisible_Character     : Boolean;
+         Protected_Character     : Boolean;
+         Horizontal              : Boolean;
+         Left                    : Boolean;
+         Low                     : Boolean;
+         Right                   : Boolean;
+         Top                     : Boolean;
+         Vertical                : Boolean;
+      end record;
+   pragma Pack (Character_Attribute_Set);
+   pragma Convention (C, Character_Attribute_Set);
+
+   for Character_Attribute_Set use
+      record
+         Stand_Out               at 0 range  0 ..  0;
+         Under_Line              at 0 range  1 ..  1;
+         Reverse_Video           at 0 range  2 ..  2;
+         Blink                   at 0 range  3 ..  3;
+         Dim_Character           at 0 range  4 ..  4;
+         Bold_Character          at 0 range  5 ..  5;
+         Alternate_Character_Set at 0 range  6 ..  6;
+         Invisible_Character     at 0 range  7 ..  7;
+         Protected_Character     at 0 range  8 ..  8;
+         Horizontal              at 0 range  9 ..  9;
+         Left                    at 0 range 10 .. 10;
+         Low                     at 0 range 11 .. 11;
+         Right                   at 0 range 12 .. 12;
+         Top                     at 0 range 13 .. 13;
+         Vertical                at 0 range 14 .. 14;
+      end record;
+   for Character_Attribute_Set'Size use 16;
+   --  Please note: this rep. clause is generated and may be
+   --               different on your system.

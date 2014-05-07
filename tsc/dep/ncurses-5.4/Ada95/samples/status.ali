@@ -1,0 +1,78 @@
+V "GNAT Lib v3.15a"
+P UA
+R nnvvnnnvnnnnnvvvvnvnvvvnnnvvnnnnnvnnnnnnvnnvnn
+
+U status%b		status.adb		e275d25a NE PK
+W system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
+
+U status%s		status.ads		342b9c53 EE PK
+W ada%s			ada.ads			ada.ali
+W ada.interrupts%s	a-interr.adb		a-interr.ali
+W ada.interrupts.names%s  a-intnam.ads		a-intnam.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.interrupts%s	s-interr.adb		s-interr.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-interr.ads		20020507104832 2a5d5c10
+D a-intnam.ads		20020507104739 2c7b339b
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D status.ads		20031025153918 1850afc8
+D status.adb		20031025153918 fa257d92
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-intman.ads		20020507105121 e6cbadb4
+D s-inmaop.ads		20020507105121 bb5e23d2
+D s-interr.ads		20020507105121 c27e9f88
+D s-osinte.ads		20020507104759 8f433951
+D s-osinte.adb		20011011175953 ee9233b2
+D s-osprim.ads		20020507105124 171b3898
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-tasinf.ads		20020507105203 bbbd2b69
+D s-taspri.ads		20020507104759 26c755ad
+D s-taprop.ads		20020507105202 157f77e3
+D s-taprop.adb		20011218002815 cec3b385
+D s-taskin.ads		20020507105204 36912069
+D s-tasdeb.ads		20020507105203 0206f9fb
+D s-taenca.ads		20020507105202 3924a220
+D s-tasini.ads		20020507105203 2bd7ac60
+D s-taprob.ads		20020507105202 0962e958
+D s-tpoben.ads		20020507105207 4dc7204d
+D s-tpobop.ads		20020507105207 739ac9ab
+D s-tpobop.adb		20011002143018 870cd7ad
+D s-tasque.ads		20011002143018 ba9bc255
+D s-tasren.ads		20020507105204 35499295
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+D unchdeal.ads		20020507105303 8ac9d15e
+X 1 ada.ads
+18K9*Ada 21e8 11|44r6 55r36
+X 5 a-interr.ads
+43K13*Interrupts 77e19 11|44r10 55r40
+X 6 a-intnam.ads
+59K24*Names 171e25 11|44r21 55r51
+69i4*SIGINT 11|55r57
+X 11 status.ads
+46K9*Status 60r5 60e11 12|44b14 57r5 57t11
+52w14*Process 58r8 58e15 12|46b19 55r8 55t15
+53U17 Stop 55r30 12|47b17 50r11 50t15
+54V16 Continue 12|51b16 54r11 54t19
+57b7 Done 12|49r10 53r21
+

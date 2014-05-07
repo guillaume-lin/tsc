@@ -1,0 +1,146 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvnvnnvvnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.forms.field_types.user%b  terminal_interface-curses-forms-field_types-user.adb  cbf83deb NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+U terminal_interface.curses.forms.field_types.user%s  terminal_interface-curses-forms-field_types-user.ads  8ff3a2af EE PR PK
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D a-unccon.ads		20020507104903 5b55fe29
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-user.ads  20031025153918 7359de83
+D terminal_interface-curses-forms-field_types-user.adb  20031025153918 a3f0580a
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 34|41r6 80r39
+X 10 a-unccon.ads
+22v14*Unchecked_Conversion 34|41r10 80r43
+X 13 interfac.ads
+23K9*Interfaces 168e15 33|41r6 45r13 46r21 79r13 34|42r6 47r13
+X 14 i-c.ads
+20K20*C 140e17 33|41r17 45r24 46r32 79r24 34|42r17 47r24
+33I9*int 33|45r26 46r34 79r26 34|47r26
+X 16 system.ads
+41K9*System 150e11 33|84r40 91r39 34|68r38 81r7 84r40 95r39
+67M9*Address 33|84r47 91r46 34|81r14 84r47 95r46
+68M4*Null_Address 34|68r45
+X 28 terminal_interface.ads
+41K9*Terminal_Interface 46e23 33|43r9 44r25 97r5 34|43r6 43r41 45r14 132r5
+X 29 terminal_interface-curses.ads
+48K28*Curses 1933e30 33|43r28 44r44 97r24 34|43r25 43r60 45r33 132r24
+X 30 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 34|43r32 43r67
+78I12*Eti_Error 34|61r13 109r13
+80i4*E_Ok 34|75r17 122r23
+96U14*Eti_Exception 34|76r10 123r16
+X 31 terminal_interface-curses-forms.ads
+48K35*Forms 782e36 33|43r35 44r51 97r31 34|45r40 132r31
+55M9*Field 33|57r13 70r39 83r40 34|49r39 55r37 83r40
+288X4*Form_Exception 34|116r19
+X 32 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 239e48 33|43r41 44r57 97r37 34|45r46 132r37
+52R9*Field_Type 33|48r49
+63P9*Field_Type_Access 34|66r16
+132P9 C_Field_Type 33|81r37 34|56r37 107r35 110r13
+134p4 Null_Field_Type 34|70r38 112r27 115r17 128r40
+141p4 M_Generic_Type 34|112r10 126m10 128r22 129r14
+162V13 Make_Arg 34|119r39
+167V13 Copy_Arg 34|120r39
+172U14 Free_Arg 34|121r39
+211R9 Argument 215e14 34|68r21
+212p7*Typ 34|88r66 99r66
+216P9 Argument_Access 34|53r37 57r37 64r37 81r23
+222V13 New_Fieldtype 34|113r15
+227V13 Set_Fieldtype_Arg 34|118r20
+X 33 terminal_interface-curses-forms-field_types-user.ads
+43K53*User 44r69 97r49 97e53 34|45b58 132r49 132t53
+46I12*C_Int 84r63 90r39 91r62 34|58r37 84r63 91r14 94r39 95r62 102r14
+48R9*User_Defined_Field_Type<32|52R9> 54r6 58r13 65r13 71r39 34|50r39 52r34
+. 63r34 66r41
+53P9*User_Defined_Field_Type_Access 34|87r16 88r9 98r16 99r9
+56V13*Field_Check 34|90r17
+57M7 Fld
+58r7 Typ
+63V13*Character_Check 34|101r17
+64e7 Ch
+65r7 Typ
+70U14*Set_Field_Type 34|49b14 78r8 78t22
+70M30 Fld 34|49b30 55r46
+71r30 Typ 34|50b30 74r50
+81V13 C_Generic_Type 34|56r53 107b13 130r8 130t22
+83V13 Generic_Field_Check 85r26 34|83b13 92r8 92t27 113r30
+83M34 Fld 34|83b34 90r30
+84M34 Usr 34|84b34 88r61
+90V13 Generic_Char_Check 92r26 34|94b13 103r8 103t26 114r30
+90i33 Ch 34|94b33 101r49
+91M33 Usr 34|95b33 99r61
+X 34 terminal_interface-curses-forms-field_types-user.adb
+52V16 Allocate_Arg 63b16 71r11 71t23 74r36
+52c30 T<33|48R9> 63b30 66r72
+55V16*Set_Fld_Type 59m25 74r14
+55M30 F
+56p30 Cft
+57p30 Arg1 74r28
+61i7 Res 74m7 75r10 76r25
+66p10 Ptr 69r38
+80V13 To_Argument_Access 88r41 99r41
+86b7 Result 90m7 91r34
+87p7 Udf 90r35
+97b7 Result 101m7 102r34
+98p7 Udf 101r54
+109i7 Res 118m13 122r16 123r31
+110p7 T 113m10 115r13 118r39 126r28
+

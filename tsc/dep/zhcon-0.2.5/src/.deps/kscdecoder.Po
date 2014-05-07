@@ -1,0 +1,5 @@
+kscdecoder.o kscdecoder.o: kscdecoder.cpp kscdecoder.h hzdecoder.h
+
+kscdecoder.h:
+
+hzdecoder.h:

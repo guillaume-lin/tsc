@@ -1,0 +1,79 @@
+#
+#
+#
+CCFLAGS =  -g ;
+C++FLAGS = -g ;
+LINKFLAGS =  ;
+LINK = g++ ;
+CHMOD = ;
+SEARCH_SOURCE = ../control ../frame-buffer ;
+LOCATE_TARGET = build ;
+LINKLIBS = /usr/lib/libncurses++.a /usr/lib/libform.a /usr/lib/libpanel.a /usr/lib/libmenu.a /usr/lib/libncurses.a ;
+
+Main	ncurses_ui.exe : main.cpp
+			vm.c 
+			codec.c
+			datastruct.c
+			io_ncurses.c
+			util.c
+			detector_set.c
+			key_buffer.c
+			cpld_fifo.c
+			key_translate.c
+			baseform.cpp
+			fieldmonitor.cpp
+			integerchecker.cpp
+			messagebox.cpp
+			basemenu.cpp
+			settimeform.cpp
+			keyboardtestform.cpp
+			LampSettingForm.cpp
+			LampGroupSettingForm.cpp
+			DetectorSettingForm.cpp
+			greenconflictform.cpp
+			ControlModeSelectionForm.cpp
+			SystemParamForm.cpp
+			MultipleScheduleControlParamForm.cpp
+			ActuateControlParamForm.cpp
+			CordlessCoordinateControlParamForm.cpp
+			TimmingPlanForm.cpp
+			PhasePlanForm.cpp
+			SchedulePlanForm.cpp
+			SpecialDayForm.cpp
+			ShowSystemTimeform.cpp
+			terminalstatusform.cpp
+			detectorstatusform.cpp
+			LoadDefaultParamform.cpp
+			simpleini.c
+			fb_util.c
+			gdi.c
+			zk.c
+			show_bmp.c
+			PassValidateForm.cpp
+			uc_profile.cpp
+			uc_ErrorInfo.cpp
+
+			#canvas.c
+			#fb_canvas.c
+			#bpsf.c
+			#crossingbitmap.c
+			#crossingstatusform.cpp
+			#hzk.cpp
+			;
+#LINKLIBS on ncurses_ui.exe  = -lncurses++ -lform -lpanel -lmenu -lncurses ;
+
+rule run-command
+{
+	ECHO $(1) $(2)	 ;
+	ECHO  "execute rule run-command" ;
+	ALWAYS $(1) ;
+}
+
+actions run-command 
+{
+	etags * 
+}
+
+run-command TAGS ;
+
+#ctags

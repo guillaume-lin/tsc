@@ -1,0 +1,43 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnn
+
+U system.img_wiu%b	s-imgwiu.adb		2b9118f5 NE PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+U system.img_wiu%s	s-imgwiu.ads		9d4aa163 NE PU PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D system.ads		20020507104801 427a8039
+D s-imgwiu.ads		20020507105121 da9d1668
+D s-imgwiu.adb		20020507105121 f4a139af
+D s-unstyp.ads		20020507105208 05ad3732
+X 1 system.ads
+41K9*System 150e11 2|40r6 42r9 60r11 73r5 3|36r6 36r33 38r14 138r5
+X 2 s-imgwiu.ads
+42K16*Img_WIU 43r14 73r12 73e19 3|38b21 138r12 138t19
+45U14*Set_Image_Width_Integer 3|44b14 83r8 83t31
+46i7 V 3|45b7 55r10 56r46 70r50
+47i7 W 3|46b7 56r50 70r54
+48s7 S 3|47b7 56m53 63m10 70m61 76r16 80m10
+49i7 P 3|48b7 56m56 62m10 62r15 63r13 64r19 70m64
+59U14*Set_Image_Width_Unsigned 3|56r10 70r13 89b14 136r8 136t32
+60m7 V 3|90b7 116r19
+61i7 W 3|91b7 120r22 122r20
+62s7 S 3|92b7 106m13 109m13 126m13 126r22 132m13
+63i7 P 3|93b7 95r35 105m13 105r18 106r16 108m13 108r18 109r16 120r10 121r15
+. 122m10 122r15 122r25 123r15
+X 3 s-imgwiu.adb
+50i7 Start 64m10 76r19 77m13 77r22 80r13
+95i7 Start 120r14 122r29 125r20 131r19
+96i7 F 121m10 125r16 126r25 128m13 128r18
+96i10 T 123m10 126r16 127m13 127r18 131r32
+98U17 Set_Digits 101b17 104r13 111r11 111t21 116r7
+98m29 T 101b29 103r13 104r25 106r37 109r37
+131i14 J 132r16
+X 4 s-unstyp.ads
+42K16*Unsigned_Types 2|40r13 60r18 3|36r13 36r40 4|234e26
+47M9*Unsigned 2|60r33 3|56r36 70r39 90r11 98r33 101r33
+

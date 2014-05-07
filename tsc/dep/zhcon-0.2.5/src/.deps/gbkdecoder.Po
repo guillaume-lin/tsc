@@ -1,0 +1,5 @@
+gbkdecoder.o gbkdecoder.o: gbkdecoder.cpp gbkdecoder.h hzdecoder.h
+
+gbkdecoder.h:
+
+hzdecoder.h:

@@ -1,0 +1,123 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnvvvnnnnvnnnnnnnnnvnvnnnnnnnvnvnn
+
+U terminal_interface.curses.termcap%b  terminal_interface-curses-termcap.adb  34fabaf1 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U terminal_interface.curses.termcap%s  terminal_interface-curses-termcap.ads  15e666ce NE PR PK
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-termcap.ads  20031025153918 a45896fc
+D terminal_interface-curses-termcap.adb  20040130235701 cb446a6f
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 interfac.ads
+23K9*Interfaces 168e15 18|43r6 43r24 44r6 44r32
+X 4 i-c.ads
+20K20*C 140e17 18|43r17 43r35 44r17 44r43
+54M9*size_t 18|54r17 73r16 91r16 111r16 132r16 155r16
+68e4*nul 18|55r46 114r39 135r35
+73A9*char_array 18|50r32 50r50 53r17 55r17 59r26 70r31 72r16 88r30 90r16
+. 107r31 108r31 110r16 113r21 117r29 128r31 129r31 131r16 134r21 138r29 150r29
+. 154r16
+88U14*To_C 18|58r7 75r7 93r7 116r7 137r7 157r7
+X 5 i-cstrin.ads
+42K22*Strings 105e25 18|44r19 44r45
+47M9*chars_ptr 18|108r50 112r16 129r50 133r16 152r43
+51M4*Null_Ptr 18|118r17 139r17
+X 14 terminal_interface.ads
+41K9*Terminal_Interface 46e23 17|42r9 43r25 80r5 18|42r6 42r41 46r14 163r5
+X 15 terminal_interface-curses.ads
+48K28*Curses 1933e30 17|42r28 43r44 80r24 18|42r25 42r60 46r33 163r24
+59I9*Line_Position 17|55r26 18|149r26
+60I9*Column_Position 17|54r26 18|148r26
+382X4*Curses_Exception 18|61r16
+X 16 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 18|42r32 42r67
+55I12*C_Int 18|51r32 56r17 70r50 88r49 151r29 152r29 159r43 159r56
+121V13*Fill_String 18|121r19 158r30
+X 17 terminal_interface-curses-termcap.ads
+42K35*Termcap 43r51 80r31 80e38 18|46b40 163r31 163t38
+50A9*Termcap_String 55r48 18|149r48 158r14
+53V13*TGoto 18|147b13 160r8 160t13
+53s20 Cap 18|147b20 154r33 157r13
+54i20 Col 18|148b20 159r50
+55i20 Row 18|149b20 159r63
+59V13*Get_Entry 18|48b13 65r8 65t17
+59s24 Name 18|48b24 53r34 58r13
+63V13*Get_Flag 18|68b13 81r8 81t16
+63s23 Name 18|68b23 72r33 75r13
+67U14*Get_Number 18|84b14 100r8 100t18
+67s26 Name 18|84b26 90r33 93r13
+68i26 Value 18|85b26 94m7 95r10
+69b26 Result 18|86b26 96m10 98m10
+73U14*Get_String 18|103b14 124r8 124t18
+73s26 Name 18|103b26 110r33 116r13
+74s26 Value 18|104b26 121m10
+75b26 Result 18|105b26 119m10 122m10
+76V13*Get_String 18|126b13 144r8 144t18
+76s25 Name 18|126b25 131r33 137r13
+X 18 terminal_interface-curses-termcap.adb
+50V16*tgetent 52m25 59r17
+50a25 name
+50a44 val
+53a7 NameTxt 58m19 59r48
+54m7 Length 58m28
+55a7 ignored 59r38
+56i7 result 59m7 60r10 63r30
+70V16*tgetflag 71m25 76r10
+70a26 id
+72a7 Txt 75m19 76r20
+73m7 Length 75m24
+88V16*tgetnum 89m25 94r25
+88a25 id
+90a7 Txt 93m19 94r34
+91m7 Length 93m24
+107V16*tgetstr 109m25 117r15
+107a25 id
+108a25 buf
+110a7 Txt 116m19 117r24
+111m7 Length 116m24
+112M7 Txt2 117m7 118r10 121r32
+113A12 t<4|73A9> 114r23
+114a7 Return_Buffer 117r41
+128V16*tgetstr 130m25 138r15
+128a25 Id
+129a25 buf
+131a7 Txt 137m19 138r24
+132m7 Length 137m24
+133M7 Txt2 138m7 139r10
+134A12 t<4|73A9> 135r19
+135a7 Phony_Txt 138r41
+150V16*tgoto 153m25 159r31
+150a23 cap
+151i23 col
+152i23 row
+154a7 Txt 157m18 159r38
+155m7 Length 157m23
+

@@ -1,0 +1,135 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvnnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.color_test%b	ncurses2-color_test.adb	611a3d6d NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U ncurses2.color_test%s	ncurses2-color_test.ads	b16f8484 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-color_test.ads  20001202223125 e0987d70
+D ncurses2-color_test.adb  20001202223125 cd8a678b
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgint.ads		20020507105116 f1ba8463
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 27|44r6 96r16 98r40 123r19 124r43 126r19 127r43
+X 10 a-string.ads
+18K13*Strings 32e16 27|44r10 96r20 98r44 123r23 124r47 126r23 127r47
+30n24*Left 27|98r52 124r55 127r55
+X 11 a-strfix.ads
+43K21*Fixed 256e22 27|44r18 96r28 123r31 126r31
+194V13*Trim 27|96r34 123r37 126r37
+211U14*Trim 27|96r34 123r37 126r37
+X 16 a-tiinio.ads
+79U14*Put 27|77r10
+X 25 ncurses2.ads
+42K9*ncurses2 44e13 26|41r11 27|41r6 41r25 46r11 164r5
+X 26 ncurses2-color_test.ads
+41U20*color_test 27|46b20 164r14 164t24
+X 27 ncurses2-color_test.adb
+49U14 show_color_name 72b14 84r8 84t23 137r10 140r10
+49i31 y 72b31 78r38 81r38
+49i34 x 72b34 78r69 81r69
+49i47 color 72b47 77r21 82r35
+51a4 color_names 82r22
+73a7 tmp5 77m15 79r22
+87i4 top 116m10 118m10 121r43 137r27 140r27 151r38
+87i9 width 103m7 105m7 137r46 153r42
+88a4 hello 109m7 111m7 154r22
+114b8 Bright 118r30 129r10 147r13 157r34
+136i11 i 137r37 137r53
+139i11 i 140r37 140r43
+142i11 i 143r33 143r51 144r35 146r41 151r49 152r43
+X 28 ncurses2-util.ads
+44K18*util 27|41r15 41r34 28|78e18
+51e4*newl 27|100r15
+61U14*Pause 27|158r10
+69K12*Int_IO 27|47r8
+X 43 terminal_interface.ads
+41K9*Terminal_Interface 27|43r6 43r37 43|46e23
+X 44 terminal_interface-curses.ads
+48K28*Curses 27|43r25 43r56 44|1933e30
+59I9*Line_Position 27|78r23 81r23 121r28 151r23
+60I9*Column_Position 27|78r52 81r52 152r25
+276I9*Color_Number 27|143r37 144r21
+297I9*Color_Pair 27|143r21 146r29
+420V13*Number_Of_Colors 27|75r10 96r55 97r55 102r7 108r7 115r10 118r41 123r58
+. 126r58 136r21 139r21 143r57 144r39 151r53 152r49 157r10
+423V13*Number_Of_Color_Pairs 27|142r21
+488U14*End_Windows 27|163r4
+504U14*Move_Cursor 27|121r7
+505i27 Line 27|121r20
+506i27 Column 27|121r53
+521U14*Add 27|100r4 125r7 134r7
+522e19 Ch 27|100r9 125r12 134r12
+646U14*Add 27|94r4 96r4 99r4 123r7 126r7 128r7 130r10 132r10
+647s19 Str 27|94r9 96r9 99r9 123r12 126r12 128r12 130r15 132r15
+655U14*Add 27|78r10 81r10 151r10
+656i19 Line 27|78r15 81r15 151r15
+657i19 Column 27|78r42 81r42 152r15
+658s19 Str 27|79r15 82r15 154r15
+799U14*Switch_Character_Attribute 27|148r13
+801r7 Attr 27|148r41
+810U14*Set_Character_Attributes 27|155r10
+831U14*Set_Color 27|146r10
+832i25 Pair 27|146r21
+1038U14*Refresh 27|93r4
+1067U14*Erase 27|162r4
+1080U14*Clear_To_End_Of_Screen 27|120r7
+1705U14*Init_Pair 27|143r10
+

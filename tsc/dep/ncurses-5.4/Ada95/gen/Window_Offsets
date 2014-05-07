@@ -1,0 +1,22 @@
+   Offset_maxy        : constant Natural :=  2; --  short
+   Offset_maxx        : constant Natural :=  3; --  short
+   Offset_begy        : constant Natural :=  4; --  short
+   Offset_begx        : constant Natural :=  5; --  short
+   Offset_cury        : constant Natural :=  0; --  short
+   Offset_curx        : constant Natural :=  1; --  short
+   Offset_yoffset     : constant Natural := 36; --  short
+   Offset_pary        : constant Natural := 13; --  int
+   Offset_parx        : constant Natural := 12; --  int
+   Offset_notimeout   : constant Natural := 24; --  char
+   Offset_clear       : constant Natural := 25; --  char
+   Offset_leaveok     : constant Natural := 26; --  char
+   Offset_scroll      : constant Natural := 27; --  char
+   Offset_idlok       : constant Natural := 28; --  char
+   Offset_idcok       : constant Natural := 29; --  char
+   Offset_immed       : constant Natural := 30; --  char
+   Offset_sync        : constant Natural := 31; --  char
+   Offset_use_keypad  : constant Natural := 32; --  char
+   Sizeof_bool        : constant Natural :=  1; --  bool
+   Offset_XY          : constant Natural :=  1; --  int
+
+   type Curses_Bool is mod 2 ** Interfaces.C.char'Size;

@@ -1,0 +1,24 @@
+   type Menu_Option_Set is
+      record
+         One_Valued        : Boolean;
+         Show_Descriptions : Boolean;
+         Row_Major_Order   : Boolean;
+         Ignore_Case       : Boolean;
+         Show_Matches      : Boolean;
+         Non_Cyclic        : Boolean;
+      end record;
+   pragma Pack (Menu_Option_Set);
+   pragma Convention (C, Menu_Option_Set);
+
+   for Menu_Option_Set use
+      record
+         One_Valued        at 0 range  0 ..  0;
+         Show_Descriptions at 0 range  1 ..  1;
+         Row_Major_Order   at 0 range  2 ..  2;
+         Ignore_Case       at 0 range  3 ..  3;
+         Show_Matches      at 0 range  4 ..  4;
+         Non_Cyclic        at 0 range  5 ..  5;
+      end record;
+   for Menu_Option_Set'Size use 32;
+   --  Please note: this rep. clause is generated and may be
+   --               different on your system.

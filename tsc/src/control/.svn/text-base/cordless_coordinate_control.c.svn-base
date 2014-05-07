@@ -1,0 +1,105 @@
+/**
+ * cordless_coordinate_control.c
+ * 
+ * 无线缆协调控制
+ * 
+ * Company: Xiamen Uni-Creative Technology Corporation
+ * Author:  Lin Jingxian(林景贤)
+ * E-Mail:  cckk_lin@yahoo.ie
+ * Date:    2005-07-05 11:48:58 中国标准时间
+ * 
+ * $log$
+ *
+ */
+#include "io.h"
+#include "kernel.h"
+
+// 计算配时周期
+static int get_cycle(int timming)
+{
+	int i,cycle;
+	cycle = 0;
+	if(timming < 1 || timming > MAX_TIMMING_PLAN_COUNT)
+		return -1;
+	for(i=0; i<g_config.m_timming_table[timming-1].m_step; i++)
+	{
+		cycle += g_config.m_timming_table[timming-1].m_greentimming[i];
+		cycle += g_config.m_timming_table[timming-1].m_greenflashtimming[i];
+		cycle += g_config.m_timming_table[timming-1].m_yellowtimming[i];
+		cycle += g_config.m_timming_table[timming-1].m_redtimming[i];
+	}
+	return cycle;
+}
+/**
+ * 无线缆协调控制
+ */
+int cordless_coordinate_control(int mode_switch, int timer)
+{
+	static unsigned char is_switching;
+	static unsigned char phase;
+	static unsigned char timming;
+
+	if(mode_switch){
+		int yellow,red,cycle;
+		int hour,minute,offset;
+		//判断进入无线协调的时间是否到了
+		hour = g_config.m_cordless_coordinate_control_param.m_start_hour;
+		minute = g_config.m_cordless_coordinate_control_param.m_start_minute;
+		offset = g_config.m_cordless_coordinate_control_param.m_offset;
+
+		
+		if((g_controller_status.m_hour-hour)*(long)3600+
+		   (g_controller_status.m_minute-minute)*60+
+		    g_controller_status.m_second < 0){
+			// 时间还没到
+			return -1;
+		}
+		//引导相位和配时
+		phase = g_config.m_cordless_coordinate_control_param.m_phase;
+		timming = g_config.m_cordless_coordinate_control_param.m_timming;
+		if(!is_schedule_valid(phase,timming))
+			return -1;
+
+		cycle = get_cycle(timming);
+		// 计算过渡阶段所需要的时间长度
+		yellow = ((g_controller_status.m_hour-hour)*(long)3600+
+			 (g_controller_status.m_minute-minute)*60+
+			 g_controller_status.m_second-offset) % cycle;
+		
+		yellow = cycle - yellow;
+		if(yellow < 15)		
+			yellow += cycle;	//确保黄闪大于10秒
+		yellow -= 5;
+		red = 5;	// 五秒四面红
+
+		// 进入过渡阶段
+		is_switching = 1;
+		switching_with_yellow_flash_all_red(1,yellow,red,timer);
+	}
+
+	if(is_switching){
+		int ret = switching_with_yellow_flash_all_red(0,0,0,timer);
+		if(ret == 1){
+			is_switching = 0;
+			// 载入无线缆协调控制的配时和相位
+			load_current_schedule(0,phase,timming);
+			g_controller_status.m_next_phase_plan_p=g_controller_status.m_current_phase_plan_p;
+			g_controller_status.m_step=1;
+			g_controller_status.m_stage = 1;
+			if(g_controller_status.m_current_phase_plan_p->m_stage_count>1)
+				g_controller_status.m_next_stage=2;
+			else
+				g_controller_status.m_next_stage=1;
+			run_current_step();
+		}
+		return 0;
+	}
+
+	if(timer == 0 && is_step_end()){
+		// 更新步号
+		set_current_stage();
+		run_current_step();
+	}
+	return 0;
+}
+

@@ -1,0 +1,15 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U ada.characters%s	a-charac.ads		060f352a NE PU PK
+W ada%s			ada.ads			ada.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D system.ads		20020507104801 427a8039
+X 1 ada.ads
+18K9*Ada 21e8 2|19r9 22r5
+X 2 a-charac.ads
+19K13*Characters 20r14 22r9 22e19
+

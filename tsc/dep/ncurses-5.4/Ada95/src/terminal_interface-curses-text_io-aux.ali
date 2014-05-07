@@ -1,0 +1,87 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U terminal_interface.curses.text_io.aux%b  terminal_interface-curses-text_io-aux.adb  05629336 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+
+U terminal_interface.curses.text_io.aux%s  terminal_interface-curses-text_io-aux.ads  8d58529c EE NE PK
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-aux.adb  20031025153918 e3816d78
+D unchconv.ads		20020507105303 1b7a14c5
+X 25 terminal_interface.ads
+41K9*Terminal_Interface 46e23 28|41r17 54r5 29|41r14 127r5
+X 26 terminal_interface-curses.ads
+48K28*Curses 1933e30 28|41r36 54r24 29|41r33 127r24
+56M9*Window 28|48r19 29|44r19
+57M4*Null_Window 29|107r29
+59I9*Line_Position 29|55r13
+60I9*Column_Position 29|56r13 90r24
+62I12*Line_Count 29|53r13
+64I12*Column_Count 29|54r13 74r16
+1221U14*Get_Size 29|73r13
+1237U14*Get_Cursor_Position 29|89r16
+X 27 terminal_interface-curses-text_io.ads
+44K35*Text_IO 136e38 28|41r43 54r31 29|41r40 127r31
+50I12*Field 28|50r19 29|46r19 50r13 51r13 52r13 58r36 60r36
+86U14*New_Line 29|91r19
+115U14*Put 29|86r22 93r16 99r22
+134X4*Layout_Error 29|76r25
+X 28 terminal_interface-curses-text_io-aux.ads
+41K51*Aux 54r39 54e42 29|41b48 127r39 127t42
+47U14*Put_Buf 29|43b14 125r8 125t15
+48M7 Win 29|44b7 73r23 86r27 89r37 91r29 93r21 99r27 107r22
+49s7 Buf 29|45b7 93r26 110r24 111r23 117r15 118r24 119r23 122r17 123r25
+50i7 Width 29|46b7 52r22
+51b7 Signal 29|47b7 75r19
+52b7 Ljust 29|48b7 81r40 94r36 108r10
+X 29 terminal_interface-curses-text_io-aux.adb
+50i7 L 109m10 111r28 112m13 112r18 114r17 117m10 119r28 120m13 120r18 122r30
+. 123r18
+51i7 Len 63r13 65r21 67r16 69r21 72r28 74r30 81r19 83r58 90r41 94r19 96r58
+. 114m10 115r21 122m10
+52i7 W 64r16 65m16 67r22 69m16 72r35 81r25 83r54 94r25 96r54
+53i7 LC 73m28
+54i7 CC 73m32 74r37 90r49
+55i7 Y 89m42
+56i7 X 89m45 90r20
+58U17 Output 60b17 104r11 104t17 115r10 123r10
+58i25 From 60b25 93r31
+58i31 To 60b31 93r39
+83a22 Filler 86r32
+96a22 Filler 99r32
+110i14 I
+118i14 I
+

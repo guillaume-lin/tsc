@@ -1,0 +1,220 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvvvnvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U sample.menu_demo%b	sample-menu_demo.adb	e704c9b3 NE PK
+W sample%s		sample.adb		sample.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.function_key_setting%s  sample-function_key_setting.adb  sample-function_key_setting.ali
+W sample.helpers%s	sample-helpers.adb	sample-helpers.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W sample.menu_demo%s	sample-menu_demo.adb	sample-menu_demo.ali
+W sample.menu_demo.handler%s  sample-menu_demo-handler.adb  sample-menu_demo-handler.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+W terminal_interface.curses.menus.item_user_data%s  terminal_interface-curses-menus-item_user_data.adb  terminal_interface-curses-menus-item_user_data.ali
+W terminal_interface.curses.menus.menu_user_data%s  terminal_interface-curses-menus-menu_user_data.adb  terminal_interface-curses-menus-menu_user_data.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+U sample.menu_demo%s	sample-menu_demo.ads	fa7e47cd EE NE PK
+W sample%s		sample.adb		sample.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-helpers.ads	20031025153918 a22559f6
+D sample-manifest.ads	20031025153918 448d6845
+D sample-menu_demo.ads	20031025153918 08e34ec6
+D sample-menu_demo.adb	20031025153918 480dd5c3
+D sample-menu_demo-aux.ads  20031025153918 51f435a8
+D sample-menu_demo-handler.ads  20031025153918 25531d72
+D sample-menu_demo-handler.adb  20031025153918 41bcb03b
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-expuns.ads		20020507105108 28466e32
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-menus.adb  20031025153918 c955c37c
+D terminal_interface-curses-menus-item_user_data.ads  20140426095555 a69b1a62
+D terminal_interface-curses-menus-item_user_data.adb  20031025153918 ef0ac43a
+D terminal_interface-curses-menus-menu_user_data.ads  20140426095555 de45cb01
+D terminal_interface-curses-menus-menu_user_data.adb  20031025153918 c8716752
+D terminal_interface-curses-mouse.ads  20140426095555 73bb89fb
+D terminal_interface-curses-mouse.adb  20031025153918 ec79f2ad
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D unchconv.ads		20020507105303 1b7a14c5
+X 16 sample.ads
+41K9*Sample 43e11 21|41r9 45r5 22|47r6 47r27 48r6 48r39 49r6 50r6 50r26 51r6
+. 51r30 53r14 72r28 326r25 390r5
+X 17 sample-explanation.ads
+45K16*Explanation 59e23 22|51r13 51r37
+53U14*Notepad 22|229r10 369r7
+X 18 sample-function_key_setting.ads
+46K16*Function_Key_Setting 82e32 22|48r13 48r46
+48U14*Push_Environment 22|228r10 368r7
+56U14*Pop_Environment 22|302r10 385r7
+76U14*Default_Labels 22|230r10 370r7
+X 19 sample-helpers.ads
+46K16*Helpers 54e19 22|50r13 50r33
+52U14*Not_Implemented 22|355r34
+X 20 sample-manifest.ads
+43K16*Manifest 67e20 22|47r13 47r34
+45i4*QUIT 22|110r23 346r20
+46i4*SELECT_ITEM 22|348r23
+X 21 sample-menu_demo.ads
+41K16*Menu_Demo 45r12 45e21 22|49r13 53b21 72r35 326r32 390r12 390t21
+43U14*Demo 22|309b14 388r8 388t12
+X 22 sample-menu_demo.adb
+55K12 Spacing_Demo 57r8 57e20 59b17 307r8 307t20 354r29
+56U17*Spacing_Test 61b17 306r11 306t23 354r42
+63V19 My_Driver 72r54 103b19 167r14 167t23
+63M30 M 103b30
+64i30 K 104b30 109r16 110r19 114r16 115r21
+65M30 P 105b30
+67U20 Set_Option_Key 169b20 184r14 184t28 235r10 266r16 275r19
+68U20 Set_Select_Key 186b20 197r14 197t28 236r10 284r19
+69U20 Set_Description_Key 199b20 214r14 214t33 237r10 267r16 293r19
+70U20 Set_Hide_Key 216b20 225r14 225t26 238r10
+72K18 Mh 242r13
+74p10 I 89r34 149r34 150r41 159r41 303r63 305m16
+89M10 M 176r29 190r26 206r29 240r22 242r26 247r32 250r32 254r49 255r49 260r38
+. 262r38 263r37 272r32 274r32 281r32 283r32 290r32 292r32 299r23 303r43 304m18
+90b10 Flip_State 245r19 246m19 249m19 300m10
+91b10 Hide_Long 145m22 145r39 152r31 219r16
+93E15 Format_Code 100r27
+93n31 Four_By_1 100r42 121r40 173r33 254r24
+93n42 Four_By_2 125r40 255r24
+93n53 Four_By_3 129r40 138r43 203r33 256r24
+94E15 Operations 96r32
+94n31 Flip 117r33 244r27
+94n37 Reorder 132r33 268r30
+94n46 Reformat 120r33 124r33 128r33 252r30
+94n56 Reselect 135r33 277r30
+94n66 Describe 139r36 286r30
+96A15 Change 97r23 98r31 98r41 101r22
+98a10 No_Change 101r32 108r26 243r35
+100e10 Current_Format 121m22 125m22 129m22 138r25 173r16 203r16 253r21
+101a10 To_Change 108m13 117m22 120m22 124m22 128m22 132m22 135m22 139m25
+. 243r23 244r16 252r19 268r19 277r19 286r19
+147r25 O 150m48 151m28 155m37 159r48
+149i29 J 150r44 153r36 159r44
+171r13 O 176m32 177r19
+188r13 O 190m29 191r16
+201r13 O 206m32 207r19
+258r25 O 260m41 261m25 262r41
+270r19 O 272m35 273m19 273r44 274r35
+279r19 O 281m35 282m19 282r39 283r35
+288r19 O 290m35 291m19 291r46 292r35
+314I12 User_Data 315r39 319r42 320r42 334r36 336r36
+315P12 User_Data_Access 319r53 320r53 334r12 335r12 336r12 337r12
+319K15 MUD 374r7 379r7
+320K15 IUD 375r7 382r7
+322V16 My_Driver 326r51 339b16 366r11 366t20
+322M27 M 339b27 343r59
+323i27 K 340b27 345r13 346r16 348r19
+324M27 P 341b27 350r25 358r24 359r25
+326K15 Mh 377r7
+328p7 Itm 332r29 349r26 357r26 375r26 382r26 387m13
+332M7 M 372r26 374r26 377r20 379r26 386m15
+334p7 U1 374r29 380r22 380r34
+335p7 U2 379m29 380r27
+336p7 U3 375r35 383r22 383r34
+337p7 U4 382m35 383r27
+343i10 Idx 349r19 353r21 357r19
+X 24 sample-menu_demo-handler.ads
+52k26*Handler 22|49r23 72r45 326r42 24|64e29
+60U14 Drive_Me 22|242r16 377r10
+X 36 terminal_interface.ads
+41K9*Terminal_Interface 22|41r6 41r37 42r6 42r44 43r6 43r43 44r6 45r6 36|46e23
+X 37 terminal_interface-curses.ads
+48K28*Curses 22|41r25 41r56 42r25 42r63 43r25 43r62 44r25 45r25 37|1933e30
+67I9*Key_Code 22|64r34 104r34 323r31 340r31
+76I12*Special_Key_Code 22|114r21
+100i4*Key_F4 22|116r24
+101i4*Key_F5 22|119r24
+102i4*Key_F6 22|123r24
+103i4*Key_F7 22|127r24
+104i4*Key_F8 22|131r24
+105i4*Key_F9 22|134r24
+106i4*Key_F10 22|137r24
+107i4*Key_F11 22|144r24
+208I12*User_Key_Code 22|109r21 345r18
+1033U14*Update_Screen 22|361r19
+1498U14*Set_Soft_Label_Key 22|174r16 178r19 180r19 192r16 194r16 204r16 208r19
+. 210r19 220r16 222r16 231r10 232r10 233r10 234r10
+1510U14*Refresh_Soft_Label_Keys_Without_Update 22|183r13 196r13 213r13 224r13
+. 371r7
+X 40 terminal_interface-curses-menus.ads
+48K35*Menus 22|43r32 43r69 44r32 45r32 40|676e36
+56M9*Menu 22|63r34 89r14 103r34 322r31 332r11 339r31
+61M4*Null_Item 22|87r13 331r10
+120R9*Menu_Option_Set 22|171r17 188r17 201r17 258r29 270r23 279r23 288r23
+. 40|128e17
+122b10*One_Valued 22|191r18 282r21 282r41
+123b10*Show_Descriptions 22|207r21 261r27 291r21 291r48
+124b10*Row_Major_Order 22|177r21 273r21 273r46
+153R9*Item_Option_Set 22|147r29 40|156e17
+155b10*Selectable 22|151r30 155r39
+176A9*Item_Array 22|74r39 328r38
+179P9*Item_Array_Access 22|74r14 328r13
+181U14*Free 22|305r10 387r7
+198V13*New_Item 22|75r13 76r13 77r13 78r13 79r13 80r13 81r13 82r13 83r13
+. 84r13 85r13 86r13 329r10 330r10
+237U14*Set_Options 22|159r28
+252U14*Get_Options 22|150r28
+295V13*Current 22|343r50
+311V13*Get_Index 22|303r25 303r52 343r39
+334U14*Set_Options 22|262r25 274r19 283r19 292r19
+348U14*Get_Options 22|176r16 190r13 206r16 260r25 272r19 281r19 290r19
+485U14*Set_Pad_Character 22|372r7
+501U14*Set_Spacing 22|247r19 250r19 299r10
+538U14*Set_Format 22|240r10 254r37 255r37 263r25
+624V13*Items 22|303r36
+643V13*New_Menu 22|89r24 332r19
+646U14*Delete 22|304r10 386r7
+X 42 terminal_interface-curses-menus-item_user_data.ads
+45k41*Item_User_Data 22|45r38 320r26 42|73e51
+57U14 Set_User_Data 22|375r11
+63U14 Get_User_Data 22|382r11
+68V13 Get_User_Data 22|382r11
+X 44 terminal_interface-curses-menus-menu_user_data.ads
+45k41*Menu_User_Data 22|44r38 319r26 44|69e51
+53U14 Set_User_Data 22|374r11
+59U14 Get_User_Data 22|379r11
+64V13 Get_User_Data 22|379r11
+X 48 terminal_interface-curses-panels.ads
+43K35*Panels 22|42r32 42r70 48|146e37
+48M9*Panel 22|65r34 105r34 324r31 341r31
+81U14*Top 22|358r19
+86U14*Show 22|359r19
+91U14*Update_Panels 22|351r19 360r19
+96U14*Hide 22|350r19
+

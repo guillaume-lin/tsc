@@ -1,0 +1,37 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.traceback%b	s-traceb.adb		4d4e8ee2 NE PK
+W system%s		system.ads		system.ali
+
+U system.traceback%s	s-traceb.ads		7437b5a6 NE PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-traceb.ads		20011002143018 364d359f
+D s-traceb.adb		20011002143018 7b03bb7d
+X 1 system.ads
+41K9*System 150e11 2|45r9 52r21 55r21 55r39 56r21 56r39 78r19 84r5 3|38r14
+. 45r19 61r21 63r21 64r21 69r19 73r21 73r39 79r5
+67M9*Address 2|52r28 55r28 56r28 78r26 3|45r26 61r28 63r28 64r28 69r26 73r28
+68M4*Null_Address 2|55r46 56r46 3|73r46
+X 2 s-traceb.ads
+45K16*Traceback 84r12 84e21 3|38b21 79r12 79t21
+51U14*Call_Chain 3|52r7 68b14 77r8 77t18
+52M7 Traceback 3|69b7 76r25
+53i7 Max_Len 3|70b7 76r36
+54i7 Len 3|71b7 76m7
+55M7 Exclude_Min 3|72b7 76r45
+56M7 Exclude_Max 3|73b7 76r58
+77V13*C_Call_Chain 81m22 3|44b13 54r8 54t20
+78M7 Traceback 3|45b7 52r19
+79i7 Max_Len 3|46b7 52r30
+X 3 s-traceb.adb
+49i7 Val 52m39 53r14
+60V13 Backtrace 66m22 76r14
+61M7 Traceback
+62i7 Len
+63M7 Exclude_Min
+64M7 Exclude_Max
+

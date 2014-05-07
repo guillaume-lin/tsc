@@ -1,0 +1,8 @@
+big52gbdecoder.o big52gbdecoder.o: big52gbdecoder.cpp big52gbdecoder.h \
+  big5decoder.h hzdecoder.h
+
+big52gbdecoder.h:
+
+big5decoder.h:
+
+hzdecoder.h:

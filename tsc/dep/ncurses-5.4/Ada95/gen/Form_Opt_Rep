@@ -1,0 +1,16 @@
+   type Form_Option_Set is
+      record
+         NL_Overload : Boolean;
+         BS_Overload : Boolean;
+      end record;
+   pragma Pack (Form_Option_Set);
+   pragma Convention (C, Form_Option_Set);
+
+   for Form_Option_Set use
+      record
+         NL_Overload at 0 range  0 ..  0;
+         BS_Overload at 0 range  1 ..  1;
+      end record;
+   for Form_Option_Set'Size use 32;
+   --  Please note: this rep. clause is generated and may be
+   --               different on your system.

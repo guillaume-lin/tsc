@@ -1,0 +1,197 @@
+C51 COMPILER V7.09   CPLD_FIFO                                                             04/25/2008 16:22:19 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE CPLD_FIFO
+OBJECT MODULE PLACED IN cpld_fifo.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE cpld_fifo.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * cpld_fifo.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-08-08 18:24:30 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "cpld_fifo.h"
+  15          
+  16          /**
+  17           * 参数：
+  18           *      self    环形队列
+  19           * 返回：
+  20           *      无
+  21           * 说明：
+  22           *      初始化环形队列
+  23           */
+  24          void cpld_fifo_init(cpld_fifo_t* self)
+  25          {
+  26   1              self->m_read_p = self->m_write_p = 0;
+  27   1      }
+  28          
+  29          /**
+  30           * 参数:
+  31           *      self 环形队列
+  32           *      buf  存放读到的字节的缓冲区
+  33           *      len 缓冲区长度
+  34           * 返回：
+  35           *      从环形队列中读到的字节数
+  36           * 说明：
+  37           */
+  38          int cpld_fifo_read(cpld_fifo_t* self,unsigned char* buf, int len)
+  39          {
+  40   1              int count = 0;
+  41   1              while(count < len && !cpld_fifo_is_empty(self)){
+  42   2                      buf[count++] = cpld_fifo_getchar(self);
+  43   2              }
+  44   1              return count;
+  45   1      }
+  46          
+  47          /**
+  48           * 参数:
+  49           *      self 环形队列
+  50           *      buf  要写入的字节的缓冲区
+  51           *      len  缓冲区长度
+  52           * 返回：
+  53           *      写入到环形队列中的字节数
+  54           * 说明：
+  55           *      
+C51 COMPILER V7.09   CPLD_FIFO                                                             04/25/2008 16:22:19 PAGE 2   
+
+  56           */
+  57          
+  58          int cpld_fifo_write(cpld_fifo_t* self, unsigned char* buf, int len)
+  59          {
+  60   1              int count = 0;
+  61   1              while(count < len && !cpld_fifo_is_full(self)){
+  62   2                      cpld_fifo_putchar(self,buf[count++]);
+  63   2              }
+  64   1              return count;
+  65   1      }
+  66          
+  67          /**
+  68           * 参数：
+  69           *      self 环形队列
+  70           *      ch   要放入环形队列的字符
+  71           * 返回：
+  72           *      无      
+  73           * 说明：
+  74           *      把字符放入环形队列
+  75           */
+  76          void cpld_fifo_putchar(cpld_fifo_t* self,unsigned char ch)
+  77          {
+  78   1              self->m_buffer[self->m_write_p++] = ch;
+  79   1              if(self->m_write_p == MAX_BUFFER_LEN)
+  80   1                      self->m_write_p = 0;
+  81   1      }
+  82          
+  83          /**
+  84           * 参数：
+  85           *      self 环形队列
+  86           * 返回:
+  87           *      队列头的字符
+  88           * 说明:
+  89           *      读取队列头的字符
+  90           *
+  91           */
+  92          unsigned char cpld_fifo_getchar(cpld_fifo_t* self)
+  93          {
+  94   1              unsigned char ch = self->m_buffer[self->m_read_p++];
+  95   1              if(self->m_read_p == MAX_BUFFER_LEN)
+  96   1                      self->m_read_p = 0;
+  97   1              return ch;
+  98   1      
+  99   1      }
+ 100          
+ 101          /**
+ 102           * 参数:
+ 103           *      self 环形队列
+ 104           * 返回：
+ 105           *      如果队列将要满的话，返回非0，否则返回0
+ 106           * 说明：
+ 107           *      判断队列中是否只剩下一个空位
+ 108           */
+ 109          int cpld_fifo_is_will_full(cpld_fifo_t* self)
+ 110          {
+ 111   1              if((self->m_write_p + 2)%MAX_BUFFER_LEN == self->m_read_p)
+ 112   1                      return 1;
+ 113   1              else
+ 114   1                      return 0;
+ 115   1      
+ 116   1      }
+ 117          
+C51 COMPILER V7.09   CPLD_FIFO                                                             04/25/2008 16:22:19 PAGE 3   
+
+ 118          /**
+ 119           * 参数：
+ 120           *      self 环形队列
+ 121           * 返回：
+ 122           *      如果队列满了，返回非0，否则返回0
+ 123           * 说明：
+ 124           *      判断队列是否已经满了
+ 125           */
+ 126          int cpld_fifo_is_full(cpld_fifo_t* self)
+ 127          {
+ 128   1              if((self->m_write_p + 1)%MAX_BUFFER_LEN  == self->m_read_p)
+ 129   1                      return 1;
+ 130   1              else
+ 131   1                      return 0;
+ 132   1      
+ 133   1      }
+ 134          
+ 135          /**
+ 136           * 参数：
+ 137           *      self 环形队列
+ 138           * 返回：
+ 139           *      如果队列为空，返回非0，否则返回0
+ 140           * 说明：
+ 141           *
+ 142           */
+ 143          int cpld_fifo_is_empty(cpld_fifo_t* self)
+ 144          {
+ 145   1              if(self->m_read_p == self->m_write_p)
+ 146   1                      return 1;
+ 147   1              else
+ 148   1                      return 0;
+ 149   1      
+ 150   1      }
+ 151          
+ 152          /**
+ 153           * 参数:
+ 154           *     self 环形队列
+ 155           * 返回:
+ 156           *     环形队列的剩余空间
+ 157           * 说明:
+ 158           */
+ 159          int cpld_fifo_capacity(cpld_fifo_t* self)
+ 160          {
+ 161   1      
+ 162   1              
+ 163   1              if(self->m_write_p >= self->m_read_p)
+ 164   1                      return (MAX_BUFFER_LEN - 1 - (self->m_write_p - self->m_read_p));
+ 165   1              else
+ 166   1                      return (self->m_read_p - self->m_write_p -1);
+ 167   1                              
+ 168   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    636    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----      32
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V7.09   CPLD_FIFO                                                             04/25/2008 16:22:19 PAGE 4   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

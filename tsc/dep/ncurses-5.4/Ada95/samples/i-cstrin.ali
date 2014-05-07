@@ -1,0 +1,137 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvvvnnnnvvnnnnnnnnvnvnnnnnnnnnvnn
+
+U interfaces.c.strings%b  i-cstrin.adb		ed672937 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+W system.address_to_access_conversions%s
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W unchecked_conversion%s
+
+U interfaces.c.strings%s  i-cstrin.ads		23ab0dac EE PR PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrin.adb		20020507105014 ee1723c7
+D system.ads		20020507104801 427a8039
+D s-atacco.ads		20011029140703 5ae889e0
+D s-atacco.adb		20020507105058 b16fefff
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stoele.adb		20020507105159 792079f8
+D unchconv.ads		20020507105303 1b7a14c5
+X 5 interfac.ads
+23K9*Interfaces 168e15 7|42r9 105r5 8|39r14 329r5
+X 6 i-c.ads
+20K20*C 140e17 7|42r20 105r16 8|39r25 329r16
+54M9*size_t 7|49r35 70r19 77r19 80r49 84r19 90r19 8|55r44 59r56 62r30 72r44
+. 96r17 121r39 160r56 175r49 176r20 219r19 232r27 238r19 269r19 309r53
+66E9*char 8|41r62 47r44 51r28 140r44 150r28
+68e4*nul 8|121r16 163r24 184r40 292r29 320r26 325r26
+73A9*char_array 7|45r41 58r40 66r48 71r16 85r19 8|59r37 95r40 160r37 220r19
+. 250r48 251r16 270r16 286r19 310r16
+78V13*To_C 8|133r30 243r29
+83V13*To_Ada 8|303r14 321r20 326r14
+138X4*Terminator_Error 8|207r16
+X 7 i-cstrin.ads
+42K22*Strings 43r22 105r18 105e25 8|39b27 329r18 329t25
+45P9*char_array_access 54r22 8|197r22
+47M9*chars_ptr 49r55 51r24 56r19 58r59 60r49 62r34 66r30 69r19 73r30 76r19
+. 80r31 83r19 89r19 97c9 99r24 8|47r26 51r41 55r25 55r59 62r45 65r32 72r25
+. 72r59 74r21 81r34 95r59 97r17 131r49 140r26 150r41 175r31 199r19 218r19
+. 223r15 237r19 250r30 268r19 301r30 309r30
+49A9*chars_ptr_array
+51M4*Null_Ptr 99c4 8|83r17 88r15 179r17 203r17 254r17 273r17 313r17
+53V13*To_Chars_Ptr 8|196b13 211r8 211t20
+54p7 Item 8|197b7 202r10 205r43 205r55 209m29 209r35
+55b7 Nul_Check 8|198b7 204r13
+58V13*New_Char_Array 8|95b13 125r8 125t22 133r14
+58a29 Chars 8|95b29 103r41 104r37 108r19 111r28 111r35 119r28 121r48
+60V13*New_String 8|131b13 134r8 134t18
+60s25 Str 8|131b25 133r36
+62U14*Free 8|81b14 89r8 89t12
+62M20 Item 8|81b20 83r10 87r15 88m7
+64X4*Dereference_Error 8|180r16 255r16 274r16 314r16
+66V13*Value 8|250b13 265r8 265t13 303r22
+66M20 Item 8|250b20 251r41 254r10 261r30
+68V13*Value 8|267b13 299r8 299t13
+69M7 Item 8|268b7 273r10 290r33
+70m7 Length 8|269b7 281r10 286r36
+73V13*Value 8|301b13 304r8 304t13
+73M20 Item 8|301b20 303r29
+75V13*Value 8|309b13 327r8 327t13
+76M7 Item 8|309b20 313r10 318r30
+77m7 Length 8|309b41 310r33 317r21 325r15
+80V13*Strlen 8|175b13 190r8 190t14 226r50 251r33
+80M21 Item 8|175b21 179r10 184r19
+82U14*Update 8|109r10 117r10 217b14 234r8 234t14 243r7
+83M7 Item 8|109r18 117r18 218b7 223r28 226r58
+84m7 Offset 8|110r18 118r18 219b7 223r35 226r25
+85a7 Chars 8|111r18 119r18 220b7 226r34 230r16 231r16
+86b7 Check 8|112r18 120r18 221b7 226r10
+88U14*Update 8|236b14 244r8 244t14
+89M7 Item 8|237b7 243r15
+90m7 Offset 8|238b7 243r21
+91s7 Str 8|239b7 243r35
+92b7 Check 8|240b7 243r41
+94X4*Update_Error 8|227r16
+X 8 i-cstrin.adb
+41K12 Char_Access 141r11 151r11
+47V13 Peek 48r19 140b13 144r8 144t12 184r13 261r24 290r27 318r24
+47M19 From 140b19 143r47
+51U14 Poke 52r19 121r10 150b14 154r8 154t12 231r10
+51e20 Value 150b20 153r55
+51M34 Into 121r21 150b34 153r40 231r27
+55V13 "+" 72b13 121r37 184r24 223r33 232r25 261r35 290r38 318r35
+55M18 Left 72b18 74r14
+55m36 Right 72b36 74r32
+59V13 Position_Of_Nul 103r16 160b13 169r8 169t23 205r18
+59a30 Into 103r33 160b30 162r16 163r13 168r14 205r35
+62V13 C_Malloc 63m22 104r18
+62m23 Size
+65U14 C_Free 66m22 87r7
+65M22 Address
+96m7 Index 103m7 104r29 108r10 111r50
+97M7 Pointer 104m7 109r28 117r28 121r29 124r14
+162m11 J 163r19 164r20
+176m7 Item_Index 184r26 185r20 188m10 188r24
+223M7 Index 231r35 232m10 232r19
+230m11 J 231r23
+251a7 Result 260r16 261m10 264r14
+260m11 J 261r18 261r37
+286a10 Result 289r19 290m13 292r16 293r23 297r17
+289m14 J 290r21 290r40 292r24 293r36
+310a7 Result 318m10 320r13 321r28 325m7 326r22
+317m11 J 318r18 318r37 320r21 321r41
+X 9 system.ads
+41K9*System 7|40r6 97r26 8|36r6 36r18 37r6 9|150e11
+67M9*Address 8|143r26 153r19
+X 10 s-atacco.ads
+43k16*Address_To_Access_Conversions 8|37r13 41r31 10|59e41
+49V13*To_Pointer 8|143r14 153r7
+X 19 s-stoele.ads
+26K16*Storage_Elements 7|40r13 97r33 19|91e28
+79M9*Integer_Address 7|97r50
+81V13*To_Address 8|143r35 153r28
+86V13*To_Integer 8|209r17
+

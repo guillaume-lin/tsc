@@ -1,0 +1,71 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.forms.form_user_data%b  terminal_interface-curses-forms-form_user_data.adb  4c75dca1 NE PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+
+U terminal_interface.curses.forms.form_user_data%s  terminal_interface-curses-forms-form_user_data.ads  c7d2c58d NE PR PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-form_user_data.ads  20140426095555 ba095955
+D terminal_interface-curses-forms-form_user_data.adb  20031025153918 488f3e97
+D unchconv.ads		20020507105303 1b7a14c5
+X 4 interfac.ads
+23K9*Interfaces 168e15 17|50r13
+X 5 i-c.ads
+20K20*C 140e17 17|50r24
+33I9*int 17|50r26
+X 12 terminal_interface.ads
+41K9*Terminal_Interface 46e23 16|45r9 46r25 69r5 17|46r6 46r41 48r14 86r5
+X 13 terminal_interface-curses.ads
+48K28*Curses 1933e30 16|45r28 46r44 69r24 17|46r25 46r60 48r33 86r24
+X 14 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 17|46r32 46r67
+55I12*C_Int 17|59r62
+78I12*Eti_Error 17|62r22
+80i4*E_Ok 17|64r18
+96U14*Eti_Exception 17|65r10
+X 15 terminal_interface-curses-forms.ads
+48K35*Forms 782e36 16|45r35 46r51 69r31 17|48r40 86r31
+56M9*Form 16|53r39 59r40 64r39 17|55r39 58r41 71r39 73r36 79r40
+X 16 terminal_interface-curses-forms-form_user_data.ads
+43+9 User 44r31
+44P9 User_Access 54r39 60r40 64r52 17|56r39 59r41 71r52 73r49 80r40
+45k41*Form_User_Data 46r57 69r37 69e51 17|48b46 86r37 86t51
+53U14 Set_User_Data 56r19 17|55b14 67r8 67t21
+53M29 Frm 17|55b29 62r53
+54p29 Data 17|56b29 62r58
+59U14 Get_User_Data 17|79b14 84r8 84t21
+59M29 Frm 17|79b29 83r30
+60p29 Data 17|80b29 83m7
+64V13 Get_User_Data 17|71b13 77r8 77t21 83r15
+64M28 Frm 17|71b28 76r28
+X 17 terminal_interface-curses-forms-form_user_data.adb
+58V16*Set_Form_Userptr 60m25 62r35
+58M34 Frm
+59p34 Data
+62i7 Res 64r11 65r25
+73V16*Form_Userptr 74m25 76r14
+73M30 Frm
+

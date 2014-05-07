@@ -1,0 +1,5 @@
+jisdecoder.o jisdecoder.o: jisdecoder.cpp jisdecoder.h hzdecoder.h
+
+jisdecoder.h:
+
+hzdecoder.h:

@@ -1,0 +1,129 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P UA
+R nnvnnnnvnnnnnvvvvnvnvvvnnnvnnnnvnvnnnnnnnvnvnn
+
+U rain%b		rain.adb		d4e2401a NE SU
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W status%s		status.adb		status.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U rain%s		rain.ads		71b75c1a EE NE SU
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-interr.ads		20020507104832 2a5d5c10
+D a-intnam.ads		20020507104739 2c7b339b
+D a-numeri.ads		20020507104840 24750733
+D a-nuflra.ads		20020507104839 847103fa
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D rain.ads		20031025153918 71b75c1a
+D rain.adb		20031025153918 88ca4000
+D status.ads		20031025153918 1850afc8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-interr.ads		20020507105121 c27e9f88
+D s-osinte.ads		20020507104759 8f433951
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-tasinf.ads		20020507105203 bbbd2b69
+D s-taspri.ads		20020507104759 26c755ad
+D s-taskin.ads		20020507105204 36912069
+D s-taprob.ads		20020507105202 0962e958
+D s-tpoben.ads		20020507105207 4dc7204d
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+D unchdeal.ads		20020507105303 8ac9d15e
+X 1 ada.ads
+18K9*Ada 21e8 24|43r6 43r37
+X 10 a-numeri.ads
+19K13*Numerics 30e17 24|43r10 43r41
+X 11 a-nuflra.ads
+53K22*Float_Random 101e30 24|43r19 43r50
+57R9*Generator 24|59r8
+61V13*Random 24|95r47 96r47 102r40 103r40
+X 23 rain.ads
+43U11*Rain 24|47b11 162r5 162t9
+X 24 rain.adb
+49e4 Visibility 88m4 89m27 158m4 159m27
+51I12 X_Position 54r32 61r15 65r26 76r26 95r19 102r12
+52I12 Y_Position 55r32 62r15 65r42 76r42 96r19 103r12
+54a4 Xpos 94r13 95m7 108r15 113r15 118r15 120r15 122r15 127r15 129r15 131r15
+. 133r15 135r15 140r15 142r15 144r15 146r15 148r15 151m7
+55a4 Ypos 96m7 108r25 113r25 118r29 120r25 122r29 127r29 129r29 131r25 133r29
+. 135r29 140r29 142r29 144r25 146r29 148r29 152m7
+57i4 N 99m4 108r21 108r31 112m13 113r21 113r31 117m13 118r21 118r35 120r21
+. 120r31 122r21 122r35 126m13 127r21 127r35 129r21 129r35 131r21 131r31 133r21
+. 133r35 135r21 135r35 139m13 140r21 140r35 142r21 142r35 144r21 144r31 146r21
+. 146r35 148r21 148r35 151r13 152r13
+59R4 G 95r55 96r55 102r48 103r48
+61i4 Max_X 91m4 95r38 102r31
+61i11 X 102m7 105r15 151r19
+62i4 Max_Y 92m4 96r38 103r31
+62i11 Y 103m7 105r18 152r19
+64U14 Next 67b14 74r8 74t12 112r7 117r7 126r7 139r7
+64i20 J 67b20 69r10 70m10 72m10 72r15
+65U14 Cursor 76b14 79r8 79t14 80r19 105r7 108r7 113r7 118r7 120r7 122r7 127r7
+. 129r7 131r7 133r7 135r7 140r7 142r7 144r7 146r7 148r7
+65i22 X 76b22 78r28
+65i38 Y 76b38 78r41
+94i8 I 95r13 96r13
+X 25 status.ads
+46K9*Status 24|44r6 44r18 25|60e11
+52w14*Process 24|100r10 25|58e15
+54V16 Continue 24|100r18
+X 45 terminal_interface.ads
+41K9*Terminal_Interface 24|45r6 45r37 45|46e23
+X 46 terminal_interface-curses.ads
+48K28*Curses 24|45r25 45r56 46|1933e30
+59I9*Line_Position 24|51r26
+60I9*Column_Position 24|52r26
+411V13*Lines 24|91r13
+414V13*Columns 24|92r13
+479U14*Init_Screen 24|84r4
+488U14*End_Windows 24|160r4
+504U14*Move_Cursor 24|78r7
+505i27 Line 24|78r20
+506i27 Column 24|78r31
+521U14*Add 24|106r7 109r7 114r7 119r7 123r7 128r7 136r7 141r7 149r7
+522e19 Ch 24|106r12 109r12 114r12 119r12 123r12 128r12 136r12 141r12 149r12
+646U14*Add 24|121r7 130r7 132r7 134r7 143r7 145r7 147r7
+647s19 Str 24|121r12 130r12 132r12 134r12 143r12 145r12 147r12
+891U14*Set_Echo_Mode 24|86r4
+968U14*Set_NL_Mode 24|85r4
+1038U14*Refresh 24|154r7
+1791E9*Cursor_Visibility 24|49r17
+1791n31*Invisible 24|88r18
+1791n42*Normal 24|158r18
+1794U14*Set_Cursor_Visibility 24|89r4 159r4
+1799U14*Nap_Milli_Seconds 24|155r7
+

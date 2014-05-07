@@ -1,0 +1,99 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvvnnnnnnvnvnn
+
+U terminal_interface.curses.putwin%b  terminal_interface-curses-putwin.adb  2090b59d NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+W ada.streams.stream_io.c_streams%s  a-ssicst.adb  a-ssicst.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U terminal_interface.curses.putwin%s  terminal_interface-curses-putwin.ads  d11c7b03 EE NE PK
+W ada%s			ada.ads			ada.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-ststio.ads		20020507104848 2798a67e
+D a-ssicst.ads		20020507104843 0c300012
+D a-tags.ads		20020507104854 bc792b69
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-putwin.ads  20031025153918 473a2d4f
+D terminal_interface-curses-putwin.adb  20031025153918 d55b1d1b
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 30|41r6 46r33 48r33 31|41r6 48r24 52r33 63r32
+X 6 a-stream.ads
+41K13*Streams 73e16 30|41r10 46r37 48r37 31|41r10 48r28 52r37 63r36
+X 7 a-ststio.ads
+43K21*Stream_IO 192e26 30|41r18 46r45 48r45 31|41r18 48r36 52r45 63r44
+47P9*File_Type 30|46r55 48r55 31|52r55 63r54
+X 8 a-ssicst.ads
+42K31*C_Streams 56e36 31|41r28 48r46
+46V13*C_Stream 31|56r46 68r42
+X 10 interfac.ads
+23K9*Interfaces 168e15 31|42r6 47r24
+X 13 i-cstrea.ads
+44K20*C_Streams 346e25 31|42r17 47r35
+53M12*FILEs 31|53r46 65r32
+X 27 terminal_interface.ads
+41K9*Terminal_Interface 46e23 30|43r9 50r5 31|43r6 43r41 45r14 77r5
+X 28 terminal_interface-curses.ads
+48K28*Curses 1933e30 30|43r28 50r24 31|43r25 43r60 45r33 77r24
+56M9*Window 30|45r33 48r73 31|51r33 53r30 64r32 65r46 68r20
+57M4*Null_Window 31|70r14
+382X4*Curses_Exception 31|59r16 71r16
+X 29 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 31|43r32 43r67
+55I12*C_Int 31|49r13 53r60 56r20
+71i4*Curses_Ok 31|58r15
+X 30 terminal_interface-curses-putwin.ads
+43K35*PutWin 50r31 50e37 31|45b40 77r31 77t37
+45U14*Put_Window 31|51b14 61r8 61t18
+45M26 Win 31|51b26 56r37
+46P26 File 31|52b26 56r56
+48V13*Get_Window 31|63b13 75r8 75t18
+48P25 File 31|63b25 68r52
+X 31 terminal_interface-curses-putwin.adb
+47K12 ICS 53r42 65r28
+48K12 ACS 56r42 68r38
+53V16*putwin 54m25 56r29
+53M24 Win
+53M38 f
+56i7 R 58r10
+65V16*getwin 66m25 68r30
+65M24 f
+68M7 W 70r10 73r17
+

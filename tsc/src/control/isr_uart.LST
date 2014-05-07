@@ -1,0 +1,136 @@
+C51 COMPILER V7.09   ISR_UART                                                              04/25/2008 16:22:13 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ISR_UART
+OBJECT MODULE PLACED IN isr_uart.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE isr_uart.C LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "isr_uart.h"
+   2          
+   3          unsigned char uart0_chanl_sel;                                                                                  // 选择串口 0 相应的子通道
+   4          unsigned char xdata uart0_trans_buffer[8][uart0_trans_max];                             // 串口 0 各子通道发送数据缓冲区
+   5          unsigned char xdata uart0_receive_buffer[8][uart0_received_max];                // 串口 0 各子通道接受数据缓冲区
+   6          
+   7          unsigned char ReceiveBuff0;
+   8          unsigned char bdata flag0_uart0,flag1_uart0;
+   9          sbit f_uart0_transed_now0               = flag0_uart0^0;                                                // 串口 0 子通道 1 有数据发送
+  10          sbit f_uart0_transed_now1               = flag0_uart0^1;                                                // 串口 0 子通道 2 有数据发送
+  11          sbit f_uart0_transed_now2               = flag0_uart0^2;                                                // 串口 0 子通道 3 有数据发送
+  12          sbit f_uart0_transed_now3               = flag0_uart0^3;                                                // 串口 0 子通道 4 有数据发送
+  13          sbit f_uart0_transed_now4               = flag0_uart0^4;                                                // 串口 0 子通道 5 有数据发送
+  14          sbit f_uart0_received_over0             = flag0_uart0^5;                                                // 串口 0 子通道 1 接收的数据溢出
+  15          sbit f_uart0_received_over1     = flag0_uart0^6;                                                // 串口 0 子通道 2 接收的数据溢出
+  16          sbit f_uart0_received_over2     = flag0_uart0^7;                                                // 串口 0 子通道 3 接收的数据溢出
+  17          
+  18          sbit f_uart0_received_now0              = flag1_uart0^0;                                                // 串口 0 子通道 1 正在接收数据
+  19          sbit f_uart0_received_now1              = flag1_uart0^1;                                                // 串口 0 子通道 2 正在接收数据
+  20          sbit f_uart0_received_now2              = flag1_uart0^2;                                                // 串口 0 子通道 3 正在接收数据
+  21          sbit f_uart0_received_now3              = flag1_uart0^3;                                                // 串口 0 子通道 4 正在接收数据
+  22          sbit f_uart0_received_now4              = flag1_uart0^4;                                                // 串口 0 子通道 5 正在接收数据
+  23          sbit f_uart0_received_over3     = flag1_uart0^5;                                                // 串口 0 子通道 4 接收的数据溢出
+  24          sbit f_uart0_received_over4     = flag1_uart0^6;                                                // 串口 0 子通道 5 接收的数据溢出
+  25          sbit f_chanl_no                                 = flag1_uart0^7;                                                // 该通道无数据发送
+  26          
+  27          /*********************************************************************************************
+  28          *       原型：void uart0_isr(void) interrupt 4
+  29          *       功能: 串口 0 中断子程序 
+  30          *       说明：串口 0 可设定为单通道模式或多通道模式工作，多通道模式下可带 5 个子串口且各子串口波特率
+  31          *                 相同
+  32          *       参数：无
+  33          *       返回：无
+  34          *********************************************************************************************/
+  35          void uart0_isr(void) interrupt 4
+  36          {
+  37   1      unsigned char i,oo,ctemp1,ctemp2;
+  38   1              if(TI0) {                                                                                       // 发送完成标志位
+  39   2      #ifdef single_mode                                                                              // 串口扩展芯片在单通道模式下工作，使用子通道 1 占用的资源
+                              if(!is_out_empty(1)) {
+                                      UART_CHANL = 0xc7 | uart0_chanl_sel;
+                                      UART_CHANL = (UART_CHANL & 0xc7) | uart0_chanl_sel;
+                                      SBUF0 = out_getchar(1);
+                                      }
+              
+              #else                                                                                                   // 串口扩展芯片在多通道模式下工作
+  47   2                      if ((flag0_uart0 & 0x1f) != 0x00) {
+  48   3                              uart0_chanl_sel = uart0_chanl_sel + 0x08;                               
+  49   3                              if (uart0_chanl_sel > 0x30) uart0_chanl_sel = 0x08;
+  50   3      
+  51   3                              ctemp1 = uart0_chanl_sel >> 3;
+  52   3                              ctemp2 = 0x01;
+  53   3                              for (i=0x01;i<ctemp1;i++) ctemp2 = ctemp2 << 1;
+  54   3                              if ((flag0_uart0 & ctemp2) != 0x00) {
+  55   4                                      if (!is_out_empty(ctemp1)){
+C51 COMPILER V7.09   ISR_UART                                                              04/25/2008 16:22:13 PAGE 2   
+
+  56   5                                              UART_CHANL = 0xc7 | uart0_chanl_sel;
+  57   5                                              UART_CHANL = (UART_CHANL & 0xc7) | uart0_chanl_sel;
+  58   5                                              SBUF0 = out_getchar(ctemp1);
+  59   5                                              }
+  60   4                                      else {
+  61   5                                              f_chanl_no = 1;
+  62   5                                              flag0_uart0 = flag0_uart0 & !ctemp2;
+  63   5                                              }
+  64   4                                      }
+  65   3                              else f_chanl_no = 1;
+  66   3                              if (f_chanl_no) {
+  67   4                                      UART_CHANL = UART_CHANL & 0xc7;
+  68   4                                      SBUF0 = 0x00; 
+  69   4                                      }
+  70   3                              }
+  71   2                      f_chanl_no = 0;
+  72   2      #endif
+  73   2                      TI0 = 0;
+  74   2                      }
+  75   1              if(RI0){                                                        // 接收完成标志位
+  76   2      #ifdef single_mode1                                             // 串口扩展芯片在单通道模式下工作，使用子通道 1 占用的资源
+                              in_putchar(1,SBUF0);
+              #else                                                                   // 串口扩展芯片在多通道模式下工作
+  79   2                      oo = P4;
+  80   2                      oo = oo&0x07;
+  81   2                      if ((oo<=5) & (oo>=1)) in_putchar(oo,SBUF0);
+  82   2      #endif
+  83   2                      RI0 = 0;
+  84   2                      }
+  85   1              }
+  86                  
+  87          /*********************************************************************************************
+  88          *       原型：void uart1_isr(void) interrupt 20
+  89          *       功能: 串口 1 中断子程序 
+  90          *       说明：用作 485 通讯
+  91          *       参数：无
+  92          *       返回：无
+  93          *********************************************************************************************/
+  94          void uart1_isr(void) interrupt 20
+  95          {
+  96   1              if (SCON1 & 0x02) {                                             // TI1 = 1
+  97   2                      if(g_out_read_p[5] != g_out_write_p[5]) {
+  98   3                              SBUF1 = uart0_trans_buffer[5][g_out_read_p[5]++];
+  99   3                              if(g_out_read_p[5] == uart0_trans_max) g_out_read_p[5] = 0;             
+ 100   3                              }
+ 101   2                      else f_uart1_using = 0;
+ 102   2                      SCON1 = SCON1 & 0xfd;                           // TI1 = 0
+ 103   2                      }
+ 104   1              if (SCON1 & 0x01) {                                             // RI1 = 1
+ 105   2                      uart0_receive_buffer[5][g_in_write_p[5]++] = SBUF1;
+ 106   2                      if(g_in_write_p[5] == uart0_trans_max) g_in_write_p[5] = 0;
+ 107   2                      SCON1 = SCON1 & 0xfe;                           // RI1 = 0
+ 108   2                      }
+ 109   1              }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    418    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   5602       2
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+C51 COMPILER V7.09   ISR_UART                                                              04/25/2008 16:22:13 PAGE 3   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

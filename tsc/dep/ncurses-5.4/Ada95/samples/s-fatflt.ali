@@ -1,0 +1,26 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnvnnnvnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.fat_flt%s	s-fatflt.ads		1d4b0099 NE PU PK
+W ada%s			ada.ads			ada.ali
+W ada.unchecked_conversion%s
+W system%s		system.ads		system.ali
+W system.fat_gen%s
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D ada.ads		20020507104909 a0108083
+D a-unccon.ads		20020507104903 5b55fe29
+D system.ads		20020507104801 427a8039
+D s-fatflt.ads		20020507105109 485be067
+D s-fatgen.ads		20020507105109 176a60c7
+D s-fatgen.adb		20020507105109 f7d45ad0
+D s-unstyp.ads		20020507105208 05ad3732
+X 3 system.ads
+41K9*System 150e11 4|39r6 41r9 49r29 51r5
+X 4 s-fatflt.ads
+41K16*Fat_Flt 42r14 51r12 51e19
+49K12*Fat_Float
+X 5 s-fatgen.ads
+45k16*Fat_Gen 4|39r13 49r36 5|104e19
+

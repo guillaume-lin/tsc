@@ -1,0 +1,121 @@
+C51 COMPILER V7.09   CORDLESS_COORDINATE_CONTROL                                           04/25/2008 16:22:12 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE CORDLESS_COORDINATE_CONTROL
+OBJECT MODULE PLACED IN cordless_coordinate_control.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE cordless_coordinate_control.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * cordless_coordinate_control.c
+   3           * 
+   4           * 无线缆协调控制
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-05 11:48:58 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "io.h"
+  15          #include "kernel.h"
+  16          
+  17          // 计算配时周期
+  18          static int get_cycle(int timming)
+  19          {
+  20   1              int i,cycle;
+  21   1              cycle = 0;
+  22   1              if(timming < 1 || timming > MAX_TIMMING_PLAN_COUNT)
+  23   1                      return -1;
+  24   1              for(i=0; i<g_config.m_timming_table[timming-1].m_step; i++)
+  25   1                      cycle += g_config.m_timming_table[timming-1].m_greentimming[i];
+  26   1              return cycle;
+  27   1      }
+  28          /**
+  29           * 无线缆协调控制
+  30           */
+  31          int cordless_coordinate_control(int mode_switch, int timer)
+  32          {
+  33   1              static unsigned char is_switching;
+  34   1              static unsigned char phase;
+  35   1              static unsigned char timming;
+  36   1      
+  37   1              if(mode_switch){
+  38   2                      int yellow,red,cycle;
+  39   2                      int hour,minute,offset;
+  40   2      
+  41   2                      phase = g_config.m_cordless_coordinate_control_param.m_phase;
+  42   2                      timming = g_config.m_cordless_coordinate_control_param.m_timming;
+  43   2                      if(!is_schedule_valid(phase,timming))
+  44   2                              return -1;
+  45   2                      hour = g_config.m_cordless_coordinate_control_param.m_start_hour;
+  46   2                      minute = g_config.m_cordless_coordinate_control_param.m_start_minute;
+  47   2                      offset = g_config.m_cordless_coordinate_control_param.m_offset;
+  48   2      
+  49   2                      
+  50   2                      if((g_controller_status.m_hour-hour)*(long)3600+
+  51   2                         (g_controller_status.m_minute-minute)*60+
+  52   2                          g_controller_status.m_second < 0){
+  53   3                              // 时间还没到
+  54   3                              return -1;
+  55   3                      }
+C51 COMPILER V7.09   CORDLESS_COORDINATE_CONTROL                                           04/25/2008 16:22:12 PAGE 2   
+
+  56   2                      cycle = get_cycle(timming);
+  57   2                      // 计算过渡阶段所需要的时间长度
+  58   2                      yellow = ((g_controller_status.m_hour-hour)*(long)3600+
+  59   2                               (g_controller_status.m_minute-minute)*60+
+  60   2                               g_controller_status.m_second-offset) % cycle;
+  61   2                      
+  62   2                      yellow = cycle - yellow;
+  63   2                      if(yellow < 15)         
+  64   2                              yellow += cycle;        //确保黄闪大于10秒
+  65   2                      yellow -= 5;
+  66   2                      red = 5;        // 五秒四面红
+  67   2      
+  68   2                      // 进入过渡阶段
+  69   2                      is_switching = 1;
+  70   2                      switching_with_yellow_flash_all_red(1,yellow,red,timer);
+  71   2              }
+  72   1      
+  73   1              if(is_switching){
+  74   2                      int ret = switching_with_yellow_flash_all_red(0,0,0,timer);
+  75   2                      if(ret == 1){
+  76   3                              is_switching = 0;
+  77   3                              // 载入无线缆协调控制的配时和相位
+  78   3                              load_current_schedule(0,phase,timming);
+  79   3                              g_controller_status.m_step = 1;
+  80   3                              run_current_step();
+  81   3                      }
+  82   2                      return 0;
+  83   2              }
+  84   1      
+  85   1              if(timer == 0 && is_step_end()){
+  86   2                      // 更新步号
+  87   2                      if(is_last_step())
+  88   2                              g_controller_status.m_step = 1;
+  89   2                      else
+  90   2                              g_controller_status.m_step++;
+  91   2                      run_current_step();
+  92   2              }
+  93   1      
+  94   1              return 0;
+  95   1      }
+  96          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    762    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      3      18
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

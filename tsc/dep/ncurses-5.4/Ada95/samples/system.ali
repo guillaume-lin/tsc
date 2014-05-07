@@ -1,0 +1,69 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system%s		system.ads		427a8039 NE PU PK
+
+D system.ads		20020507104801 427a8039
+X 1 system.ads
+41K9*System 42r14 150r5 150e11
+46E9*Name 47r27
+46n18*SYSTEM_NAME_GNAT 47r35
+47e4*System_Name
+51N4*Min_Int
+52N4*Max_Int
+54N4*Max_Binary_Modulus
+55N4*Max_Nonbinary_Modulus
+57N4*Max_Base_Digits
+58N4*Max_Digits
+60N4*Max_Mantissa 61r49
+61N4*Fine_Delta
+63N4*Tick
+67M9*Address 68r28 76r33 77r33 78r33 79r33 80r33 120c9 121r28
+68M4*Null_Address 121c4
+70N4*Storage_Unit
+71N4*Word_Size
+72N4*Memory_Size 120r24
+76V13*"<"
+76M19 Left
+76M25 Right
+77V13*"<="
+77M19 Left
+77M25 Right
+78V13*">"
+78M19 Left
+78M25 Right
+79V13*">="
+79M19 Left
+79M25 Right
+80V13*"="
+80M19 Left
+80M25 Right
+90E9*Bit_Order 91r33 92r26
+90n23*High_Order_First
+90n41*Low_Order_First
+91e4*Default_Bit_Order
+96i4*Max_Priority
+98i4*Max_Interrupt_Priority
+100I12*Any_Priority 103r24 110r34
+103I12*Priority 115r32 116r34 116r50
+110I12*Interrupt_Priority
+115i4*Default_Priority
+133b4 AAMP
+134b4 Command_Line_Args
+135b4 Denorm
+136b4 Frontend_Layout
+137b4 Functions_Return_By_DSP
+138b4 Long_Shifts_Inlined
+139b4 High_Integrity_Mode
+140b4 Machine_Overflows
+141b4 Machine_Rounds
+142b4 OpenVMS
+143b4 Signed_Zeros
+144b4 Stack_Check_Default
+145b4 Stack_Check_Probes
+146b4 Use_Ada_Main_Program_Name
+147b4 ZCX_By_Default
+148b4 GCC_ZCX_Support
+149b4 Front_End_ZCX_Support
+

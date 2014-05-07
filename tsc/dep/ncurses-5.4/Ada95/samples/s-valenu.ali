@@ -1,0 +1,72 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnvnnnn
+
+U system.val_enum%b	s-valenu.adb		e9918401 NE PK
+W system%s		system.ads		system.ali
+W system.val_util%s	s-valuti.adb		s-valuti.ali
+W unchecked_conversion%s
+
+U system.val_enum%s	s-valenu.ads		c51ec4ad NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-valenu.ads		20020507105211 87644494
+D s-valenu.adb		20020507105211 85439ef0
+D s-valuti.ads		20020507105214 f0cc4aa0
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 system.ads
+41K9*System 150e11 2|40r9 45r17 68r17 77r17 84r5 3|37r6 37r27 39r14 47r17
+. 61r35 86r17 100r35 125r17 139r35 158r5
+67M9*Address 2|45r24 68r24 77r24 3|47r24 61r42 86r24 100r42 125r24 139r42
+X 2 s-valenu.ads
+40K16*Val_Enum 41r14 84r12 84e20 3|39b21 158r12 158t20
+43V13*Value_Enumeration_8 3|45b13 78r8 78t27
+44s7 Names 3|46b7 69r13
+45M7 Indexes 3|47b7 63r66
+46i7 Num 3|48b7 68r21
+47s7 Str 3|49b7 54r19 54r33
+66V13*Value_Enumeration_16 3|84b13 117r8 117t28
+67s7 Names 3|85b7 108r13
+68M7 Indexes 3|86b7 102r66
+69i7 Num 3|87b7 107r21
+70s7 Str 3|88b7 93r19 93r33
+75V13*Value_Enumeration_32 3|123b13 156r8 156t28
+76s7 Names 3|124b7 147r13
+77M7 Indexes 3|125b7 141r66
+78i7 Num 3|126b7 146r21
+79s7 Str 3|127b7 132r19 132r33
+X 3 s-valenu.adb
+52i7 F 66m28 71r50
+53i7 L 66m31 71r55
+54a7 S 66m25 71r47
+56I12 Natural_8 57r46
+57A12 Index_Table 58r38
+58P12 Index_Table_Ptr 61r51 63r27
+60V16 To_Index_Table_Ptr 63r46
+63p7 IndexesT 70r22 71r22
+68i11 J 70r32 71r32 73r20
+91i7 F 105m28 110r50
+92i7 L 105m31 110r55
+93a7 S 105m25 110r47
+95I12 Natural_16 96r46
+96A12 Index_Table 97r38
+97P12 Index_Table_Ptr 100r51 102r27
+99V16 To_Index_Table_Ptr 102r46
+102p7 IndexesT 109r22 110r22
+107i11 J 109r32 110r32 112r20
+130i7 F 144m28 149r50
+131i7 L 144m31 149r55
+132a7 S 144m25 149r47
+134I12 Natural_32 135r46
+135A12 Index_Table 136r38
+136P12 Index_Table_Ptr 139r51 141r27
+138V16 To_Index_Table_Ptr 141r46
+141p7 IndexesT 148r22 149r22
+146i11 J 148r32 149r32 151r20
+X 4 s-valuti.ads
+38K16*Val_Util 3|37r13 37r34 4|110e20
+41U14*Normalize_String 3|66r7 105r7 144r7
+X 5 unchconv.ads
+22v10*Unchecked_Conversion 3|36r6 61r13 100r13 139r13
+

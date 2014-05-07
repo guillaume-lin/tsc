@@ -1,0 +1,54 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnvnnnnnvnnnnnnnnnvnvnnnnnnnnnnnn
+
+U system.img_lld%b	s-imglld.adb		0fbe3a59 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W system%s		system.ads		system.ali
+W system.img_dec%s	s-imgdec.adb		s-imgdec.ali
+W system.img_lli%s	s-imglli.adb		s-imglli.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U system.img_lld%s	s-imglld.ads		ac80a90f NE PR PK
+W system%s		system.ads		system.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D system.ads		20020507104801 427a8039
+D s-imgdec.ads		20020507105115 a21b9345
+D s-imglld.ads		20020507105117 eefa2936
+D s-imglld.adb		20020507105116 1af9593b
+D s-imglli.ads		20020507105117 59a6d911
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 system.ads
+41K9*System 150e11 5|39r9 67r5 6|36r6 36r26 37r6 37r26 39r14 89r5
+X 4 s-imgdec.ads
+39K16*Img_Dec 83e19 6|36r13 36r33
+67U14*Set_Decimal_Digits 6|86r7
+X 5 s-imglld.ads
+39K16*Img_LLD 40r22 67r12 67e19 6|39b21 89r12 89t19
+42V13*Image_Long_Long_Decimal 6|45b13 67r8 67t31
+43i7 V 6|46b7 55r10
+44i7 Scale 6|47b7 55r19 55r45
+50U14*Set_Image_Long_Long_Decimal 6|54r7 73b14 87r8 87t35
+51i7 V 6|74b7 82r49
+52s7 S 6|75b7 86m46
+53i7 P 6|76b7 86m49
+54i7 Scale 6|77b7 86r52
+55i7 Fore 6|78b7 86r59
+56i7 Aft 6|79b7 86r65
+57i7 Exp 6|80b7 86r70
+X 6 s-imglld.adb
+50i7 P 55m16 61r18 61r36 63r25 65r25
+51a7 S 55m13 60r10 60r32 61m10 61r28 62m10 63r17 65r17
+82a7 Digs 86r27 86r33
+X 7 s-imglli.ads
+40K16*Img_LLI 6|37r13 37r33 7|57e19
+43V13*Image_Long_Long_Integer 6|82r24
+

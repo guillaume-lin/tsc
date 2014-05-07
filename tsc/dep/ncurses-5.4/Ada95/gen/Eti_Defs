@@ -1,0 +1,17 @@
+   subtype Eti_Error is C_Int range -14 .. 0;
+
+   E_Ok               : constant Eti_Error := 0;
+   E_System_Error     : constant Eti_Error := -1;
+   E_Bad_Argument     : constant Eti_Error := -2;
+   E_Posted           : constant Eti_Error := -3;
+   E_Connected        : constant Eti_Error := -4;
+   E_Bad_State        : constant Eti_Error := -5;
+   E_No_Room          : constant Eti_Error := -6;
+   E_Not_Posted       : constant Eti_Error := -7;
+   E_Unknown_Command  : constant Eti_Error := -8;
+   E_No_Match         : constant Eti_Error := -9;
+   E_Not_Selectable   : constant Eti_Error := -10;
+   E_Not_Connected    : constant Eti_Error := -11;
+   E_Request_Denied   : constant Eti_Error := -12;
+   E_Invalid_Field    : constant Eti_Error := -13;
+   E_Current          : constant Eti_Error := -14;

@@ -1,0 +1,37 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.string_ops_concat_5%b  s-sopco5.adb	ec185bba NE PK
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.string_ops_concat_4%s  s-sopco4.adb	s-sopco4.ali
+
+U system.string_ops_concat_5%s  s-sopco5.ads	154a1cda NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-secsta.ads		20020507105154 e384df23
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-sopco4.ads		20020507105157 3cc42ca6
+D s-sopco5.ads		20020507105157 57309ce3
+D s-sopco5.adb		20020507105157 bb28c759
+X 1 system.ads
+41K9*System 150e11 5|38r9 44r5 6|36r14 66r5
+77V13*"<=" 6|44r20
+X 5 s-sopco5.ads
+38K16*String_Ops_Concat_5 39r14 44r12 44e31 6|36b21 66r12 66t31
+41V13*Str_Concat_5 6|42b13 64r8 64t20
+41s27 S1 6|42b27 44r10 49r39 53r25 53r37 56r16 56r34 56r57 57r16 57r34 58r16
+. 58r34 59r16 59r34 60r16
+41s31 S2 6|42b31 45r17 49r51 57r57
+41s35 S3 6|42b35 45r22 50r45 58r57
+41s39 S4 6|42b39 45r27 51r45 59r57
+41s43 S5 6|42b43 45r32 52r45 60r57
+X 6 s-sopco5.adb
+49i13 L12 50r39 57r45 58r27
+50i13 L13 51r39 58r45 59r27
+51i13 L14 52r39 59r45 60r27
+52i13 L15 53r48
+53a13 R 56m13 57m13 58m13 59m13 60m13 60r34 61r20
+

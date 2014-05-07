@@ -1,0 +1,129 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnvvvnnnnvnnnnnnnnnvnvnnnnnnnvnvnn
+
+U terminal_interface.curses.aux%b  terminal_interface-curses-aux.adb  b428ec28 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U terminal_interface.curses.aux%s  terminal_interface-curses-aux.ads  b35822ac NE PR PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W system%s		system.ads		system.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W unchecked_conversion%s
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-aux.adb  20031025153918 0adb574b
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 interfac.ads
+23K9*Interfaces 168e15 16|46r6 47r6 47r32 53r13 55r26 56r26 57r26 58r26 59r26
+. 60r26 61r26
+X 4 i-c.ads
+20K20*C 140e17 16|46r17 47r17 47r43 53r24 55r37 56r37 57r37 58r37 59r37 60r37
+. 61r37
+33I9*int 16|53r26 55r39
+34I9*short 16|56r39
+35I9*long 16|57r39
+41M9*unsigned 16|59r39
+43M9*unsigned_long 16|60r39
+54M9*size_t 16|58r39
+X 5 i-cstrin.ads
+42K22*Strings 105e25 16|47r19 47r45 61r39
+47M9*chars_ptr 16|61r47 116r37 121r31 17|44r37 73r31
+51M4*Null_Ptr 17|52r16 77r16
+73V13*Value 17|60r18
+80V13*Strlen 17|53r26 78r26
+X 6 system.ads
+41K9*System 150e11 16|45r6 62r30
+67M9*Address 16|62r37
+X 14 terminal_interface.ads
+41K9*Terminal_Interface 46e23 16|50r9 51r25 124r5 17|41r14 116r5
+X 15 terminal_interface-curses.ads
+48K28*Curses 1933e30 16|50r28 51r44 124r24 17|41r33 116r24
+351R9*Attributed_Character 356e17 16|103r38 105r38 109r38 114r38
+388X4*Eti_System_Error 17|99r42
+389X4*Eti_Bad_Argument 17|100r42
+390X4*Eti_Posted 17|101r42
+391X4*Eti_Connected 17|102r42
+392X4*Eti_Bad_State 17|103r42
+393X4*Eti_No_Room 17|104r42
+394X4*Eti_Not_Posted 17|105r42
+395X4*Eti_Unknown_Command 17|106r42
+396X4*Eti_No_Match 17|107r42
+397X4*Eti_Not_Selectable 17|108r42
+398X4*Eti_Not_Connected 17|109r42
+399X4*Eti_Request_Denied 17|110r42
+400X4*Eti_Invalid_Field 17|111r42
+401X4*Eti_Current 17|112r42
+X 16 terminal_interface-curses-aux.ads
+50K35*Aux 51r51 124r31 124e34 17|41b40 116r31 116t34
+55I12*C_Int 71r28 72r28 74r28 75r28 78r25
+56I12*C_Short
+57I12*C_Long_Int
+58M12*C_Size_T
+59M12*C_UInt
+60M12*C_ULong 63r30 64r30
+61M12*C_Char_Ptr
+62M12*C_Void_Ptr<6|67+9>
+63M12*C_Chtype<4|43M9> 102r38 106r38
+64M12*C_AttrType<4|43M9> 110r38 113r38
+71i4*Curses_Ok
+72i4*Curses_Err
+74i4*Curses_True
+75i4*Curses_False
+78I12*Eti_Error 80r34 81r34 82r34 83r34 84r34 85r34 86r34 87r34 88r34 89r34
+. 90r34 91r34 92r34 93r34 94r34 96r36 17|94r36
+80i4*E_Ok 17|98r15
+81i4*E_System_Error 17|99r15
+82i4*E_Bad_Argument 17|100r15
+83i4*E_Posted 17|101r15
+84i4*E_Connected 17|102r15
+85i4*E_Bad_State 17|103r15
+86i4*E_No_Room 17|104r15
+87i4*E_Not_Posted 17|105r15
+88i4*E_Unknown_Command 17|106r15
+89i4*E_No_Match 17|107r15
+90i4*E_Not_Selectable 17|108r15
+91i4*E_Not_Connected 17|109r15
+92i4*E_Request_Denied 17|110r15
+93i4*E_Invalid_Field 17|111r15
+94i4*E_Current 17|112r15
+96U14*Eti_Exception 17|94b14 114r8 114t21
+96i29 Code 17|94b29 97r12
+101V13*Chtype_To_AttrChar
+104V13*AttrChar_To_Chtype
+108V13*AttrChar_To_AttrType
+112V13*AttrType_To_AttrChar
+116U14*Fill_String 17|44b14 71r8 71t19 85r16
+116M27 Cp 17|44b27 52r10 53r34 60r25
+117s27 Str 17|45b27 54r13 61m13 61r18 61r32 67r16 68m10 68r16 68r36
+121V13*Fill_String 17|73b13 92r8 92t19
+121M26 Cp 17|73b26 77r10 78r34 85r29
+X 17 terminal_interface-curses-aux.adb
+50i7 Len 53m10 54r26 58r30 61r44 64m10 67r10 68r28
+58a13 S 60m13 61r57 61r60
+75i7 Len 78m10 79r13 83r33
+83a16 S 85m33 86r23
+X 18 unchconv.ads
+22v10*Unchecked_Conversion 16|48r6 102r6 105r6 109r6 113r6
+

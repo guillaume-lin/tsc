@@ -1,0 +1,9 @@
+   for Attributed_Character use
+      record
+         Ch    at 0 range  0 ..  7;
+         Color at 0 range  8 .. 15;
+         Attr  at 0 range 16 .. 31;
+      end record;
+   for Attributed_Character'Size use 32;
+      --  Please note: this rep. clause is generated and may be
+      --               different on your system.

@@ -1,0 +1,49 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.command_line%b	a-comlin.adb		38d9141f NE PK
+W ada%s			ada.ads			ada.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U ada.command_line%s	a-comlin.ads		d8088025 NE PR PK
+W ada%s			ada.ads			ada.ali
+
+D ada.ads		20020507104909 a0108083
+D a-comlin.ads		20020507104826 781800a6
+D a-comlin.adb		20020507104825 02bb9480
+D system.ads		20020507104801 427a8039
+D s-secsta.ads		20020507105154 e384df23
+D s-stoele.ads		20020507105159 c6bef0ad
+X 1 ada.ads
+18K9*Ada 21e8 2|40r9 103r5 3|37r14 100r5
+X 2 a-comlin.ads
+40K13*Command_Line 41r22 103r9 103e21 3|37b18 100r9 100t21
+43V13*Argument_Count 3|56r19 79b13 86r8 86t22
+50V13*Argument 3|52b13 73r8 73t16
+50i23 Number 3|52b23 56r10 61r17 63r30
+59V13*Command_Name 3|92b13 98r8 98t20
+67I9*Exit_Status 69r23 70r23 72r38 76r23 77r23
+69i4*Success 76c4
+70i4*Failure 77c4
+72U14*Set_Exit_Status 101m22
+72i31 Code
+86i4 Remove_Count 3|84r17
+90A9 Arg_Nums 91r32
+91P9 Arg_Nums_Ptr 96r18
+96p4 Remove_Args 3|60r10 63r17 81r10
+X 3 a-comlin.adb
+39V13 Arg_Count 40m22 82r17
+42U14 Fill_Arg 43m22 70r10 96r7
+42M24 A
+42i44 Arg_Num
+45V13 Len_Arg 46m22 67r37 93r34
+45i22 Arg_Num
+53i7 Num 61m10 63m10 67r46 70r33
+67a10 Arg 70m20 71r17
+93a7 Arg 96m17 97r14
+X 4 system.ads
+41K9*System 3|36r6 42r28 4|150e11
+67M9*Address 3|42r35
+

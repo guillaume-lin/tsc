@@ -1,0 +1,106 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnvvnnnnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.stack_checking%b  s-stache.adb		31fdd957 NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+U system.stack_checking%s  s-stache.ads		0b01fe3e NE PK
+W system%s		system.ads		system.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D system.ads		20020507104801 427a8039
+D s-parame.ads		20020507105150 e802d143
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stache.adb		20020507105157 8c856a53
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stoele.adb		20020507105159 792079f8
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 7|36r6 261r13
+X 2 a-except.ads
+47K13*Exceptions 346e19 7|36r10 261r17
+62U14*Raise_Exception 7|261r28
+62P31 E 7|262r16
+62s49 Message 7|263r16
+X 3 system.ads
+41K9*System 150e11 6|39r6 45r9 47r15 47r33 48r15 48r33 49r15 71r20 86r42
+. 92r16 93r16 106r5 7|38r6 38r35 39r6 39r29 40r6 42r14 100r21 103r43 106r26
+. 182r20 185r32 202r23 208r32 281r5
+67M9*Address 6|47r22 48r22 86r49 7|97r24 100r28 103r50 106r33 148r34 157r34
+. 185r39 202r30 208r39
+68M4*Null_Address 6|47r40 48r40 92r23 93r23 7|116r26 131r31
+76V13*"<" 7|156r31 224r28 256r33
+77V13*"<=" 7|217r28 239r36
+78V13*">" 7|147r31 219r28 259r33
+79V13*">=" 7|222r28 242r36
+80V13*"=" 7|116r24 131r28
+X 4 s-parame.ads
+54K16*Parameters 136e22 7|39r13 39r36
+99b4*Stack_Grows_Down 7|141r13 190r10 216r11 221r15 238r14 241r18 255r14
+. 258r18
+X 5 s-soflin.ads
+47K16*Soft_Links 365e22 7|40r13 114r19 168r10
+157p4*Check_Abort_Status 7|168r21
+234p4*Get_Stack_Info 7|114r30
+X 6 s-stache.ads
+45K16*Stack_Checking 106r12 106e26 7|42b21 281r12 281t26
+46R9*Stack_Info 50e14 56r36 91r31
+47M7*Limit 7|145r22 147r25 148r25 152r22 156r25 157r25 191r19 193r19 219r43
+. 224r43 256r44 259r44
+48M7*Base 7|116r19 139r19 145r40 147r42 152r40 156r42 191r37 193r37 217r44
+. 222r44 239r48 242r48 252r22
+49i7*Size 7|122r22 124r22 134r28 145r56 152r56
+56P9*Stack_Access 74r42 79r50 86r65 97r32 101r31 7|53r44 53r65 82r50 92r22
+. 93r14 99r21 184r23 203r14 207r32 232r21 274r42
+64b4*Multi_Processor 7|276r14
+70U14*Set_Stack_Size 7|181b14 195r8 195t22
+71i7 Stack_Size 7|182b7 191r44 193r44
+74U14*Update_Stack_Cache 7|274b14 279r8 279t26
+74p34 Stack 7|274b34 277r19
+79U14*Invalidate_Stack_Cache 7|82b14 85r8 85t30
+79p38 Any_Stack 7|82b38
+86V13*Stack_Check 104m22 7|188r19 201b13 268r8 268t19
+86M26 Stack_Address 7|202b7 219r14 224r14 256r19 259r19
+91r4 Null_Stack_Info 97m48
+97p4 Null_Stack 101r47 7|84r16
+101p4 Cache 103m22 7|84m7 207r48 232m53 277m10
+X 7 s-stache.adb
+44i4 Kilobyte 45r63 134r61
+45i4 Default_Env_Stack_Size 124r30
+53V13 Set_Stack_Info 91b13 173r8 173t22 232r37
+53p29 Stack 92b7 164r7
+95R12 Frame_Mark 96r24
+96r7 Frame_Location 97m35
+97M7 Frame_Address 139r27
+99p7 My_Stack 114m7 116r10 122r13 124m13 134m19 139m10 145m13 145r31 145r47
+. 147r16 147r33 148m16 152m13 152r31 152r47 156r16 156r33 157m16 164r20 172r14
+100M7 Limit_Chars 129m13 131r16 132r31
+101i7 Limit 132m16 133r19 134r52
+103V16*getenv 104m25 129r28
+103s24 S
+106V16*atoi 107m25 132r25
+106M22 A
+184p7 My_Stack 185m50 188m7 191m10 191r28 193m10 193r28
+185M7 Frame_Address 188r32
+205R12 Frame_Marker 206r23
+206r7 Marker 208m50
+207p7 Cached_Stack 217r31 219r30 222r31 224r30 227r17
+208M7 Frame_Address 217r14 222r14 239r22 242r22 252r30
+230q7 Full_Check 267r11 267e21
+232p10 My_Stack 239r39 242r39 252m13 256r35 259r35 266r17
+X 9 s-stoele.ads
+26K16*Storage_Elements 6|39r13 49r22 71r27 7|38r13 38r42 182r27 9|91e28
+31I9*Storage_Offset 6|49r39 71r44 7|44r38 45r38 134r36 182r44
+49V13*"+" 7|152r45 193r42
+59V13*"-" 7|145r45 191r42
+

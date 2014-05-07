@@ -1,0 +1,59 @@
+C51 COMPILER V7.09   MAIN                                                                  04/25/2008 16:22:07 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE main.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * 信号机控制程序的主程序
+   3           *
+   4           * Company: Xiamen Uni-Creative Information Technology Corporation
+   5           * Author: Lin Jingxian(林景贤)
+   6           * E-Mail: cckk_lin@yahoo.ie
+   7           * Date:  2005-06-28 09:40:03(中国标准时间) 
+   8           *
+   9           * $log$
+  10           */
+  11          #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+*** WARNING C245 IN LINE 11 OF MAIN.C: unknown #pragma, line ignored
+  12          #include "io.h"
+  13          #include "kernel.h"
+  14          
+  15          
+  16          void main(void)
+  17          {
+  18   1      #if 1
+  19   1              int bInit = 1;
+  20   1              int isRunning = 0;
+  21   1              
+  22   1              initialize();
+  23   1      
+  24   1              while(bInit || isRunning)       
+  25   1              {
+  26   2                      bInit = 0;
+  27   2      
+  28   2                      controller_main();      
+  29   2      
+  30   2      //              isRunning = is_vm_running();
+  31   2      //              if(isRunning == -1)
+  32   2      //                      break;
+  33   2              }
+  34   1      }
+*** WARNING C316 IN LINE 34 OF main.c: unterminated conditionals
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     49    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       4
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,574 @@
+/**
+ * datastruct.h
+ *
+ * data struct for signal controller
+ * 
+ * Company: Xiamen Uni-Creative Technology Corporation
+ * Author:  Lin Jingxian(林景贤)
+ * E-Mail:  cckk_lin@yahoo.ie
+ * Date:    2005-06-27 14:44:07 (中国标准时间)
+ *
+ * $log$
+ *
+ */ 
+#ifndef INCLUDED_DATA_STRUCT_H
+#define INCLUDED_DATA_STRUCT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// 支持的最大输出端子个数
+#define MAX_TERMINAL_COUNT 72 
+
+// 相位输出需要的字节数
+#define MAX_OUTPUT_COUNT 18	// MAX_TERMINAL_COUNT / 4
+
+// 支持的最大检测器数
+#define MAX_DETECTOR_COUNT 32
+
+// 支持的特殊日个数
+#define MAX_SPECIAL_DAY_COUNT 10
+
+// 信号灯状态
+#define OFF 0
+#define ON  1
+#define FLASH 2
+
+// 信号灯颜色
+#define RED 0
+#define GREEN 1
+#define YELLOW 2
+
+// 支持的最大灯组数
+#define MAX_LAMP_GROUP_COUNT 24 
+
+// 支持的最大的步伐数
+#define MAX_STEP_COUNT 96	
+
+// 支持的相位方案数
+#define MAX_PHASE_PLAN_COUNT 6
+
+// 支持的配时方案数
+#define MAX_TIMMING_PLAN_COUNT 32
+
+// 支持的时段方案数
+#define MAX_SCHEDULE_PLAN_COUNT 20
+
+// 每个时段方案可划分的时段数
+#define MAX_TIME_SEGMENT_COUNT 24
+
+// 支持的通信端口数
+#define MAX_COMM_COUNT 6
+// 最多支持8个相位阶段
+#define MAX_STAGE_COUNT 8     
+// 最多支持每个相位阶段12相位控制
+#define MAX_PHASE_COUNT 12
+//车流量，占有率保存的个数
+#define MAX_VOLUME_OCCCUPY_NUM 60
+     
+typedef unsigned char byte;
+// 灯组设置
+typedef struct{
+	// 灯组总数
+	byte m_lamp_group_count;
+	byte m_lamp_group[MAX_LAMP_GROUP_COUNT][3];
+} lamp_group_setting_t;
+//信号灯设置
+typedef struct{
+	//是否启用，0 表示禁用，1表示启用
+	byte  m_use[MAX_TERMINAL_COUNT/8];	// 9个字节
+} lamp_setting_t;
+// 检测器设置
+typedef struct {
+	// 属性，比如检测器灵敏度，是否启用
+	// [7][6][5][4][3][2][1][0]
+	// [7] - 0 表示下游，1表示上游
+	// [6] - 0 表示禁用，1表示启用
+	// [1][0] 检测器的灵敏度
+	//
+	byte m_attribute[MAX_DETECTOR_COUNT];
+	// 对应的灯组
+	byte m_lamp_group[MAX_DETECTOR_COUNT];
+	// 上下游检测器的距离
+	byte m_distance;
+} detector_setting_t;
+
+// 绿冲突表
+typedef struct {
+	// 如果两个端子冲突，则相应的位置为1
+	byte m_conflict[(MAX_LAMP_GROUP_COUNT-1)*MAX_LAMP_GROUP_COUNT/2/8+1];
+} green_conflict_t;
+
+// 相位
+typedef struct {
+	byte m_output[MAX_OUTPUT_COUNT];
+} lamp_status_t;
+
+// 相位属性
+typedef struct {
+	// 保安时间
+	byte m_safe_guard_time;
+	byte m_attr;
+	// [7][6][5][4][3][2][1][0]
+	// [7] 1代表可变步，0 代表过渡步
+	//
+} phase_attr_t;
+
+///////////////////////////////
+//特殊相位定义
+// 黄闪相位
+#define PHASE_YELLOW_FLASH 253
+// 全红相位
+#define PHASE_ALL_RED      254
+// 灭灯相位
+#define PHASE_ALL_OFF      255
+// 特殊相位的配时
+#define TIMMING_SPECIAL_PHASE 255
+
+// 相位方案
+//typedef struct {
+//	byte m_step;
+//	phase_t m_phase[MAX_STEP_COUNT];
+//} phase_plan_t;
+//阶段参数
+typedef struct {
+// 1- MAX_PHASE_COUNT 代表相应的相位激活，0代表没有相位激活
+		byte m_phase[MAX_PHASE_COUNT]; 
+} stage_t;
+typedef struct {
+		byte m_stage_count;
+		stage_t m_stage[MAX_STAGE_COUNT];
+}stage_plan_t;
+// 配时方案
+typedef struct {
+	byte m_step;
+	byte m_greentimming[MAX_STAGE_COUNT];
+	byte m_greenflashtimming[MAX_STAGE_COUNT];
+	byte m_yellowtimming[MAX_STAGE_COUNT];
+	byte m_redtimming[MAX_STAGE_COUNT];
+} timming_plan_t;
+
+// 时段方案
+typedef struct {
+	// 有效时段的个数
+	byte m_time_segment_count;
+	byte m_hour[MAX_TIME_SEGMENT_COUNT];
+	byte m_minute[MAX_TIME_SEGMENT_COUNT];
+	byte m_phase[MAX_TIME_SEGMENT_COUNT];
+	byte m_timming[MAX_TIME_SEGMENT_COUNT];
+} schedule_plan_t;
+
+
+// 灭灯控制
+#define ALL_OFF_CONTROL             1
+// 全红控制
+#define ALL_RED_CONTROL             2
+// 黄闪控制
+#define YELLOW_FLASH_CONTROL        3
+// 多段控制
+#define MULTIPLE_SCHEDULE_CONTROL   4
+// 感应控制
+#define ACTUATE_CONTROL        	    5
+// 无线缆协调控制
+#define CORDLESS_COORDINATE_CONTROL 6
+// 联机协调控制
+#define ONLINE_HARMONY_CONTROL      7
+// 手控控制
+#define MANUAL_CONTROL		        8	
+
+// 执行机控制
+#define EXECUTIVE_MACHINE_CONTROL   9
+
+// 灯的故障信息
+typedef struct {
+	byte m_health[MAX_TERMINAL_COUNT/8];	// 9 个字节
+} lamp_health_t;
+
+// 检测器状态(有车，无车)
+typedef struct {
+	byte m_status[MAX_DETECTOR_COUNT/8];	// 4 个字节
+} detector_status_t;
+
+// 检测器故障信息
+typedef struct {
+	byte m_health[MAX_DETECTOR_COUNT/8];	// 4 个字节
+} detector_health_t;
+
+// 检测器计数值
+typedef struct {
+	byte m_counter[MAX_DETECTOR_COUNT];	// 32 个字节
+}detector_counter_t;
+
+// 时间信息
+typedef struct {
+	byte m_year[2];// 20,05 第一个字节存放世纪，第二个字节存放年份
+	byte m_month;	// 1 - 12
+	byte m_day;	// 1 - 31
+	byte m_hour;	// 0 - 23
+	byte m_minute;	// 0 - 59
+	byte m_second;	// 0 - 59
+	byte m_weekday;	// 0 - 6, 0 代表星期天
+} date_time_t;
+
+/**
+ *  错误状态
+ */
+typedef struct {
+	byte m_is_door_illegal_open : 1;
+	byte m_hard_error;	// 硬件错误字
+	byte m_soft_error;	// 软件错误字
+} machine_error_status_t;
+//中转信息
+typedef struct tagcheckpack 
+{ 
+	unsigned long userid; 
+	unsigned long port; 
+	char  szip[16]; 
+}checkpack_t;
+//联机控制命令
+typedef struct{
+	byte m_cmd;
+	byte m_param1;
+	byte m_param2;
+}online_control_command_t;
+typedef struct {
+	byte m_year[2]; // 20,05 第一个字节存放世纪，第二个字节存放年份
+	byte m_month;
+	byte m_day;
+	byte m_hour;
+	byte m_minute;
+	// 车流量
+	byte m_volume[MAX_DETECTOR_COUNT];
+	// 占有率
+	byte m_occupy[MAX_DETECTOR_COUNT];
+} volume_occupy_t;
+//车流量，占有率的时间
+typedef struct{
+	byte m_year[2]; // 20,05 第一个字节存放世纪，第二个字节存放年份
+	byte m_month;
+	byte m_day;
+	byte m_hour;
+	byte m_minute;
+}volume_occupy_time_t;
+// 车流量，占有率信息组
+typedef struct {
+	volume_occupy_t vo[MAX_VOLUME_OCCCUPY_NUM];
+	byte            m_pointer;
+}volume_occupy_group_t;
+typedef struct {
+	byte m_is_degraded;	// 处于降级运行状态
+	// 时间
+	byte m_second;
+	byte m_minute;
+	byte m_hour;
+	byte m_week;  // -1 如果时间芯片出问题
+	byte m_day;
+	byte m_month;
+	byte m_year[2]; // 20,05 第一个字节存放世纪，第二个字节存放年份
+
+	// 设定的控制模式
+	byte m_designate_control_mode;
+	// 实际运行的控制模式
+	byte m_actual_control_mode;
+	// 时段方案
+	byte m_schedule;
+	// 配时方案
+	byte m_timming;
+	// 相位方案
+	byte m_phase;
+	//阶段号（当前）
+	byte m_stage;
+	// 步伐号
+	byte m_step;
+	// 当前步已运行时间
+	byte m_elapse_time;
+	// 设定的步伐时间
+	byte m_assign_time;
+	// 剩余的步伐时间
+	byte m_remain_time;
+	//运行降级状态的步伐时间
+	byte m_degraded_time;
+
+	// 当前灯色
+	lamp_status_t 		m_current_lamp_status;
+	detector_status_t 	m_current_detector_status;
+	detector_counter_t 	m_current_detector_counter;
+	detector_health_t 	m_detector_health;
+	lamp_health_t 		m_lamp_health;
+
+	// 当前控制命令
+	byte m_command;
+
+	// 温度的整数部分
+	byte m_temperature_integer;
+	// 温度的小数部分
+	byte m_temperature_decimal;
+	
+	// 错误状态
+	machine_error_status_t m_error;
+} machine_status_t;
+
+// 控制命令
+//联机
+#define ONLINE          1
+// 保持
+#define STAGE_KEEP  	2
+// 步进
+#define STAGE_FORWARD 	3
+//跳步
+#define STAGE_JUMP      4
+//脱机
+#define  OFFLINE        5
+// 强制灯色
+#define DIRECT_PHASE	6
+// 全局状态
+typedef struct {
+	
+	byte m_is_degraded;	// 处于降级运行状态
+	// 时间
+	byte m_second;
+	byte m_minute;
+	byte m_hour;
+	byte m_week;  	// -1 如果时间芯片出问题
+	byte m_day;
+	byte m_month;
+	byte m_year[2]; // 20,05 第一个字节存放世纪，第二个字节存放年份
+
+	// 设定的控制模式
+	byte m_designate_control_mode;
+	// 实际运行的控制模式
+	byte m_actual_control_mode;
+	// 时段方案
+	byte m_schedule;
+	// 配时方案
+	byte m_timming;
+	// 相位方案
+	byte m_phase;
+	// 相位数
+	byte m_step;
+	//阶段号（当前）
+	byte m_stage;
+	//下一阶段号
+	byte m_next_stage;
+	// 当前步已运行时间
+	byte m_elapse_time;
+	// 设定的步伐时间
+	byte m_assign_time;
+	// 剩余的步伐时间
+	byte m_remain_time;
+	//运行降级状态的步伐时间
+	byte m_degraded_time;
+//  当前的上位机控制命令
+//	byte m_command;
+
+	// 信号机温度
+	int m_temperature;
+
+	machine_error_status_t m_error;
+
+	// 始终计时器
+	int m_timer;
+	//////////////////////////////
+	lamp_status_t   m_current_lamp_status;
+	// 指向当前所用相位表的指针
+	stage_plan_t*   m_current_phase_plan_p;
+	//指向下个所用相位表的指针
+	stage_plan_t*   m_next_phase_plan_p;
+	// 指向当前所用配时方案的指针
+	timming_plan_t* m_current_timming_plan_p;
+
+	
+	detector_status_t 	m_current_detector_status;
+	detector_counter_t 	m_current_detector_counter;
+	detector_health_t 	m_detector_health;
+	lamp_health_t 		m_lamp_health;
+
+	// 非0 表示主控制循环需要重新启动
+	byte m_restart:1;	
+
+	// 表明配置是否更改，如果是，需要将配置永久保存起来
+	byte m_is_config_updated:1;
+
+	// 步进按钮状态，1表示按下过
+	byte m_step_forward_button_state:1;
+	byte m_need_change_stage_flag:1;
+	// 强制灯色
+	lamp_status_t m_direct_phase;
+	//控制信息
+	online_control_command_t m_online_command;
+	//是否接受控制命令
+	byte  m_bNoRevCommand;
+} controller_status_t;
+
+// 特殊日
+typedef struct {
+	// 起始月
+	byte m_start_month;
+	// 起始日
+	byte m_start_day;
+	// 结束月
+	byte m_end_month;
+	// 结束日
+	byte m_end_day;
+	// 时段方案
+	byte m_schedule;
+} special_day_t;
+
+// 特殊日表
+typedef struct {
+	special_day_t m_day[MAX_SPECIAL_DAY_COUNT];
+} special_day_table_t;
+
+// 端口类型
+#define RS_232 1
+#define RS_485 2
+#define ETHER 3
+
+// 波特率
+#define B_600 	1
+#define B_1200 	2
+#define B_2400	3
+#define B_4800  4
+#define B_9600  5
+#define B_19200 6
+
+//
+
+// 通信参数
+typedef struct {
+	// 端口类型
+	byte m_type;
+	// 波特率
+	byte m_baud;
+	// IP地址
+	byte m_ip[4];
+	// 通信协议
+	byte m_protocol;
+	// 是否启用
+	byte m_enable;
+}  comm_param_t;
+
+// 系统基本参数
+typedef struct {
+	// 黄闪时间
+	byte m_initial_yellow_flash_time;
+	// 四面红时间
+	byte m_initial_all_red_time;
+	//处于降级状态的时间
+	byte m_run_degraded_time;
+} system_param_t ;
+
+// 选择控制模式时，按照信号机前面板的选择运行
+#define CONTROL_MODE_FRONT_PANEL_SELECT 0
+
+// 控制模式选择
+typedef struct {
+	// 运行何种控制模式
+	byte m_control_mode;
+} control_mode_selection_t;
+
+// 多段控制模式
+typedef struct {
+	byte m_enable_special;
+	byte m_schedule_plan;
+} multiple_schedule_control_param_t;
+
+// 半感应控制策略
+#define STRATEGY_HALF_ACTUATE 	1
+// 全感应控制策略
+#define STRATEGY_FULL_ACTUATE	2
+
+// 线圈检测方式
+#define LOOP_DETECT_METHOD	1
+// 视频检测方式
+#define VIDEO_DETECT_METHOD	2
+
+// 感应控制参数
+typedef struct {
+	// 控制策略，全感应或者半感应或者其他
+	byte m_strategy;
+
+	// 车辆检测方法(视频或者线圈)
+	byte m_detect_method;
+
+	// 最小绿
+	byte m_minmum_green;
+	// 最大绿
+	byte m_maximum_green;
+	// 每次的调整量
+	byte m_adjust_quantum;
+	// 车头时距(单位为0.1秒)
+	byte m_vehicle_gap;
+	// 使用的相位
+//	byte m_phase;
+	// 使用的配时
+//	byte m_timming;
+
+} actuate_control_param_t;
+
+// 无线缆协调控制
+typedef struct {
+	// 起始小时
+	byte m_start_hour;
+	// 起始分钟
+	byte m_start_minute;
+	// 相位差
+	byte m_offset;
+	// 相位方案
+	byte m_phase;
+	// 配时方案
+	byte m_timming;
+} cordless_coordinate_control_param_t;
+// 车流量和占有率
+
+
+// 交通统计设置
+typedef struct {
+	// 统计间隔（单位分钟）
+	byte m_interval;
+	// 是否打印
+	byte m_should_print:1;
+	// 打印时间
+	byte m_print_hour;
+	byte m_print_minute;
+
+} traffic_stat_t;
+// 包含系统的所有配置参数
+typedef struct {
+	system_param_t 		m_system_param;											// 占用 2 个字节
+	lamp_group_setting_t 	m_lamp_group_setting;								// 占用 1 + 3 * 32  共 97 个字节
+	detector_setting_t  	m_detector_setting;									// 占用 1 * 32 + 1 * 32 + 1 共 65 个字节
+
+	stage_plan_t    	m_phase_table[MAX_PHASE_PLAN_COUNT];					// 占用 6 * (1 + 18 * 96)  共 10374 个字节 
+	timming_plan_t  	m_timming_table[MAX_TIMMING_PLAN_COUNT];				// 占用 32 * (1 + 96) 共 3104 个字节
+	schedule_plan_t 	m_schedule_table[MAX_SCHEDULE_PLAN_COUNT];				// 占用 20 * (1 + 24 + 24 + 24 + 24) 共 1940 个字节
+
+	special_day_table_t   	m_special_day_table;								// 占用 5 * 10 共 40 个字节
+	multiple_schedule_control_param_t m_multiple_schedule_control_param;		// 占用 1 + 1 共 2 个字节
+	actuate_control_param_t m_actuate_control_param;							// 占用 8 个字节
+	cordless_coordinate_control_param_t m_cordless_coordinate_control_param;	// 占用 5 个字节
+	comm_param_t m_comm_param[MAX_COMM_COUNT];									// 占用 6 * 8 共 48 个字节
+	control_mode_selection_t m_control_mode_selection;							// 占用 1 个字节
+	green_conflict_t      m_green_conflict;
+	lamp_setting_t        m_lamp_setting;										    // 占用 9 个字节
+} system_config_t ;																// 共 15705 个字节
+
+	int lamp_group_setting_get_lamp_group_count(lamp_group_setting_t* self);
+	int green_conflict_is_conflict(green_conflict_t* self,int n, int m);
+	int green_conflict_set_conflict(green_conflict_t* self,int n, int m, int conflict);
+	int phase_set_output(lamp_status_t* self, int n, int v);
+	int phase_get_output(lamp_status_t* self,int n);
+	int is_phase_green_conflict(lamp_status_t* phase, green_conflict_t* conflict);
+	int lamp_health_get_health(lamp_health_t* self, int n);
+	int lamp_health_set_health(lamp_health_t* self,int n, int v);
+	int detector_health_get_health(detector_health_t* self, int n);
+	int detector_health_set_health(detector_health_t* self, int n, int v);
+	int detector_status_get_status(detector_status_t* self, int n);
+	int detector_status_set_status(detector_status_t* self, int n, int v);
+	int lamp_group_setting_get_terminal(lamp_group_setting_t* self,int lamp_no);
+#ifdef __cplusplus
+}
+#endif
+
+#endif

@@ -1,0 +1,41 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnvvnnnvnnnnnnnnnnnnvnnnnnnnnnvnn
+
+U system.task_primitives%s  s-taspri.ads	ebfeecc5 NE PK
+W system%s		system.ads		system.ali
+W system.os_interface%s	s-osinte.adb		s-osinte.ali
+
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-osinte.ads		20020507104759 8f433951
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-taspri.ads		20020507104759 26c755ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 system.ads
+41K9*System 150e11 8|44r6 49r9 71r35 74r28 75r20 75r43 76r24 76r47 79r25
+. 81r29 89r29 93r25 93r48 98r5
+100I12*Any_Priority 8|71r42 75r27 75r50 76r31 76r54 93r32 93r55
+X 5 s-osinte.ads
+46K16*OS_Interface 518e24 8|44r13 74r35 79r32 81r36 89r36
+265M9*pthread_t 8|81r49
+268R9*pthread_mutex_t 507e14 8|74r48 79r45
+269R9*pthread_cond_t 513e14 8|89r49
+X 8 s-taspri.ads
+49K16*Task_Primitives 98r12 98e27
+51R9*Lock 73c9 77e14
+54R9*RTS_Lock 79c9 90r29
+60P9*Task_Body_Access
+64R9*Private_Data 80c9 96e14
+71A9 Prio_Array_Type
+74R7*L
+75i7*Ceiling
+76i7*Saved_Priority
+81M7*Thread
+89R7*CV
+90R7*L
+93i7*Active_Priority
+

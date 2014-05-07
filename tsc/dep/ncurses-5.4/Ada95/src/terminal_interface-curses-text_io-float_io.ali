@@ -1,0 +1,95 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U terminal_interface.curses.text_io.float_io%b  terminal_interface-curses-text_io-float_io.adb  ddcddf06 NE PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.aux%s  terminal_interface-curses-text_io-aux.adb  terminal_interface-curses-text_io-aux.ali
+
+U terminal_interface.curses.text_io.float_io%s  terminal_interface-curses-text_io-float_io.ads  907487b1 EE NE PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiflau.ads		20020507104858 ba8cb130
+D a-tiflio.ads		20020507104859 661a85c9
+D a-tiflio.adb		20020507104859 7c98c807
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-float_io.ads  20031025153918 fbcf2b63
+D terminal_interface-curses-text_io-float_io.adb  20031025153918 5836a957
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 33|41r6 47r23
+X 8 a-textio.ads
+51K13*Text_IO 442e16 33|41r10 47r27
+X 10 a-tiflio.ads
+49k21*Float_IO 92e25 33|47r35
+82U14 Put 33|62r11
+X 28 terminal_interface.ads
+41K9*Terminal_Interface 46e23 32|44r9 66r5 33|42r6 44r14 46r24 76r5
+X 29 terminal_interface-curses.ads
+48K28*Curses 1933e30 32|44r28 66r24 33|42r25 44r33 46r43 76r24
+56M9*Window 32|51r17 33|50r17
+X 30 terminal_interface-curses-text_io.ads
+44K35*Text_IO 136e38 32|44r35 66r31 33|42r32 44r40 46r50 76r31
+50I12*Field 32|46r19 47r19 48r19 53r17 54r17 55r17 59r17 60r17 61r17 33|52r17
+. 53r17 54r17 56r26 57r13 68r17 69r17 70r17
+62V13*Get_Window 33|73r12
+X 31 terminal_interface-curses-text_io-aux.ads
+41K51*Aux 54e42 33|42r40 46r58
+47U14*Put_Buf 33|63r11
+X 32 terminal_interface-curses-text_io-float_io.ads
+42F9 Num 47r28 52r17 58r18 33|47r45 51r17 67r17
+44k43*Float_IO 66r39 66e47 33|44b48 76r39 76t47
+46i4 Default_Fore 53r26 59r26 33|52r26 68r26
+47i4 Default_Aft 54r26 60r26 33|53r26 69r26
+48i4 Default_Exp 55r26 61r26 33|54r26 70r26
+50U14 Put 33|49b14 64r8 64t11 73r7
+51M7 Win 33|50b7 63r20
+52f7 Item 33|51b7 62r21
+53i7 Fore 33|52b7 57r22
+54i7 Aft 33|53b7 57r33 62r27
+55i7 Exp 33|54b7 59r10 60r27 62r32
+57U14 Put 33|66b14 74r8 74t11
+58f7 Item 33|67b7 73r24
+59i7 Fore 33|68b7 73r30
+60i7 Aft 33|69b7 73r36
+61i7 Exp 33|70b7 73r41
+X 33 terminal_interface-curses-text_io-float_io.adb
+46K12 Aux 63r7
+47K12 FIO 62r7
+56a7 Buf 62m16 63r25
+57i7 Len 60m10 60r17 63r30
+

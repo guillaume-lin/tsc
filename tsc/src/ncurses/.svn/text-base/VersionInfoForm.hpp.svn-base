@@ -1,0 +1,29 @@
+/* @(#)terminalstatusform.hpp
+* Company: Xiamen Uni-Creative Technology Corporation
+* Author:  张继良（pony_fx@sina.com)
+* E-Mail:  mli0080@uni-Creative.com
+* Date:    2008-7-3 14:55:00 (中国标准时间)
+*/
+
+#ifndef _VERSIONINFOFORM_H
+#define _VERSIONINFOFORM_H 1
+
+#include <cursesm.h>
+#include <cursesf.h>
+#include "baseform.hpp"
+#include "label.hpp"
+class CVersionInfoForm : public CBaseForm {
+public:
+	CVersionInfoForm():CBaseForm(8,24,0,0)
+	{
+			F = new NCursesFormField*[4];
+			F[0] = new CLabel("版本 V1.10",1,7);
+			F[1] = new CLabel("版权归高校电子所有",2,3);
+			F[2] = new CLabel("电话：0592-5801120",3,3);
+			F[3] = new NCursesFormField();
+			InitForm(F,TRUE,TRUE);	
+	}
+};
+
+#endif /* _TERMINALSTATUSFORM_H */
+

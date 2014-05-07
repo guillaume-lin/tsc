@@ -1,0 +1,275 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnvnnvvvvvvnvvvnnnnnnnnvnvnnnnnnvvnvnn
+
+U sample.text_io_demo%b	sample-text_io_demo.adb	beaaa77e NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.complex_types%s  a-nucoty.ads	a-nucoty.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.decimal_aux%s  a-tideau.adb	a-tideau.ali
+W ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.modular_aux%s  a-timoau.adb	a-timoau.ali
+W sample%s		sample.adb		sample.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.function_key_setting%s  sample-function_key_setting.adb  sample-function_key_setting.ali
+W sample.keyboard_handler%s  sample-keyboard_handler.adb  sample-keyboard_handler.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W system%s		system.ads		system.ali
+W system.exn_flt%s	s-exnflt.ads		s-exnflt.ali
+W system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+W system.img_enum%s	s-imgenu.adb		s-imgenu.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.complex_io%s  terminal_interface-curses-text_io-complex_io.adb  terminal_interface-curses-text_io-complex_io.ali  ED
+W terminal_interface.curses.text_io.decimal_io%s  terminal_interface-curses-text_io-decimal_io.adb  terminal_interface-curses-text_io-decimal_io.ali  ED
+W terminal_interface.curses.text_io.enumeration_io%s  terminal_interface-curses-text_io-enumeration_io.adb  terminal_interface-curses-text_io-enumeration_io.ali  ED
+W terminal_interface.curses.text_io.fixed_io%s  terminal_interface-curses-text_io-fixed_io.adb  terminal_interface-curses-text_io-fixed_io.ali  ED
+W terminal_interface.curses.text_io.float_io%s  terminal_interface-curses-text_io-float_io.adb  terminal_interface-curses-text_io-float_io.ali  ED
+W terminal_interface.curses.text_io.integer_io%s  terminal_interface-curses-text_io-integer_io.adb  terminal_interface-curses-text_io-integer_io.ali  ED
+W terminal_interface.curses.text_io.modular_io%s  terminal_interface-curses-text_io-modular_io.adb  terminal_interface-curses-text_io-modular_io.ali  ED
+
+U sample.text_io_demo%s	sample-text_io_demo.ads	70d17cb7 EE NE PK
+W sample%s		sample.adb		sample.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-numeri.ads		20020507104840 24750733
+D a-numaux.ads		20020507104820 a59c15c5
+D a-numaux.adb		20020507104820 b66d40cb
+D a-nucoty.ads		20020507104839 897483d5
+D a-ngcoty.ads		20020507104836 36def867
+D a-ngcoty.adb		20020507104835 210f8ed7
+D a-ngelfu.ads		20020507104836 95071d99
+D a-ngelfu.adb		20020507104836 a87c25ee
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tideau.ads		20020507104858 1ff8a490
+D a-tideio.ads		20020507104858 28551eaf
+D a-tideio.adb		20020507104858 81905535
+D a-tienau.ads		20020507104858 a07287f1
+D a-tienio.ads		20020507104858 18c7435c
+D a-tienio.adb		20020507104858 69ccfdaa
+D a-tifiio.ads		20020507104858 f6b39cd1
+D a-tifiio.adb		20020507104858 4e8c5e77
+D a-tiflau.ads		20020507104858 ba8cb130
+D a-tiflio.ads		20020507104859 661a85c9
+D a-tiflio.adb		20020507104859 7c98c807
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-timoau.ads		20020507104901 596262d1
+D a-timoio.ads		20020507104901 2d589caf
+D a-timoio.adb		20020507104901 182d4f8f
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D sample.ads		20031025153918 f29d090b
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-keyboard_handler.ads  20031025153918 c5f0a79f
+D sample-manifest.ads	20031025153918 448d6845
+D sample-text_io_demo.ads  20031025153918 824c75bc
+D sample-text_io_demo.adb  20031025153918 930a249b
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exnflt.ads		20020507105103 3b4236b8
+D s-exngen.ads		20020507105103 8326a4b5
+D s-fatflt.ads		20020507105109 485be067
+D s-fatgen.ads		20020507105109 176a60c7
+D s-fatgen.adb		20020507105109 f7d45ad0
+D s-fatllf.ads		20020507105110 301be279
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgenu.ads		20020507105115 20631dce
+D s-maccod.ads		20020507105122 f1886293
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D s-valenu.ads		20020507105211 87644494
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-complex_io.ads  20031025153918 a8454a01
+D terminal_interface-curses-text_io-complex_io.adb  20031025153918 391e31ed
+D terminal_interface-curses-text_io-decimal_io.ads  20031025153918 1875f947
+D terminal_interface-curses-text_io-decimal_io.adb  20031025153918 3a02c4c1
+D terminal_interface-curses-text_io-enumeration_io.ads  20031025153918 79fe075a
+D terminal_interface-curses-text_io-enumeration_io.adb  20031025153918 d16ae992
+D terminal_interface-curses-text_io-fixed_io.ads  20031025153918 752c8172
+D terminal_interface-curses-text_io-fixed_io.adb  20031025153918 73c3bf42
+D terminal_interface-curses-text_io-float_io.ads  20031025153918 fbcf2b63
+D terminal_interface-curses-text_io-float_io.adb  20031025153918 5836a957
+D terminal_interface-curses-text_io-integer_io.ads  20031025153918 abfe0229
+D terminal_interface-curses-text_io-integer_io.adb  20031025153918 3513da4d
+D terminal_interface-curses-text_io-modular_io.ads  20031025153918 dbec370d
+D terminal_interface-curses-text_io-modular_io.adb  20031025153918 6860af3a
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 56|41r6 42r6 43r6 77r6 92r52
+X 10 a-numeri.ads
+19K13*Numerics 30e17 56|41r10 42r10 43r10 77r10 92r56
+X 13 a-nucoty.ads
+20K22*Complex_Types 56|42r19 43r19 92r65
+X 14 a-ngcoty.ads
+47R9*Complex 56|112r12
+X 16 a-ngelfu.ads
+21k22*Generic_Elementary_Functions 75e46 56|41r19 77r19
+24V13*Sqrt 56|138r28
+X 50 sample.ads
+41K9*Sample 43e11 55|41r9 45r5 56|57r6 57r27 58r6 58r39 59r6 59r35 60r6 60r30
+. 62r14 180r5
+X 51 sample-explanation.ads
+45K16*Explanation 59e23 56|60r13 60r37
+47U14*Explain 56|166r38
+50U14*Explain_Context 56|165r38
+53U14*Notepad 56|120r7
+X 52 sample-function_key_setting.ads
+46K16*Function_Key_Setting 82e32 56|58r13 58r46
+48U14*Push_Environment 56|118r7
+56U14*Pop_Environment 56|177r7
+76U14*Default_Labels 56|119r7
+X 53 sample-keyboard_handler.ads
+47K16*Keyboard_Handler 55e28 56|59r13 59r42
+49V13*Get_Key 56|161r15
+X 54 sample-manifest.ads
+43K16*Manifest 67e20 56|57r13 57r34
+49i4*HELP_CODE 56|165r21
+51i4*EXPLAIN_CODE 56|166r21
+53i4*QUIT_CODE 56|164r21
+X 55 sample-text_io_demo.ads
+41K16*Text_IO_Demo 45r12 45e24 56|62b21 180r12 180t24
+43U14*Demo 56|107b14 178r8 178t12
+X 56 sample-text_io_demo.adb
+64E9 Weekday 88r56 142r16
+64n21 Sunday
+65n21 Monday
+66n21 Tuesday
+67n21 Wednesday
+68n21 Thursday
+69n21 Friday
+70n21 Saturday
+72O9 Fix 96r50 113r12
+73D9 Dec 100r52 114r12
+74M9 Md 104r52 115r11 147r12 149r19
+76K12 Math 138r23
+79K12 Int_IO 81r8
+83K12 Real_IO 85r8
+87K12 Enum_IO 89r8
+91K12 C_IO 93r8
+95K12 F_IO 97r8
+99K12 D_IO 101r8
+103K12 M_IO 105r8
+109M7 W 125m7 128r22 129r24 130r30 132r19 175m15
+110M7 P 174m15
+111i7 K 161m10 162r13 163r18
+112r7 Im 156r12
+113o7 Fx 157r12
+114d7 Dc 158r12
+115m7 L 147m7 150r18 151m13 151r18
+134i11 I 136r23 138r41
+142e11 W 143r23
+148i11 I
+149m14 J
+X 80 terminal_interface.ads
+41K9*Terminal_Interface 56|45r6 45r37 46r6 46r44 47r6 48r6 49r6 50r6 51r6
+. 52r6 53r6 54r6 55r6 80r6 84r6 88r6 92r6 96r6 100r6 104r6 80|46e23
+X 81 terminal_interface-curses.ads
+48K28*Curses 56|45r25 45r56 46r25 46r63 47r25 48r25 49r25 50r25 51r25 52r25
+. 53r25 54r25 55r25 80r25 84r25 88r25 92r25 96r25 100r25 104r25 81|1933e30
+56M9*Window 56|109r11
+57M4*Null_Window 56|172r19
+71I12*Real_Key_Code 56|111r11
+76I12*Special_Key_Code 56|162r18
+411V13*Lines 56|125r41
+414V13*Columns 56|125r52
+474V13*Standard_Window 56|110r28 125r24
+581U14*Delete 56|175r7
+587V13*Sub_Window 56|125r12
+713U14*Box 56|126r7
+891U14*Set_Echo_Mode 56|122r7
+897U14*Set_Meta_Mode 56|123r7 128r7
+903U14*Set_KeyPad_Mode 56|124r7 129r7
+1002U14*Immediate_Update_Mode 56|130r7
+1045U14*Refresh_Without_Update 56|127r7 173r14
+1067U14*Erase 56|173r7
+X 84 terminal_interface-curses-panels.ads
+43K35*Panels 56|46r32 46r70 84|146e37
+48M9*Panel 56|110r11
+66V13*Create 56|110r20
+138U14*Delete 56|174r7
+X 86 terminal_interface-curses-text_io.ads
+44K35*Text_IO 56|47r32 48r32 49r32 50r32 51r32 52r32 53r32 54r32 55r32 80r32
+. 84r32 88r32 92r32 96r32 100r32 104r32 86|136e38
+59U14*Set_Window 56|132r7 172r7
+87U14*New_Line 56|139r10 145r7 154r7 156r17 157r17 158r17
+109U14*Put 56|143r27 150r22
+116U14*Put 56|135r10 137r10
+X 88 terminal_interface-curses-text_io-complex_io.ads
+46k43*Complex_IO 56|52r40 92r40 88|70e49
+61U14*Put 56|156r7
+X 90 terminal_interface-curses-text_io-decimal_io.ads
+44k43*Decimal_IO 56|54r40 100r40 90|66e49
+57U14*Put 56|158r7
+X 92 terminal_interface-curses-text_io-enumeration_io.ads
+44k43*Enumeration_IO 56|51r40 88r40 92|63e53
+55U14*Put 56|143r10
+56e7 Item 56|143r15
+X 94 terminal_interface-curses-text_io-fixed_io.ads
+44k43*Fixed_IO 56|53r40 96r40 94|66e47
+57U14*Put 56|157r7
+X 96 terminal_interface-curses-text_io-float_io.ads
+44k43*Float_IO 56|50r40 84r40 96|66e47
+57U14*Put 56|138r10
+58f7 Item 56|138r15
+60i7 Aft 56|138r56
+61i7 Exp 56|138r46
+X 98 terminal_interface-curses-text_io-integer_io.ads
+44k43*Integer_IO 56|49r40 80r40 98|63e49
+55U14*Put 56|136r10
+56i7 Item 56|136r15
+57i7 Width 56|136r26
+X 100 terminal_interface-curses-text_io-modular_io.ads
+44k43*Modular_IO 56|55r40 104r40 100|63e49
+55U14*Put 56|150r13
+

@@ -1,0 +1,20 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U tour%b		tour.adb		f2542152 NE SU
+W sample%s		sample.adb		sample.ali
+
+U tour%s		tour.ads		ed63d9c0 EE NE SU
+
+D sample.ads		20031025153918 f29d090b
+D system.ads		20020507104801 427a8039
+D tour.ads		20031025153918 ed63d9c0
+D tour.adb		20031025153918 edaaf199
+X 1 sample.ads
+41K9*Sample 43e11 4|41r6 41r18
+42U14*Whow 4|45r4
+X 3 tour.ads
+41U11*Tour 4|43b11 46r5 46t9
+

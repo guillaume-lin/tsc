@@ -1,0 +1,178 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.text_io.modular_aux%b  a-timoau.adb	73e5b8cb NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.generic_aux%s  a-tigeau.adb	a-tigeau.ali
+W system%s		system.ads		system.ali
+W system.img_biu%s	s-imgbiu.adb		s-imgbiu.ali
+W system.img_llb%s	s-imgllb.adb		s-imgllb.ali
+W system.img_llu%s	s-imgllu.adb		s-imgllu.ali
+W system.img_llw%s	s-imgllw.adb		s-imgllw.ali
+W system.img_uns%s	s-imguns.adb		s-imguns.ali
+W system.img_wiu%s	s-imgwiu.adb		s-imgwiu.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.val_llu%s	s-valllu.adb		s-valllu.ali
+W system.val_uns%s	s-valuns.adb		s-valuns.ali
+
+U ada.text_io.modular_aux%s  a-timoau.ads	c418f69f NE PK
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tigeau.ads		20020507104900 f602cde1
+D a-timoau.ads		20020507104901 596262d1
+D a-timoau.adb		20020507104900 0221e59b
+D interfac.ads		20020507105017 6e859da6
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgbiu.ads		20020507105115 5f10f0d2
+D s-imgllb.ads		20020507105116 c485c297
+D s-imgllu.ads		20020507105117 c84acf16
+D s-imgllw.ads		20020507105118 a66fcb95
+D s-imguns.ads		20020507105119 e533639a
+D s-imgwiu.ads		20020507105121 da9d1668
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D s-valllu.ads		20020507105213 0936eeef
+D s-valuns.ads		20020507105214 1d8c5fbb
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 10|45r17 91r5 11|36r6 36r35 47r14 307r5
+X 8 a-textio.ads
+51K13*Text_IO 442e16 10|45r21 91r9 11|36r10 36r39 47r18 307r9
+54P9*File_Type 10|50r15 55r15 60r15 66r15 11|56r14 68r15 93r15 162r14 210r15
+. 235r15
+76I12*Field 10|52r15 57r15 62r15 68r15 11|70r15 72r27 95r15 97r27 212r15
+. 215r26 237r15 240r26 264r26 290r26
+81I12*Number_Base 10|63r15 69r15 84r14 89r14 11|213r15 238r15 262r14 288r14
+295X4*Data_Error 11|132r16 154r16
+296X4*Layout_Error 11|275r16 301r16
+X 9 a-tigeau.ads
+39K29*Generic_Aux 191e28 11|36r18 36r47
+48U14*Check_End_Of_Field 11|85r7 110r7
+84U14*Load_Width 11|78r10 103r10
+91U14*Load_Skip 11|170r7
+105U14*Load 11|187r13
+112U14*Load 11|182r10 190r10
+123U14*Load 11|178r7 199r13
+131U14*Load_Digits 11|179r7
+139U14*Load_Digits 11|200r13
+152U14*Load_Extended_Digits 11|186r13
+162U14*Put_Item 11|227r7 252r7
+176U14*String_Skip 11|79r10 104r10 125r7 147r7
+X 10 a-timoau.ads
+45K29*Modular_Aux 91r17 91e28 11|47b26 307r17 307t28
+47K12*U 51r19 56r19 61r15 67r15 73r18 78r18 83r14 88r14
+49U14*Get_Uns 11|92b14 111r8 111t15
+50P7 File 11|93b7 103r22 106r24 110r27
+51m7 Item 11|94b7 109m7
+52i7 Width 11|95b7 102r10 103r28 110r49
+54U14*Get_LLU 11|67b14 86r8 86t15
+55P7 File 11|68b7 78r22 81r24 85r27
+56m7 Item 11|69b7 84m7
+57i7 Width 11|70b7 77r10 78r28 85r49
+59U14*Put_Uns 11|234b14 253r8 253t15
+60P7 File 11|235b7 252r17
+61m7 Item 11|236b7 245r30 247r36 249r36
+62i7 Width 11|237b7 244r29 247r42 249r48
+63i7 Base 11|238b7 244r10 246r13 249r42
+65U14*Put_LLU 11|209b14 228r8 228t15
+66P7 File 11|210b7 227r17
+67m7 Item 11|211b7 220r40 222r46 224r46
+68i7 Width 11|212b7 219r29 222r52 224r58
+69i7 Base 11|213b7 219r10 221r13 224r52
+71U14*Gets_Uns 11|139b14 155r8 155t16
+72s7 From 11|140b7 147r20 148r30 148r48
+73m7 Item 11|141b7 148m7
+74i7 Last 11|142b7 149m7 153m10
+76U14*Gets_LLU 11|117b14 133r8 133t16
+77s7 From 11|118b7 125r20 126r40 126r58
+78m7 Item 11|119b7 126m7
+79i7 Last 11|120b7 127m7 131m10
+81U14*Puts_Uns 11|285b14 305r8 305t16
+82s7 To 11|286b7 295r42 297r48 300r16 303m10 303r14 303r26
+83m7 Item 11|287b7 295r36 297r36
+84i7 Base 11|288b7 294r10 297r42
+86U14*Puts_LLU 11|259b14 279r8 279t16
+87s7 To 11|260b7 269r52 271r58 274r16 277m10 277r14 277r26
+88m7 Item 11|261b7 269r46 271r46
+89i7 Base 11|262b7 268r10 271r52
+X 11 a-timoau.adb
+55U14 Load_Modular 81r10 106r10 161b14 203r8 203t20
+56P7 File 162b7 170r18 178r13 179r20 182r16 186r35 187r19 190r16 199r19 200r26
+57s7 Buf 163b7 178m19 179m26 182m22 186m41 187m25 187r35 190m22 199m25 200m32
+58i7 Ptr 164b7 178m24 179m31 182m27 185r25 186m46 187m30 190m27 199m30 200m37
+72a7 Buf 78m35 79r23 81m30 84r40 85r33
+73i7 Stop 78m40 81m35 84r57 85r38
+74i7 Ptr 79m28 84m45 85r44
+97a7 Buf 103m35 104r23 106m30 109r30 110r33
+98i7 Stop 103m40 106m35 109r47 110r38
+99i7 Ptr 104m28 109m35 110r44
+122i7 Pos 125m26 126m46 127r15 131r18
+144i7 Pos 147m26 148m36 149r15 153r18
+166i7 Hash_Loc 185m13 187r40
+167b7 Loaded 179m36 181r10 182m42 184r13 190m42 192r13
+215a7 Buf 220m46 222m59 224m65 227r23
+216i7 Ptr 220m51 222m64 224m70 227r33
+240a7 Buf 245m36 247m49 249m55 252r23
+241i7 Ptr 245m41 247m54 249m60 252r33
+264a7 Buf 269m63 271m69 277r49
+265i7 Ptr 269m68 271m74 274r10 277r37 277r59
+290a7 Buf 295m53 297m59 303r49
+291i7 Ptr 295m58 297m64 300r10 303r37 303r59
+X 14 system.ads
+41K9*System 10|43r6 47r22 11|38r6 38r26 39r6 39r26 40r6 40r26 41r6 41r26
+. 42r6 42r26 43r6 43r26 44r6 44r26 45r6 45r26 49r8 14|150e11
+X 19 s-imgbiu.ads
+42K16*Img_BIU 11|38r13 38r33 19|76e19
+61U14*Set_Image_Based_Unsigned 11|249r10 297r10
+X 20 s-imgllb.ads
+42K16*Img_LLB 11|40r13 40r33 20|76e19
+61U14*Set_Image_Based_Long_Long_Unsigned 11|224r10 271r10
+X 21 s-imgllu.ads
+42K16*Img_LLU 11|41r13 41r33 21|61e19
+50U14*Set_Image_Long_Long_Unsigned 11|220r10
+X 22 s-imgllw.ads
+42K16*Img_LLW 11|42r13 42r33 22|73e19
+59U14*Set_Image_Width_Long_Long_Unsigned 11|222r10 269r10
+X 23 s-imguns.ads
+42K16*Img_Uns 11|39r13 39r33 23|61e19
+50U14*Set_Image_Unsigned 11|245r10
+X 24 s-imgwiu.ads
+42K16*Img_WIU 11|43r13 43r33 24|73e19
+59U14*Set_Image_Width_Unsigned 11|247r10 295r10
+X 32 s-unstyp.ads
+42K16*Unsigned_Types 10|43r13 47r29 11|49r15 32|234e26
+47M9*Unsigned 10|51r21 61r17 73r20 83r16 11|94r19 141r18 236r15 287r14
+49M9*Long_Long_Unsigned 10|56r21 67r17 78r20 88r16 11|69r19 119r18 211r15
+. 261r14
+X 33 s-valllu.ads
+41K16*Val_LLU 11|45r13 45r33 33|83e19
+44V13*Scan_Long_Long_Unsigned 11|84r15 126r15
+X 34 s-valuns.ads
+41K16*Val_Uns 11|44r13 44r33 34|83e19
+44V13*Scan_Unsigned 11|109r15 148r15
+

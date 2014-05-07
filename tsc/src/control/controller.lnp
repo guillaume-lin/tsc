@@ -1,0 +1,26 @@
+"kernel.obj",
+"main.obj",
+"multiple_schedule_control.obj",
+"datastruct.obj",
+"mcu.obj",
+"manual_control.obj",
+"actuate_control.obj",
+"executive_machine_control.obj",
+"command_reactor.obj",
+"codec.obj",
+"cordless_coordinate_control.obj",
+"STARTUP.obj",
+"isr_uart.obj",
+"isr_int0.obj",
+"isr_adc0.obj",
+"isr_timer3.obj",
+"isr_smbus.obj",
+"smbus.obj",
+"detector_set.obj",
+"util.obj",
+"key_buffer.obj",
+"error_code.obj",
+"cpld_fifo.obj" 
+TO "controller" 
+NOLINES, NOSYMBOLS, NOPUBLICS IXREF (NOGENERATED, NOLIBRARIES) 
+RAMSIZE(256) 

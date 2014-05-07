@@ -1,0 +1,238 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvvvnvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U sample.menu_demo.aux%b  sample-menu_demo-aux.adb  3c4f999b NE PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W sample%s		sample.adb		sample.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.helpers%s	sample-helpers.adb	sample-helpers.ali
+W sample.keyboard_handler%s  sample-keyboard_handler.adb  sample-keyboard_handler.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W sample.menu_demo%s	sample-menu_demo.adb	sample-menu_demo.ali
+
+U sample.menu_demo.aux%s  sample-menu_demo-aux.ads  11f85539 EE NE PK
+W sample%s		sample.adb		sample.ali
+W sample.menu_demo%s	sample-menu_demo.adb	sample-menu_demo.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-helpers.ads	20031025153918 a22559f6
+D sample-keyboard_handler.ads  20031025153918 c5f0a79f
+D sample-manifest.ads	20031025153918 448d6845
+D sample-menu_demo.ads	20031025153918 08e34ec6
+D sample-menu_demo-aux.ads  20031025153918 51f435a8
+D sample-menu_demo-aux.adb  20031025153918 bd0d1cd2
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-menus.adb  20031025153918 c955c37c
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 23|41r6 41r34
+X 2 a-charac.ads
+19K13*Characters 22e19 23|41r10 41r38
+X 4 a-chlat1.ads
+18K24*Latin_1 297e27 23|41r21 41r49
+26e4*SOH 23|190r21
+27e4*STX 23|187r21
+29e4*EOT 23|185r21
+30e4*ENQ 23|191r21
+31e4*ACK 23|186r21
+33e4*BS 23|189r21
+35e4*LF 23|194r26
+38e4*CR 23|194r21
+39e4*SO 23|182r21
+42e4*DLE 23|183r21
+46e4*DC4 23|192r21
+47e4*NAK 23|184r21
+50e4*CAN 23|181r21
+51e4*EM 23|188r21
+X 16 sample.ads
+41K9*Sample 43e11 22|45r9 71r5 23|43r6 43r27 44r6 44r26 45r6 45r35 46r6 46r30
+. 48r14 203r5
+X 17 sample-explanation.ads
+45K16*Explanation 59e23 23|46r13 46r37
+47U14*Explain 23|165r44
+50U14*Explain_Context 23|164r44
+X 18 sample-helpers.ads
+46K16*Helpers 54e19 23|44r13 44r33
+48U14*Window_Title 23|129r10
+X 19 sample-keyboard_handler.ads
+47K16*Keyboard_Handler 55e28 23|45r13 45r42
+49V13*Get_Key 23|161r15
+X 20 sample-manifest.ads
+43K16*Manifest 67e20 23|43r13 43r34
+45i4*QUIT 23|167r51 181r35
+46i4*SELECT_ITEM 23|194r40
+49i4*HELP_CODE 23|164r21
+51i4*EXPLAIN_CODE 23|165r21
+53i4*QUIT_CODE 23|167r21
+55a4*Menu_Marker 23|68r20
+58i4*Menu_Fore_Color 23|117r45
+59i4*Menu_Back_Color 23|115r43 118r45
+60i4*Menu_Grey_Color 23|119r39
+X 21 sample-menu_demo.ads
+41K16*Menu_Demo 45e21 22|45r16 71r12 23|48r21 203r12
+X 22 sample-menu_demo-aux.ads
+45K26*Aux 71r22 71e25 23|48b31 203r22 203t25
+47U14*Geometry 23|84b14 94r8 94t16
+47M24 M 23|84b24 93r17
+48i24 L 23|85b24 93m20
+49i24 C 23|86b24 93m23
+50i24 Y 23|87b24 93m26
+51i24 X 23|88b24 93m29
+55V13*Create 23|96b13 134r8 134t14
+55M21 M 23|96b21 108r17 117r33 118r33 119r27 126r19 127r23 132r13
+56s21 Title 23|97b21 128r10 129r27
+57i21 Lin 23|98b21 109r30
+58i21 Col 23|99b21 109r35
+62U14*Destroy 23|136b14 151r8 151t15
+62M23 M 23|136b23 141r24 142r28 143r13 146r19 147r23
+63M23 P 23|137b23 145m15
+67V13*Get_Request 23|153b13 201r8 201t19
+67M26 M 23|153b26 155r43
+67M36 P 23|153b36 159r12
+X 23 sample-menu_demo-aux.adb
+50U14 Geometry 58b14 82r8 82t16 93r7 108r7
+50M24 M 58b24 68r17 70r16 71r14
+51i24 L 59b24 71m17 75m7 75r12
+52i24 C 60b24 71m20 76m7 76r12 79r23
+53i24 Y 61b24 80m7
+54i24 X 62b24 79m7
+55i24 Fy 63b24 70m29 73r35 75r20
+56i24 Fx 64b24 70m33 73m7 73r13 76r20
+66i7 Spc_Desc 70m19
+90i7 Fy 93m32
+91i7 Fx 93m36
+101M7 W 109m7 110r22 111r24 113r33 120r17 122r28 125r12 126r22 129r24 131r25
+101M10 S 122m7 123r22 124r24 127r26
+102i7 L 108m20 109r24 122r31
+103i7 C 108m23 109r27 122r39
+104i7 Y 108m26
+104i10 Fy 108m32 122r35 122r47
+105i7 X 108m29
+105i10 Fx 108m36 122r43 122r51
+106M7 Pan 131m7 133r14
+139M7 W 141m7 144r14 149m15
+139M10 S 142m7 148m15
+155M7 W 161r24
+156i7 K 161m10 162r13 163r18 176r51 178r16 179r34 195r40 198r20
+157e7 Ch 179m13 180r18
+X 33 terminal_interface.ads
+41K9*Terminal_Interface 22|41r6 41r38 42r6 42r45 43r6 43r44 33|46e23
+X 34 terminal_interface-curses.ads
+48K28*Curses 22|41r25 41r57 42r25 42r64 43r25 43r63 34|1933e30
+56M9*Window 23|101r14 139r14 155r21
+57M4*Null_Window 23|146r22 147r26
+59I9*Line_Position 22|50r33 57r29 23|53r33 55r33 61r33 63r33 87r32 90r12
+. 98r29 104r15
+60I9*Column_Position 22|51r33 58r29 23|54r33 56r33 62r33 64r33 66r18 73r18
+. 88r33 91r12 99r29 105r15
+62I12*Line_Count 22|48r33 23|51r33 59r33 85r32 102r11
+64I12*Column_Count 22|49r33 23|52r33 60r33 86r32 103r11
+67I9*Key_Code 22|67r54 23|153r54
+71I12*Real_Key_Code 23|156r12
+76I12*Special_Key_Code 23|162r18
+80I12*Normal_Key_Code 23|178r21
+90i4*Key_Cursor_Down 23|168r21
+91i4*Key_Cursor_Up 23|169r21
+92i4*Key_Cursor_Left 23|170r21
+93i4*Key_Cursor_Right 23|171r21
+94i4*Key_Home 23|166r21
+95i4*Key_Backspace 23|173r21
+131i4*Key_Next_Page 23|174r21
+132i4*Key_Previous_Page 23|175r21
+153i4*Key_End 23|172r21
+349r4*Normal_Video 23|116r43
+414V13*Columns 23|79r13
+572V13*New_Window 23|109r12
+581U14*Delete 23|148r7 149r7
+597V13*Derived_Window 23|122r12
+713U14*Box 23|125r7
+897U14*Set_Meta_Mode 23|110r7 123r7
+903U14*Set_KeyPad_Mode 23|111r7 124r7
+1067U14*Erase 23|120r10 144r7
+1101U14*Set_Background 23|113r10
+1102M7 Win 23|113r26
+1103r7 Ch 23|114r26
+1719V13*Has_Colors 23|112r10
+X 37 terminal_interface-curses-menus.ads
+48K35*Menus 22|43r32 43r70 37|676e36
+56M9*Menu 22|47r33 55r29 62r30 67r30 23|50r33 58r33 84r32 96r29 136r30 153r30
+87i4*REQ_LEFT_ITEM 23|170r51
+88i4*REQ_RIGHT_ITEM 23|171r51
+89i4*REQ_UP_ITEM 23|169r51
+90i4*REQ_DOWN_ITEM 23|168r51
+91i4*REQ_SCR_ULINE 23|184r35
+92i4*REQ_SCR_DLINE 23|185r35
+93i4*REQ_SCR_DPAGE 23|174r51 186r35
+94i4*REQ_SCR_UPAGE 23|175r51 187r35
+95i4*REQ_FIRST_ITEM 23|166r51
+96i4*REQ_LAST_ITEM 23|172r51
+97i4*REQ_NEXT_ITEM 23|182r35
+98i4*REQ_PREV_ITEM 23|183r35
+99i4*REQ_TOGGLE_ITEM 23|192r35
+100i4*REQ_CLEAR_PATTERN 23|188r35
+101i4*REQ_BACK_PATTERN 23|173r51 189r35
+102i4*REQ_NEXT_MATCH 23|190r35
+103i4*REQ_PREV_MATCH 23|191r35
+323U14*Post 23|132r7 143r7
+362U14*Set_Window 23|126r7 146r7
+368V13*Get_Window 23|141r12 155r31
+373U14*Set_Sub_Window 23|127r7 147r7
+379V13*Get_Sub_Window 23|142r12
+384U14*Scale 23|71r7
+404U14*Set_Mark 23|68r7
+424U14*Set_Foreground 23|117r10
+425M7 Men 23|117r26
+427i7 Color 23|117r36
+444U14*Set_Background 23|118r10
+445M7 Men 23|118r26
+447i7 Color 23|118r36
+464U14*Set_Grey 23|119r10
+465M7 Men 23|119r20
+467i7 Color 23|119r30
+509U14*Spacing 23|70r7
+X 39 terminal_interface-curses-panels.ads
+43K35*Panels 22|42r32 42r71 39|146e37
+48M9*Panel 22|58r53 63r34 67r40 23|99r53 106r13 137r34 153r40
+71V13*New_Panel 23|131r14
+81U14*Top 23|159r7
+91U14*Update_Panels 23|150r7
+138U14*Delete 23|145r7
+

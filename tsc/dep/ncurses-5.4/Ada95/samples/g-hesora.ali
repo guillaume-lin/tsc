@@ -1,0 +1,37 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U gnat.heap_sort_a%b	g-hesora.adb		c5fbb2c4 NE PK
+W gnat%s		gnat.ads		gnat.ali
+
+U gnat.heap_sort_a%s	g-hesora.ads		dc301c49 NE PR PK
+W gnat%s		gnat.ads		gnat.ali
+
+D gnat.ads		20011002141535 6380ea48
+D g-hesora.ads		20011002141531 bfb0f601
+D g-hesora.adb		20020507104950 7a4b44c5
+D system.ads		20020507104801 427a8039
+X 1 gnat.ads
+38K9*GNAT 41e9 2|44r9 68r5 3|35r14 135r5
+X 2 g-hesora.ads
+44K14*Heap_Sort_A 45r22 68r10 68e21 3|35b19 135r10 135t21
+51P9*Move_Procedure 61r40 3|50r40
+51i45 From
+51i61 To
+56P9*Lt_Function 61r61 3|50r61
+56i41 Op1
+56i46 Op2
+61U14*Sort 3|50b14 133r8 133t12
+61i20 N 3|50b20 52r24 117r29
+61p33 Move 3|50b33 89r13 99r16 108r10 118r10 127r10 128r10
+61p56 Lt 3|50b56 85r35 98r16
+X 3 g-hesora.adb
+52i7 Max 83r29 85r22 126r13 127r16 128r19 129m10 129r17
+55U17 Sift 63b17 109r11 109t15 119r10 130r10
+55i23 S 63b23 64r31 95r21
+64i10 C 82r24 89r24 90m13 95r16 96r23 99r30 100m16 108r19
+65i10 Son 82m13 83r23 85r16 85r39 85r44 86m16 86r23 89r19 90r18
+66i10 Father 96m13 98r20 99r22 100r21
+117i11 J 118r16 119r16
+

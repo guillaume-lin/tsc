@@ -1,0 +1,313 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U ncurses2.demo_forms%b	ncurses2-demo_forms.adb	f0dffd5e NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_user_data%s  terminal_interface-curses-forms-field_user_data.adb  terminal_interface-curses-forms-field_user_data.ali
+
+U ncurses2.demo_forms%s	ncurses2-demo_forms.ads	9615cabc EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-demo_forms.ads  20001202223126 c7e23348
+D ncurses2-demo_forms.adb  20001202223125 55868ee6
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms.adb  20031025153918 04e92484
+D terminal_interface-curses-forms-field_user_data.ads  20140426095555 5d91d7ef
+D terminal_interface-curses-forms-field_user_data.adb  20031025153918 422f2e48
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 34|45r6 46r6 47r6 50r22 110r19
+X 2 a-charac.ads
+19K13*Characters 22e19 34|45r10 110r23
+X 3 a-chahan.ads
+41K24*Handling 136e28 34|45r21 110r34
+49V13*Is_Graphic 34|110r43
+X 11 a-string.ads
+18K13*Strings 32e16 34|46r10 47r10 50r26
+X 12 a-strbou.ads
+42K21*Bounded 467e24 34|47r18 50r34
+49k12*Generic_Bounded_Length 465e30 34|50r42
+53R12 Bounded_String 34|99r23
+59V16 Length 34|146r45 146r63
+65V16 To_Bounded_String 34|107r24 138r36
+70V16 To_String 34|113r41 139r47 147r47
+111U17 Append 34|111r22
+343U17 Delete 34|146r28
+X 32 ncurses2.ads
+42K9*ncurses2 44e13 33|41r11 34|41r6 41r25 49r11 496r5
+X 33 ncurses2-demo_forms.ads
+41U20*demo_forms 34|49b20 496r14 496t24
+X 34 ncurses2-demo_forms.adb
+50K12 BS 99r20 107r21 111r19 113r38 138r33 139r44 146r25 146r42 146r60 147r44
+52P9 myptr 61r64 102r19 349r13
+60K12 StringData 91r11 348r11
+63V13 edit_secure 83b13 156r8 156t19 307r15 310r15
+63M26 me 83b26 93r13 104r25 106r28 113r31 139r37 147r37
+63i38 c_in 83b38 88r23
+64V13 form_virtualize 160b13 314r8 314t23 475r12
+64M30 f 160b30 285r30
+64M40 w 160b40 284r32
+65V13 my_form_driver 316b13 326r8 326t22 483r25
+65M29 f 316b29 317r39
+65i39 c 316b39 319r10
+66V13 make_label 328b13 340r8 340t18 453r13 454r13 456r13 458r13 460r13 462r14
+66i25 frow 328b25 331r45
+67i25 fcol 329b25 331r51
+68s25 label 330b25 331r31 335r28
+69V13 make_field 342b13 364r8 364t18 455r13 457r13 459r13 461r13 463r14
+69i25 frow 342b25 352r35 354r35
+70i25 fcol 343b25 352r41 354r41
+71i25 rows 344b25 352r23 354r23
+72i25 cols 345b25 352r29 354r29
+73b25 secure 346b25 351r10
+74U14 display_form 366b14 404r8 404t20 469r4
+74M28 f 366b28 371r14 375r22 376r26 384r16
+75U14 erase_form 406b14 415r8 415t18 489r4
+75M26 f 406b26 407r33 408r37 410r13
+84i7 rows 93m17
+84i13 frow 93m29
+85i7 nrow 93m41
+86i7 cols 93m23
+86i13 fcol 93m35
+87i7 nbuf 93m47 97r10
+88i7 c 108r16 109r36 114m19 116m19 119r21 135m22 155r14
+89e7 c2 109m16 110r55 111r36
+99R13 temp 107m13 111m30 113r52 138m25 139r58 146m36 146r53 146r71 147r58
+100a13 temps 104m39 107r43
+102p13 len 106m32 107r55 112r19 112r30 137r25 140r25 145r25 148r25 148r36
+158i4 mode 289r13 290m13 292m13 294r15
+161R12 lookup_t 165e17 167r54
+162i10 code 297r27
+163i10 result 298r32
+167a7 lookup 296r19 297r16 298r21
+284i7 c 288r10 294m10 297r34 298m16 306r10 307m10 307r32 309r13 310m10 310r32
+. 313r14
+285M7 me 307r28 308r26 310r28 311r26
+296i14 n 297r24 298r29
+317e7 flag 320r13
+331M7 f 332r44 334r10 335r22 337r23 339r14
+332r7 o 336m10 337r26
+347M7 f 352m10 354m10 357r10 358r26 361r25 363r14
+349p7 len 359m10 360r10 361r28
+367M7 w 373m7 374r10 375r25 376r45 377r15 378r27 401r22
+368i7 rows 371m17 373r24 376r48
+369i7 cols 371m23 373r34 376r54
+407M7 w 411r14 412r16 414m15
+408M7 s 413m15
+417b4 finished 474r14 483m13
+418p4 f 453m4 454m4 455m4 456m4 457m4 458m4 459m4 460m4 461m4 462m4 463m4
+. 464r14 465m4 467r24
+419M4 secure 464m4 479r62
+420M4 myform 467m4 469r18 471r21 475r29 476r25 483r41 489r16
+421M4 w 471m4 475r37
+422i4 c 475m7 476r33 483r49
+423e4 result 476m7 477r12
+X 35 ncurses2-util.ads
+44K18*util 34|41r15 41r34 35|78e18
+51e4*newl 34|427r15 429r15 431r15 433r15 435r15 437r15 439r15 441r15 443r15
+. 445r15
+57V13*Getchar 34|284r23
+76V13*Code_To_Char 34|109r22
+X 50 terminal_interface.ads
+41K9*Terminal_Interface 34|42r6 42r37 43r6 43r43 44r6 61r6 50|46e23
+X 51 terminal_interface-curses.ads
+48K28*Curses 34|42r25 42r56 43r25 43r62 44r25 61r25 51|1933e30
+56M9*Window 34|64r44 160r44 367r11 407r11 408r11 421r8
+57M4*Null_Window 34|374r15
+59I9*Line_Position 34|66r33 69r34 84r20 328r33 342r34
+60I9*Column_Position 34|67r33 70r34 86r20 329r33 343r34
+62I12*Line_Count 34|71r34 344r34 368r14
+64I12*Column_Count 34|72r34 345r34 369r14
+67I9*Key_Code 34|63r45 63r62 64r59 65r43 83r45 83r62 88r11 158r11 160r59
+. 162r17 163r19 284r11 316r43 422r8
+94i4*Key_Home 34|252r11
+95i4*Key_Backspace 34|243r11
+153i4*Key_End 34|249r11
+160i4*Key_Next 34|261r11
+163i4*Key_Previous 34|270r11
+205i4*Key_Max 34|108r21 306r15
+216i4*KEY_DOWN 34|246r11
+217i4*KEY_UP 34|276r11
+218i4*KEY_LEFT 34|255r11
+219i4*KEY_RIGHT 34|273r11
+230i4*KEY_NPAGE 34|264r11
+231i4*KEY_PPAGE 34|267r11
+237i4*KEY_LL 34|258r11
+388X4*Eti_System_Error 34|387r12
+389X4*Eti_Bad_Argument 34|388r12
+390X4*Eti_Posted 34|389r12
+391X4*Eti_Connected 34|390r12
+392X4*Eti_Bad_State 34|391r12
+393X4*Eti_No_Room 34|392r12
+394X4*Eti_Not_Posted 34|393r12
+395X4*Eti_Unknown_Command 34|394r12
+396X4*Eti_No_Match 34|395r12
+397X4*Eti_Not_Selectable 34|396r12
+398X4*Eti_Not_Connected 34|397r12
+399X4*Eti_Request_Denied 34|398r12
+400X4*Eti_Invalid_Field 34|399r12
+401X4*Eti_Current 34|400r12
+504U14*Move_Cursor 34|425r4
+505i27 Line 34|425r17
+506i27 Column 34|425r29
+521U14*Add 34|427r4 429r4 431r4 433r4 435r4 437r4 439r4 441r4 443r4 445r4
+522e19 Ch 34|427r9 429r9 431r9 433r9 435r9 437r9 439r9 441r9 443r9 445r9
+572V13*New_Window 34|373r12
+581U14*Delete 34|413r7 414r7
+597V13*Derived_Window 34|376r29
+646U14*Add 34|426r4 428r4 430r4 432r4 434r4 436r4 438r4 440r4 442r4 444r4
+. 446r4
+647s19 Str 34|426r9 428r9 430r9 432r9 434r9 436r9 438r9 440r9 442r9 444r9
+. 446r9
+655U14*Add 34|448r4 479r13
+656i19 Line 34|448r9 479r18
+657i19 Column 34|448r20 479r29
+658s19 Str 34|448r34 479r43
+713U14*Box 34|377r10
+863U14*Beep 34|323r10 485r13
+885U14*Set_Raw_Mode 34|472r4 493r4
+885b28 SwitchOn 34|472r18 493r18
+903U14*Set_KeyPad_Mode 34|378r10
+968U14*Set_NL_Mode 34|473r4 494r4
+968b27 SwitchOn 34|473r17 494r17
+1038U14*Refresh 34|401r13 412r7 450r4 481r13
+1067U14*Erase 34|411r7
+1087U14*Clear_To_End_Of_Line 34|480r13
+X 54 terminal_interface-curses-forms.ads
+48K35*Forms 34|43r32 43r69 44r32 61r32 54|782e36
+55M9*Field 34|63r31 68r48 73r50 83r31 285r12 330r48 331r11 346r50 347r11
+. 419r13
+56M9*Form 34|64r34 65r33 74r32 75r30 160r34 316r33 366r32 406r30 420r13
+58M4*Null_Field 34|334r15 357r15 465r14
+67R9*Field_Option_Set 34|332r11 54|79e17
+70b10*Active 34|336r12
+130I9*Buffer_Number 34|87r14
+132A9*Field_Array 34|418r34
+135P9*Field_Array_Access 34|418r8
+143I12*Form_Request_Code 34|240r11 280r11 309r18 319r14
+208i4*F_Validate_Field 34|317r42
+213i4*REQ_NEXT_PAGE 34|185r43 264r22
+214i4*REQ_PREV_PAGE 34|267r22
+218i4*REQ_NEXT_FIELD 34|206r43 261r21
+219i4*REQ_PREV_FIELD 34|212r43 270r25
+220i4*REQ_FIRST_FIELD 34|252r21
+221i4*REQ_LAST_FIELD 34|249r20 258r19
+226i4*REQ_LEFT_FIELD 34|200r43
+227i4*REQ_RIGHT_FIELD 34|215r43
+228i4*REQ_UP_FIELD 34|221r43
+229i4*REQ_DOWN_FIELD 34|179r43
+235i4*REQ_NEXT_WORD 34|131r21 227r43
+236i4*REQ_PREV_WORD 34|132r21 173r43
+237i4*REQ_BEG_FIELD 34|120r25 218r43
+238i4*REQ_END_FIELD 34|126r21 182r43
+241i4*REQ_LEFT_CHAR 34|129r21 255r21
+242i4*REQ_RIGHT_CHAR 34|133r21 273r22
+243i4*REQ_UP_CHAR 34|134r21 276r19
+244i4*REQ_DOWN_CHAR 34|125r21 246r21
+246i4*REQ_NEW_LINE 34|130r21 203r43
+247i4*REQ_INS_CHAR 34|127r21 194r43
+248i4*REQ_INS_LINE 34|128r21 209r43
+249i4*REQ_DEL_CHAR 34|143r24 224r43
+250i4*REQ_DEL_PREV 34|144r21 191r43 243r26
+251i4*REQ_DEL_LINE 34|123r21 233r43
+252i4*REQ_DEL_WORD 34|124r21 188r43
+253i4*REQ_CLR_EOL 34|122r21 176r43
+254i4*REQ_CLR_EOF 34|121r21 197r43
+255i4*REQ_CLR_FIELD 34|136r24 230r43
+256i4*REQ_OVL_MODE 34|290r21
+257i4*REQ_INS_MODE 34|158r23 289r20 292r21
+274i4*REQ_NEXT_CHOICE 34|170r43
+275i4*REQ_PREV_CHOICE 34|236r43
+295V13*Create 34|331r20 352r15 354r15
+356U14*Set_Buffer 34|113r19 139r25 147r25 335r10
+364U14*Get_Buffer 34|104r13
+367s7 Str 34|104r32
+370V13*Get_Buffer 34|479r50
+399U14*Set_Options 34|337r10
+418V13*Get_Options 34|332r31
+448U14*Set_Background 34|308r10 311r10 358r10
+484U14*Info 34|93r7
+507U14*Set_Window 34|375r10
+513V13*Get_Window 34|407r21 471r9
+518U14*Set_Sub_Window 34|376r10
+524V13*Get_Sub_Window 34|408r21
+529U14*Scale 34|371r7
+630V13*New_Form 34|467r14
+674U14*Post 34|384r10 410r7
+707E9*Driver_Result 34|317r14 423r13
+707n27*Form_Ok 34|320r20 478r15
+709n27*Unknown_Request 34|482r15
+713V13*Driver 34|317r31 476r17
+731V13*Current 34|285r21
+X 56 terminal_interface-curses-forms-field_user_data.ads
+45k41*Field_User_Data 34|44r38 61r38 56|69e52
+53U14 Set_User_Data 34|361r10
+59U14 Get_User_Data 34|106r13
+

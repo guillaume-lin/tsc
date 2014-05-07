@@ -1,0 +1,82 @@
+C51 COMPILER V7.09   EXECUTIVE_MACHINE_CONTROL                                             04/25/2008 16:22:10 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE EXECUTIVE_MACHINE_CONTROL
+OBJECT MODULE PLACED IN executive_machine_control.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE executive_machine_control.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * exective_machine_control.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-14 14:58:10 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "io.h"
+  15          #include "datastruct.h"
+  16          #include "kernel.h"
+  17          
+  18          /**
+  19           *  在指定的时间内没有收到命令，信号机将退出该状态
+  20           */
+  21          static int active_guard_timer;
+  22          
+  23          int executive_machine_control(int switch_mode,int timer)
+  24          {
+  25   1              if(switch_mode){
+  26   2                      byte s,p,t;
+  27   2                      active_guard_timer = 3;
+  28   2                      get_current_schedule(&s,&p,&t);
+  29   2                      load_current_schedule(s,p,t);
+  30   2                      g_controller_status.m_assign_time = 0;
+  31   2                      g_controller_status.m_remain_time = 0;
+  32   2              }
+  33   1      
+  34   1              if(g_controller_status.m_command == DIRECT_PHASE){
+  35   2                      // 设置强制灯色
+  36   2                      set_term_status(&g_controller_status.m_direct_phase);
+  37   2                      g_controller_status.m_elapse_time = 0;
+  38   2                      g_controller_status.m_command = 0;
+  39   2                      active_guard_timer = 3;
+  40   2              }
+  41   1              else if(g_controller_status.m_command == STEP_KEEP){
+  42   2                      // 保持
+  43   2                      active_guard_timer = 3;
+  44   2                      g_controller_status.m_command = 0;
+  45   2              }
+  46   1      
+  47   1              if(timer == 0){
+  48   2                      active_guard_timer--;
+  49   2                      if(active_guard_timer <= 0){
+  50   3                              // 3秒钟之类没有保持指令
+  51   3                              // 放弃控制
+  52   3                              return -1;
+  53   3                      }
+  54   2              }
+  55   1      
+C51 COMPILER V7.09   EXECUTIVE_MACHINE_CONTROL                                             04/25/2008 16:22:10 PAGE 2   
+
+  56   1              return 0;
+  57   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    181    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2       5
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

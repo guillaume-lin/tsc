@@ -1,0 +1,205 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvnnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.attr_test%b	ncurses2-attr_test.adb	c9a30fc9 NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.string_ops%s	s-strops.adb		s-strops.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.terminfo%s  terminal_interface-curses-terminfo.adb  terminal_interface-curses-terminfo.ali
+
+U ncurses2.attr_test%s	ncurses2-attr_test.ads	cb5b61c7 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-attr_test.ads  20001202223124 9aac9833
+D ncurses2-attr_test.adb  20010721213437 a5b077b3
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-strops.ads		20020507105201 1d376900
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-terminfo.ads  20031025153918 5a7a429a
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 30|45r6 46r6 203r22 215r22 246r10
+X 2 a-charac.ads
+19K13*Characters 22e19 30|45r10 246r14
+X 3 a-chahan.ads
+41K24*Handling 136e28 30|45r21 246r25
+54V13*Is_Digit 30|246r34
+X 11 a-string.ads
+18K13*Strings 32e16 30|46r10 203r26 215r26
+X 12 a-strfix.ads
+43K21*Fixed 256e22 30|46r18 203r34 215r34
+246V13*"*" 30|203r40 215r40
+251V13*"*" 30|203r40 215r40
+X 19 a-tiinio.ads
+79U14*Put 30|347r16 350r16
+X 28 ncurses2.ads
+42K9*ncurses2 44e13 29|41r11 30|41r6 41r25 48r11 367r5
+X 29 ncurses2-attr_test.ads
+41U20*attr_test 30|48b20 367r14 367t23
+X 30 ncurses2-attr_test.adb
+50V14 subset 63b13 86r8 86t14 220r20
+50r22 super 63b21 66r10 67r10 68r10 69r10 70r10 71r10 72r10 73r10 220r28
+50r29 sub 63b28 66r33 67r34 68r37 69r29 70r37 71r38 72r47 73r43 220r59
+51V14 intersect 89b13 112r8 112t17 227r22
+51r25 b 89b24 92r26 93r27 94r30 95r22 96r30 97r31 98r40 99r36
+51r28 a 89b27 92r10 93r10 94r10 95r10 96r10 97r10 98r10 99r10
+52V14 has_A_COLOR 114b13 121r8 121t19 222r31
+52r27 attr 114b26 116r10
+53V14 show_attr 124b13 235r8 235t17 314r17 316r17 318r17 320r17 322r17 324r17
+. 328r17 330r17
+53i25 row 124b24 197r28 199r28 234r14
+54i25 skip 125b24 201r10 203r45 214r10 215r45
+55r25 attr 126b24 206r46 208r44 212r46 218r10 220r66 227r61
+56s25 name 127b24 198r19
+57b25 once 128b24 205r10 211r10
+58U14 attr_getc 237b14 265r8 265t17 359r10
+58i25 skip 237b25 247m10
+59i25 fg 237b45 255m41 255r48 256m41 256r48
+59i29 bg 237b49 257m41 257r48 258m41 258r48
+60b25 result 238b45 245m7 260m16 263m10
+130V16 make_record 131b16 192r11 192t22 225r48
+130i29 n 131b29 150r15 151r18
+133r10 a 153m13 158m13 163m13 168m13 173m13 178m13 188m13 191r17
+134i10 m 150m10 152r17 155m10 157r17 160m10 162r17 165m10 167r17 170m10 172r17
+. 175m10 177r17 180m10 185m10 187r17
+135i10 rest 151m10 155r15 156m10 156r18 160r15 161m10 161r18 165r15 166m10
+. 166r18 170r15 171m10 171r18 175r15 176m10 176r18 180r15 181m10 181r18 185r15
+. 186m10 186r18
+194i7 ncv 222r19 225r61
+224r19 Color_Supported_Attributes 227r33
+239i7 ch 246r59 247r38 248r13 253r15
+240i7 nc 255r60 256r60 257r60 258r60
+241M7*curscr 242m25 250r17
+271a4 pairs 280m4 301r20 303m16
+272i4 fg 297r27 302r33 347r36 359m24
+272i8 bg 297r66 302r37 350r36 359m28
+273i4 xmc 274r22 333r13
+274i4 skip 282r7 283m7 285r9
+275i4 n 285m4 314r33 316r33 318r33 320r33 322r33 324r33 328r33 330r33 359m21
+289i10 row 314m10 314r28 316m10 316r28 318m10 318r28 320m10 320r28 322m10
+. 322r28 324m10 324r28 328m10 328r28 330m10 330r28 332r31 338r31 341r31
+290r10 normal 305m13 308r32
+296i13 pair 301r27 302r27 303r23 305r29
+344a21 tmp1 347m21 348r28 350m21 351r28
+358b15 result 359m32 360r24
+X 31 ncurses2-util.ads
+44K18*util 30|41r15 41r34 31|78e18
+47r4*Blank2 30|290r43 364r26
+53V13*CTRL 30|248r18
+57V13*Getchar 30|239r24
+69K12*Int_IO 30|277r8
+76V13*Code_To_Char 30|247r24
+77V13*ctoi 30|247r18
+X 47 terminal_interface.ads
+41K9*Terminal_Interface 30|42r6 42r37 43r6 44r5 47|46e23
+X 48 terminal_interface-curses.ads
+48K28*Curses 30|42r25 42r56 43r25 44r24 48|1933e30
+56M9*Window 30|241r16
+59I9*Line_Position 30|53r32 57r48 124r31 128r47 289r16
+67I9*Key_Code 30|239r12
+276I9*Color_Number 30|59r41 237r61 240r21 240r37 272r13 297r32
+284i4*Black 30|272r29
+297I9*Color_Pair 30|116r24 271r19 296r20 297r15
+305R9*Character_Attribute_Set 30|50r35 51r32 55r32 63r34 89r31 126r31 130r49
+. 131r49 133r14 225r21 48|322e17
+307b10*Stand_Out 30|66r16 66r37 92r12 92r28 153r15
+308b10*Under_Line 30|67r16 67r38 93r12 93r29 158r15
+309b10*Reverse_Video 30|68r16 68r41 94r12 94r32 163r15
+310b10*Blink 30|69r16 69r33 95r12 95r24 168r15
+311b10*Dim_Character 30|70r16 70r41 96r12 96r32
+312b10*Bold_Character 30|71r16 71r42 97r12 97r33 173r15
+313b10*Alternate_Character_Set 30|72r16 72r51 98r12 98r42 188r15
+314b10*Invisible_Character 30|73r16 73r47 99r12 99r38 178r15
+349r4*Normal_Video 30|218r18 330r36
+351R9*Attributed_Character 30|52r34 114r33 290r19 48|356e17
+354i10*Color 30|116r15 305r20
+420V13*Number_Of_Colors 30|240r51 297r46
+488U14*End_Windows 30|366r4
+504U14*Move_Cursor 30|197r7 199r7 332r10 338r10 341r10
+505i27 Line 30|197r20 199r20 332r23 338r23 341r23
+506i27 Column 30|197r33 199r33 332r36 338r40 341r40
+521U14*Add 30|200r7 217r7 349r16 352r16
+522e19 Ch 30|200r12 217r12 349r21 352r21
+646U14*Add 30|198r7 203r10 210r7 215r10 221r16 228r22 334r13 336r13 339r10
+. 342r10 346r16 348r16 351r16
+647s19 Str 30|198r12 203r15 210r12 215r15 221r21 228r27 334r18 336r18 339r15
+. 342r15 346r21 348r21 351r21
+655U14*Add 30|311r10
+656i19 Line 30|311r15
+657i19 Column 30|311r26
+658s19 Str 30|312r15
+799U14*Switch_Character_Attribute 30|206r10 212r10
+801r7 Attr 30|206r38 212r38
+802b7 On 30|212r52
+810U14*Set_Character_Attributes 30|208r10
+812r7 Attr 30|208r36
+1038U14*Refresh 30|251r10 355r10
+1067U14*Erase 30|309r10 365r4
+1101U14*Set_Background 30|308r10 364r4
+1103r7 Ch 30|308r26 364r20
+1118V13*Get_Background 30|222r44
+1134U14*Touch 30|249r10 250r10
+1665V13*Supported_Attributes 30|220r37
+1705U14*Init_Pair 30|302r16
+1719V13*Has_Colors 30|252r13 295r13 343r13
+X 51 terminal_interface-curses-terminfo.ads
+44K35*Terminfo 30|43r32 44r31 51|81e39
+68V13*Get_Number 30|194r33 273r30
+

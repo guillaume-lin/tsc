@@ -1,0 +1,71 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.menus.menu_user_data%b  terminal_interface-curses-menus-menu_user_data.adb  a8c71730 NE PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+
+U terminal_interface.curses.menus.menu_user_data%s  terminal_interface-curses-menus-menu_user_data.ads  acec4421 NE PR PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-menus-menu_user_data.ads  20140426095555 de45cb01
+D terminal_interface-curses-menus-menu_user_data.adb  20031025153918 c8716752
+D unchconv.ads		20020507105303 1b7a14c5
+X 4 interfac.ads
+23K9*Interfaces 168e15 17|45r13
+X 5 i-c.ads
+20K20*C 140e17 17|45r24
+33I9*int 17|45r26
+X 12 terminal_interface.ads
+41K9*Terminal_Interface 46e23 16|45r9 46r25 69r5 17|41r6 41r41 43r14 76r5
+X 13 terminal_interface-curses.ads
+48K28*Curses 1933e30 16|45r28 46r44 69r24 17|41r25 41r60 43r33 76r24
+X 14 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 17|41r32 41r67
+55I12*C_Int 17|51r62
+78I12*Eti_Error 17|54r22
+80i4*E_Ok 17|56r18
+96U14*Eti_Exception 17|57r10
+X 15 terminal_interface-curses-menus.ads
+48K35*Menus 676e36 16|45r35 46r51 69r31 17|43r40 76r31
+56M9*Menu 16|53r39 59r40 64r39 17|47r39 50r41 61r39 63r36 69r40
+X 16 terminal_interface-curses-menus-menu_user_data.ads
+43+9 User 44r31
+44P9 User_Access 54r39 60r40 64r52 17|48r39 51r41 61r52 63r49 70r40
+45k41*Menu_User_Data 46r57 69r37 69e51 17|43b46 76r37 76t51
+53U14 Set_User_Data 56r19 17|47b14 59r8 59t21
+53M29 Men 17|47b29 54r53
+54p29 Data 17|48b29 54r58
+59U14 Get_User_Data 17|69b14 74r8 74t21
+59M29 Men 17|69b29 73r30
+60p29 Data 17|70b29 73m7
+64V13 Get_User_Data 17|61b13 67r8 67t21 73r15
+64M28 Men 17|61b28 66r28
+X 17 terminal_interface-curses-menus-menu_user_data.adb
+50V16*Set_Menu_Userptr 52m25 54r35
+50M34 Men
+51p34 Data
+54i7 Res 56r11 57r25
+63V16*Menu_Userptr 64m25 66r14
+63M30 Men
+

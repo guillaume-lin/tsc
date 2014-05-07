@@ -1,0 +1,214 @@
+diff -urN zhcon-0.2.5/ChangeLog zhcon-0.2.6/ChangeLog
+--- zhcon-0.2.5/ChangeLog	2006-05-02 18:19:08.000000000 +0100
++++ zhcon-0.2.6/ChangeLog	2006-05-14 21:15:19.000000000 +0100
+@@ -1,3 +1,10 @@
++2006-05-14 ejoy <ejoy@users.sourceforge.net>
++    * Fixed: segfault caused by wrong config file in $prefix/etc/zhcon.conf
++
++2006-05-13 ejoy <ejoy@users.sourceforge.net>
++    * Fixed: Seg fault when no graph device is availiable
++    * Added: more user friend message when zhcon can not open graphical device
++
+ 2006-05-02 ejoy <ejoy@users.sourceforge.net>
+     * Removed: po and intl directory
+     * Removed: configserver.cpp
+diff -urN zhcon-0.2.5/NEWS zhcon-0.2.6/NEWS
+--- zhcon-0.2.5/NEWS	2006-05-04 17:12:33.000000000 +0100
++++ zhcon-0.2.6/NEWS	2006-05-14 21:19:24.000000000 +0100
+@@ -1,3 +1,10 @@
++What's new in zhcon version 0.2.6?
++----------------------------------
++zhcon 0.2.6 is a bugfix release
++    * Fixed: segfault caused by the following changes
++    * change /etc/zhcon.conf to $prefix/etc/zhcon.conf
++    * Added: more user friend message when zhcon can not open graphical device
++
+ What's new in zhcon version 0.2.5?
+ ----------------------------------
+ zhcon 0.2.5 is a major release since 0.2.3, adding basic utf-8 support under linux.
+diff -urN zhcon-0.2.5/configure zhcon-0.2.6/configure
+--- zhcon-0.2.5/configure	2006-05-02 10:52:54.000000000 +0100
++++ zhcon-0.2.6/configure	2006-05-14 21:19:55.000000000 +0100
+@@ -1637,7 +1637,7 @@
+ 
+ # Define the identity of the package.
+  PACKAGE=zhcon
+- VERSION=0.2.5
++ VERSION=0.2.6
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+diff -urN zhcon-0.2.5/configure.in zhcon-0.2.6/configure.in
+--- zhcon-0.2.5/configure.in	2006-05-02 10:52:37.000000000 +0100
++++ zhcon-0.2.6/configure.in	2006-05-14 21:18:13.000000000 +0100
+@@ -2,7 +2,7 @@
+ # vim600:fdm=marker
+ 
+ AC_INIT(src/zhcon.cpp)
+-AM_INIT_AUTOMAKE(zhcon, 0.2.5)
++AM_INIT_AUTOMAKE(zhcon, 0.2.6)
+ AM_MAINTAINER_MODE
+ AM_CONFIG_HEADER(config.h)
+ 
+diff -urN zhcon-0.2.5/src/configfile.cpp zhcon-0.2.6/src/configfile.cpp
+--- zhcon-0.2.5/src/configfile.cpp	2006-04-24 17:38:27.000000000 +0100
++++ zhcon-0.2.6/src/configfile.cpp	2006-05-14 21:14:30.000000000 +0100
+@@ -21,6 +21,7 @@
+ #include <cstdlib>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <cstdio>
+ #include "configfile.h"
+ 
+ ConfigFile::ConfigFile(const char *fn) {
+@@ -32,8 +33,10 @@
+     setreuid(euid, ruid);
+     
+     ifstream in(fn);
+-    if (!in)
++    if (!in) {
++        fprintf(stderr, "(configfile.cpp) can not open config file %s\n", fn);
+         throw runtime_error("Could not open config file!");
++    }
+     ParseFile(in);
+     setreuid(ruid, euid);
+ }
+diff -urN zhcon-0.2.5/src/display/vgadev.cpp zhcon-0.2.6/src/display/vgadev.cpp
+--- zhcon-0.2.5/src/display/vgadev.cpp	2006-04-24 17:38:23.000000000 +0100
++++ zhcon-0.2.6/src/display/vgadev.cpp	2006-05-13 12:01:22.000000000 +0100
+@@ -48,20 +48,20 @@
+ 
+ bool VGADev::TryOpen() {
+     if (!LRMI_init()) {
+-        throw (runtime_error("LRMI_init() failed.\n"));
++        fprintf(stderr, "\n(VGADev::TryOpen) LRMI_init() failed.\n");
+         return false;
+     }
+ 
+     EnableIOPerm();
+     if (!SetVideoMode(0x12)) {
+         DisableIOPerm();
+-        throw (runtime_error("LRMI_int() failed, can't change video mode.\n"));
++        fprintf(stderr, "\n(VGADev::TryOpen) LRMI_init() failed, can not set video mode 0x12\n");
+         return false;
+     }
+ 
+     if ((mFd = open("/dev/mem", O_RDWR)) < 0) {
+         DisableIOPerm();
+-        throw(runtime_error("Cannot open /dev/mem.\n"));
++        fprintf(stderr, "\n(VGADev::TryOpen) can not open /dev/mem in read/write mode\n");
+         return false;
+     }
+ 
+@@ -72,7 +72,8 @@
+                                 mFd, GRAPH_BASE));
+     if (mpBuf == MAP_FAILED) {
+         DisableIOPerm();
+-        throw(runtime_error("mmap() failed!"));
++        fprintf(stderr, "\n(VGADev::TryOpen) mmap() call failed\n");
++        return false;
+     }
+ 
+     mpGraphDev = new VGADev;
+diff -urN zhcon-0.2.5/src/main.cpp zhcon-0.2.6/src/main.cpp
+--- zhcon-0.2.5/src/main.cpp	2006-04-24 17:38:27.000000000 +0100
++++ zhcon-0.2.6/src/main.cpp	2006-05-13 11:36:45.000000000 +0100
+@@ -51,7 +51,10 @@
+         con.Run();
+     } catch (runtime_error & e) {
+         cerr << e.what() << endl;
++    } catch (...) {
++        cerr << "unknown exception caught" << endl;
+     }
++
+     return EXIT_SUCCESS;
+ }
+ 
+diff -urN zhcon-0.2.5/src/zhcon.cpp zhcon-0.2.6/src/zhcon.cpp
+--- zhcon-0.2.5/src/zhcon.cpp	2006-05-02 18:50:46.000000000 +0100
++++ zhcon-0.2.6/src/zhcon.cpp	2006-05-14 21:12:01.000000000 +0100
+@@ -112,6 +112,7 @@
+             UseEncodingFilter = 1;
+ }
+ 
++// will be called on exception
+ Zhcon::~Zhcon() {
+     CleanUp();
+     Zhcon::mpZhcon = NULL;
+@@ -122,7 +123,7 @@
+     string cfgfile = getenv("HOME");
+     cfgfile += "/.zhconrc";
+     if (access(cfgfile.c_str(), R_OK) != 0)
+-        cfgfile = "/etc/zhcon.conf";
++        cfgfile = PREFIX "/etc/zhcon.conf";
+ 
+     //for debug,a pause enable us to attach zhcon's pid in gdb
+     //char c;cin>>c;
+@@ -303,7 +304,8 @@
+     //    sigaction(SIGALRM, &act, NULL);
+ }
+ 
+-//do some clean up before quit
++// as CleanUp() is also called on exception, care should be made so that
++// only full inititlized part are cleaned
+ void Zhcon::CleanUp() {
+     struct sigaction act;
+     /* done in procress and block all serious signal to prevent interrupt */
+@@ -538,12 +540,14 @@
+ 
+ void Zhcon::VtSignalSet(int mode)
+ {
+-    if (GraphDev::mpGraphDev->Name() == "ggi") // no signal handling under ggi-X
++    // Signal handing only apply to console mode (fb or vga), after GraphDev being correctly initialized, 
++    // not applied to ggi
++    if (GraphDev::mpGraphDev == NULL || GraphDev::mpGraphDev->Name() == "ggi")
+         return;
+ 
+     vt_mode vtm;
+     if (ioctl(mConFd, VT_GETMODE, &vtm))
+-        throw runtime_error("ioctl VT_GETMODE failed!");
++        throw runtime_error("in Zhcon::VtSignalSet() ioctl VT_GETMODE failed!");
+ 
+     switch (mode) {
+         case 1:  // leave
+@@ -560,6 +564,7 @@
+             vtm.acqsig = SIGUSR1;
+             vtm.frsig = SIGUSR1;
+             break;
++        case 0:
+         default:  // clean
+             signal(SIGUSR1, SIG_DFL);
+             vtm.mode = VT_AUTO;
+@@ -567,7 +572,7 @@
+     }
+     
+     if (ioctl(mConFd, VT_SETMODE, &vtm))
+-        throw runtime_error("ioctl VT_SETMODE failed!");
++        throw runtime_error("in Zhcon::VtSignalSet() ioctl VT_SETMODE failed!");
+ }
+ 
+ void Zhcon::VtDoLeave() {
+@@ -693,9 +698,20 @@
+     r = GraphDev::Open(xres, yres, depth);
+ #endif
+     if (!r)
+-        throw(runtime_error("Can not open graph device,make sure "
+-            "you have a kernel compiled with framebuffer support or "
+-            "you have a vga card."));
++        throw(runtime_error(
++            "\n============== I'm really sorry, but... ================\n"
++            "I can not open graphical device on this machine, this can happen when:\n"
++            "1. your kernel does not have framebuffer device enabled, check the output from `dmesg|grep vesa`\n"
++            "2. you are running on a non-i386 machine so no VGA support\n"
++            "3. you are running under X-Window but libggi is not compiled in (required for running zhcon under X-Window)\n"
++            "\n"
++            "Don't be panic by this message, thousands of people have run zhcon successfully, surely you can!\n"
++            "I suggest you visit http://zhcon.sourceforge.net for more information, or send an email to zhcon-users@lists.sourceforge.net\n"
++            "I'm pretty sure your problem will be solved very quickly\n"
++            "You can subscribe to the list on https:// lists.sourceforge.net/lists/listinfo/zhcon-users\n"
++            "\n"
++            "Good Luck!\n"
++            ));
+     gpScreen = GraphDev::mpGraphDev;
+     GraphDev::mBlankLineHeight = f.GetOption(string("blanklineheight"), 0);
+     if (GraphDev::mBlankLineHeight < 0)

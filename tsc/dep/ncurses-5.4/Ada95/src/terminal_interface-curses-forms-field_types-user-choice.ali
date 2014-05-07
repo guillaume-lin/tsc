@@ -1,0 +1,138 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvnvnnvnnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.forms.field_types.user.choice%b  terminal_interface-curses-forms-field_types-user-choice.adb  e627011c NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.forms.field_types.user%s  terminal_interface-curses-forms-field_types-user.adb  terminal_interface-curses-forms-field_types-user.ali
+
+U terminal_interface.curses.forms.field_types.user.choice%s  terminal_interface-curses-forms-field_types-user-choice.ads  9576dea7 EE PR PK
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+W terminal_interface.curses.forms.field_types.user%s  terminal_interface-curses-forms-field_types-user.adb  terminal_interface-curses-forms-field_types-user.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D a-unccon.ads		20020507104903 5b55fe29
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-user.ads  20031025153918 7359de83
+D terminal_interface-curses-forms-field_types-user-choice.ads  20031025153918 18d8fe0c
+D terminal_interface-curses-forms-field_types-user-choice.adb  20031025153918 e5ae4472
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 35|41r6 49r39
+X 10 a-unccon.ads
+22v14*Unchecked_Conversion 35|41r10 49r43
+X 13 interfac.ads
+23K9*Interfaces 168e15 34|41r6 47r13 48r21 78r13 35|42r6 47r13
+X 14 i-c.ads
+20K20*C 140e17 34|41r17 47r24 48r32 78r24 35|42r17 47r24
+33I9*int 34|47r26 48r34 78r26 35|47r26
+X 16 system.ads
+41K9*System 150e11 34|83r33 90r33 35|50r7 53r33 65r33
+67M9*Address 34|83r40 90r40 35|50r14 53r40 65r40
+X 28 terminal_interface.ads
+41K9*Terminal_Interface 46e23 34|43r9 45r7 96r5 35|43r6 43r41 45r14 110r5
+X 29 terminal_interface-curses.ads
+48K28*Curses 1933e30 34|43r28 45r26 96r24 35|43r25 43r60 45r33 110r24
+X 30 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 35|43r32 43r67
+78I12*Eti_Error 35|80r13
+80i4*E_Ok 35|93r23 100r23
+96U14*Eti_Exception 35|94r16 101r16
+X 31 terminal_interface-curses-forms.ads
+48K35*Forms 782e36 34|43r35 45r33 96r31 35|45r40 110r31
+55M9*Field 34|61r13 68r13 82r33 89r33 35|52r33 64r33
+288X4*Form_Exception 35|87r19
+X 32 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 239e48 34|43r41 45r39 96r37 35|45r46 110r37
+132P9 C_Field_Type 34|80r37 35|78r37 81r13
+134p4 Null_Field_Type 35|83r29 86r17 106r42
+142p4 M_Generic_Choice 35|83r10 104m10 106r22 107r14
+162V13 Make_Arg 35|90r39
+167V13 Copy_Arg 35|91r39
+172U14 Free_Arg 35|92r39
+212p7*Typ 35|58r35 70r35
+216P9 Argument_Access 35|50r23
+222V13 New_Fieldtype 35|84r15
+227V13 Set_Fieldtype_Arg 35|89r20
+234V13 Set_Fieldtype_Choice 35|97r20
+X 33 terminal_interface-curses-forms-field_types-user.ads
+43K53*User 97e53 34|43r53 45r51 96r49 35|45r58 110r49
+48R9*User_Defined_Field_Type 34|51r6
+83V13 Generic_Field_Check 35|84r30
+90V13 Generic_Char_Check 35|85r30
+X 34 terminal_interface-curses-forms-field_types-user-choice.ads
+43K58*Choice 45r56 96r54 96e60 35|45b63 110r54 110t60
+48I12*C_Int 83r56 90r56 35|53r56 61r14 65r56 73r14
+50R9*User_Defined_Field_Type_With_Choice<33|48R9> 58r6 62r13 69r13
+57P9*User_Defined_Field_Type_With_Choice_Access 35|56r16 57r9 68r16 69r9
+60V13*Next 35|60r17
+61M7 Fld
+62r7 Typ
+67V13*Previous 35|72r17
+68M7 Fld
+69r7 Typ
+80V13 C_Generic_Choice 35|78b13 108r8 108t24
+82V13 Generic_Next 84r26 35|52b13 62r8 62t20 98r42
+82M27 Fld 35|52b27 60r23
+83M27 Usr 35|53b27 58r30
+89V13 Generic_Prev 91r26 35|64b13 74r8 74t20 99r42
+89M27 Fld 35|64b27 72r27
+90M27 Usr 35|65b27 70r30
+X 35 terminal_interface-curses-forms-field_types-user-choice.adb
+49V13 To_Argument_Access 58r10 70r10
+55b7 Result 60m7 61r34
+56p7 Udf 60r28
+67b7 Result 72m7 73r34
+68p7 Udf 72r32
+80i7 Res 89m13 93r16 94r31 97m13 100r16 101r31
+81p7 T 84m10 86r13 89r39 97r42 104r30
+

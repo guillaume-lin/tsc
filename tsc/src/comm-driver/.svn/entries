@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1081"
+   name=""
+   committed-date="2007-07-03T09:45:15.563362Z"
+   url="http://192.168.0.200/svn/signal_machine/old/src/comm-driver"
+   last-author="ucljx@126.com"
+   kind="dir"
+   uuid="bb11895a-0a80-49e8-a201-d944e284a252"
+   repos="http://192.168.0.200/svn"
+   revision="3719"/>
+<entry
+   committed-rev="1081"
+   name="protocol.txt"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="cb942470281fc64a8bd910f97f3e9728"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="select.t.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a1514692099f7a44c36265a5a3022328"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="fa6fd0678860ff2f2541d5bc422dab2b"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="speed.t.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="64799355b2a1dbc9f8655decf07364cf"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld_fifo.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="0789d321b4a56a3e83ec1c31400873bf"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="rs485.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="45c1035ced19879118c642d91dcb055d"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="Jamfile"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="8d8a0a4c24406af56a16a560a7118f4e"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="rs485_sample.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="084cc4bb51cf582d4e7fb861cbae6edd"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld.h"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="2956876045e5780fd30d393e94937dcb"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld_fifo.t.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="196f286e7b3ebb7e63bd6067b1a5bf4c"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="cpld_fifo.h"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="88e4d160e30f62918359e26446779cfc"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="CPLD通信Linux驱动程序实现说明.doc"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="d7777d60c5e2a4f2e280dd91dc994737"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name=".cvsignore"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="6d5c43a574d932a1dfe427820b460246"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="sigio.t.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="7bde3288c84ec421ad61e46ef26bc0ff"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+</wc-entries>

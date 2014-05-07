@@ -1,0 +1,4 @@
+--  form binding.
+--  This module is generated. Please don't change it manually!
+--  Run the generator instead.
+--  |define(`M4_BIT_ORDER',`Low_Order_First')

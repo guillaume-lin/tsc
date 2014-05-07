@@ -1,0 +1,238 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnvnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.acs_display%b  ncurses2-acs_display.adb  14f8e729 NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.genericputs%s  ncurses2-genericputs.adb  ncurses2-genericputs.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.string_ops_concat_4%s  s-sopco4.adb	s-sopco4.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U ncurses2.acs_display%s  ncurses2-acs_display.ads  ba166425 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-strsea.ads		20020507104847 691214ed
+D a-strunb.ads		20020507104848 d5fc5eb1
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-acs_display.ads  20001202223123 ebe19dd1
+D ncurses2-acs_display.adb  20001202223123 284e162d
+D ncurses2-genericputs.ads  20001202223139 4ea315f2
+D ncurses2-genericputs.adb  20001202223138 f3d62840
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-memory.ads		20020507105124 0df2d6b0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stalib.adb		20020507105158 0eac5a67
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-sopco4.ads		20020507105157 3cc42ca6
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 32|45r6 46r6 65r11 105r13 106r48 137r7 138r42 139r39
+X 10 a-string.ads
+18K13*Strings 32e16 32|45r10 46r10 65r15 105r17 106r52 137r11 138r46 139r43
+26n30*Right 32|106r60 138r54
+27n24*Left 32|139r51
+30n24*Left 32|139r51
+30n30*Right 32|106r60 138r54
+X 11 a-strbou.ads
+53R12 Bounded_String 32|68r17
+70V16 To_String 32|82r21 85r21 103r56
+X 13 a-strfix.ads
+43K21*Fixed 256e22 32|46r18 105r25 137r19
+50U14*Move 32|105r31 137r25
+53e7 Drop 32|139r31
+54e7 Justify 32|106r37 138r31
+X 17 a-strunb.ads
+43K21*Unbounded 383e26 32|45r18 65r23
+46R9*Unbounded_String 32|67r14
+60V13*To_Unbounded_String 32|74r15 103r21
+63V13*To_String 32|86r19 105r37
+69U14*Append 32|82r7 83r7 85r7
+79V13*"&" 32|76r23 78r23 80r20
+377U14 Adjust 32|74r7 76r10 78r10 80r7 103r13
+378U14 Finalize 32|74r7 76r10 78r10 80r7 103r13
+X 21 a-tiinio.ads
+79U14*Put 32|101r13
+X 30 ncurses2.ads
+42K9*ncurses2 44e13 31|41r11 32|41r6 41r25 42r6 48r11 62r24 230r5
+X 31 ncurses2-acs_display.ads
+41U20*acs_display 32|48b20 230r14 230t25
+X 32 ncurses2-acs_display.adb
+51U14 show_upper_chars 59b14 125r8 125t24 214r13
+51i32 first 59b32 60r24 61r25 81r20 92r19 94r64 95r64
+52V14 show_1_acs 127b13 145r8 145t18 164r12 166r12 168r12 170r12 172r12 173r12
+. 174r12 175r12 176r12 178r12 179r12 180r12 181r12 182r12 183r12 184r12 185r12
+. 186r12 187r12 188r12 189r12 190r12 191r12 193r12 194r12 195r12 196r12 197r12
+. 198r12 200r12 201r12 202r12
+52i26 N 127b25 132r50 133r50 144r14
+53s26 name 128b25 137r31
+54r26 code 129b25 143r18
+56U14 show_acs_chars 147b14 204r8 204t22 212r13
+60b7 C1 75r10 109r16 114r16
+61i7 last 84r20 92r28
+62K15 p 63r11 64r11
+67R7 tmpa 74m7 76m10 76r18 78m10 78r18 80m7 80r15 82m15 83m15 85m15 86r30
+. 103m13 105r48
+68R7 tmpb 81m14 82r32 84m14 85r32 102m20 103r67
+92i11 code 94r57 95r57 101r24 102r26 112r68
+94i13 row 107r26
+95i13 col 107r41
+97a13 tmp3 101m18 103r42
+98a13 tmpx 105m55 108r25
+99i13 reply 115m16 116r22 117r44 119m19
+131i7 height 132r56 133r54
+132i7 row 140r20
+133i7 col 140r35
+135a7 tmpx 137m37 140r47
+148i7 n 164m7 166m7 166r24 168m7 168r24 170m7 170r24 172m7 172r24 173m7 173r24
+. 174m7 174r24 175m7 175r24 176m7 176r24 178m7 178r24 179m7 179r24 180m7
+. 180r24 181m7 181r24 182m7 182r24 183m7 183r24 184m7 184r24 185m7 185r24
+. 186m7 186r24 187m7 187r24 188m7 188r24 189m7 189r24 190m7 190r24 191m7
+. 191r24 193m7 193r24 194m7 194r24 195m7 195r24 196m7 196r24 197m7 197r24
+. 198m7 198r24 200m7 200r24 201m7 201r24 202m7 202r24
+206i4 c1 223m7 224r26
+207e4 c 210r12 214r37 224m7 225r17 225r28
+X 33 ncurses2-genericputs.ads
+54k18*genericPuts 32|42r15 62r33 33|73e25
+55K12 BS 32|64r13 68r14
+65U14 myPut 32|81r7 84r7 102r13
+X 35 ncurses2-util.ads
+44K18*util 32|41r15 41r34 35|78e18
+57V13*Getchar 32|115r25 119r28 223r13
+61U14*Pause 32|227r4
+69K12*Int_IO 32|49r8
+76V13*Code_To_Char 32|112r44 117r30 224r12
+77V13*ctoi 32|214r31
+X 53 terminal_interface.ads
+41K9*Terminal_Interface 32|43r6 43r37 53|46e23
+X 54 terminal_interface-curses.ads
+48K28*Curses 32|43r25 43r56 54|1933e30
+59I9*Line_Position 32|94r19 94r36 132r13 132r30
+60I9*Column_Position 32|95r19 95r38 133r13 133r32
+67I9*Key_Code 32|99r21 112r58 206r9
+86i4*Key_None 32|116r31
+351R9*Attributed_Character 32|54r34 129r33 54|356e17
+411V13*Lines 32|218r20 220r20
+414V13*Columns 32|96r64 98r42 134r58 135r36
+426a4*ACS_Map 32|165r24 167r24 169r24 171r24 172r43 173r44 174r45 175r42
+. 177r24 178r48 179r46 180r46 181r46 182r42 183r48 184r41 185r45 186r41 187r45
+. 188r46 189r45 190r43 192r24 193r42 194r46 195r46 196r46 197r48 199r24 200r37
+. 201r44 202r43
+435e4*ACS_Upper_Left_Corner 32|165r33
+436e4*ACS_Lower_Left_Corner 32|167r33
+437e4*ACS_Upper_Right_Corner 32|169r33
+438e4*ACS_Lower_Right_Corner 32|171r33
+439e4*ACS_Left_Tee 32|172r52
+440e4*ACS_Right_Tee 32|173r53
+441e4*ACS_Bottom_Tee 32|174r54
+442e4*ACS_Top_Tee 32|175r51
+443e4*ACS_Horizontal_Line 32|177r33
+444e4*ACS_Vertical_Line 32|178r57
+445e4*ACS_Plus_Symbol 32|179r55
+446e4*ACS_Scan_Line_1 32|180r55
+447e4*ACS_Scan_Line_9 32|181r55
+448e4*ACS_Diamond 32|182r51
+449e4*ACS_Checker_Board 32|183r57
+450e4*ACS_Degree 32|184r50
+451e4*ACS_Plus_Minus 32|185r54
+452e4*ACS_Bullet 32|186r50
+453e4*ACS_Left_Arrow 32|187r54
+454e4*ACS_Right_Arrow 32|188r55
+455e4*ACS_Down_Arrow 32|189r54
+456e4*ACS_Up_Arrow 32|190r52
+457e4*ACS_Board_Of_Squares 32|192r33
+458e4*ACS_Lantern 32|193r51
+459e4*ACS_Solid_Block 32|194r55
+460e4*ACS_Scan_Line_3 32|195r55
+461e4*ACS_Scan_Line_7 32|196r55
+462e4*ACS_Less_Or_Equal 32|197r57
+463e4*ACS_Greater_Or_Equal 32|199r33
+464e4*ACS_PI 32|200r46
+465e4*ACS_Not_Equal 32|201r53
+466e4*ACS_Sterling 32|202r52
+488U14*End_Windows 32|229r4
+504U14*Move_Cursor 32|73r7
+505i27 Line 32|73r20
+506i27 Column 32|73r31
+516U14*Add 32|143r7
+517r19 Ch 32|143r12
+521U14*Add 32|117r19
+522e19 Ch 32|117r24
+550U14*Add_With_Immediate_Echo 32|112r13
+552e7 Ch 32|112r38
+646U14*Add 32|86r7
+647s19 Str 32|86r12
+655U14*Add 32|107r13 140r7 153r7 218r7 220r7
+656i19 Line 32|107r18 140r12 153r12 218r12 220r12
+657i19 Column 32|107r31 140r25 153r23 218r31 220r31
+658s19 Str 32|108r18 140r40 154r12 219r12 221r12
+799U14*Switch_Character_Attribute 32|71r7 87r7 151r7 155r7
+801r7 Attr 32|72r10 89r10 152r10 156r35
+802b7 On 32|88r10 155r35
+936U14*Set_NoDelay_Mode 32|110r16 121r16
+938b7 Mode 32|110r34 121r34
+1038U14*Refresh 32|90r7 158r7 222r7
+1067U14*Erase 32|70r7 150r7 228r4
+1799U14*Nap_Milli_Seconds 32|118r19
+

@@ -1,0 +1,53 @@
+一  灯组设置
+    灯组总数: 1-MAX_LAMP_GROUP_COUNT
+    端子编号范围:1-MAX_TERMINAL_COUNT
+二  检测器设置
+    上下游距离: 1-999
+    启用: 0-1, 0表示禁用，1表示启用
+    位置: 0-1, 0表示下游(靠近路口)，1表示上游(远离路口)
+    灵敏度:0-3
+    灯组: 1-MAX_LAMP_GROUP_COUNT
+三  系统参数
+    黄闪时间: 3-99
+    四面全红时间: 3-99
+四  控制模式选择
+    控制模式: 1-8,
+五  多时段参数
+    启用特殊日控制:0-1,0表示禁用，1表示启用
+    使用时段方案号:1-MAX_SCHEDULE_PLAN_COUNT
+六  感应控制参数
+    最小绿:3-255
+    最大率:3-255
+    配时方案:1-MAX_TIMMING_PLAN_COUNT
+    相位方案:1-MAX_PHASE_PLAN_COUNT
+    控制策略:0，暂时不用
+    车头时距:0-255，(单位为100ms),两辆车之间距离的行驶时间
+    检测方式:1-2	1为线圈,2为视频
+    步长调整量:0-255,单位为秒
+七  无线缆协调
+    相位差:0-255,单位为秒
+    相位方案:1-MAX_PHASE_PLAN_COUNT
+    配时方案:1-MAX_TIMMING_PLAN_COUNT
+    基准小时:0-23
+    基准分钟:0-59
+八  相位方案
+    方案号:1-MAX_PHASE_PLAN_COUNT
+    总步数:1-MAX_STEP_COUNT
+    当前步号:1-MAX_STEP_COUNT
+    相位数据:0-2
+九  配时方案
+    方案号:1-MAX_TIMMING_PALN_COUNT
+    步伐数:1-MAX_STEP_COUNT
+    配时数据:1-255
+十  时段方案
+    方案号:1-MAX_SCHEDULE_PLAN_COUNT
+    起始时:0-23
+    起始分:0-59
+    相位方案:1-MAX_PHASE_PLAN_COUNT
+    配时方案:1-MAX_TIMMING_PLAN_COUNT
+十一  特殊日
+      起始月:1-12
+      起始日:1-31
+      结束月:1-12
+      结束日:1-31
+      方案:1-MAX_SCHEDULE_PLAN_COUNT

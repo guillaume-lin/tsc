@@ -1,0 +1,37 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnvvnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.exn_gen%b	s-exngen.adb		15aa9939 NE PK
+W system%s		system.ads		system.ali
+
+U system.exn_gen%s	s-exngen.ads		c15c248c NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-exngen.ads		20020507105103 8326a4b5
+D s-exngen.adb		20020507105103 968c3d8c
+X 1 system.ads
+41K9*System 150e11 2|43r9 44r14 66r5 3|36r14 154r5
+X 2 s-exngen.ads
+43K16*Exn_Gen 44r21 66r12 66e19 3|36b21 154r12 154t19
+49F12*Type_Of_Base 52r15 54r15 3|43r15 45r15 51r16 52r16
+51v13*Exn_Float_Type 3|42b13
+52f7*Left 3|52r32
+53i7*Right 3|53r27
+59I12*Type_Of_Base 62r15 64r15 3|119r15 121r15 126r16 127r16
+61v13*Exn_Integer_Type 3|118b13
+62i7*Left 3|127r32
+63i7*Right 3|128r27
+X 3 s-exngen.adb
+43f7 Left
+44i7 Right
+51f7 Result 65m16 65r26 73r17 93m19 93r29 101r26
+52f7 Factor 65r35 70m13 70r23 70r32 79r13 93r38 98m16 98r26 98r35
+53i7 Exp 62r10 64r16 68m13 68r20 69r23 92r19 96m16 96r23 97r26
+119i7 Left
+120i7 Right
+126i7 Result 142m16 142r26 151r14
+127i7 Factor 142r35 147m13 147r23 147r32
+128i7 Exp 139r10 141r16 145m13 145r20 146r23
+

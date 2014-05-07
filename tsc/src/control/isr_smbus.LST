@@ -1,0 +1,221 @@
+C51 COMPILER V7.09   ISR_SMBUS                                                             04/25/2008 16:22:16 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ISR_SMBUS
+OBJECT MODULE PLACED IN isr_smbus.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE isr_smbus.C LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "isr_smbus.h"
+   2          //-----------------------------------------------------------------------------------
+   3          //Global VARIABLES
+   4          //-----------------------------------------------------------------------------------
+   5          unsigned char data COMMAND;                                             // Holds the slave address + R/W bit for
+   6                                                                                                          // use in the SMBus ISR.
+   7          
+   8          unsigned char data WORD;                                                // Holds data to be transmitted by the SMBus
+   9                                                                                                          // OR data that has just been received.
+  10          
+  11          unsigned char data ADDR_NUMBER;                                 // Used by ISR to check what data has just been
+  12                                                                                                          // sent - High address byte, Low byte, or data byte
+  13          unsigned char data wr_eeprom_count;
+  14          
+  15          unsigned char data HIGH_ADD,LOW_ADD;                    // High & Low byte for EEPROM memory address
+  16          unsigned char data SMB_WR_NUM_BAK;                              // SMB 要发送的字节总数
+  17          unsigned char data SMB_WR_NUM_C;                                // SMB 已发送的字节数
+  18          unsigned char data SMB_RD_NUM_BAK;                              // SMB 要接收的字节总数
+  19          unsigned char data SMB_RD_NUM_C;                                // SMB 已接收的字节数
+  20          unsigned char BUFF_SMB_TR[128];                                 // SMB 发送缓冲区
+  21          unsigned char BUFF_SMB_RD[128];                                 // SMB 接收缓冲区
+  22          unsigned char data smbus_count;                                 // 从 IIC 接口芯片读写数据计时器
+  23          unsigned char step_all_flash;                                   // 某相位表在 FLASH 中保存的总步数
+  24          
+  25          bit f_lcd;      
+  26          
+  27          unsigned char bdata flag0_smbus; 
+  28          sbit SM_BUSY                                    = flag0_smbus^0;        // This bit is set when a send or receive
+  29                                                                                                                  // is started. It is cleared by the
+  30                                                                                                                  // ISR when the operation is finished.
+  31          sbit f_rtc_err                                  = flag0_smbus^1;        // 读 RTC 芯片出错标志位
+  32          sbit f_rd_smbus_ok                              = flag0_smbus^3;        // smbus 读缓冲区有数据等待读出
+  33          sbit f_epprom_err                               = flag0_smbus^4;        // 读 EEPROM 芯片出错标志位
+  34          sbit f_step_all_ok                              = flag0_smbus^5;        // 某相位表在 FLASH 中保存的总步数已读出标志
+  35          sbit f_wr_eeprom_now                    = flag0_smbus^7;        // 向 EEPROM 里写数据延时标志位
+  36                                          
+  37          
+  38          unsigned char code Dis_table[] = {0x7e,0x0c,0xda,0x9e,0xac,0xb6,0xf6,0x0e,0xfe,0xbe,    //0,1,2,3,4,5,6,7,8,9
+  39                                          0xee,0xf4,0x72,0xdc,0xf2,0xe2,0xbe,0xec,0x60,0xe0,                                              //A,b,C,d,E,F,g,H,i,k
+  40                                          0x70,0xc4,0x7e,0xea,0xc0,0xb6,0xf0,0x54,0x00,0xd0,                                              //L,n,O,P,r,S,t,u, ,c
+  41                                          0x7c,0x6e,0xd4,0x80,0x10,0x7f,0x90,0xea,0xbc,0xaa,                                              //U,N,o,-,_,0.,=,C.,y,O
+  42                                          0xba,0xd6,0x92,0x8c,0xd7} ;                                                                                             //o_,-o,=-,-1,-o.
+  43          
+  44          /*********************************************************************************************
+  45          *       原型：void smbus_isr(void) interrupt 7
+  46          *       功能: SMBUS(IIC) 中断子程序
+  47          *       说明：I2C 接口处理，MCU 始终都是作为主器件，从器件包括 EEPROM、RTC 及调试用的 LCD
+  48          *       参数：无
+  49          *       返回：无
+  50          *********************************************************************************************/
+  51          void smbus_isr(void) interrupt 7
+  52          {
+  53   1      unsigned char data i,j;
+  54   1              i = SMB0STA;
+  55   1              if (i == SMB_START) {                   
+C51 COMPILER V7.09   ISR_SMBUS                                                             04/25/2008 16:22:16 PAGE 2   
+
+  56   2                      SMB0DAT = (COMMAND & 0xFE);                                             // Load address of the slave to be accessed.
+  57   2                      STA = 0;                                                                                // Manually clear START bit
+  58   2                      }                       
+  59   1              else {
+  60   2                      if (i == SMB_RP_START) {                
+  61   3                              SMB0DAT = COMMAND;                                                      // COMMAND should hold slave address + R.
+  62   3                              STA = 0;
+  63   3                              }
+  64   2                      else {
+  65   3                              if (i == SMB_MTADDACK) SMB0DAT = HIGH_ADD;      // Load high byte of memory address to be written.
+  66   3                              else {
+  67   4                                      if (i == SMB_MTADDNACK) { 
+  68   5                                              STO = 1;
+  69   5                                              STA = 1;
+  70   5                                              }
+  71   4                                      else {
+  72   5                                              if (i == SMB_MTDBACK) { 
+  73   6                                                      switch (ADDR_NUMBER) {
+  74   7                                                              case 1:                                         // If ADDR_NUMBER=1, LOW_ADD was just sent.
+  75   7                                                                      if (COMMAND & 0x01){    // If R/W=READ, sent repeated START.
+  76   8                                                                              STO = 0;
+  77   8                                                                              STA = 1;
+  78   8                                                                              }
+  79   7                                                                      else {                                  // If R/W=WRITE, load byte to write.
+  80   8                                                                              j = BUFF_SMB_TR[SMB_WR_NUM_C];
+  81   8                                                                              if (f_lcd) j = Dis_table[j];
+  82   8                                                                              SMB0DAT = j;
+  83   8                                                                              SMB_WR_NUM_C++;
+  84   8                                                                              if (SMB_WR_NUM_C == SMB_WR_NUM_BAK) ADDR_NUMBER--;
+  85   8                                                                              }
+  86   7                                                                      break;
+  87   7                                                              case 2:                                         // If ADDR_NUMBER=2, only HIGH_ADD
+  88   7                                                                      SMB0DAT = LOW_ADD;              // has been sent.
+  89   7                                                                      ADDR_NUMBER--;                  // Decrement for next time around.
+  90   7                                                                      break;
+  91   7                                                              default:                                        // If ADDR_NUMBER=0, transfer is finished.
+  92   7                                                                      STO = 1;
+  93   7                                                                      SM_BUSY = 0;                    // Free SMBus
+  94   7                                                                      f_epprom_err = 0; 
+  95   7                                                                      if (COMMAND == CHIP_EEPROM) {           // 若向 EEPROM 里写数据则要延时
+  96   8                                                                              f_wr_eeprom_now = 1; 
+  97   8                                                                              wr_eeprom_count = 0x00;
+  98   8                                                                      }
+  99   7                                                              }
+ 100   6                                                      }
+ 101   5                                              else {  
+ 102   6                                                      if (i == SMB_MTDBNACK) { 
+ 103   7                                                              STO = 1;
+ 104   7                                                              STA = 1;
+ 105   7                                                              }
+ 106   6                                                      else {
+ 107   7                                                              if (i == SMB_MTARBLOST) { 
+ 108   8                                                                      STO = 1;
+ 109   8                                                                      STA = 1;
+ 110   8                                                                      }
+ 111   7                                                              else {
+ 112   8                                                                      if (i == SMB_MRADDACK) { 
+ 113   9                                                                              if (f_rd_eeprom_now) {
+ 114  10                                                                                      if (rdt_num_bak == 0x01) AA = 0;
+ 115  10                                                                                      else AA = 1;
+ 116  10                                                                                      }
+ 117   9                                                                              else {
+C51 COMPILER V7.09   ISR_SMBUS                                                             04/25/2008 16:22:16 PAGE 3   
+
+ 118  10                                                                              
+ 119  10                                                                                      if (SMB_RD_NUM_BAK == 0x01) {   //只准备接收一个字节，清 AA 位，收到该字节后发送NACK 等待接收数据
+ 120  11                                                                                              AA = 0;                                         // NACK sent on acknowledge cycle.
+ 121  11                                                                                              }
+ 122  10                                                                                      else AA = 1;                                    //准备接收多个字节，置位 AA 位，收到该字节后发送ACK 等待接收数据
+ 123  10                                                                                      }
+ 124   9                                                                              }
+ 125   8                                                                      else {
+ 126   9                                                                              if (i == SMB_MRADDNACK) {
+ 127  10                                                                                      STO = 0;
+ 128  10                                                                                      STA = 1;
+ 129  10                                                                                      }
+ 130   9                                                                              else {
+ 131  10                                                                                      if (i == SMB_MRDBACK) { 
+ 132  11                                                                                              if (f_rd_eeprom_now) {
+ 133  12                                                                                                      *start_addr_ram = SMB0DAT;
+ 134  12                                                                                                      rdt_num++;
+ 135  12                                                                                                      start_addr_ram++;
+ 136  12                                                                                                      if ((rdt_num + 1) == rdt_num_bak) {
+ 137  13                                                                                                              AA = 0;
+ 138  13                                                                                                              }
+ 139  12                                                                                                      else AA = 1;
+ 140  12                                                                                                      }
+ 141  11                                                                                              else {
+ 142  12                                                                                              
+ 143  12                                                                                                      BUFF_SMB_RD[SMB_RD_NUM_C] = SMB0DAT;
+ 144  12                                                                                                      SMB_RD_NUM_C++;
+ 145  12                                                                                                      if ((SMB_RD_NUM_C + 1) == SMB_RD_NUM_BAK) {     //准备接收最后一个字节，清 AA 位，收到该字节后发送
+             -NACK 等待接收数据
+ 146  13                                                                                                              AA = 0;                                         // NACK sent on acknowledge cycle.
+ 147  13                                                                                                              }
+ 148  12                                                                                                      else AA = 1;
+ 149  12                                                                                                      }
+ 150  11                                                                                              }
+ 151  10                                                                                      else {
+ 152  11                                                                                              if (i == SMB_MRDBNACK) {                        // 接收最后一个字节 
+ 153  12                                                                                                      if (f_rd_eeprom_now) {
+ 154  13                                                                                                              f_eeprom_rd = 0;
+ 155  13                                                                                                              f_rd_eeprom_now = 0;
+ 156  13                                                                                                              if (f_step_all) {
+ 157  14                                                                                                                      f_step_all = 0;
+ 158  14                                                                                                                      f_step_all_ok = 1;
+ 159  14                                                                                                                      step_all_flash = SMB0DAT;
+ 160  14                                                                                                                      }
+ 161  13                                                                                                              else *start_addr_ram = SMB0DAT;
+ 162  13                                                                                                              }
+ 163  12                                                                                                      else {
+ 164  13                                                                                                              
+ 165  13                                                                                                              BUFF_SMB_RD[SMB_RD_NUM_C] = SMB0DAT;
+ 166  13                                                                                                              COMMAND = COMMAND & 0xfe;
+ 167  13                                                                                                              f_rd_smbus_ok = 1;                              // smbus 读缓冲区有数据等待读出
+ 168  13                                                                                                              }
+ 169  12                                                                                                      STO = 1;
+ 170  12                                                                                                      SM_BUSY = 0;                            // Free SMBus
+ 171  12                                                                                                      }
+ 172  11                                                                                              else { 
+ 173  12                                                                                                      STO = 1;                                        // Reset communication.
+ 174  12                                                                                                      SM_BUSY = 0;
+ 175  12                                                                                                      }
+ 176  11                                                                                              }
+ 177  10                                                                                      }
+ 178   9                                                                              }       
+C51 COMPILER V7.09   ISR_SMBUS                                                             04/25/2008 16:22:16 PAGE 4   
+
+ 179   8                                                                      }               
+ 180   7                                                              }                       
+ 181   6                                                      }
+ 182   5                                              }
+ 183   4                                      }
+ 184   3                              }
+ 185   2                      }
+ 186   1              if (STO == 1) {
+ 187   2                      f_lcd = 0;
+ 188   2                      }
+ 189   1              SI=0;                                                                                                                                   // clear SMBUS interrupt flag
+ 190   1              }
+ 191          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    454    ----
+   CONSTANT SIZE    =     45    ----
+   XDATA SIZE       =    257    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     12       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

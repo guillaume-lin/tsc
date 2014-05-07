@@ -1,0 +1,48 @@
+C51 COMPILER V7.09   ERROR_CODE                                                            04/25/2008 16:22:19 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ERROR_CODE
+OBJECT MODULE PLACED IN error_code.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE error_code.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * error_code.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-08-19 15:34:08 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "error_code.h"
+  15          
+  16          
+  17          void set_error(unsigned char err, unsigned char* b)
+  18          {
+  19   1              *b |= err;
+  20   1      }
+  21          void clear_error(unsigned char err, unsigned char* b)
+  22          {
+  23   1              *b &= ~err;
+  24   1      }
+  25          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     17    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

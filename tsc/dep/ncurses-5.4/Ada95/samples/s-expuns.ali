@@ -1,0 +1,31 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.exp_uns%b	s-expuns.adb		d1c9cb2f NE PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+U system.exp_uns%s	s-expuns.ads		6f91d939 NE PU PK
+W system%s		system.ads		system.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D system.ads		20020507104801 427a8039
+D s-expuns.ads		20020507105108 28466e32
+D s-expuns.adb		20020507105108 fc22922f
+D s-unstyp.ads		20020507105208 05ad3732
+X 1 system.ads
+41K9*System 150e11 2|41r6 43r9 47r15 49r15 51r5 3|36r6 36r33 38r14 77r5
+X 2 s-expuns.ads
+43K16*Exp_Uns 44r14 51r12 51e19 3|38b21 77r12 77t19
+46V13*Exp_Unsigned 3|44b13 75r8 75t20
+47m7 Left 3|45b7 50r29
+48i7 Right 3|46b7 51r28
+X 3 s-expuns.adb
+49m7 Result 65m16 65r26 74r14
+50m7 Factor 65r35 70m13 70r23 70r32
+51i7 Exp 62r10 64r16 68m13 68r20 69r23
+X 4 s-unstyp.ads
+42K16*Unsigned_Types 2|41r13 47r22 49r22 3|36r13 36r40 4|234e26
+47M9*Unsigned 2|47r37 49r37 3|45r15 47r15 49r17 50r17
+

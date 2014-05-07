@@ -1,0 +1,30 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.error_reporting%b  s-errrep.adb	06afebbf NE PK
+W system%s		system.ads		system.ali
+
+U system.error_reporting%s  s-errrep.ads	9ea7010b NE PR PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-errrep.ads		20020507105101 dcdd8132
+D s-errrep.adb		20020507105101 da726a8d
+X 1 system.ads
+41K9*System 150e11 2|40r9 48r5 3|40r14 42r45 71r5
+67M9*Address 3|42r52
+X 2 s-errrep.ads
+40K16*Error_Reporting 48r12 48e27 3|40b21 71r12 71t27
+43V13*Shutdown 3|56b13 69r8 69t16
+43s23 M 3|56b23 59r17 59r28
+X 3 s-errrep.adb
+42U14 Write 43m22 58r7 59r7 60r7
+42i21 fildes
+42M39 buf
+42i61 nbyte
+45U14 Prog_Exit 46r22 47m22 64r7
+45i25 Status
+49a4 Shutdown_Message 58m17 58r43
+50a4 End_Of_Line 60m17 60r38
+

@@ -1,0 +1,278 @@
+C51 COMPILER V7.09   DATASTRUCT                                                            04/25/2008 16:22:08 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE DATASTRUCT
+OBJECT MODULE PLACED IN datastruct.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE datastruct.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "datastruct.h"
+   2          
+   3          /**
+   4           *  判断设置的灯组数
+   5           */
+   6          int lamp_group_setting_get_lamp_group_count(lamp_group_setting_t* self)
+   7          {
+   8   1              int i;
+   9   1              for(i=0; i<MAX_LAMP_GROUP_COUNT; i++){
+  10   2                      if(self->m_lamp_group[i][RED] == 0 && 
+  11   2                                      self->m_lamp_group[i][GREEN] == 0 &&
+  12   2                                      self->m_lamp_group[i][YELLOW] == 0){
+  13   3                              break;
+  14   3                      }
+  15   2              }
+  16   1              return i;
+  17   1      }
+  18          /**
+  19           * 判断指定的两个端子是否冲突
+  20           */
+  21          int green_conflict_is_conflict(green_conflict_t* self,int n, int m)
+  22          {
+  23   1              int b,off;
+  24   1              byte mask;
+  25   1              int tmp;
+  26   1      
+  27   1              if(n < 1 || n > MAX_LAMP_GROUP_COUNT || 
+  28   1                 m < 1 || m > MAX_LAMP_GROUP_COUNT)
+  29   1                      return 0;
+  30   1      
+  31   1              if(n > m ){
+  32   2                      tmp = n;
+  33   2                      n = m;
+  34   2                      m = tmp;
+  35   2              }
+  36   1      
+  37   1              if(n == m)
+  38   1                      return 0;
+  39   1      
+  40   1              // assert(n<m);
+  41   1              n -= 1;
+  42   1              m -= 1;
+  43   1              tmp = m*(m-1)/2+n;
+  44   1              b = tmp/8;
+  45   1              off = 7 - tmp%8;
+  46   1              mask = 0x01 << off;
+  47   1              if(self->m_conflict[b] & mask )
+  48   1                      return 1;
+  49   1              else
+  50   1                      return 0;
+  51   1      }
+  52          
+  53          int green_conflict_set_conflict(green_conflict_t* self,int n, int m, int conflict)
+  54          {
+  55   1              int b,off;
+C51 COMPILER V7.09   DATASTRUCT                                                            04/25/2008 16:22:08 PAGE 2   
+
+  56   1              byte mask;
+  57   1              int tmp;
+  58   1      
+  59   1              if(n < 1 || n > MAX_LAMP_GROUP_COUNT || 
+  60   1                 m < 1 || m > MAX_LAMP_GROUP_COUNT)
+  61   1                      return -1;
+  62   1      
+  63   1              if(n > m ){
+  64   2                      tmp = n;
+  65   2                      n = m;
+  66   2                      m = tmp;
+  67   2              }
+  68   1      
+  69   1              if(n == m)
+  70   1                      return 0;
+  71   1      
+  72   1              // assert(n<m);
+  73   1              n -= 1;
+  74   1              m -= 1;
+  75   1              tmp = m*(m-1)/2+n;
+  76   1              b = tmp/8;
+  77   1              off = 7 - tmp%8;
+  78   1              mask = 0x01 << off;
+  79   1              
+  80   1              if(conflict)
+  81   1                      self->m_conflict[b] |=  mask;
+  82   1              else
+  83   1                      self->m_conflict[b] &= ~mask;
+  84   1      
+  85   1              return 0;
+  86   1      
+  87   1      }
+  88          int lamp_group_setting_get_terminal(lamp_group_setting_t* self,int lamp_no)
+  89          {
+  90   1              int group;
+  91   1              int lamp;
+  92   1              if(lamp_no < 1 || lamp_no > MAX_LAMP_GROUP_COUNT*3)
+  93   1                      return -1;
+  94   1              group = (lamp_no - 1 ) / 3;
+  95   1              lamp =  (lamp_no - 1) % 3;
+  96   1              if(lamp == 0)
+  97   1                      return self->m_lamp_group[group][RED];
+  98   1              else if(lamp == 1)
+  99   1                      return self->m_lamp_group[group][YELLOW];
+ 100   1              else
+ 101   1                      return self->m_lamp_group[group][GREEN];
+ 102   1              
+ 103   1      }
+ 104          int phase_set_output(lamp_status_t* self, int n, int v)
+ 105          {
+ 106   1              int b,off;
+ 107   1              unsigned char mask, c;
+ 108   1      
+ 109   1              //assert(n > 0 && n <= MAX_TERMINAL_COUNT)
+ 110   1              //assert(v >= 0 && v <= 2)
+ 111   1              n -= 1;
+ 112   1              b = n/4;
+ 113   1              off = n%4;
+ 114   1              mask = 0x03 << (3 - off)*2;
+ 115   1              v = v << (3 - off)*2;
+ 116   1              c = self->m_output[b] & ~mask;
+ 117   1              self->m_output[b] = c | v;
+C51 COMPILER V7.09   DATASTRUCT                                                            04/25/2008 16:22:08 PAGE 3   
+
+ 118   1              return 0;
+ 119   1      }
+ 120          int phase_get_output(lamp_status_t* self,int n)
+ 121          {
+ 122   1              int b,off;
+ 123   1              n -= 1;
+ 124   1              b = n/4;
+ 125   1              off = n % 4;
+ 126   1      
+ 127   1              return 0x03 & (self->m_output[b] >> (3 - off)*2);
+ 128   1      }
+ 129          /**
+ 130           * 根据指定的绿冲突表判断指定的相位是否有绿冲突
+ 131           */
+ 132          int is_phase_green_conflict(lamp_status_t* phase, green_conflict_t* conflict)
+ 133          {
+ 134   1              int i;
+ 135   1              int j;
+ 136   1              for(i=0; i<MAX_LAMP_GROUP_COUNT; i++){
+ 137   2                      if(phase_get_output(phase,i+1) == 0)
+ 138   2                              continue;
+ 139   2                      for(j=i+1; j<MAX_LAMP_GROUP_COUNT; j++){
+ 140   3                              if(phase_get_output(phase,j+1) > 0)
+ 141   3                                      if(green_conflict_is_conflict(conflict,i+1,j+1))
+ 142   3                                              return 1;
+ 143   3                      }
+ 144   2              }
+ 145   1              return 0;
+ 146   1      }
+ 147          
+ 148          int lamp_health_get_health(lamp_health_t* self,int n)
+ 149          {
+ 150   1              int b,off;
+ 151   1              unsigned char mask;
+ 152   1              b = (n-1)/8;
+ 153   1              off = 7 - (n-1)%8;
+ 154   1              mask = 0x01;
+ 155   1              mask <<= off;
+ 156   1      
+ 157   1              if(self->m_health[b]& mask)
+ 158   1                      return 1;
+ 159   1              else
+ 160   1                      return 0;
+ 161   1      }
+ 162          int lamp_health_set_health(lamp_health_t* self,int n, int v)
+ 163          {
+ 164   1              int b, off;
+ 165   1              unsigned char mask;
+ 166   1              b = (n-1)/8;
+ 167   1              off = 7 - (n-1)%8;
+ 168   1              mask = 0x01;
+ 169   1              mask <<= off;
+ 170   1      
+ 171   1              if(v)
+ 172   1                      self->m_health[b] |= mask;
+ 173   1              else
+ 174   1                      self->m_health[b] &= ~mask;
+ 175   1              
+ 176   1              return 0;
+ 177   1      }
+ 178          int detector_health_get_health(detector_health_t* self, int n)
+ 179          {
+C51 COMPILER V7.09   DATASTRUCT                                                            04/25/2008 16:22:08 PAGE 4   
+
+ 180   1      
+ 181   1              int b,off;
+ 182   1              unsigned char mask;
+ 183   1              b = (n-1)/8;
+ 184   1              off = 7 - (n-1)%8;
+ 185   1              mask = 0x01;
+ 186   1              mask <<= off;
+ 187   1      
+ 188   1              if(self->m_health[b]& mask)
+ 189   1                      return 1;
+ 190   1              else
+ 191   1                      return 0;
+ 192   1      }
+ 193          int detector_health_set_health(detector_health_t* self, int n, int v)
+ 194          {
+ 195   1      
+ 196   1              int b, off;
+ 197   1              unsigned char mask;
+ 198   1              b = (n-1)/8;
+ 199   1              off = 7 - (n-1)%8;
+ 200   1              mask = 0x01;
+ 201   1              mask <<= off;
+ 202   1      
+ 203   1              if(v)
+ 204   1                      self->m_health[b] |= mask;
+ 205   1              else
+ 206   1                      self->m_health[b] &= ~mask;
+ 207   1              
+ 208   1              return 0;
+ 209   1      }
+ 210          int detector_status_get_status(detector_status_t* self, int n)
+ 211          {
+ 212   1      
+ 213   1              int b,off;
+ 214   1              unsigned char mask;
+ 215   1              b = (n-1)/8;
+ 216   1              off = 7 - (n-1)%8;
+ 217   1              mask = 0x01;
+ 218   1              mask <<= off;
+ 219   1      
+ 220   1              if(self->m_status[b]& mask)
+ 221   1                      return 1;
+ 222   1              else
+ 223   1                      return 0;
+ 224   1      }
+ 225          int detector_status_set_status(detector_status_t* self, int n, int v)
+ 226          {
+ 227   1      
+ 228   1              int b, off;
+ 229   1              unsigned char mask;
+ 230   1              b = (n-1)/8;
+ 231   1              off = 7 - (n-1)%8;
+ 232   1              mask = 0x01;
+ 233   1              mask <<= off;
+ 234   1      
+ 235   1              if(v)
+ 236   1                      self->m_status[b] |= mask;
+ 237   1              else
+ 238   1                      self->m_status[b] &= ~mask;
+ 239   1              
+ 240   1              return 0;
+ 241   1      }
+C51 COMPILER V7.09   DATASTRUCT                                                            04/25/2008 16:22:08 PAGE 5   
+
+ 242          
+ 243          
+ 244          
+ 245          
+ 246          
+ 247          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2143    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----     102
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

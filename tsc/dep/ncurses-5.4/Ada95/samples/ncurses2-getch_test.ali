@@ -1,0 +1,221 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvnnnnvnnvnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.getch_test%b	ncurses2-getch_test.adb	63b7846b NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.genericputs%s  ncurses2-genericputs.adb  ncurses2-genericputs.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.img_enum%s	s-imgenu.adb		s-imgenu.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.mouse%s  terminal_interface-curses-mouse.adb  terminal_interface-curses-mouse.ali
+
+U ncurses2.getch_test%s	ncurses2-getch_test.ads	958d5169 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-genericputs.ads  20001202223139 4ea315f2
+D ncurses2-genericputs.adb  20001202223138 f3d62840
+D ncurses2-getch_test.ads  20001202223102 c47aa89d
+D ncurses2-getch_test.adb  20001202223101 bc64783c
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-expuns.ads		20020507105108 28466e32
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgenu.ads		20020507105115 20631dce
+D s-imgint.ads		20020507105116 f1ba8463
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-mouse.ads  20140426095555 73bb89fb
+D terminal_interface-curses-mouse.adb  20031025153918 ec79f2ad
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 35|48r6 49r6 63r25 109r7 140r19 155r16
+X 2 a-charac.ads
+19K13*Characters 22e19 35|48r10 109r11 140r23 155r20
+X 3 a-chahan.ads
+41K24*Handling 136e28 35|48r21 109r22 140r34 155r31
+49V13*Is_Graphic 35|140r43 155r40
+54V13*Is_Digit 35|109r31
+X 11 a-string.ads
+18K13*Strings 32e16 35|49r10 63r29
+X 12 a-strbou.ads
+42K21*Bounded 467e24 35|49r18 63r37
+49k12*Generic_Bounded_Length 465e30 35|63r45
+53R12 Bounded_String 35|65r13 184r26
+65V16 To_Bounded_String 35|65r31
+70V16 To_String 35|83r14
+106U17 Append 35|74r7 75r7 76r7 77r7 78r7 79r7 81r7 82r7
+X 22 a-tiinio.ads
+74U14*Get 35|110r7
+75s7 From 35|110r23
+76i7 Item 35|110r12
+77i7 Last 35|110r36
+79U14*Put 35|120r10 230r13 235r13
+X 31 ncurses2.ads
+42K9*ncurses2 44e13 34|41r11 35|44r6 44r25 51r6 53r11 180r30 251r5
+X 32 ncurses2-genericputs.ads
+54k18*genericPuts 73e25 35|51r15 180r39
+55K12 BS 35|182r19
+60U14 myGet 35|193r16
+62R21 Str 35|193r23
+70U14 myAdd 35|203r16
+70R21 Str 35|203r23
+X 34 ncurses2-getch_test.ads
+41U20*getch_test 35|53b20 251r14 251t24
+X 35 ncurses2-getch_test.adb
+56V13 mouse_decode 58b13 84r8 84t20 128r25
+56R27 ep 58b27 71r18
+59i7 Y 71m22 77r41
+60i7 X 71m25 75r43
+61e7 Button 71m28 79r40
+62e7 State 71m36 82r40
+63K15 BS 64r11
+65R7 buf 74m15 75m15 76m15 77m15 78m15 79m15 81m15 82m15 83r25
+87a4 buf 104m16 109r41 110r31
+88i4 n 110m20 111r52
+89i4 c 115m4 120r30 123r13 131r16 132r23 136r16 138r49 153r46 178r10 208r13
+. 210r13 210r40 211r10 213r13 227m10 228r20
+90e4 blockflag 112m7 211r27 229r13
+91b4 firsttime 118r14 177m7
+92M4 tmp2 101m4 245m4
+93a4 tmp6 120m15 121r22 230m18 231r25 235m18 236r25
+94a4 tmp20 132m26 133r25
+95i4 x 170m52
+96i4 y 170m39 171r13
+97i4 tmpx 110m44
+98i4 incount 230r24 235r24 241m10 241r21
+124R13 event 126m13 128r39
+138e16 c2 140r55 142r30 145r50
+153e13 c2 155r52 156r27 160r47
+180K21 p 181r17 182r17
+183b13 timedout 197m16 200r20
+184R13 boundedbuf 193m30 203r30
+X 36 ncurses2-util.ads
+44K18*util 35|44r15 44r34 36|78e18
+51e4*newl 35|129r24 135r24 150r27 158r27 164r27 196r27 205r27 215r21 217r21
+. 219r21 221r21 223r21 233r24 238r24
+57V13*Getchar 35|227r15
+66U14*ShellOut 35|209r10
+69K12*Int_IO 35|54r8
+X 54 terminal_interface.ads
+41K9*Terminal_Interface 35|46r6 46r37 47r6 47r43 54|46e23
+X 55 terminal_interface-curses.ads
+48K28*Curses 35|46r25 46r56 47r25 47r62 55|1933e30
+59I9*Line_Position 35|59r16 77r20 96r8
+60I9*Column_Position 35|60r16 75r20 95r8
+67I9*Key_Code 35|89r8
+86i4*Key_None 35|211r14 228r25
+88i4*Key_Min 35|131r21
+202i4*Key_Mouse 35|123r17
+297I9*Color_Pair 35|146r53 161r49
+349r4*Normal_Video 35|147r52 162r48
+382X4*Curses_Exception 35|194r28
+411V13*Lines 35|171r18
+488U14*End_Windows 35|250r4
+504U14*Move_Cursor 35|172r13
+505i27 Line 35|172r26
+506i27 Column 35|172r37
+521U14*Add 35|122r10 129r13 135r13 142r19 150r16 156r16 158r16 164r16 196r16
+. 205r16 215r10 217r10 219r10 221r10 223r10 233r13 238r13
+522e19 Ch 35|122r15 129r18 135r18 142r24 150r21 156r21 158r21 164r21 196r21
+. 205r21 215r15 217r15 219r15 221r15 223r15 233r18 238r18
+646U14*Add 35|102r4 119r10 121r10 127r13 128r13 133r13 141r19 144r19 145r19
+. 149r16 157r16 160r16 163r16 186r13 195r16 202r16 204r16 214r10 216r10 218r10
+. 220r10 222r10 231r13 232r13 236r13 237r13
+647s19 Str 35|102r9 119r15 121r15 127r18 128r18 133r18 141r24 144r24 145r24
+. 149r21 157r21 160r21 163r21 186r18 195r21 202r21 204r21 214r15 216r15 218r15
+. 220r15 222r15 231r18 232r18 236r18 237r18
+885U14*Set_Raw_Mode 35|116r4 247r4
+885b28 SwitchOn 35|116r18 247r18
+891U14*Set_Echo_Mode 35|103r4 106r4 187r13 201r16
+891b29 SwitchOn 35|103r19 106r19 187r28 201r31
+942E9*Timeout_Mode 35|90r16
+942n26*Blocking 35|90r32 211r39 229r26 246r30
+942n50*Delayed 35|111r33 112r20
+945U14*Set_Timeout_Mode 35|111r7 246r4
+946e32 Mode 35|111r25 246r22
+947i32 Amount 35|111r42 246r40
+968U14*Set_NL_Mode 35|107r4 248r4
+968b27 SwitchOn 35|107r17 248r17
+1038U14*Refresh 35|100r4
+1067U14*Erase 35|249r4
+1087U14*Clear_To_End_Of_Line 35|174r10
+1237U14*Get_Cursor_Position 35|170r10
+1239i7 Line 35|170r31
+1240i7 Column 35|170r42
+1456U14*Get 35|104r4
+1457s19 Str 35|104r9
+1603U14*Key_Name 35|132r13
+1620V13*Un_Control 35|145r31 160r28
+X 58 terminal_interface-curses-mouse.ads
+47K35*Mouse 35|47r32 47r69 58|230e36
+63M9*Event_Mask 35|92r12
+64M4*No_Events 35|245r25
+65M4*All_Events 35|101r25
+67E9*Mouse_Button 35|61r16 79r20
+78E9*Button_State 35|62r16 82r20
+91R9*Mouse_Event 35|56r32 58r32 124r21 58|174e17
+122V13*Start_Mouse 35|101r12 245r12
+132V13*Get_Mouse 35|126r22
+136U14*Get_Event 35|71r7
+

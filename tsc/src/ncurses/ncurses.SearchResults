@@ -1,0 +1,7 @@
+---- getKey Matches (6 in 6 files) ----
+Baseform.cpp:int CBaseForm::getKey()
+Baseform.hpp:	virtual int getKey();
+Basemenu.cpp:int CBaseMenu::getKey()
+Basemenu.hpp:	virtual int getKey();
+Main.cpp:			getKey();
+Messagebox.cpp:		getKey();

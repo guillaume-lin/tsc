@@ -1,0 +1,23 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U gnat.exceptions%s	g-except.ads		350327a4 NE PU PK
+W gnat%s		gnat.ads		gnat.ali
+
+D gnat.ads		20011002141535 6380ea48
+D g-except.ads		20011002141531 5683cdec
+D system.ads		20020507104801 427a8039
+X 1 gnat.ads
+38K9*GNAT 41e9 2|40r9 79r5
+X 2 g-except.ads
+40K14*Exceptions 41r14 79r10 79e20
+43R9*Exception_Type 61r18 62r18 63r18 64r18 67r35
+61r4*CE 73m22
+62r4*PE 74m22
+63r4*SE 75m22
+64r4*TE 76m22
+67U14*Raise_Exception 68m24 69r22
+67r31 E
+67s51 Message
+

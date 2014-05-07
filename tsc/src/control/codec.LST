@@ -1,0 +1,822 @@
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE CODEC
+OBJECT MODULE PLACED IN codec.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE codec.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * codec.c
+   3           * 
+   4           * 编解码的实现
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-07 16:31:35 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include <string.h>
+  15          #include "io.h"
+  16          #include "codec.h"
+  17          #include "util.h"
+  18          #include "cpld_fifo.h"
+  19          
+  20          /**
+  21           *  初始化帧
+  22           */
+  23          int init_frame(frame_t* frame,frame_data_t* datum)
+  24          {
+  25   1              frame->m_header   = 0xAA;
+  26   1              frame->m_command  = 0x00;
+  27   1              frame->m_reserve  = 0x00;
+  28   1              frame->m_data_len = 0x00;
+  29   1              frame->m_data_p   = datum;
+  30   1              frame->m_checksum = 0x00;
+  31   1              return 0;
+  32   1      }
+  33          int frame_set_data_len(frame_t* self,int len)
+  34          {
+  35   1              if(len > 255){
+  36   2                      self->m_reserve |= 0x80;
+  37   2                      self->m_data_len = len - 255;
+  38   2              }
+  39   1              else{
+  40   2                      self->m_reserve &= ~0x80;
+  41   2                      self->m_data_len = len;
+  42   2              }
+  43   1              return 0;
+  44   1      }
+  45          int frame_get_data_len(frame_t* self)
+  46          {
+  47   1              if(self->m_reserve & 0x80)
+  48   1                      return self->m_data_len + 255;
+  49   1              else
+  50   1                      return self->m_data_len;
+  51   1      }
+  52          // 计算帧的校验和
+  53          byte compute_checksum(frame_t* frame)
+  54          {
+  55   1              int data_len;
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 2   
+
+  56   1              int i=0;
+  57   1              byte csum = 0;
+  58   1              csum += frame->m_header;
+  59   1              csum += frame->m_command;
+  60   1              csum += frame->m_reserve;
+  61   1              csum += frame->m_data_len;
+  62   1              data_len = frame_get_data_len(frame);
+  63   1              if(data_len > 0 )
+  64   1                      for(i=0; i<data_len && i<MAX_FRAME_DATA_SIZE; i++){
+  65   2                              csum += frame->m_data_p->m_data[i];
+  66   2                      }
+  67   1              return csum;
+  68   1      }
+  69          byte compute_buffer_checksum(byte* buf,byte len)
+  70          {
+  71   1              int i=0;
+  72   1              byte csum = 0;
+  73   1              for(i=0; i<len; i++)
+  74   1                      csum += buf[i];
+  75   1              return csum;
+  76   1      }
+  77          // 判断指定的命令ID是否指示正常应答
+  78          int is_cmd_response_ok(byte cmd,byte response)
+  79          {
+  80   1              if(cmd + 0x80 == response)
+  81   1                      return 1;
+  82   1              else
+  83   1                      return 0;
+  84   1      }
+  85          /**
+  86           * @desc 返回指定的命令的应答命令ID
+  87           * @param [in]
+  88           * @param [out]
+  89           * @param [inout]
+  90           * @return  应答的命令ID
+  91           */
+  92          byte get_response_cmd(byte cmd)
+  93          {
+  94   1              return cmd + 0x80;
+  95   1      }
+  96          
+  97          /**
+  98           * @param fd  目标端口描述符
+  99           * @param frame  要写入的帧
+ 100           * @return 返回写入帧的长度
+ 101           */ 
+ 102          int write_frame(int fd,frame_t* frame)
+ 103          {
+ 104   1              byte buffer[MAX_FRAME_DATA_SIZE*2+5];
+ 105   1              byte header = 0xaa;
+ 106   1              int count = 0;
+ 107   1              int i=0;
+ 108   1              int data_len;
+ 109   1              frame->m_checksum = compute_checksum(frame);
+ 110   1      
+ 111   1              buffer[count++] = frame->m_header;
+ 112   1              buffer[count++] = frame->m_command;
+ 113   1              buffer[count++] = frame->m_reserve;
+ 114   1              buffer[count++] = frame->m_data_len;
+ 115   1              data_len = frame_get_data_len(frame);
+ 116   1              for(i=0; i<data_len && i<MAX_FRAME_DATA_SIZE; i++){
+ 117   2                      buffer[count++] = frame->m_data_p->m_data[i];
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 3   
+
+ 118   2                      // 对于数据中的一个0xaa用两个0xaa表示
+ 119   2                      if(frame->m_data_p->m_data[i] == 0xaa){
+ 120   3                              buffer[count++] = header;
+ 121   3                      }
+ 122   2              }
+ 123   1              buffer[count++] = frame->m_checksum;
+ 124   1      
+ 125   1              return write_comm(fd,buffer,count);
+ 126   1      }
+ 127          
+ 128          /**
+ 129           * read as much as possible from fd
+ 130           * and buffer it to internal fifo
+ 131           */
+ 132          int read_byte(int fd, unsigned char* buf, int len)
+ 133          {
+ 134   1              static cpld_fifo_t fifo;
+ 135   1              static int init = 0;
+ 136   1              unsigned char tmp_buf[255];
+ 137   1              int ret,count;
+ 138   1              if(!init){
+ 139   2                      init = 1;
+ 140   2                      cpld_fifo_init(&fifo);
+ 141   2              }
+ 142   1              count = cpld_fifo_capacity(&fifo);
+ 143   1              if(count > 255)
+ 144   1                      count = 255;
+ 145   1              if(count > 0){
+ 146   2                      ret = read_comm(fd,tmp_buf,count);
+ 147   2                      if(ret > 0){
+ 148   3                              count = cpld_fifo_write(&fifo,tmp_buf,ret);
+ 149   3                              // assert (count == ret)
+ 150   3                      }
+ 151   2              }
+ 152   1              return cpld_fifo_read(&fifo,buf,len);
+ 153   1      }
+ 154          /**
+ 155           * @param fd 文件描述符,
+ 156           * @param frame 存放读取到的帧 , 如果frame = NULL, 表示清空读缓冲区
+ 157           * @return > 0 表示读到完整的一帧, == 0 表示没有读到完整的帧, < 0 表示出错
+ 158           */ 
+ 159          int read_frame(int fd,frame_t* frame)
+ 160          {
+ 161   1              static byte header;
+ 162   1              static byte command;
+ 163   1              static byte reserve;
+ 164   1              static byte data_len_byte;
+ 165   1              static int  data_len;
+ 166   1              static byte datum[MAX_FRAME_DATA_SIZE];
+ 167   1              static int data_to_read;
+ 168   1              static byte is_aa_read = 0;
+ 169   1              static byte pos = 0;
+ 170   1              byte csum;
+ 171   1              byte sum;
+ 172   1              int ret;
+ 173   1              
+ 174   1      
+ 175   1              if(frame == 0){
+ 176   2                      // 复位
+ 177   2                      pos = 0;
+ 178   2                      // 清空读缓冲区
+ 179   2                      while(read_byte(fd,datum,250) > 0);
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 4   
+
+ 180   2                      return -1;
+ 181   2              }
+ 182   1      
+ 183   1              switch(pos){
+ 184   2                      case 0:         // 读取帧头
+ 185   2                              header    = 0x00;
+ 186   2                              command   = 0x00;
+ 187   2                              reserve   = 0x00;
+ 188   2                              data_len_byte  = 0x00;
+ 189   2                              data_to_read = 0x00;
+ 190   2                              is_aa_read = 0x00;
+ 191   2                              csum      = 0x00;
+ 192   2                              sum        = 0x00;
+ 193   2                              do{
+ 194   3                                      ret = read_byte(fd,&header,1);
+ 195   3                                      if(ret != 1)
+ 196   3                                              return ret;
+ 197   3                                      if(header == 0xaa)
+ 198   3                                              break;
+ 199   3                              }while(header != 0xaa);
+ 200   2      
+ 201   2                              pos = 1;
+ 202   2                      case 1:         // 读取command
+ 203   2                              ret = read_byte(fd,&command,1);
+ 204   2                              if(ret != 1)
+ 205   2                                      return ret;
+ 206   2                              if(command == 0xaa){
+ 207   3                                      // 连续读到两个aa,不是合法的帧开头
+ 208   3                                      pos = 0;
+ 209   3                                      return -1;
+ 210   3                              }
+ 211   2                              pos = 2;
+ 212   2                      case 2:         // 读取reserve
+ 213   2                              ret = read_byte(fd,&reserve,1);
+ 214   2                              if(ret != 1)
+ 215   2                                      return ret;
+ 216   2                              pos = 3;
+ 217   2                      case 3:         // 读取data_len
+ 218   2                              ret = read_byte(fd,&data_len_byte,1);
+ 219   2                              if(ret != 1)
+ 220   2                                      return ret;
+ 221   2                              pos = 4;
+ 222   2                              is_aa_read = 0;         // 复位标志
+ 223   2                              data_to_read = 0;               // 准备读取数据
+ 224   2                              data_len = data_len_byte;
+ 225   2                              if(reserve & 0x80)
+ 226   2                                      data_len += 255;
+ 227   2                      case 4:         // 读取数据
+ 228   2                              while(data_to_read < data_len){
+ 229   3                                      ret = read_byte(fd,datum+data_to_read,1);
+ 230   3                                      if(ret != 1){
+ 231   4                                              return ret;
+ 232   4                                      }
+ 233   3      
+ 234   3                                      if(datum[data_to_read] != 0xaa){
+ 235   4                                              if(is_aa_read){
+ 236   5                                                      // 读到一个0xaa,但是紧接着却不是0xaa
+ 237   5                                                      // 格式错误
+ 238   5                                                      pos = 0;
+ 239   5                                                      return -8;
+ 240   5                                              }
+ 241   4                                              data_to_read++;
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 5   
+
+ 242   4                                      } 
+ 243   3                                      else {  // 读到的是一个0xaa
+ 244   4                                              if(!is_aa_read){
+ 245   5                                                      // 先前没读到0xaa, 先做标记
+ 246   5                                                      is_aa_read = 1;
+ 247   5                                              }
+ 248   4                                              else {
+ 249   5                                                      // 先前已经读到过一个0xaa, 入缓冲区
+ 250   5                                                      data_to_read++;
+ 251   5                                                      is_aa_read = 0;
+ 252   5                                              }
+ 253   4                                      }
+ 254   3                                              
+ 255   3                              }
+ 256   2                              pos = 5;
+ 257   2                      case 5:         // 读取校验和
+ 258   2                              sum = 0;
+ 259   2                              csum = 0;
+ 260   2                              ret = read_byte(fd,&csum,1);
+ 261   2                              if(ret != 1)
+ 262   2                                      return ret;
+ 263   2                              sum += compute_buffer_checksum(datum,data_len);
+ 264   2                              sum += header+command+reserve+data_len_byte;
+ 265   2      
+ 266   2                              pos = 0;
+ 267   2      
+ 268   2                              if(csum != sum){
+ 269   3                                      // 校验错
+ 270   3                                      return -1;
+ 271   3                              }
+ 272   2                              
+ 273   2      
+ 274   2                              // 返回完整的一帧
+ 275   2                              frame->m_header = header;
+ 276   2                              frame->m_command  = command;
+ 277   2                              frame->m_reserve = reserve;
+ 278   2                              frame->m_data_len = data_len_byte;
+ 279   2                              memcpy(frame->m_data_p->m_data,datum,data_len);
+ 280   2                              frame->m_checksum = csum;
+ 281   2                              return data_len + 5;
+ 282   2                      default:
+ 283   2                              pos = 0;
+ 284   2                              break;
+ 285   2              };
+ 286   1      
+ 287   1              return -11;
+ 288   1      }
+ 289          
+ 290          // 编码函数
+ 291          // 系统时间
+ 292                  int encode_set_system_time_req(date_time_t* dt, frame_t* frame)
+ 293                  {
+ 294   1                      memcpy(frame->m_data_p->m_data,dt,sizeof(date_time_t));
+ 295   1                      frame_set_data_len(frame,sizeof(date_time_t));
+ 296   1                      return 0;
+ 297   1              }
+ 298          int decode_set_system_time_req(date_time_t*dt, frame_t* frame)
+ 299          {
+ 300   1              memcpy(dt,frame->m_data_p->m_data,sizeof(date_time_t));
+ 301   1              return 0;
+ 302   1      }
+ 303          int encode_get_system_time_res(date_time_t* dt, frame_t* frame)
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 6   
+
+ 304          {
+ 305   1              memcpy(frame->m_data_p->m_data,dt,sizeof(date_time_t));
+ 306   1              frame_set_data_len(frame,sizeof(date_time_t));
+ 307   1              return 0;
+ 308   1      }
+ 309                  int decode_get_system_time_res(date_time_t* dt, frame_t* frame)
+ 310                  {
+ 311   1                      memcpy(dt,frame->m_data_p->m_data,sizeof(date_time_t));
+ 312   1                      return 0;
+ 313   1              }
+ 314          
+ 315          // 系统参数
+ 316                  int encode_set_system_param_req(system_param_t* sp, frame_t* frame)
+ 317                  {
+ 318   1                      memcpy(frame->m_data_p->m_data,sp,sizeof(system_param_t));
+ 319   1                      frame_set_data_len(frame, sizeof(system_param_t));
+ 320   1                      return 0;
+ 321   1              
+ 322   1              }
+ 323          int decode_set_system_param_req(system_param_t* sp, frame_t * frame)
+ 324          {
+ 325   1              memcpy(sp,frame->m_data_p->m_data,sizeof(system_param_t));
+ 326   1              return 0;
+ 327   1      }
+ 328          int encode_get_system_param_res(system_param_t* sp, frame_t* frame)
+ 329          {
+ 330   1              memcpy(frame->m_data_p->m_data,sp,sizeof(system_param_t));
+ 331   1              frame_set_data_len(frame,sizeof(system_param_t));
+ 332   1              return 0;
+ 333   1      
+ 334   1      }
+ 335                  int decode_get_system_param_res(system_param_t* sp, frame_t* frame)
+ 336                  {
+ 337   1                      memcpy(sp,frame->m_data_p->m_data,sizeof(system_param_t));
+ 338   1                      return 0;
+ 339   1              }
+ 340          
+ 341          // 灯组设置
+ 342                  int encode_set_lamp_group_setting_req(lamp_group_setting_t* lgs, frame_t* frame)
+ 343                  {
+ 344   1                      memcpy(frame->m_data_p->m_data,lgs,sizeof(lamp_group_setting_t));
+ 345   1                      frame_set_data_len(frame, sizeof(lamp_group_setting_t));
+ 346   1                      return 0;
+ 347   1              
+ 348   1              }
+ 349          int decode_set_lamp_group_setting_req(lamp_group_setting_t* lgs, frame_t* frame)
+ 350          {
+ 351   1              memcpy(lgs,frame->m_data_p->m_data,sizeof(lamp_group_setting_t));
+ 352   1              return 0;
+ 353   1      }
+ 354          // 检测器设置
+ 355                  int encode_set_detector_setting_req(detector_setting_t* ds, frame_t* frame)
+ 356                  {
+ 357   1                      memcpy(frame->m_data_p->m_data,ds,sizeof(detector_setting_t));
+ 358   1                      frame_set_data_len(frame, sizeof(detector_setting_t));
+ 359   1                      return 0;
+ 360   1              }
+ 361          int decode_set_detector_setting_req(detector_setting_t* ds, frame_t* frame)
+ 362          {
+ 363   1              memcpy(ds,frame->m_data_p->m_data,sizeof(detector_setting_t));
+ 364   1              return 0;
+ 365   1      }
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 7   
+
+ 366          int encode_get_detector_setting_res(detector_setting_t* ds, frame_t* frame)
+ 367          {
+ 368   1              memcpy(frame->m_data_p->m_data,ds,sizeof(detector_setting_t));
+ 369   1              frame_set_data_len(frame,sizeof(detector_setting_t));
+ 370   1              return 0;
+ 371   1      }
+ 372                  int decode_get_detector_setting_res(detector_setting_t* ds, frame_t* frame)
+ 373                  {
+ 374   1                      memcpy(ds,frame->m_data_p->m_data,sizeof(detector_setting_t));
+ 375   1                      return 0;
+ 376   1              }
+ 377          // 相位方案
+ 378                  int encode_set_phase_plan_req(int planNo,int stepCount,int step, stage_t* phase,frame_t* frame)
+ 379                  {
+ 380   1                      frame->m_data_p->m_data[0] = planNo;
+ 381   1                      frame->m_data_p->m_data[1] = stepCount;
+ 382   1                      frame->m_data_p->m_data[2] = step;
+ 383   1                      memcpy(frame->m_data_p->m_data+3,phase,sizeof(stage_t));
+ 384   1                      frame_set_data_len(frame,sizeof(stage_t) + 3);
+ 385   1                      return 0;
+ 386   1              }
+ 387          int decode_set_phase_plan_req(int* planNo,int* stepCount,int* step, stage_t* phase,frame_t* frame)
+ 388          {
+ 389   1              *planNo = frame->m_data_p->m_data[0];
+ 390   1              *stepCount = frame->m_data_p->m_data[1];
+ 391   1              *step = frame->m_data_p->m_data[2];
+ 392   1              memcpy(phase,frame->m_data_p->m_data+3,sizeof(stage_t));
+ 393   1              return 0;
+ 394   1      }
+ 395                  int encode_get_phase_plan_req(int plan_no, int step, frame_t* frame)
+ 396                  {
+ 397   1                      frame->m_data_p->m_data[0] = plan_no;
+ 398   1                      frame->m_data_p->m_data[1] = step;
+ 399   1                      frame_set_data_len(frame,2);
+ 400   1                      return 0;
+ 401   1              }
+ 402          int decode_get_phase_plan_req(int* plan_no, int* step, frame_t* frame)
+ 403          {
+ 404   1              *plan_no = frame->m_data_p->m_data[0];
+ 405   1              *step = frame->m_data_p->m_data[1];
+ 406   1              return 0;
+ 407   1      }
+ 408          int encode_get_phase_plan_res(int step_count, stage_t* phase, frame_t* frame)
+ 409          {
+ 410   1              frame->m_data_p->m_data[0] = step_count;
+ 411   1              memcpy(frame->m_data_p->m_data+1,phase,sizeof(stage_t));
+ 412   1              frame_set_data_len(frame,sizeof(stage_t) + 1);
+ 413   1              return 0;
+ 414   1      }
+ 415          int decode_get_phase_plan_res(int* step_count, stage_t* phase, frame_t* frame)
+ 416          {
+ 417   1              *step_count = frame->m_data_p->m_data[0];
+ 418   1              memcpy(phase,frame->m_data_p->m_data+1,sizeof(stage_t));
+ 419   1              return 0;
+ 420   1      }
+ 421          
+ 422          // 配时方案
+ 423          int encode_set_timming_plan_req(int plan_no, timming_plan_t* p, frame_t* frame)
+ 424          {
+ 425   1              frame->m_data_p->m_data[0] = plan_no;
+ 426   1              memcpy(frame->m_data_p->m_data+1,p,sizeof(timming_plan_t));
+ 427   1              frame_set_data_len(frame,sizeof(timming_plan_t) + 1);
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 8   
+
+ 428   1              return 0;
+ 429   1      }
+ 430          int decode_set_timming_plan_req(int* plan_no, timming_plan_t* p, frame_t* frame)
+ 431          {
+ 432   1              *plan_no = frame->m_data_p->m_data[0];
+ 433   1              memcpy(p,frame->m_data_p->m_data+1,sizeof(timming_plan_t));
+ 434   1              return 0;
+ 435   1      }       
+ 436          int encode_get_timming_plan_res(timming_plan_t* plan, frame_t* frame)
+ 437          {
+ 438   1              memcpy(frame->m_data_p->m_data,plan,sizeof(timming_plan_t));
+ 439   1              frame_set_data_len(frame,sizeof(timming_plan_t));
+ 440   1              return 0;
+ 441   1      }
+ 442                  int decode_get_timming_plan_res(timming_plan_t* plan, frame_t* frame)
+ 443                  {
+ 444   1                      memcpy(plan,frame->m_data_p->m_data,sizeof(timming_plan_t));
+ 445   1                      return 0;
+ 446   1              }
+ 447                  int encode_get_timming_plan_req(int plan_no,frame_t* frame)
+ 448                  {
+ 449   1                      frame->m_data_p->m_data[0] = plan_no;
+ 450   1                      frame_set_data_len(frame,1);
+ 451   1                      return 0;
+ 452   1              }
+ 453          int decode_get_timming_plan_req(int* plan_no, frame_t* frame)
+ 454          {
+ 455   1              *plan_no = frame->m_data_p->m_data[0];
+ 456   1              return 0;
+ 457   1      }
+ 458          // 时段方案
+ 459                  int encode_set_schedule_plan_req(int planNo, schedule_plan_t* p, frame_t* frame)
+ 460                  {
+ 461   1                      frame->m_data_p->m_data[0] = planNo;
+ 462   1                      memcpy(frame->m_data_p->m_data+1,p,sizeof(schedule_plan_t));
+ 463   1                      frame_set_data_len(frame,sizeof(schedule_plan_t) + 1);
+ 464   1                      return 0;
+ 465   1              }
+ 466          int decode_set_schedule_plan_req(int* planNo, schedule_plan_t* p, frame_t* frame)
+ 467          {
+ 468   1              *planNo = frame->m_data_p->m_data[0];
+ 469   1              memcpy(p,frame->m_data_p->m_data+1,sizeof(schedule_plan_t));
+ 470   1              return 0;
+ 471   1      }
+ 472                  int encode_get_schedule_plan_req(int planNo, frame_t* frame)
+ 473                  {
+ 474   1                      frame->m_data_p->m_data[0] = planNo;
+ 475   1                      frame_set_data_len(frame,1);
+ 476   1                      return 0;
+ 477   1              }
+ 478          int decode_get_schedule_plan_req(int* planNo, frame_t* frame)
+ 479          {
+ 480   1              *planNo = frame->m_data_p->m_data[0];
+ 481   1              return 0;
+ 482   1      }
+ 483          int encode_get_schedule_plan_res(schedule_plan_t* schedule, frame_t* frame)
+ 484          {
+ 485   1              memcpy(frame->m_data_p->m_data,schedule,sizeof(schedule_plan_t));
+ 486   1              frame_set_data_len(frame,sizeof(schedule_plan_t));
+ 487   1              return 0;
+ 488   1      }
+ 489                  int decode_get_schedule_plan_res(schedule_plan_t* schedule, frame_t* frame)
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 9   
+
+ 490                  {
+ 491   1                      memcpy(schedule,frame->m_data_p->m_data,sizeof(schedule_plan_t));
+ 492   1                      return 0;
+ 493   1              }
+ 494          
+ 495          // 特殊日
+ 496                  int encode_set_special_day_table_req(special_day_table_t* day,frame_t* frame)
+ 497                  {
+ 498   1                      memcpy(frame->m_data_p->m_data,day,sizeof(special_day_table_t));
+ 499   1                      frame_set_data_len(frame,sizeof(special_day_table_t));
+ 500   1                      return 0;
+ 501   1              }
+ 502          int decode_set_special_day_table_req(special_day_table_t* day, frame_t* frame)
+ 503          {
+ 504   1              memcpy(day,frame->m_data_p->m_data,sizeof(special_day_table_t));
+ 505   1              return 0;
+ 506   1      }
+ 507          // 通信参数
+ 508                  int encode_set_comm_param_req(int portNo,comm_param_t* param, frame_t* frame)
+ 509                  {
+ 510   1                      frame->m_data_p->m_data[0] = portNo;
+ 511   1                      memcpy(frame->m_data_p->m_data+1,param,sizeof(comm_param_t));
+ 512   1                      frame_set_data_len(frame,sizeof(comm_param_t) + 1);
+ 513   1                      return 0;
+ 514   1              }
+ 515          int decode_set_comm_param_req(int* portNo,comm_param_t* param, frame_t* frame)
+ 516          {
+ 517   1              *portNo = frame->m_data_p->m_data[0];
+ 518   1              memcpy(param,frame->m_data_p->m_data+1,sizeof(comm_param_t));
+ 519   1              return 0;
+ 520   1      }
+ 521                  int encode_set_multiple_schedule_control_param_req(multiple_schedule_control_param_t* control, frame_t* f
+             -rame)
+ 522                  {
+ 523   1                      memcpy(frame->m_data_p->m_data,control,sizeof(multiple_schedule_control_param_t));
+ 524   1                      frame_set_data_len(frame,sizeof(multiple_schedule_control_param_t));
+ 525   1                      return 0;
+ 526   1              }
+ 527          int decode_set_multiple_schedule_control_param_req(multiple_schedule_control_param_t* control, frame_t* fr
+             -ame)
+ 528          {
+ 529   1              memcpy(control,frame->m_data_p->m_data,sizeof(multiple_schedule_control_param_t));
+ 530   1              return 0;
+ 531   1      }
+ 532          
+ 533                  int encode_set_cordless_coordinate_control_param_req(cordless_coordinate_control_param_t* control, frame_
+             -t* frame)
+ 534                  {
+ 535   1                      memcpy(frame->m_data_p->m_data,control,sizeof(cordless_coordinate_control_param_t));
+ 536   1                      frame_set_data_len(frame,sizeof(cordless_coordinate_control_param_t));
+ 537   1                      return 0;
+ 538   1              }
+ 539          int decode_set_cordless_coordinate_control_param_req(cordless_coordinate_control_param_t* control, frame_t
+             -* frame)
+ 540          {
+ 541   1              memcpy(control,frame->m_data_p->m_data,sizeof(cordless_coordinate_control_param_t));
+ 542   1              return 0;
+ 543   1      }
+ 544                  int encode_set_current_control_mode_req(control_mode_selection_t* selection,frame_t* frame)
+ 545                  {
+ 546   1                      memcpy(frame->m_data_p->m_data,selection,sizeof(control_mode_selection_t));
+ 547   1                      frame_set_data_len(frame,sizeof(control_mode_selection_t));
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 10  
+
+ 548   1                      return 0;
+ 549   1              }
+ 550          
+ 551          int decode_set_current_control_mode_req(control_mode_selection_t* selection,frame_t* frame)
+ 552          {
+ 553   1              memcpy(selection,frame->m_data_p->m_data,sizeof(control_mode_selection_t));
+ 554   1              return 0;
+ 555   1      }
+ 556          // 解码函数
+ 557          // 系统时间
+ 558                  int decode_system_time(date_time_t* dt, frame_t* frame)
+ 559                  {
+ 560   1                      memcpy(dt,frame->m_data_p->m_data,sizeof(date_time_t));
+ 561   1                      return 0;
+ 562   1              }
+ 563          // 系统参数
+ 564                  int decode_system_param(system_param_t* sp, frame_t* frame)
+ 565                  {
+ 566   1                      memcpy(sp,frame->m_data_p->m_data,sizeof(system_param_t));
+ 567   1                      return 0;
+ 568   1              }
+ 569          
+ 570          int encode_get_lamp_group_setting_res(lamp_group_setting_t* lgs, frame_t* frame)
+ 571          {
+ 572   1              memcpy(frame->m_data_p->m_data,lgs,sizeof(lamp_group_setting_t));
+ 573   1              frame_set_data_len(frame,sizeof(lamp_group_setting_t));
+ 574   1              return 0;
+ 575   1      }
+ 576                  int decode_get_lamp_group_setting_res(lamp_group_setting_t* lgs, frame_t* frame)
+ 577                  {
+ 578   1                      memcpy(lgs,frame->m_data_p->m_data,sizeof(lamp_group_setting_t));
+ 579   1                      return 0;
+ 580   1              }
+ 581          
+ 582          int encode_get_special_day_table_res(special_day_table_t* day, frame_t* frame)
+ 583          {
+ 584   1              memcpy(frame->m_data_p->m_data,day,sizeof(special_day_table_t));
+ 585   1              frame_set_data_len(frame,sizeof(special_day_table_t));
+ 586   1              return 0;
+ 587   1      }
+ 588                  int decode_get_special_day_table_res(special_day_table_t* day, frame_t* frame)
+ 589                  {
+ 590   1                      memcpy(day,frame->m_data_p->m_data,sizeof(special_day_table_t));
+ 591   1                      return 0;
+ 592   1              }
+ 593          
+ 594                  int encode_get_comm_param_req(int port_no, frame_t* frame)
+ 595                  {
+ 596   1                      frame->m_data_p->m_data[0] = port_no;
+ 597   1                      frame_set_data_len(frame,1);
+ 598   1                      return 0;
+ 599   1              }
+ 600          int decode_get_comm_param_req(int* port_no, frame_t* frame)
+ 601          {
+ 602   1              *port_no = frame->m_data_p->m_data[0];
+ 603   1      
+ 604   1              return 0;
+ 605   1      }
+ 606          int encode_get_comm_param_res(comm_param_t* param, frame_t* frame)
+ 607          {
+ 608   1              memcpy(frame->m_data_p->m_data,param,sizeof(comm_param_t));
+ 609   1              frame_set_data_len(frame,sizeof(comm_param_t));
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 11  
+
+ 610   1              return 0;
+ 611   1      }
+ 612                  int decode_get_comm_param_res(comm_param_t* param, frame_t* frame)
+ 613                  {
+ 614   1                      memcpy(param,frame->m_data_p->m_data,sizeof(comm_param_t));
+ 615   1                      return 0;
+ 616   1              }
+ 617          int encode_get_multiple_schedule_control_param_res(multiple_schedule_control_param_t*
+ 618                                                             param, frame_t* frame)
+ 619          {
+ 620   1              memcpy(frame->m_data_p->m_data,param,sizeof(multiple_schedule_control_param_t));
+ 621   1              frame_set_data_len(frame,sizeof(multiple_schedule_control_param_t));
+ 622   1              return 0;
+ 623   1      }
+ 624                  int decode_get_multiple_schedule_control_param_res(multiple_schedule_control_param_t*
+ 625                                                                       param, frame_t* frame)
+ 626                  {
+ 627   1                      memcpy(param,frame->m_data_p->m_data,sizeof(multiple_schedule_control_param_t));
+ 628   1                      return 0;
+ 629   1              }
+ 630          int encode_get_actuate_control_param_res(actuate_control_param_t* param, frame_t* frame)
+ 631          {
+ 632   1              memcpy(frame->m_data_p->m_data,param,sizeof(actuate_control_param_t));
+ 633   1              frame_set_data_len(frame,sizeof(actuate_control_param_t));
+ 634   1              return 0;
+ 635   1      
+ 636   1      }
+ 637                  int decode_get_actuate_control_param_res(actuate_control_param_t* param, frame_t* frame)
+ 638                  {
+ 639   1                      memcpy(param,frame->m_data_p->m_data,sizeof(actuate_control_param_t));
+ 640   1                      return 0;
+ 641   1              }
+ 642                  int encode_set_actuate_control_param_req(actuate_control_param_t* param, frame_t* frame)
+ 643                  {
+ 644   1                      memcpy(frame->m_data_p->m_data,param,sizeof(actuate_control_param_t));
+ 645   1                      frame_set_data_len(frame,sizeof(actuate_control_param_t));
+ 646   1                      return 0;
+ 647   1              
+ 648   1              }
+ 649          int decode_set_actuate_control_param_req(actuate_control_param_t* param, frame_t* frame)
+ 650          {
+ 651   1              memcpy(param,frame->m_data_p->m_data,sizeof(actuate_control_param_t));
+ 652   1              return 0;
+ 653   1      }
+ 654          int encode_get_cordless_coordinate_control_param_res(cordless_coordinate_control_param_t*                                                       param, fr
+             -ame_t* frame)
+ 655          {
+ 656   1              memcpy(frame->m_data_p->m_data,param,sizeof(cordless_coordinate_control_param_t));
+ 657   1              frame_set_data_len(frame,sizeof(cordless_coordinate_control_param_t));
+ 658   1              return 0;
+ 659   1      
+ 660   1      }
+ 661          int decode_get_cordless_coordinate_control_param_res(cordless_coordinate_control_param_t*
+ 662                                                                param, frame_t* frame)
+ 663          {
+ 664   1              memcpy(param,frame->m_data_p->m_data,sizeof(cordless_coordinate_control_param_t));
+ 665   1              return 0;
+ 666   1      }
+ 667          int encode_get_current_control_mode_res(control_mode_selection_t* param,frame_t* frame)
+ 668          {
+ 669   1              memcpy(frame->m_data_p->m_data,param,sizeof(control_mode_selection_t));
+ 670   1              frame_set_data_len(frame,sizeof(control_mode_selection_t));
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 12  
+
+ 671   1              return 0;
+ 672   1      
+ 673   1      }
+ 674                  int decode_get_current_control_mode_res(control_mode_selection_t* param,frame_t* frame)
+ 675                  {
+ 676   1                      memcpy(param,frame->m_data_p->m_data,sizeof(control_mode_selection_t));
+ 677   1                      return 0;
+ 678   1              }
+ 679          
+ 680          // 信号机状态
+ 681          int encode_get_machine_status_res(machine_status_t* status, frame_t* frame)
+ 682          {
+ 683   1              memcpy(frame->m_data_p->m_data,status,sizeof(machine_status_t));
+ 684   1              frame_set_data_len(frame,sizeof(machine_status_t));
+ 685   1              return 0;
+ 686   1      }
+ 687          
+ 688                  int decode_get_machine_status_res(machine_status_t* status, frame_t* frame)
+ 689                  {
+ 690   1                      memcpy(status,frame->m_data_p->m_data,sizeof(machine_status_t));
+ 691   1                      return 0;
+ 692   1              }
+ 693          
+ 694                  int encode_do_lamp_status_req(lamp_status_t* phase,frame_t* frame)
+ 695                  {
+ 696   1                      memcpy(frame->m_data_p->m_data,phase,sizeof(lamp_status_t));
+ 697   1                      frame_set_data_len(frame,sizeof(lamp_status_t));
+ 698   1                      return 0;
+ 699   1              }
+ 700          int decode_do_lamp_status_req(lamp_status_t* phase,frame_t* frame)
+ 701          {
+ 702   1              memcpy(phase,frame->m_data_p->m_data,sizeof(lamp_status_t));
+ 703   1              return 0;
+ 704   1      }
+ 705          
+ 706          int encode_get_detector_counter_res(detector_counter_t* counter, frame_t* frame)
+ 707          {
+ 708   1              memcpy(frame->m_data_p->m_data,counter,sizeof(detector_counter_t));
+ 709   1              frame_set_data_len(frame,sizeof(detector_counter_t));
+ 710   1              return 0;
+ 711   1      }
+ 712                  int decode_get_detector_counter_res(detector_counter_t* counter, frame_t* frame)
+ 713                  {
+ 714   1                      memcpy(counter,frame->m_data_p->m_data,sizeof(detector_counter_t));
+ 715   1                      return 0;
+ 716   1              }
+ 717          int encode_get_detector_status_res(detector_status_t* status,frame_t* frame)
+ 718          {
+ 719   1              memcpy(frame->m_data_p->m_data,status,sizeof(detector_status_t));
+ 720   1              frame_set_data_len(frame,sizeof(detector_status_t));
+ 721   1      
+ 722   1              return 0;
+ 723   1      }
+ 724                  int decode_get_detector_status_res(detector_status_t* status,frame_t* frame)
+ 725                  {
+ 726   1                      memcpy(status,frame->m_data_p->m_data,sizeof(detector_status_t));
+ 727   1              
+ 728   1                      return 0;
+ 729   1              }
+ 730          
+ 731          int encode_get_lamp_health_res(lamp_health_t* health, frame_t* frame)
+ 732          {
+C51 COMPILER V7.09   CODEC                                                                 04/25/2008 16:22:12 PAGE 13  
+
+ 733   1              memcpy(frame->m_data_p->m_data,health,sizeof(lamp_health_t));
+ 734   1              frame_set_data_len(frame,sizeof(lamp_health_t));
+ 735   1      
+ 736   1              return 0;
+ 737   1      }
+ 738          int decode_get_lamp_health_res(lamp_health_t* health, frame_t* frame)
+ 739          {
+ 740   1              memcpy(health,frame->m_data_p->m_data,sizeof(lamp_health_t));
+ 741   1              
+ 742   1              return 0;
+ 743   1      }
+ 744          
+ 745          int encode_get_detector_health_res(detector_health_t* health, frame_t* frame)
+ 746          {
+ 747   1              memcpy(frame->m_data_p->m_data,health,sizeof(detector_health_t));
+ 748   1              frame_set_data_len(frame,sizeof(detector_health_t));
+ 749   1      
+ 750   1              return 0;
+ 751   1      }
+ 752                  int decode_get_detector_health_res(detector_health_t* health, frame_t* frame)
+ 753                  {
+ 754   1                      memcpy(health,frame->m_data_p->m_data,sizeof(detector_health_t));
+ 755   1                      return 0;
+ 756   1              }
+ 757          
+ 758          int encode_get_volume_occupy_res(volume_occupy_t* oc, frame_t* frame)
+ 759          {
+ 760   1              memcpy(frame->m_data_p->m_data,oc,sizeof(volume_occupy_t));
+ 761   1              frame_set_data_len(frame,sizeof(volume_occupy_t));
+ 762   1      
+ 763   1              return 0;
+ 764   1      }
+ 765                  int decode_get_volume_occupy_res(volume_occupy_t* oc, frame_t* frame)
+ 766                  {
+ 767   1                      memcpy(oc,frame->m_data_p->m_data,sizeof(volume_occupy_t));
+ 768   1                      return 0;
+ 769   1              }
+ 770          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   7108    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   1536    1284
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

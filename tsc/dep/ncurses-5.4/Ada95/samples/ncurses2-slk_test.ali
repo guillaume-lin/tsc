@@ -1,0 +1,166 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnvnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.slk_test%b	ncurses2-slk_test.adb	3f8acfe7 NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U ncurses2.slk_test%s	ncurses2-slk_test.ads	aa2dfd03 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strunb.ads		20020507104848 d5fc5eb1
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-slk_test.ads	20001202223106 fbda04f7
+D ncurses2-slk_test.adb	20001202223105 3f882ab6
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-memory.ads		20020507105124 0df2d6b0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stalib.adb		20020507105158 0eac5a67
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 28|44r6 50r31 54r31 57r11 78r8
+X 10 a-string.ads
+18K13*Strings 32e16 28|44r10 50r35 54r35 57r15 78r12
+X 13 a-strunb.ads
+43K21*Unbounded 383e26 28|44r18 50r43 54r43 57r23 78r20
+46R9*Unbounded_String 28|50r53 54r53 81r10
+60V13*To_Unbounded_String 28|72r14
+63V13*To_String 28|154r53
+377U14 Adjust 28|72r7
+378U14 Finalize 28|72r7
+X 20 interfac.ads
+23K9*Interfaces 168e15 28|45r6 58r11 68r18
+X 21 i-c.ads
+20K20*C 140e17 28|45r17 58r22 68r29
+33I9*int 28|63r32 63r44
+66E9*char 28|68r31
+73A9*char_array 28|62r32 66r13
+83V13*To_Ada 28|72r35
+X 26 ncurses2.ads
+42K9*ncurses2 44e13 27|41r11 28|41r6 41r25 48r11 171r5
+X 27 ncurses2-slk_test.ads
+41U20*slk_test 28|48b20 171r14 171t22
+X 28 ncurses2-slk_test.adb
+49U14 myGet 53b14 73r8 73t13 151r13
+49M21 Win 53b21 69r20
+50R21 Str 54b21 72m7 151r20
+51i21 Len 55b21
+61V16*Wgetnstr 64m25 69r10
+61M26 Win
+62a26 Str
+63i26 Len
+66a7 Txt 68m7 69r25 72r43
+80i4 c 87m4 90r27 131m16 132r36 166m7
+81R4 buf 151m27 154r64
+82e4 c2 90m7 91r12 132m16 133r26 137r27 153r26
+83e4 fmt 142m13 144m13 146m13 154r70
+84i4 tmp 153m13 154r47
+X 29 ncurses2-util.ads
+44K18*util 28|41r15 41r34 29|78e18
+53V13*CTRL 28|87r9
+57V13*Getchar 28|131r21 166r12
+69K12*Int_IO 28|76r8
+74U14*P 28|103r13 104r13 105r13 106r13 107r13 108r13 109r13 110r13 111r13
+. 112r13 113r13 114r13 115r13 116r13 117r13 118r13 119r13
+76V13*Code_To_Char 28|90r13 132r22
+77V13*ctoi 28|153r20
+X 45 terminal_interface.ads
+41K9*Terminal_Interface 28|42r6 42r37 46r6 59r11 45|46e23
+X 46 terminal_interface-curses.ads
+48K28*Curses 28|42r25 42r56 46r25 59r30 46|1933e30
+56M9*Window 28|49r31 53r31 61r32
+67I9*Key_Code 28|80r8
+382X4*Curses_Exception 28|70r16
+474V13*Standard_Window 28|49r41 53r41
+488U14*End_Windows 28|170r4
+504U14*Move_Cursor 28|89r7 102r13 156r13
+505i27 Line 28|89r20 102r26 156r26
+506i27 Column 28|89r31 102r37 156r38
+521U14*Add 28|137r16
+522e19 Ch 28|137r21
+655U14*Add 28|96r13 128r13 148r13
+656i19 Line 28|96r18 128r18 148r18
+657i19 Column 28|96r29 128r30 148r30
+658s19 Str 28|97r18 129r17 149r18
+799U14*Switch_Character_Attribute 28|94r13 98r13
+801r7 Attr 28|94r41 99r41
+802b7 On 28|98r41
+863U14*Beep 28|164r13
+891U14*Set_Echo_Mode 28|150r13 152r13
+891b29 SwitchOn 28|150r28 152r28
+1038U14*Refresh 28|120r13
+1067U14*Erase 28|93r13 169r4
+1073U14*Clear 28|126r13
+1087U14*Clear_To_End_Of_Line 28|157r13
+1488I9*Label_Number 28|154r33
+1489E9*Label_Justification 28|83r10
+1489n33*Left 28|142r20
+1489n39*Centered 28|83r33 144r20
+1489n49*Right 28|146r20
+1498U14*Set_Soft_Label_Key 28|154r13
+1505U14*Refresh_Soft_Label_Keys 28|155r13
+1526U14*Clear_Soft_Label_Keys 28|140r13
+1531U14*Restore_Soft_Label_Keys 28|121r13 124r13
+X 48 terminal_interface-curses-aux.ads
+50K35*Aux 28|46r32 59r37 48|124e34
+72i4*Curses_Err 28|69r35
+

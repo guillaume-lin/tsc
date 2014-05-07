@@ -1,0 +1,157 @@
+C51 COMPILER V7.09   MANUAL_CONTROL                                                        04/25/2008 16:22:09 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE MANUAL_CONTROL
+OBJECT MODULE PLACED IN manual_control.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE manual_control.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * manual_control.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-02 09:38:34 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "kernel.h"
+  15          #include "io.h"
+  16          #include "manual_control.h"
+  17          /**
+  18           *  手动控制
+  19           *
+  20           */
+  21          void manual_load_multiple_schedule()
+  22          {
+  23   1              unsigned char s,p,t;
+  24   1              get_current_schedule(&s,&p,&t);
+  25   1              // 检查当前相位和配时是否合法
+  26   1              if(is_schedule_valid(p,t))                                                                      // 时段数据合法
+  27   1              {
+  28   2                      load_current_schedule(s,p,t);                                                   // 当前相位和配时合法则载入，否则不载
+  29   2                      g_controller_status.m_stage=1;
+  30   2                      if(g_controller_status.m_current_phase_plan_p->m_stage_count==1)
+  31   2                              g_controller_status.m_next_stage=1;
+  32   2                      else
+  33   2                              g_controller_status.m_next_stage=2;
+  34   2                      g_controller_status.m_step = 1;                                                 // 从多时段相位表的第一步开始运行
+  35   2                      run_current_step();
+  36   2              }
+  37   1              else  // 时段数据不合法，则运行黄闪
+  38   1              {                                                                                                               
+  39   2                      load_current_schedule(0,PHASE_YELLOW_FLASH,TIMMING_SPECIAL_PHASE);
+  40   2                      g_controller_status.m_stage=1;
+  41   2                      g_controller_status.m_step = 1;
+  42   2                      g_controller_status.m_next_stage=1;
+  43   2                      run_current_step();
+  44   2              }
+  45   1      }
+  46          //按下步进键以后的处理
+  47          void manual_step_dispose()
+  48          {
+  49   1              if(is_step_end())
+  50   1              {
+  51   2                      set_current_stage();
+  52   2                      run_current_step();
+  53   2              }
+  54   1              if(g_controller_status.m_step>=4)//当前相位完成
+  55   1              {
+C51 COMPILER V7.09   MANUAL_CONTROL                                                        04/25/2008 16:22:09 PAGE 2   
+
+  56   2                      clear_step_forward_button_state();
+  57   2              }
+  58   1      }
+  59          void manual_change_step_dispose()
+  60          {
+  61   1              if(is_step_end())
+  62   1              {
+  63   2                      if(g_controller_status.m_step<4)
+  64   2                      {
+  65   3                              g_controller_status.m_step++;
+  66   3                      }
+  67   2                      else
+  68   2                      {
+  69   3                              g_controller_status.m_stage=g_controller_status.m_next_stage;
+  70   3                              if(g_controller_status.m_current_phase_plan_p->m_stage_count>g_controller_status.m_stage)
+  71   3                                      g_controller_status.m_next_stage++;
+  72   3                              else
+  73   3                                      g_controller_status.m_next_stage=1;
+  74   3                              g_controller_status.m_step=1;
+  75   3                              g_controller_status.m_need_change_stage_flag=0;
+  76   3                              clear_need_change_stage_flag();
+  77   3                      }
+  78   2                      run_current_step();
+  79   2              }
+  80   1      }
+  81          int manual_control(int mode_switch,int timer)
+  82          {
+  83   1              static unsigned char time_count = 0x00; 
+  84   1              int  need_change_to_stage_count=0;
+  85   1              if(mode_switch)
+  86   1              {
+  87   2                      if (g_controller_status.m_current_phase_plan_p->m_stage_count == 1)     // 手动控制时若相位表总步数为 1，则
+             -调用多时段相位表
+  88   2                      {
+  89   3                              manual_load_multiple_schedule();
+  90   3                              clear_step_forward_button_state();
+  91   3                              return 0;
+  92   3                      }
+  93   2                      if(g_controller_status.m_need_change_stage_flag)//在执行改变状态的过程中，步进键按键无效
+  94   2                      {
+  95   3                              clear_step_forward_button_state();                      
+  96   3                              clear_need_change_stage_flag();
+  97   3                      }
+  98   2                      else
+  99   2                      {
+ 100   3                              if(is_step_forward_button_pressed()) {                                                          // 有步进键按下
+ 101   4                                      g_controller_status.m_step_forward_button_state = 1;
+ 102   4                              }
+ 103   3                      }
+ 104   2                      if(g_controller_status.m_step_forward_button_state)//按下步进键
+ 105   2                      {
+ 106   3                              manual_step_dispose();
+ 107   3                              clear_need_change_stage_flag();//在执行步进过程中，按下转换相位按钮无效
+ 108   3                              return 0;
+ 109   3                      }
+ 110   2                      if (is_need_change_stage())
+ 111   2                      {
+ 112   3                              g_controller_status.m_need_change_stage_flag=1; 
+ 113   3                              need_change_to_stage_count=get_manual_next_stage_count();
+ 114   3                              if(need_change_to_stage_count>g_controller_status.m_current_phase_plan_p->m_stage_count)
+ 115   3                                      need_change_to_stage_count=need_change_to_stage_count-g_controller_status.m_current_phase_plan_p->m_st
+             -age_count;
+C51 COMPILER V7.09   MANUAL_CONTROL                                                        04/25/2008 16:22:09 PAGE 3   
+
+ 116   3                              g_controller_status.m_next_stage=need_change_to_stage_count;
+ 117   3                      }
+ 118   2                      if(g_controller_status.m_need_change_stage_flag)
+ 119   2                      {
+ 120   3                              manual_change_step_dispose();
+ 121   3                              clear_step_forward_button_state();//在执行转换相位过程中，按下转换步进按钮无效
+ 122   3                              return 0;
+ 123   3                      }
+ 124   2              }
+ 125   1              return 0;
+ 126   1      }
+*** WARNING C280 IN LINE 81 OF MANUAL_CONTROL.C: 'timer': unreferenced local variable
+*** WARNING C280 IN LINE 83 OF MANUAL_CONTROL.C: 'time_count': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    432    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      1       7
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

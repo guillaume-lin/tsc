@@ -1,0 +1,117 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvnnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.overlap_test%b  ncurses2-overlap_test.adb  68153803 NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U ncurses2.overlap_test%s  ncurses2-overlap_test.ads  89d58a60 EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-overlap_test.ads  20001202223105 d8227394
+D ncurses2-overlap_test.adb  20001202223105 de17b1cb
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 25 ncurses2.ads
+42K9*ncurses2 44e13 26|41r11 27|41r6 41r25 46r11 156r5
+X 26 ncurses2-overlap_test.ads
+41U20*overlap_test 27|46b20 156r14 156t26
+X 27 ncurses2-overlap_test.adb
+48U14 fillwin 51b14 65r8 65t15 131r13 133r13
+48M23 win 51b23 55r17 57r23 59r18
+48e37 ch 51b37 59r29
+49U14 crosswin 67b14 81r8 81t16 135r13 137r13
+49M24 win 67b24 71r17 76r29 77r21
+49e38 ch 67b38 77r32
+52i7 y1 55m22 56r21
+53i7 x1 55m26 58r24
+56i11 y 57r28
+58i14 x
+68i7 y1 71m22 72r21 75r28 75r57
+69i7 x1 71m26 73r24 74r24 74r53
+72i11 y 75r23 75r46 76r34
+73i14 x 74r19 74r42 76r37
+85e4 ch 119m7 120r17 120r36 121r12
+86M4 win1 123r37 128r37 131r22 135r23 139r20 140r26 145r24 147r30 153m12
+87M4 win2 124r37 127r37 133r22 137r23 142r20 143r26 145r30 147r24 152m12
+X 28 ncurses2-util.ads
+44K18*util 27|41r15 41r34 28|78e18
+51e4*newl 27|94r15 97r15 99r15 104r15 107r15 110r15 112r15 115r15
+55V13*CTRL 27|120r22 120r41
+57V13*Getchar 27|119r27
+76V13*Code_To_Char 27|119r13
+X 42 terminal_interface.ads
+41K9*Terminal_Interface 27|42r6 42r37 42|46e23
+X 43 terminal_interface-curses.ads
+48K28*Curses 27|42r25 42r56 43|1933e30
+56M9*Window 27|48r29 49r30 51r29 67r30 86r11 87r11
+59I9*Line_Position 27|52r12 68r12
+60I9*Column_Position 27|53r12 69r12
+382X4*Curses_Exception 27|63r12
+488U14*End_Windows 27|155r4
+504U14*Move_Cursor 27|57r10 76r16 91r4 101r4 140r13 143r13
+505i27 Line 27|91r17 101r17
+506i27 Column 27|91r28 101r29
+521U14*Add 27|59r13 77r16 94r4 97r4 99r4 104r4 107r4 110r4 112r4 115r4
+522e19 Ch 27|59r23 77r26 94r9 97r9 99r9 104r9 107r9 110r9 112r9 115r9
+572V13*New_Window 27|86r21 87r21
+581U14*Delete 27|152r4 153r4
+646U14*Add 27|92r4 95r4 98r4 102r4 105r4 108r4 111r4 113r4 116r4
+647s19 Str 27|92r9 95r9 98r9 102r9 105r9 108r9 111r9 113r9 116r9
+885U14*Set_Raw_Mode 27|89r4
+885b28 SwitchOn 27|89r18
+1033U14*Update_Screen 27|125r13 129r13
+1038U14*Refresh 27|90r4
+1045U14*Refresh_Without_Update 27|123r13 124r13 127r13 128r13
+1067U14*Erase 27|154r4
+1073U14*Clear 27|139r13 142r13
+1181U14*Overwrite 27|145r13 147r13
+1221U14*Get_Size 27|55r7 71r7
+

@@ -1,0 +1,84 @@
+C51 COMPILER V7.09   KEY_BUFFER                                                            04/25/2008 16:22:18 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE KEY_BUFFER
+OBJECT MODULE PLACED IN key_buffer.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE key_buffer.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * key_buffer.c
+   3           * 
+   4           * 按键的环形缓冲区
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-28 09:42:40 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "key_buffer.h"
+  15          
+  16          int init_key_buffer(key_buffer_t* self)
+  17          {
+  18   1              self->m_read_p = 0;
+  19   1              self->m_write_p = 0;
+  20   1              return 0;
+  21   1      }
+  22          // 读取按键
+  23          int get_buffer_key(key_buffer_t* self)
+  24          {
+  25   1              int key = self->m_buffer[self->m_read_p++];
+  26   1              if(self->m_read_p == MAX_KEY_BUFFER_SIZE)
+  27   1                      self->m_read_p = 0;
+  28   1              return key;
+  29   1      }
+  30          // 放入按键
+  31          int put_buffer_key(key_buffer_t* self,int key)
+  32          {
+  33   1              self->m_buffer[self->m_write_p++] = key;
+  34   1              if(self->m_write_p == MAX_KEY_BUFFER_SIZE)
+  35   1                      self->m_write_p = 0;
+  36   1              return 0;
+  37   1      }
+  38          // 判断缓冲区是否满
+  39          int is_buffer_full(key_buffer_t* self)
+  40          {
+  41   1              if(((self->m_write_p + 1)% MAX_KEY_BUFFER_SIZE) == self->m_read_p)
+  42   1                      return 1;
+  43   1              else
+  44   1                      return 0;
+  45   1      }
+  46          // 判断缓冲区是否空
+  47          int is_buffer_empty(key_buffer_t* self)
+  48          {
+  49   1              if(self->m_read_p == self->m_write_p)
+  50   1                      return 1;
+  51   1              else
+  52   1                      return 0;
+  53   1      }
+  54          // 清空缓冲区
+  55          int empty_key_buffer(key_buffer_t* self)
+C51 COMPILER V7.09   KEY_BUFFER                                                            04/25/2008 16:22:18 PAGE 2   
+
+  56          {
+  57   1              return init_key_buffer(self);
+  58   1      }
+  59          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    291    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       9
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,14 @@
+   type Item_Option_Set is
+      record
+         Selectable  : Boolean;
+      end record;
+   pragma Pack (Item_Option_Set);
+   pragma Convention (C, Item_Option_Set);
+
+   for Item_Option_Set use
+      record
+         Selectable  at 0 range  0 ..  0;
+      end record;
+   for Item_Option_Set'Size use 32;
+   --  Please note: this rep. clause is generated and may be
+   --               different on your system.

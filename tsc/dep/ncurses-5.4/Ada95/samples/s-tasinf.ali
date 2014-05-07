@@ -1,0 +1,30 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnvnnn
+
+U system.task_info%b	s-tasinf.adb		ba71e5f8 NE PK
+W system%s		system.ads		system.ali
+
+U system.task_info%s	s-tasinf.ads		730e7a0e EB NE PK
+W system%s		system.ads		system.ali
+W unchecked_deallocation%s
+
+D system.ads		20020507104801 427a8039
+D s-tasinf.ads		20020507105203 bbbd2b69
+D s-tasinf.adb		20020507105203 01ccce91
+D unchdeal.ads		20020507105303 8ac9d15e
+X 1 system.ads
+41K9*System 150e11 2|45r9 101r5 3|44r14 46r5
+X 2 s-tasinf.ads
+45K16*Task_Info 101r12 101e21 3|44b21 46r12 46t21
+76E9*Scope_Type 85r31
+77n7*Process_Scope
+80n7*System_Scope
+83n7*Default_Scope 98r55
+85E9*Task_Info_Type<76E9> 98r37
+91P9*Task_Image_Type 96r38
+95U14*Free_Task_Image
+98e4*Unspecified_Task_Info
+X 4 unchdeal.ads
+22u11*Unchecked_Deallocation 2|44r6 96r6
+

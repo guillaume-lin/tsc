@@ -1,0 +1,56 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnnnvnn
+
+U sample.manifest%s	sample-manifest.ads	07ae917c NE PK
+W sample%s		sample.adb		sample.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D sample.ads		20031025153918 f29d090b
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D unchconv.ads		20020507105303 1b7a14c5
+X 3 sample.ads
+41K9*Sample 43e11 4|43r9 67r5
+X 4 sample-manifest.ads
+43K16*Manifest 67r12 67e20
+45i4*QUIT 46r48
+46i4*SELECT_ITEM
+48i4*FKEY_HELP
+49i4*HELP_CODE
+50i4*FKEY_EXPLAIN
+51i4*EXPLAIN_CODE
+52i4*FKEY_QUIT
+53i4*QUIT_CODE
+55a4*Menu_Marker
+57i4*Default_Colors
+58i4*Menu_Fore_Color
+59i4*Menu_Back_Color
+60i4*Menu_Grey_Color
+61i4*Form_Fore_Color
+62i4*Form_Back_Color
+63i4*Notepad_Color
+64i4*Help_Color
+65i4*Header_Color
+X 10 terminal_interface.ads
+41K9*Terminal_Interface 4|41r6 41r37 10|46e23
+X 11 terminal_interface-curses.ads
+48K28*Curses 4|41r25 41r56 11|1933e30
+76I12*Special_Key_Code 4|49r28 51r28 53r28
+97i4*Key_F1 4|49r48
+98i4*Key_F2 4|51r48
+99i4*Key_F3 4|53r48
+208I12*User_Key_Code 4|45r28 45r48 46r28
+299I12*Redefinable_Color_Pair 4|57r31 58r31 59r31 60r31 61r31 62r31 63r31
+. 64r31 65r31
+1488I9*Label_Number 4|48r28 50r28 52r28
+

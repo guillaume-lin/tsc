@@ -1,0 +1,27 @@
+V "GNAT Lib v3.15a"
+P
+R nnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.numerics%s	a-numeri.ads		846587b0 EE PU PK
+W ada%s			ada.ads			ada.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20020507104909 a0108083
+D a-numeri.ads		20020507104840 24750733
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-stalib.ads		20020507105159 76713122
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 2|19r9 30r5
+X 2 a-numeri.ads
+19K13*Numerics 20r14 30r9 30e17
+22X4*Argument_Error
+24N4*Pi
+27N4*e
+

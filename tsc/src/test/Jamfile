@@ -1,0 +1,34 @@
+#
+#
+#
+CCFLAGS =  -g  ;
+C++FLAGS = -g  -Wall ;
+LINKFLAGS =  ;
+LINK = g++ ;
+CHMOD = ;
+SEARCH_SOURCE = ;
+LOCATE_TARGET = build ;
+LINKLIBS = /usr/lib/libncurses++.a /usr/lib/libform.a /usr/lib/libpanel.a /usr/lib/libmenu.a /usr/lib/libncurses.a ;
+
+Main	nc1.exe : 	nc1.cpp
+			integerchecker.cpp
+			messagebox.cpp
+
+			;
+#LINKLIBS on nc1.exe  = -lncurses++ -lform -lpanel -lmenu -lncurses ;
+
+rule run-command
+{
+	ECHO $(1) $(2)	 ;
+	ECHO  "execute rule run-command" ;
+	ALWAYS $(1) ;
+}
+
+actions run-command 
+{
+	etags * 
+}
+
+run-command TAGS ;
+
+#ctags

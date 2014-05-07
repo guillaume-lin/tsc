@@ -1,0 +1,143 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvvvnvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U sample.function_key_setting%b  sample-function_key_setting.adb  82677b2a PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.unchecked_deallocation%s
+W sample%s		sample.adb		sample.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U sample.function_key_setting%s  sample-function_key_setting.ads  69b48af3 EE PK
+W sample%s		sample.adb		sample.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-function_key_setting.adb  20031025153918 3df27a09
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 20|41r6 74r10 78r11
+X 10 a-uncdea.ads
+22u15*Unchecked_Deallocation 20|41r10 74r14 78r15
+X 18 sample.ads
+41K9*Sample 43e11 19|46r9 82r5 20|42r6 42r28 46r14 213r5
+X 19 sample-function_key_setting.ads
+46K16*Function_Key_Setting 82r12 82e32 20|46b21 213r12 213t32
+48U14*Push_Environment 20|83b14 111r8 111t24
+48s32 Key 20|83b32 105r37
+49b32 Reset 20|84b32 91r13 108r10
+56U14*Pop_Environment 20|113b14 131r8 131t23
+60U14*Initialize 20|180b14 192r8 192t18
+60e26 Mode 20|180b26 184r12 190r29
+61e26 Just 20|181b26 191r24
+64V13*Context 20|133b13 141r8 141t15
+67V13*Find_Context 20|143b13 160r8 160t20
+67s27 Key 20|143b27 147r31 152r29
+71U14*Notepad_To_Context 20|127r10 162b14 178r8 178t26
+71M34 Pan 20|162b34 172r25 173r10 174r16
+74X4*Function_Key_Stack_Error 20|118r16
+76U14*Default_Labels 20|194b14 201r8 201t22
+79V13*Notepad_Window 20|203b13 211r8 211t22
+X 20 sample-function_key_setting.adb
+48i4 Max_Label_Length 52r34
+49i4 Number_Of_Keys 86r52 89r21 120r24 186m15 188m15
+50e4 Justification 121r50 191m7
+52A12 Label 53r57
+53A9 Label_Array 70r20
+55R9 Key_Environment 56r27 65c9 78r39 86r35
+55i26 N
+56P9 Env_Ptr 57r23 67r20 79r39 81r19 86r20 115r11 145r11
+59P9 String_Access 60r23 62r21 68r20 75r38
+62p4 Active_Context 97r17 105m7 123r25 124m26 125m10 136r10 137r17 147r10
+63M4 Active_Notepad 98r20 104m7 166r10 167r27 169m18 172m7 206r10 207r29
+65R9 Key_Environment 71e17
+65i27*N 70r38
+67p10*Prev 95r9 128r28 155r23
+68p10*Help 97r9 125r30 152r18
+69M10*Notepad 98r9 100r13 101r18 127r32
+70a10*Labels 90r35 121r38
+73U14 Release_String 124r10
+77U14 Release_Environment 129r10
+81p4 Top_Of_Stack 95r17 107m7 115r22 117r10 128m10 145r22
+86p7 P 90m33 95m7 97m7 98m7 100r11 101r16 107r23
+89i11 I 90r30 90r43 92r33
+115p7 P 121r36 125r28 127r30 128r26 129m31
+120i14 I 121r33 121r46
+145p7 P 151r23 152r16 155m16 155r21
+164M7 W 167m10 168r17 170m18
+X 21 sample-manifest.ads
+43K16*Manifest 20|42r13 42r35 21|67e20
+48i4*FKEY_HELP 20|198r27
+50i4*FKEY_EXPLAIN 20|199r27
+52i4*FKEY_QUIT 20|197r27
+X 32 terminal_interface.ads
+41K9*Terminal_Interface 19|41r6 41r37 42r6 42r44 32|46e23
+X 33 terminal_interface-curses.ads
+48K28*Curses 19|41r25 41r56 42r25 42r63 33|1933e30
+56M9*Window 19|79r35 20|164r11 203r35
+57M4*Null_Window 20|209r17
+581U14*Delete 20|170r10
+1033U14*Update_Screen 20|177r7
+1073U14*Clear 20|168r10
+1484E9*Soft_Label_Key_Format 19|60r33 20|180r33
+1486n35*PC_Style 19|60r58 20|180r58 185r15
+1487n35*PC_Style_With_Index 20|185r27
+1488I9*Label_Number 20|49r23 49r39 53r31 55r30 55r46 65r31 65r47
+1489E9*Label_Justification 19|61r33 20|50r23 181r33
+1489n33*Left 19|61r56 20|50r46 181r56
+1492U14*Init_Soft_Label_Keys 20|190r7
+1498U14*Set_Soft_Label_Key 20|92r13 121r13 197r7 198r7 199r7
+1510U14*Refresh_Soft_Label_Keys_Without_Update 20|109r10 126r10 200r7
+1515U14*Get_Soft_Label_Key 20|90r10
+X 36 terminal_interface-curses-panels.ads
+43K35*Panels 19|42r32 42r70 36|146e37
+48M9*Panel 19|71r43 20|63r21 69r20 162r43
+53M4*Null_Panel 20|63r30 100r24 104r25 166r28 173r17 206r28
+81U14*Top 20|174r10
+91U14*Update_Panels 20|102r10 176r7
+96U14*Hide 20|101r10
+101V13*Get_Window 20|167r15 207r17
+138U14*Delete 20|169r10
+

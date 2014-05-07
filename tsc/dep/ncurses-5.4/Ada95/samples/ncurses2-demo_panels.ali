@@ -1,0 +1,221 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.demo_panels%b  ncurses2-demo_panels.adb  303710cd NE PU SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.genericputs%s  ncurses2-genericputs.adb  ncurses2-genericputs.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+W terminal_interface.curses.panels.user_data%s  terminal_interface-curses-panels-user_data.adb  terminal_interface-curses-panels-user_data.ali
+
+U ncurses2.demo_panels%s  ncurses2-demo_panels.ads  c4d0727b EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-demo_panels.ads  20001202223137 95278b8f
+D ncurses2-demo_panels.adb  20001202223137 639f768f
+D ncurses2-genericputs.ads  20001202223139 4ea315f2
+D ncurses2-genericputs.adb  20001202223138 f3d62840
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D terminal_interface-curses-panels-user_data.ads  20140426095555 6df45326
+D terminal_interface-curses-panels-user_data.adb  20031025153918 dd3c0884
+D unchconv.ads		20020507105303 1b7a14c5
+X 11 a-strbou.ads
+53R12 Bounded_String 31|174r14
+X 29 ncurses2.ads
+42K9*ncurses2 44e13 30|41r11 31|41r6 41r25 46r6 48r11 170r21 379r5
+X 30 ncurses2-demo_panels.ads
+41U20*demo_panels 31|48b20 379r14 379t25
+41i33 nap_mseci 31|48b33 62r26
+X 31 ncurses2-demo_panels.adb
+51V14 mkpanel 64b13 100r8 100t15 195r16 197r16 200r16 203r16 206r16
+51i23 color 64b22 81r19 86r22 87r39 90r59 96r56
+52i23 rows 65b22 72r26
+53i23 cols 66b22 72r32
+54i23 tly 67b22 72r38
+55i23 tlx 68b22 72r43
+56U14 rmpanel 102b14 107r8 107t15 344r10 354r10 359r10 364r10
+56M23 pan 102b23 103r37 105m15
+57U14 pflush 109b14 113r8 113t14 217r10 228r10 233r10 238r10 243r10 248r10
+. 253r10 258r10 263r10 268r10 273r10 278r10 283r10 288r10 293r10 308r16 317r16
+. 325r10 330r10 335r10 340r10 345r10 350r10 355r10 360r10 365r10
+58U14 wait_a_while 115b14 123r8 123t20 219r10 229r10 234r10 239r10 244r10
+. 249r10 254r10 259r10 264r10 269r10 274r10 279r10 284r10 289r10 294r10 309r16
+. 318r16 326r10 331r10 336r10 341r10 346r10 351r10 356r10 361r10 366r10
+58i28 msec 115b28
+59U14 saywhat 125b14 130r8 130t15 218r10 221r10 231r10 236r10 241r10 246r10
+. 251r10 256r10 261r10 266r10 271r10 276r10 281r10 286r10 291r10 302r16 311r16
+. 322r10 328r10 333r10 338r10 343r10 348r10 353r10 358r10 363r10
+59s23 text 125b23 129r19
+60U14 fill_panel 139b14 159r8 159t18 210r10 211r10 212r10 213r10 214r10
+60M26 pan 139b26 140r37 141r41
+62i4 nap_msec 118r10 121r29 219r24 229r24 234r24 239r24 244r24 249r24 254r24
+. 259r24 264r24 269r24 274r24 279r24 284r24 289r24 294r24 309r30 318r30 326r24
+. 331r24 336r24 341r24 346r24 351r24 356r24 361r24 366r24 367r14 370m13
+69M7 win 72m7 73r25 74r28 76m21 88r32 93r29
+70M7 pan 74m10 75r13 99r14
+79i16 fg 82m19 84m19 87r47
+79i20 bg 86m16 87r51
+103M7 win 106m15
+133A9 User_Data 134r40 135r41 188r39 189r39 190r39 191r39 192r39
+134P9 User_Data_Access 135r52 188r15 189r15 190r15 191r15 192r15
+135K12 PUD 137r8
+140M7 win 147r20 149r12 150r29 151r12 152r17 155r26 156r18
+141e7 num 148r19 156r23
+142a7 tmp6 148m7 149r24
+143i7 maxy 152m22 153r21
+144i7 maxx 152m28 154r24
+153i11 y 155r31
+154i14 x 155r34
+161a4 modstr 304r25 307r25 313r25 316r25
+170K12 p 171r8 172r8
+174R4 tmpb 181m17 182r24
+179i8 y 181r24
+180i11 x 181r28
+185i8 y
+187M10 p1 195m10 196r25 210r22 222r16 224r16 232r16 277r15 339r15 354m19
+187M14 p2 197m10 199r25 211r22 225r16 237r16 242r16 282r15 334r15 344m19
+187M18 p3 200m10 202r25 212r22 223r16 247r16 252r16 257r18 272r15 287r15
+. 349r16
+187M22 p4 203m10 205r25 213r22 215r16 226r16 262r16 292r15 298r45 305r22
+. 323r16 359m19
+187M26 p5 206m10 208r25 214r22 216r16 227r16 267r16 299r45 314r22 329r15
+. 364m19
+188p10 U1 196r29
+189p10 U2 199r29
+190p10 U3 202r29
+191p10 U4 205r29
+192p10 U5 208r29
+296i14 itmp 304r33 305r54 307r33 313r33 314r59 316r33
+298M16 w4 303r29 304r21 312r29 313r21
+299M16 w5 306r29 307r21 315r29 316r21
+X 32 ncurses2-genericputs.ads
+54k18*genericPuts 31|46r15 170r30 32|73e25
+55K12 BS 31|172r10 174r11
+65U14 myPut 31|181r10
+70U14 myAdd 31|182r10
+70R21 Str 31|182r17
+X 34 ncurses2-util.ads
+44K18*util 31|41r15 41r34 34|78e18
+59U14*Getchar 31|119r10
+69K12*Int_IO 31|49r8
+X 49 terminal_interface.ads
+41K9*Terminal_Interface 31|42r6 42r37 43r6 43r44 44r6 49|46e23
+X 50 terminal_interface-curses.ads
+48K28*Curses 31|42r25 42r56 43r25 43r63 44r25 50|1933e30
+56M9*Window 31|69r13 103r13 140r13 298r21 299r21
+57M4*Null_Window 31|73r10
+59I9*Line_Position 31|54r31 67r30
+60I9*Column_Position 31|55r31 68r30 305r37 314r42
+62I12*Line_Count 31|52r31 65r30 143r14
+64I12*Column_Count 31|53r31 66r30 144r14
+276I9*Color_Number 31|51r31 64r30 79r25
+284i4*Black 31|84r25
+285i4*Red 31|195r25
+286i4*Green 31|197r25
+287i4*Yellow 31|200r25
+288i4*Blue 31|81r27 203r25
+289i4*Magenta 31|206r25
+291i4*White 31|82r25
+297I9*Color_Pair 31|87r27 90r47 96r44
+349r4*Normal_Video 31|89r46
+411V13*Lines 31|127r28 179r27 195r30 197r32 197r60 200r33 200r58 203r31 203r60
+. 206r34 206r63 242r20 252r20 303r33 305r26 306r33 312r33 314r26 315r33 323r20
+414V13*Columns 31|180r30 195r45 197r47 198r25 200r44 201r25 203r46 204r25
+. 206r49 207r25 242r35 252r35 305r63 323r36
+488U14*End_Windows 31|377r4
+504U14*Move_Cursor 31|127r7 147r7 155r13 303r16 306r16 312r16 315r16
+505i27 Line 31|127r20
+506i27 Column 31|127r39
+521U14*Add 31|156r13
+572V13*New_Window 31|72r14
+581U14*Delete 31|76r13 106r7
+646U14*Add 31|129r7 149r7 304r16 307r16 313r16 316r16
+647s19 Str 31|129r12 149r17
+713U14*Box 31|151r7
+1033U14*Update_Screen 31|112r7
+1038U14*Refresh 31|177r4
+1067U14*Erase 31|376r4
+1087U14*Clear_To_End_Of_Line 31|128r7 150r7
+1101U14*Set_Background 31|88r16 93r13
+1221U14*Get_Size 31|152r7
+1705U14*Init_Pair 31|87r16
+1719V13*Has_Colors 31|77r16
+1799U14*Nap_Milli_Seconds 31|121r10
+X 53 terminal_interface-curses-panels.ads
+43K35*Panels 31|43r32 43r70 44r32 135r23 53|146e37
+48M9*Panel 31|55r55 56r36 60r32 68r54 70r13 102r36 139r32 187r31
+53M4*Null_Panel 31|70r22 75r19
+71V13*New_Panel 31|74r17
+76U14*Bottom 31|257r10
+81U14*Top 31|272r10 277r10 282r10 287r10 292r10 329r10 334r10 339r10
+86U14*Show 31|224r10 225r10 226r10 227r10 232r10 237r10 247r10 262r10 267r10
+91U14*Update_Panels 31|111r7
+96U14*Hide 31|215r10 216r10 223r10 349r10
+106V13*Panel_Window 31|103r23 140r23 298r31 299r31
+116U14*Move 31|222r10 242r10 252r10 305r16 314r16 323r10
+138U14*Delete 31|105r7
+X 55 terminal_interface-curses-panels-user_data.ads
+45k42*User_Data 31|44r39 135r30 55|69e47
+53U14 Set_User_Data 31|196r10 199r10 202r10 205r10 208r10
+64V13 Get_User_Data 31|141r26
+

@@ -1,0 +1,50 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.string_ops%b	s-strops.adb		cf0ab27e NE PK
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U system.string_ops%s	s-strops.ads		5f4de939 NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-secsta.ads		20020507105154 e384df23
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-strops.ads		20020507105201 1d376900
+D s-strops.adb		20020507105200 d23ddb7e
+X 1 system.ads
+41K9*System 150e11 4|38r9 64r5 5|36r14 149r5
+77V13*"<=" 5|44r19 92r19
+X 4 s-strops.ads
+38K16*String_Ops 39r14 64r12 64e22 5|36b21 149r12 149t22
+41V13*Str_Concat 5|42b13 58r8 58t18
+41s25 X 5|42b25 44r10 49r37 50r25 50r36 53r16 53r28 54r16 54r26
+41s28 Y 5|42b28 45r17 49r48 54r49
+44V13*Str_Concat_SC 5|90b13 105r8 105t21
+44s28 X 5|90b28 92r10 97r25 97r36 100r16 100r28
+44e40 Y 5|90b40 93r23 101r27
+47V13*Str_Concat_CS 5|77b13 84r8 84t21
+47e28 X 5|77b28 81r16
+47s43 Y 5|77b43 78r24 82r26
+50V13*Str_Concat_CC 5|64b13 71r8 71t21
+50e28 X 5|64b28 68r16
+50e31 Y 5|64b31 69r16
+53V13*Str_Equal 5|111b13 125r8 125t17
+53s24 A 5|111b24 113r10 117r19 118r16 118r43
+53s27 B 5|111b27 113r22 118r25 118r33
+56U14*Str_Normalize 62r19 5|131b14 136r8 136t21
+56s29 A 5|131b29 133r16 134m10
+59U14*Wide_Str_Normalize 63r19 5|142b14 147r8 147t26
+59s34 A 5|142b34 144r16 145m10
+X 5 s-strops.adb
+49i13 L 50r46
+50a13 R 53m13 54m13 54r38 55r20
+65a7 R 68m7 69m7 70r14
+78a7 R 81m7 82m7 82r15 83r14
+97a13 R 100m13 101m13 101r16 102r20
+117i14 J 118r19 118r28
+133i11 J 134r13
+144i11 J 145r13
+

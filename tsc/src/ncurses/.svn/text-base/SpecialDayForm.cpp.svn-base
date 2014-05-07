@@ -1,0 +1,197 @@
+/* @(#)SpecialDayForm.cpp
+* Company: Xiamen Uni-Creative Technology Corporation
+* Author:  Leslie(李明)
+* E-Mail:  mli0080@uni-Creative.com
+* Date:    2005-10-18 18:44:07 (中国标准时间)
+*/
+
+#include "SpecialDayForm.hpp"
+#include "label.hpp"
+#include "field.hpp"
+#include "integerchecker.hpp"
+
+CIntegerChecker month_ic(1,12);
+CIntegerChecker day_ic(1,31);
+static CIntegerChecker schedule_ic(1,MAX_SCHEDULE_PLAN_COUNT);
+
+CSpecialDayForm::CSpecialDayForm()
+	:CBaseForm(8,24,0,0)
+{
+	m_CurValue =0;
+	F = new NCursesFormField*[37];
+
+	F[0] = new CLabel("特殊日",0,0);
+	F[1] = new CLabel("  ",0,7);
+	F[2] = new CLabel("  ",0,10);
+	F[3] = new CLabel("  ",0,13);
+	F[4] = new CLabel("  ",0,16);
+	F[5] = new CLabel("  ",0,19);
+	/*
+	F[1] = new CLabel(itoa(m_CurValue*5+1),0,7);
+	F[2] = new CLabel(itoa(m_CurValue*5+2),0,10);
+	F[3] = new CLabel(itoa(m_CurValue*5+3),0,13);
+	F[4] = new CLabel(itoa(m_CurValue*5+4),0,16);
+	F[5] = new CLabel(itoa(m_CurValue*5+5),0,19);
+*/
+	F[6] = new CLabel("起始月",1,0);
+	F[7] = new CField(2,1,7);
+	F[13] = new CField(2,1,10);
+	F[19] = new CField(2,1,13);
+	F[25] = new CField(2,1,16);
+	F[31] = new CField(2,1,19);
+
+	F[12] = new CLabel("起始日",2,0);
+	F[8] = new CField(2,2,7);
+	F[14] = new CField(2,2,10);
+	F[20] = new CField(2,2,13);
+	F[26] = new CField(2,2,16);
+	F[32] = new CField(2,2,19);
+
+	F[18] = new CLabel("结束月",3,0);
+	F[9] = new CField(2,3,7);
+	F[15] = new CField(2,3,10);
+	F[21] = new CField(2,3,13);
+	F[27] = new CField(2,3,16);
+	F[33] = new CField(2,3,19);
+
+	F[24] = new CLabel("结束日",4,0);
+	F[10] = new CField(2,4,7);
+	F[16] = new CField(2,4,10);
+	F[22] = new CField(2,4,13);
+	F[28] = new CField(2,4,16);
+	F[34] = new CField(2,4,19);
+
+	F[30] = new CLabel("方　案",5,0);
+	F[11] = new CField(2,5,7);
+	F[17] = new CField(2,5,10);
+	F[23] = new CField(2,5,13);
+	F[29] = new CField(2,5,16);
+	F[35] = new CField(2,5,19);
+	
+	for(int i=0; i<5; i++){
+		F[7+i*6]->set_fieldtype(month_ic);
+		F[8+i*6]->set_fieldtype(day_ic);
+		F[9+i*6]->set_fieldtype(month_ic);
+		F[10+i*6]->set_fieldtype(day_ic);
+		F[11+i*6]->set_fieldtype(schedule_ic);
+	}
+	F[36] = new NCursesFormField();
+	InitForm(F,TRUE,TRUE);	
+
+	onLoad();
+	setLableValue();
+}
+
+int CSpecialDayForm::onLoad()
+{
+	vm_set_beep_option(&g_vm,1);
+	return vm_get_special_day_table(&g_vm,&m_data);
+}
+
+int CSpecialDayForm::onSave()
+{
+	doSet();
+	vm_set_beep_option(&g_vm,1);
+	return vm_set_special_day_table(&g_vm,&m_data);
+}
+
+int CSpecialDayForm::doSet()
+{
+	// get data from ui and send to mcu	
+
+	m_data.m_day[m_CurValue*5].m_start_month = (byte)atoi(F[7]->value());
+	m_data.m_day[m_CurValue*5+1].m_start_month = (byte)atoi(F[13]->value());
+	m_data.m_day[m_CurValue*5+2].m_start_month = (byte)atoi(F[19]->value());
+	m_data.m_day[m_CurValue*5+3].m_start_month = (byte)atoi(F[25]->value());
+	m_data.m_day[m_CurValue*5+4].m_start_month = (byte)atoi(F[31]->value());
+
+	m_data.m_day[m_CurValue*5].m_start_day = (byte)atoi(F[8]->value());
+	m_data.m_day[m_CurValue*5+1].m_start_day = (byte)atoi(F[14]->value());
+	m_data.m_day[m_CurValue*5+2].m_start_day = (byte)atoi(F[20]->value());
+	m_data.m_day[m_CurValue*5+3].m_start_day = (byte)atoi(F[26]->value());
+	m_data.m_day[m_CurValue*5+4].m_start_day = (byte)atoi(F[32]->value());
+
+	m_data.m_day[m_CurValue*5].m_end_month = (byte)atoi(F[9]->value());
+	m_data.m_day[m_CurValue*5+1].m_end_month = (byte)atoi(F[15]->value());
+	m_data.m_day[m_CurValue*5+2].m_end_month = (byte)atoi(F[21]->value());
+	m_data.m_day[m_CurValue*5+3].m_end_month = (byte)atoi(F[27]->value());
+	m_data.m_day[m_CurValue*5+4].m_end_month = (byte)atoi(F[33]->value());
+
+	m_data.m_day[m_CurValue*5].m_end_day = (byte)atoi(F[10]->value());
+	m_data.m_day[m_CurValue*5+1].m_end_day = (byte)atoi(F[16]->value());
+	m_data.m_day[m_CurValue*5+2].m_end_day = (byte)atoi(F[22]->value());
+	m_data.m_day[m_CurValue*5+3].m_end_day = (byte)atoi(F[28]->value());
+	m_data.m_day[m_CurValue*5+4].m_end_day = (byte)atoi(F[34]->value());
+
+	m_data.m_day[m_CurValue*5].m_schedule = (byte)atoi(F[11]->value());
+	m_data.m_day[m_CurValue*5+1].m_schedule = (byte)atoi(F[17]->value());
+	m_data.m_day[m_CurValue*5+2].m_schedule = (byte)atoi(F[23]->value());
+	m_data.m_day[m_CurValue*5+3].m_schedule = (byte)atoi(F[29]->value());
+	m_data.m_day[m_CurValue*5+4].m_schedule = (byte)atoi(F[35]->value());
+
+	return 0;
+}
+int CSpecialDayForm::doGet()
+{
+	// get data from mcu and set to ui
+
+
+	F[7]->set_value(itoa(m_data.m_day[m_CurValue*5].m_start_month));
+	F[13]->set_value(itoa(m_data.m_day[m_CurValue*5+1].m_start_month));
+	F[19]->set_value(itoa(m_data.m_day[m_CurValue*5+2].m_start_month));
+	F[25]->set_value(itoa(m_data.m_day[m_CurValue*5+3].m_start_month));
+	F[31]->set_value(itoa(m_data.m_day[m_CurValue*5+4].m_start_month));
+
+	F[8]->set_value(itoa(m_data.m_day[m_CurValue*5].m_start_day));
+	F[14]->set_value(itoa(m_data.m_day[m_CurValue*5+1].m_start_day));
+	F[20]->set_value(itoa(m_data.m_day[m_CurValue*5+2].m_start_day));
+	F[26]->set_value(itoa(m_data.m_day[m_CurValue*5+3].m_start_day));
+	F[32]->set_value(itoa(m_data.m_day[m_CurValue*5+4].m_start_day));
+
+	F[9]->set_value(itoa(m_data.m_day[m_CurValue*5].m_end_month));
+	F[15]->set_value(itoa(m_data.m_day[m_CurValue*5+1].m_end_month));
+	F[21]->set_value(itoa(m_data.m_day[m_CurValue*5+2].m_end_month));
+	F[27]->set_value(itoa(m_data.m_day[m_CurValue*5+3].m_end_month));
+	F[33]->set_value(itoa(m_data.m_day[m_CurValue*5+4].m_end_month));
+
+	F[10]->set_value(itoa(m_data.m_day[m_CurValue*5].m_end_day));
+	F[16]->set_value(itoa(m_data.m_day[m_CurValue*5+1].m_end_day));
+	F[22]->set_value(itoa(m_data.m_day[m_CurValue*5+2].m_end_day));
+	F[28]->set_value(itoa(m_data.m_day[m_CurValue*5+3].m_end_day));
+	F[34]->set_value(itoa(m_data.m_day[m_CurValue*5+4].m_end_day));
+
+	F[11]->set_value(itoa(m_data.m_day[m_CurValue*5].m_schedule));
+	F[17]->set_value(itoa(m_data.m_day[m_CurValue*5+1].m_schedule));
+	F[23]->set_value(itoa(m_data.m_day[m_CurValue*5+2].m_schedule));
+	F[29]->set_value(itoa(m_data.m_day[m_CurValue*5+3].m_schedule));
+	F[35]->set_value(itoa(m_data.m_day[m_CurValue*5+4].m_schedule));
+
+	return 0;
+}
+
+int CSpecialDayForm::onPageUp()
+{
+	doSet();
+	if(m_CurValue > 0)
+		m_CurValue--;
+	setLableValue();
+	return 0;
+}
+int CSpecialDayForm::onPageDown()
+{
+	doSet();
+	if(m_CurValue < (MAX_SPECIAL_DAY_COUNT/5)-1)
+		m_CurValue++;
+	setLableValue();
+	return 0;
+}
+void     CSpecialDayForm::setLableValue(void)
+{
+	F[1]->set_value(itoa(m_CurValue*5+1));
+	F[2]->set_value(itoa(m_CurValue*5+2));
+	F[3]->set_value(itoa(m_CurValue*5+3));
+	F[4]->set_value(itoa(m_CurValue*5+4));
+	F[5]->set_value(itoa(m_CurValue*5+5));
+	doGet();
+}
+

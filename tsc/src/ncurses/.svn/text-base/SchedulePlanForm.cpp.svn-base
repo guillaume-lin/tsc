@@ -1,0 +1,198 @@
+/* @(#)SchedulePlanForm.cpp
+* Company: Xiamen Uni-Creative Technology Corporation
+* Author:  Leslie(李明)
+* E-Mail:  mli0080@uni-Creative.com
+* Date:    2005-10-19 15:35:00 (中国标准时间)
+*/
+
+#include "SchedulePlanForm.hpp"
+#include "label.hpp"
+#include "field.hpp"
+#include "integerchecker.hpp"
+
+static CIntegerChecker plan_count_ic(1,MAX_SCHEDULE_PLAN_COUNT);
+static CIntegerChecker hour_ic(0,23);
+static CIntegerChecker minute_ic(0,59);
+static CIntegerChecker phase_ic(0,255);//MAX_PHASE_PLAN_COUNT);
+static CIntegerChecker timming_ic(0,255);
+
+CSchedulePlanForm::CSchedulePlanForm()
+	:CBaseForm(8,24,0,0)
+{
+	m_CurValue =0;
+	m_Index = 0;
+	F = new NCursesFormField*[29];
+	F[0] = new CLabel("时段方案",0,0);
+	
+	F[1] = new CLabel("*方案号",0,12);
+	F[2] = new CField(2,0,19);
+	m_Monitor.set_form(this);
+	F[2]->set_fieldtype(m_Monitor);
+
+	F[3] = new CLabel("编号:",1,0);
+	F[4] = new CLabel("  ",1,9);
+	F[5] = new CLabel("  ",1,12);
+	F[6] = new CLabel("  ",1,15);
+	F[7] = new CLabel("  ",1,18);
+	/*
+	F[4] = new CLabel(itoa(m_CurValue*4+1),2,7);
+	F[5] = new CLabel(itoa(m_CurValue*4+2),2,11);
+	F[6] = new CLabel(itoa(m_CurValue*4+3),2,15);
+	F[7] = new CLabel(itoa(m_CurValue*4+4),2,19);
+*/
+	F[8] = new CLabel("起始时:",2,0);
+	F[9]  = new CField(2,2,9);
+	F[14] = new CField(2,2,12);
+	F[19] = new CField(2,2,15);
+	F[24] = new CField(2,2,18);
+
+	F[13] = new CLabel("起始分:",3,0);
+	F[10] = new CField(2,3,9);
+	F[15] = new CField(2,3,12);
+	F[20] = new CField(2,3,15);
+	F[25] = new CField(2,3,18);
+
+	F[18] = new CLabel("相位方案",4,0);
+	F[11] = new CField(3,4,9);
+	F[16] = new CField(3,4,12);
+	F[21] = new CField(3,4,15);
+	F[26] = new CField(3,4,18);
+
+	F[23] = new CLabel("配时方案",5,0);
+	F[12] = new CField(2,5,9);
+	F[17] = new CField(2,5,12);
+	F[22] = new CField(2,5,15);
+	F[27] = new CField(2,5,18);
+
+	for(int i=0; i<4; i++){
+		F[9+i*5]->set_fieldtype(hour_ic);
+		F[10+i*5]->set_fieldtype(minute_ic);
+		F[11+i*5]->set_fieldtype(phase_ic);
+		F[12+i*5]->set_fieldtype(timming_ic);
+	}
+
+	F[28] = new NCursesFormField();
+	InitForm(F,TRUE,TRUE);	
+	//keypad(TRUE);
+	//doGet();
+	memset(&m_data,0,sizeof(m_data));
+	onLoad();
+	setLableValue();
+
+}
+int CSchedulePlanForm::onLoad()
+{
+	schedule_plan_t plan;
+	int ret;
+	vm_set_beep_option(&g_vm,1);
+	ret = vm_get_schedule_plan(&g_vm,m_Index+1,&plan);
+	if(ret == 0)
+		memcpy(&m_data[m_Index],&plan,sizeof(schedule_plan_t));
+	return ret;
+}
+int CSchedulePlanForm::onSave()
+{
+	doSet();
+	vm_set_beep_option(&g_vm,1);
+	return vm_set_schedule_plan(&g_vm,&m_data[m_Index],m_Index+1);
+}
+int CSchedulePlanForm::doSet()
+{
+	// get data from ui and send to mcu
+	
+	//m_data.m_lamp_group_count = (byte)atoi(F[2]->value());
+
+	m_data[m_Index].m_hour[m_CurValue*4]   = (byte)atoi(F[9]->value());
+	m_data[m_Index].m_hour[m_CurValue*4+1] = (byte)atoi(F[14]->value());
+	m_data[m_Index].m_hour[m_CurValue*4+2] = (byte)atoi(F[19]->value());
+	m_data[m_Index].m_hour[m_CurValue*4+3] = (byte)atoi(F[24]->value());
+
+	m_data[m_Index].m_minute[m_CurValue*4]   = (byte)atoi(F[10]->value());
+	m_data[m_Index].m_minute[m_CurValue*4+1] = (byte)atoi(F[15]->value());
+	m_data[m_Index].m_minute[m_CurValue*4+2] = (byte)atoi(F[20]->value());
+	m_data[m_Index].m_minute[m_CurValue*4+3] = (byte)atoi(F[25]->value());
+
+	m_data[m_Index].m_phase[m_CurValue*4]   = (byte)atoi(F[11]->value());
+	m_data[m_Index].m_phase[m_CurValue*4+1] = (byte)atoi(F[16]->value());
+	m_data[m_Index].m_phase[m_CurValue*4+2] = (byte)atoi(F[21]->value());
+	m_data[m_Index].m_phase[m_CurValue*4+3] = (byte)atoi(F[26]->value());
+
+	m_data[m_Index].m_timming[m_CurValue*4]   = (byte)atoi(F[12]->value());
+	m_data[m_Index].m_timming[m_CurValue*4+1] = (byte)atoi(F[17]->value());
+	m_data[m_Index].m_timming[m_CurValue*4+2] = (byte)atoi(F[22]->value());
+	m_data[m_Index].m_timming[m_CurValue*4+3] = (byte)atoi(F[27]->value());
+	
+	return 0;
+}
+int CSchedulePlanForm::doGet()
+{
+	// get data from mcu and set to ui
+	F[2]->set_value(itoa(m_Index+1));
+
+	F[9]->set_value( itoa(m_data[m_Index].m_hour[m_CurValue*4]  ));
+	F[14]->set_value(itoa(m_data[m_Index].m_hour[m_CurValue*4+1]));
+	F[19]->set_value(itoa(m_data[m_Index].m_hour[m_CurValue*4+2]));
+	F[24]->set_value(itoa(m_data[m_Index].m_hour[m_CurValue*4+3]));
+
+	F[10]->set_value(itoa(m_data[m_Index].m_minute[m_CurValue*4]  ));
+	F[15]->set_value(itoa(m_data[m_Index].m_minute[m_CurValue*4+1]));
+	F[20]->set_value(itoa(m_data[m_Index].m_minute[m_CurValue*4+2]));
+	F[25]->set_value(itoa(m_data[m_Index].m_minute[m_CurValue*4+3]));
+
+	F[11]->set_value(itoa(m_data[m_Index].m_phase[m_CurValue*4]  ));
+	F[16]->set_value(itoa(m_data[m_Index].m_phase[m_CurValue*4+1]));
+	F[21]->set_value(itoa(m_data[m_Index].m_phase[m_CurValue*4+2]));
+	F[26]->set_value(itoa(m_data[m_Index].m_phase[m_CurValue*4+3]));
+
+	F[12]->set_value(itoa(m_data[m_Index].m_timming[m_CurValue*4]  ));
+	F[17]->set_value(itoa(m_data[m_Index].m_timming[m_CurValue*4+1]));
+	F[22]->set_value(itoa(m_data[m_Index].m_timming[m_CurValue*4+2]));
+	F[27]->set_value(itoa(m_data[m_Index].m_timming[m_CurValue*4+3]));
+
+	return 0;
+}
+
+int CSchedulePlanForm::onPageUp()
+{
+	doSet();
+	if(m_CurValue > 0)
+		m_CurValue--;
+	setLableValue();
+	return 0;
+}
+int CSchedulePlanForm::onPageDown()
+{
+	doSet();
+	if(m_CurValue < (MAX_TIME_SEGMENT_COUNT/4)-1)
+		m_CurValue++;
+	setLableValue();
+	return 0;
+}
+void     CSchedulePlanForm::setLableValue(void)
+{
+	F[4]->set_value(itoa(m_CurValue*4+1));
+	F[5]->set_value(itoa(m_CurValue*4+2));
+	F[6]->set_value(itoa(m_CurValue*4+3));
+	F[7]->set_value(itoa(m_CurValue*4+4));
+	doGet();
+}
+int CSchedulePlanForm::onFieldChanged(NCursesFormField& f)
+{
+	int tmp;
+	int   FiledValue = atoi(f.value());
+	if(FiledValue<1  || FiledValue > MAX_SCHEDULE_PLAN_COUNT)
+	{
+		f.set_value(itoa(m_Index+1));
+		//f.set_changed(false);
+		return -1;
+	}
+	tmp = m_Index;
+	m_Index = FiledValue-1;
+	m_CurValue=0;
+	if(onLoad() != 0){
+		m_Index = tmp;
+		f.set_value(itoa(m_Index+1));
+	}
+	setLableValue();
+	return 0;
+}

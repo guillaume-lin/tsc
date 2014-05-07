@@ -1,0 +1,88 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvnvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U sample.my_field_type%b  sample-my_field_type.adb  1ddf1f6a NE PK
+W sample%s		sample.adb		sample.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+
+U sample.my_field_type%s  sample-my_field_type.ads  3ad35518 EE PK
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W sample%s		sample.adb		sample.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+W terminal_interface.curses.forms.field_types.user%s  terminal_interface-curses-forms-field_types-user.adb  terminal_interface-curses-forms-field_types-user.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D sample.ads		20031025153918 f29d090b
+D sample-my_field_type.ads  20031025153918 c6cc1e48
+D sample-my_field_type.adb  20031025153918 a6c89dfa
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-stratt.adb		20020507105159 5475baa8
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-user.ads  20031025153918 7359de83
+D unchconv.ads		20020507105303 1b7a14c5
+X 15 sample.ads
+41K9*Sample 43e11 16|48r9 61r5 17|46r14 65r5
+X 16 sample-my_field_type.ads
+48K16*My_Field_Type 61r12 61e25 17|46b21 65r12 65t25
+50R9*My_Data<35|48R9> 56r33 59r36 17|50r32 58r36
+52e9*Ch 17|60r37
+55V13*Field_Check 17|49b13 54r8 54t19
+55M26 Fld 17|49b26
+56r26 Typ 17|50b26
+58V13*Character_Check 17|57b13 63r8 63t23
+58e30 Ch 17|57b30 62r14
+59r30 Typ 17|58b30 60r33
+X 17 sample-my_field_type.adb
+60e7 C 62r19
+X 31 terminal_interface.ads
+41K9*Terminal_Interface 16|41r6 41r43 42r6 43r5 17|41r6 41r43 31|46e23
+X 32 terminal_interface-curses.ads
+48K28*Curses 16|41r25 41r62 42r25 43r24 17|41r25 41r62 32|1933e30
+X 33 terminal_interface-curses-forms.ads
+48K35*Forms 16|41r32 41r69 42r32 43r31 17|41r32 41r69 33|782e36
+55M9*Field 16|55r33 17|49r32
+X 34 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 16|42r38 43r37 34|239e48
+X 35 terminal_interface-curses-forms-field_types-user.ads
+43K53*User 16|42r50 43r49 35|97e53
+48R9*User_Defined_Field_Type 16|50r24
+

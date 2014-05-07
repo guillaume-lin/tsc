@@ -1,0 +1,133 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvnvnnnnvvnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.panels%b  terminal_interface-curses-panels.adb  be91f0b1 NE PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U terminal_interface.curses.panels%s  terminal_interface-curses-panels.ads  783c214e EE PR PK
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+L "-lpanel"
+L "-lncurses"
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-exctab.adb		20020507105102 82979bb2
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D unchconv.ads		20020507105303 1b7a14c5
+X 5 interfac.ads
+23K9*Interfaces 168e15 18|42r6 46r13
+X 6 i-c.ads
+20K20*C 140e17 18|42r17 46r24
+33I9*int 18|46r26
+X 8 system.ads
+41K9*System 150e11 17|41r6 143r25
+X 13 s-stoele.ads
+26K16*Storage_Elements 91e28 17|143r32
+79M9*Integer_Address 17|143r49
+X 14 terminal_interface.ads
+41K9*Terminal_Interface 46e23 17|43r9 44r25 146r5 18|41r6 41r41 44r14 164r5
+X 15 terminal_interface-curses.ads
+48K28*Curses 1933e30 17|43r28 44r44 146r24 18|41r25 41r60 44r33 164r24
+56M9*Window 17|66r27 71r30 101r45 106r47 111r32 18|48r27 50r32 102r45 104r47
+. 107r13 116r32 119r35
+57M4*Null_Window 18|109r16
+59I9*Line_Position 17|117r32 18|128r32
+60I9*Column_Position 17|118r32 18|129r32
+X 16 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 18|41r32 41r67
+55I12*C_Int 18|64r49 74r46 84r47 94r47 119r50 132r31 133r31 133r45 136r21
+. 136r35 143r50 155r47
+72i4*Curses_Err 18|67r30 77r27 87r28 97r28 122r35 136r53 158r28
+75i4*Curses_False 18|146r31
+X 17 terminal_interface-curses-panels.ads
+43K35*Panels 44r51 146r31 146e37 18|44b40 164r31 164t37
+48M9*Panel 53r26 66r42 71r45 76r31 81r28 86r29 96r29 101r31 106r33 110r32
+. 116r32 123r30 128r26 128r40 133r26 133r40 138r35 143c12 144r29 18|48r42
+. 50r47 53r13 62r31 64r35 72r28 74r32 82r29 84r33 92r29 94r33 102r31 104r33
+. 115r32 118r35 127r32 131r31 141r30 143r36 153r35 155r33
+53M4*Null_Panel 144c7 18|56r16 161r14
+59X4*Panel_Exception 18|57r16 68r16 78r16 88r16 98r16 110r16 123r16 137r16
+. 159r16
+66V13*Create 71r59 18|48b13 60r8 60t14
+66M21 Win 18|48b21 55r24
+71V13*New_Panel 73r19
+71M24 Win
+76U14*Bottom 78r19 18|62b14 70r8 70t14
+76M22 Pan 18|62b22 67r23
+81U14*Top 83r19 18|72b14 80r8 80t11
+81M19 Pan 18|72b19 77r20
+86U14*Show 88r19 18|82b14 90r8 90t12
+86M20 Pan 18|82b20 87r21
+91U14*Update_Panels 93m22
+96U14*Hide 98r19 18|92b14 100r8 100t12
+96M20 Pan 18|92b20 97r21
+101V13*Get_Window 103r19 106r62 18|102b13 113r8 113t18
+101M25 Pan 18|102b25 107r34
+106V13*Panel_Window 107r19
+106M27 Pan
+110U14*Replace 113r19 18|115b14 125r8 125t15
+110M23 Pan 18|115b23 122r23
+111M23 Win 18|116b23 122r28
+116U14*Move 120r19 18|127b14 139r8 139t12
+116M20 Pan 18|127b20 136r16
+117i20 Line 18|128b20 136r28
+118i20 Column 18|129b20 136r42
+123V13*Is_Hidden 125r19 18|141b13 151r8 151t17
+123M24 Pan 18|141b24 146r24
+128V13*Above 130m22
+128M20 Pan
+133V13*Below 135m22
+133M20 Pan
+138U14*Delete 18|153b14 162r8 162t14
+138M22 Pan 18|153b22 158r21 161m7
+X 18 terminal_interface-curses-panels.adb
+50V16*Newpanel 51m25 55r14
+50M26 Win
+53M7 Pan 55m7 56r10 59r14
+64V16*Bottompanel 65m25 67r10
+64M29 Pan
+74V16*Toppanel 75m25 77r10
+74M26 Pan
+84V16*Showpanel 85m25 87r10
+84M27 Pan
+94V16*Hidepanel 95m25 97r10
+94M27 Pan
+104V16*Panel_Win 105m25 107r23
+104M27 Pan
+107M7 Win 109r10 112r14
+118V16*Replace_Pan 120m25 122r10
+118M29 Pan
+119M29 Win
+131V16*Move 134m25 136r10
+131M22 Pan
+132i22 Line
+133i22 Column
+143V16*Panel_Hidden 144m25 146r10
+143M30 Pan
+155V16*Del_Panel 156m25 158r10
+155M27 Pan
+

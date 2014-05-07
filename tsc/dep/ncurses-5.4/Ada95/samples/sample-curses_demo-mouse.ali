@@ -1,0 +1,249 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnvnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U sample.curses_demo.mouse%b  sample-curses_demo-mouse.adb  36162248 NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W sample%s		sample.adb		sample.ali
+W sample.curses_demo%s	sample-curses_demo.adb	sample-curses_demo.ali
+W sample.explanation%s	sample-explanation.adb	sample-explanation.ali
+W sample.function_key_setting%s  sample-function_key_setting.adb  sample-function_key_setting.ali
+W sample.helpers%s	sample-helpers.adb	sample-helpers.ali
+W sample.keyboard_handler%s  sample-keyboard_handler.adb  sample-keyboard_handler.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W system%s		system.ads		system.ali
+W system.img_enum%s	s-imgenu.adb		s-imgenu.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.mouse%s  terminal_interface-curses-mouse.adb  terminal_interface-curses-mouse.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.enumeration_io%s  terminal_interface-curses-text_io-enumeration_io.adb  terminal_interface-curses-text_io-enumeration_io.ali  ED
+W terminal_interface.curses.text_io.integer_io%s  terminal_interface-curses-text_io-integer_io.adb  terminal_interface-curses-text_io-integer_io.ali  ED
+
+U sample.curses_demo.mouse%s  sample-curses_demo-mouse.ads  75af3045 EE NE PK
+W sample%s		sample.adb		sample.ali
+W sample.curses_demo%s	sample-curses_demo.adb	sample-curses_demo.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tienau.ads		20020507104858 a07287f1
+D a-tienio.ads		20020507104858 18c7435c
+D a-tienio.adb		20020507104858 69ccfdaa
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D sample.ads		20031025153918 f29d090b
+D sample-curses_demo.ads  20031025153918 0f81a466
+D sample-curses_demo-mouse.ads  20031025153918 7a2e9423
+D sample-curses_demo-mouse.adb  20031025153918 cb062029
+D sample-explanation.ads  20031025153918 f54fa3cc
+D sample-function_key_setting.ads  20031025153918 a16f228f
+D sample-helpers.ads	20031025153918 a22559f6
+D sample-keyboard_handler.ads  20031025153918 c5f0a79f
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-expuns.ads		20020507105108 28466e32
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgenu.ads		20020507105115 20631dce
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D s-valenu.ads		20020507105211 87644494
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-mouse.ads  20140426095555 73bb89fb
+D terminal_interface-curses-mouse.adb  20031025153918 ec79f2ad
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D terminal_interface-curses-panels.adb  20031025153918 756de4bf
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-enumeration_io.ads  20031025153918 79fe075a
+D terminal_interface-curses-text_io-enumeration_io.adb  20031025153918 d16ae992
+D terminal_interface-curses-text_io-integer_io.ads  20031025153918 abfe0229
+D terminal_interface-curses-text_io-integer_io.adb  20031025153918 3513da4d
+D unchconv.ads		20020507105303 1b7a14c5
+X 31 sample.ads
+41K9*Sample 43e11 33|41r9 45r5 34|48r6 48r26 49r6 49r27 50r6 50r35 51r6 51r39
+. 52r6 52r30 54r14 219r5
+X 32 sample-curses_demo.ads
+41K16*Curses_Demo 45e23 33|41r16 45r12 34|54r21 219r12
+X 33 sample-curses_demo-mouse.ads
+41K28*Mouse 45r24 45e29 34|54b33 219r24 219t29
+43U14*Demo 34|68b14 217r8 217t12
+X 34 sample-curses_demo-mouse.adb
+56K12 Int_IO 58r8
+60K12 Button_IO 62r8
+64K12 State_IO 66r8
+70A12 Controls 74r15
+72M7 Frame 126m7 128r33 132r45 135r17 137r32 138r24 144r12 145r21 146r31
+. 206r14 209m15
+73M7 Msg 96r15 97r15 97r37 98r15 98r37 99r15 99r37 100r15 100r37 105r21 106r21
+. 106r48 107r21 107r48 108r21 108r48 111r20 112r17 137m7 147r24 208m15
+74a7 Ctl 101r19 102r30 151r46 151r59 159r19 176m13 199r16 200r27 202m18
+75M7 Pan 138m7 207m15
+76i7 K 187m10 188r13 189r18
+77e7 V 120m30 211m30
+78M7 W 200m10 201r17 203m18
+79M7 Note 122m7 123r10 124r31
+80i7 Msg_L 126r24 126r47 137r39
+81i7 Lins 124m37 126r40
+82i7 Cols 124m43
+83M7 Mask 142m7 212r18
+84U17 Show_Mouse_Event 86b17 114r11 114t27 193r38
+88R10 Evt 95r21 103r39
+89i10 Y 95m26 98r51 104m42 107r35
+90i10 X 95m29 97r51 104m45 108r35
+91e10 Button 95m32 99r42
+92e10 State 95m40 100r42
+93M10 W 102m13 103r36 104r39
+101i14 I 102r35 106r35
+150i10 Middle_Column 161r48
+151i10 Middle_Index 160r49
+152i10 Width 154r51 161r39 163r26
+153i10 Height 162r26
+154i10 Half 161r24 178r32
+155i10 Space 161r31
+156i10 Position 160m13 165r43
+157M10 W 162m13 167r39 171r51 174r23 176r32 177r18 178r26 179r18 180r37
+159i14 I 160r35 176r18 179r30
+199i11 I 200r32 202r23
+X 35 sample-explanation.ads
+45K16*Explanation 34|52r13 52r37 35|59e23
+47U14*Explain 34|192r38
+50U14*Explain_Context 34|191r38
+53U14*Notepad 34|118r7
+X 36 sample-function_key_setting.ads
+46K16*Function_Key_Setting 34|51r13 51r46 36|82e32
+48U14*Push_Environment 34|117r7
+56U14*Pop_Environment 34|214r7
+76U14*Default_Labels 34|119r7
+79V13*Notepad_Window 34|122r16
+X 37 sample-helpers.ads
+46K16*Helpers 34|48r13 48r33 37|54e19
+48U14*Window_Title 34|145r7
+X 38 sample-keyboard_handler.ads
+47K16*Keyboard_Handler 34|50r13 50r42 38|55e28
+49V13*Get_Key 34|187r15
+X 39 sample-manifest.ads
+43K16*Manifest 34|49r13 49r34 39|67e20
+49i4*HELP_CODE 34|191r21
+51i4*EXPLAIN_CODE 34|192r21
+53i4*QUIT_CODE 34|190r21
+57i4*Default_Colors 34|129r42 134r45
+58i4*Menu_Fore_Color 34|173r51
+59i4*Menu_Back_Color 34|168r48
+X 57 terminal_interface.ads
+41K9*Terminal_Interface 34|41r6 41r37 42r6 42r44 43r6 43r43 44r6 44r45 45r6
+. 46r6 57r6 61r6 65r6 57|46e23
+X 58 terminal_interface-curses.ads
+48K28*Curses 34|41r25 41r56 42r25 42r63 43r25 43r62 44r25 44r64 45r25 46r25
+. 57r25 61r25 65r25 58|1933e30
+56M9*Window 34|72r15 73r15 78r15 79r15 93r19 157r26
+57M4*Null_Window 34|123r18
+59I9*Line_Position 34|81r15 89r19
+60I9*Column_Position 34|82r15 90r19 165r26
+62I12*Line_Count 34|80r24 153r35
+64I12*Column_Count 34|152r35 154r35 155r35
+71I12*Real_Key_Code 34|76r15
+76I12*Special_Key_Code 34|188r18
+202i4*Key_Mouse 34|193r21
+349r4*Normal_Video 34|130r42 133r45 169r48 172r51
+411V13*Lines 34|81r32
+414V13*Columns 34|126r31 137r50 150r55
+504U14*Move_Cursor 34|178r13
+562V13*Create 34|126r16 162r18
+581U14*Delete 34|203r10 208r7 209r7
+597V13*Derived_Window 34|137r16
+713U14*Box 34|144r7 177r13
+810U14*Set_Character_Attributes 34|132r10 171r16
+811M7 Win 34|132r36 171r42
+812r7 Attr 34|133r36 172r42
+813i7 Color 34|134r36 173r42
+897U14*Set_Meta_Mode 34|140r7
+903U14*Set_KeyPad_Mode 34|141r7
+1009U14*Allow_Scrolling 34|147r7
+1033U14*Update_Screen 34|113r25 184r22 215r22
+1045U14*Refresh_Without_Update 34|146r7 180r13
+1067U14*Erase 34|135r10 174r16
+1073U14*Clear 34|201r10 206r7
+1101U14*Set_Background 34|128r10 167r16
+1102M7 Win 34|128r26 167r32
+1103r7 Ch 34|129r26 168r32
+1229U14*Get_Window_Position 34|124r10
+1719V13*Has_Colors 34|127r10 166r16
+1791E9*Cursor_Visibility 34|77r15
+1791n31*Invisible 34|77r36
+1794U14*Set_Cursor_Visibility 34|120r7 211r7
+1806n33*From_Screen 34|104r48
+1807U14*Transform_Coordinates 34|104r16
+X 61 terminal_interface-curses-mouse.ads
+47K35*Mouse 34|43r32 43r69 61|230e36
+63M9*Event_Mask 34|83r15
+67E9*Mouse_Button 34|61r56 91r19
+78E9*Button_State 34|65r56 92r19
+91R9*Mouse_Event 34|88r28 61|174e17
+122V13*Start_Mouse 34|142r15
+127U14*End_Mouse 34|212r7
+132V13*Get_Mouse 34|88r43
+136U14*Get_Event 34|95r10
+153V13*Enclosed_In_Window 34|103r16
+X 63 terminal_interface-curses-panels.ads
+43K35*Panels 34|42r32 42r70 63|146e37
+48M9*Panel 34|70r42 75r15
+66V13*Create 34|138r16 176r24
+91U14*Update_Panels 34|113r10 184r7 215r7
+101V13*Get_Window 34|102r18 200r15
+138U14*Delete 34|202r10 207r7
+X 65 terminal_interface-curses-text_io.ads
+44K35*Text_IO 34|44r32 44r71 45r32 46r32 57r32 61r32 65r32 65|136e38
+65U14*Flush 34|112r10
+86U14*New_Line 34|111r10
+115U14*Put 34|96r10 97r10 98r10 99r10 100r10 105r16 106r43 107r43 108r43
+X 67 terminal_interface-curses-text_io-enumeration_io.ads
+44k43*Enumeration_IO 34|46r40 61r40 65r40 67|63e53
+49U14*Put 34|99r32 100r32
+X 69 terminal_interface-curses-text_io-integer_io.ads
+44k43*Integer_IO 34|45r40 57r40 69|63e49
+49U14*Put 34|97r32 98r32 106r16 107r16 108r16 179r13
+

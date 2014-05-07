@@ -1,0 +1,130 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnvvvnnnnvnnnnnnnnnvnvnnnnnnnvnvnn
+
+U terminal_interface.curses.terminfo%b  terminal_interface-curses-terminfo.adb  44ca2c9e NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U terminal_interface.curses.terminfo%s  terminal_interface-curses-terminfo.ads  15334c80 NE PR PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-terminfo.ads  20031025153918 5a7a429a
+D terminal_interface-curses-terminfo.adb  20031025153918 1e03d64f
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 19|45r6 55r32
+X 3 a-unccon.ads
+22v14*Unchecked_Conversion 19|45r10 55r36
+X 4 interfac.ads
+23K9*Interfaces 168e15 18|42r6 71r42 72r44 19|43r6 43r24 44r6 44r32
+X 5 i-c.ads
+20K20*C 140e17 18|42r17 71r53 72r55 19|43r17 43r35 44r17 44r43
+33I9*int 18|71r55 72r57
+54M9*size_t 19|72r16 90r16 111r16 130r16 147r16
+73A9*char_array 19|69r32 71r16 87r31 89r16 108r31 110r16 127r30 129r16 140r32
+. 143r28 146r16
+88U14*To_C 19|74r7 93r7 114r7 132r7 150r7
+X 6 i-cstrin.ads
+42K22*Strings 105e25 19|44r19 44r45
+47M9*chars_ptr 19|50r41 52r41 56r20 87r50 91r14 108r50 112r14
+51M4*Null_Ptr 19|95r17 116r17
+X 7 system.ads
+41K9*System 150e11 19|53r33
+X 14 s-stoele.ads
+26K16*Storage_Elements 91e28 19|53r40
+79M9*Integer_Address 19|53r57
+X 15 terminal_interface.ads
+41K9*Terminal_Interface 46e23 18|44r9 45r25 81r5 19|42r6 42r41 47r14 161r5
+X 16 terminal_interface-curses.ads
+48K28*Curses 1933e30 18|44r28 45r44 81r24 19|42r25 42r60 47r33 161r24
+382X4*Curses_Exception 19|98r16 119r16 157r16
+1930M9 Curses_Bool 19|69r51 75r28
+X 17 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 19|42r32 42r67
+55I12*C_Int 19|127r49 141r32 142r49 143r47 148r13 154r29
+72i4*Curses_Err 19|156r16
+74i4*Curses_True 19|75r41
+121V13*Fill_String 19|100r37
+X 18 terminal_interface-curses-terminfo.ads
+44K35*Terminfo 45r51 81r31 81e39 19|47b40 161r31 161t39
+54A9*Terminfo_String 58r39 76r35 19|84r39 100r20 137r35
+57U14*Get_String 19|83b14 103r8 103t18
+57s26 Name 19|83b26 89r33 93r13
+58a26 Value 19|84b26 100m10
+59b26 Result 19|85b26 96m10 101m10
+60V13*Has_String 19|106b13 123r8 123t18
+60s25 Name 19|106b25 110r33 114r13
+64V13*Get_Flag 19|67b13 80r8 80t16
+64s23 Name 19|67b23 71r33 74r13
+68V13*Get_Number 19|126b13 134r8 134t18
+68s25 Name 19|126b25 129r33 132r13
+71P9*putctype 73r26 78r35 19|139r35 142r32
+71i38 c
+76U14*Put_String 19|137b14 159r8 159t18
+76a26 Str 19|137b26 146r33 150r21
+77i26 affcnt 19|138b26 154r36
+78p26 putc 19|139b26 151r10 154r45
+X 19 terminal_interface-curses-terminfo.adb
+50V13 Is_MinusOne_Pointer 52b13 63r8 63t27 64r19 97r13 118r13
+50M34 P 52b34 58r20
+53M12 Weird_Address<14|79M9> 54r34 56r41
+54m7 Invalid_Pointer 58r25
+55V16 To_Weird 58r10
+69V16*tigetflag 70m25 75r10
+69a27 id
+71a7 Txt 74m19 75r21
+72m7 Length 74m24
+87V16*tigetstr 88m25 94r15
+87a26 id
+89a7 Txt 93m19 94r25
+90m7 Length 93m24
+91M7 Txt2 94m7 95r10 97r34 100r50
+108V16*tigetstr 109m25 115r15
+108a26 id
+110a7 Txt 114m19 115r25
+111m7 Length 114m24
+112M7 Txt2 115m7 116r10 118r34
+127V16*tigetstr 128m25 133r23
+127a26 s
+129a7 Txt 132m19 133r33
+130m7 Length 132m24
+140V16*tputs 144m25 154r17
+140a23 str
+141i23 affcnt
+142p23 putc
+143V16*putp 145m25 152r17
+143a22 str
+146a7 Txt 150m27 152r23 154r24
+147m7 Length 150m32
+148i7 Err 152m10 154m10 156r10
+

@@ -1,0 +1,69 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.machine_code%s	s-maccod.ads		b3f2e2aa NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-maccod.ads		20020507105122 f1886293
+X 1 system.ads
+41K9*System 150e11 2|40r9 134r5
+X 2 s-maccod.ads
+40K16*Machine_Code 41r14 134r12 134e24
+43I9*Asm_Input_Operand 48r34 52r34 78r17 85r17 108r17 116r17 125c9 131r34
+44I9*Asm_Output_Operand 49r34 55r34 70r17 84r17 99r17 115r17 126c9 132r34
+48I4*No_Input_Operands 78r38 85r39 108r38 116r39 131c4
+49I4*No_Output_Operands 70r39 84r39 99r39 115r39 132c4
+51A9*Asm_Input_Operand_List 64r17 71r17 92r17 100r17
+54A9*Asm_Output_Operand_List 63r17 77r17 91r17 107r17
+57I9*Asm_Insn 95r17 103r17 111r17 119r17 127c9
+61U14*Asm
+62s6 Template
+63a6 Outputs
+64a6 Inputs
+65s6 Clobber
+66b6 Volatile
+68U14*Asm
+69s6 Template
+70I6 Outputs
+71a6 Inputs
+72s6 Clobber
+73b6 Volatile
+75U14*Asm
+76s6 Template
+77a6 Outputs
+78I6 Inputs
+79s6 Clobber
+80b6 Volatile
+82U14*Asm
+83s6 Template
+84I6 Outputs
+85I6 Inputs
+86s6 Clobber
+87b6 Volatile
+89V13*Asm
+90s6 Template
+91a6 Outputs
+92a6 Inputs
+93s6 Clobber
+94b6 Volatile
+97V13*Asm
+98s6 Template
+99I6 Outputs
+100a6 Inputs
+101s6 Clobber
+102b6 Volatile
+105V13*Asm
+106s6 Template
+107a6 Outputs
+108I6 Inputs
+109s6 Clobber
+110b6 Volatile
+113V13*Asm 121m30
+114s6 Template
+115I6 Outputs
+116I6 Inputs
+117s6 Clobber
+118b6 Volatile
+

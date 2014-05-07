@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1081"
+   name=""
+   committed-date="2007-07-03T09:45:15.563362Z"
+   url="http://192.168.0.200/svn/signal_machine/old/src/pc104"
+   last-author="ucljx@126.com"
+   kind="dir"
+   uuid="bb11895a-0a80-49e8-a201-d944e284a252"
+   repos="http://192.168.0.200/svn"
+   revision="3719"/>
+<entry
+   committed-rev="1081"
+   name="repeater.c"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="a56321f29fad19b45cc08c6cea9ec278"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+<entry
+   committed-rev="1081"
+   name="readme.txt"
+   text-time="2008-04-03T00:55:08.000000Z"
+   committed-date="2007-07-03T09:45:15.563362Z"
+   checksum="03575b6d9dd1965bd6f132975cf373f1"
+   last-author="ucljx@126.com"
+   kind="file"
+   prop-time="2008-04-03T00:55:08.000000Z"/>
+</wc-entries>

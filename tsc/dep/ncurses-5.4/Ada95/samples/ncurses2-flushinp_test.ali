@@ -1,0 +1,123 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvnvnn
+
+U ncurses2.flushinp_test%b  ncurses2-flushinp_test.adb  e0895b90 NE PU SU IL
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U ncurses2.flushinp_test%s  ncurses2-flushinp_test.ads  be53ab1a EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-flushinp_test.ads  20001202223138 5e1aa2dc
+D ncurses2-flushinp_test.adb  20001202223138 d0b30310
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgint.ads		20020507105116 f1ba8463
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 25 ncurses2.ads
+42K9*ncurses2 44e13 26|43r11 27|42r6 42r25 44r11 135r5
+X 26 ncurses2-flushinp_test.ads
+43U20*flushinp_test 27|44b20 135r14 135t27
+43M35 win 27|44b35 63r11 64r14 65r25 68r26 81r13 84r9 86r9 87r9 90r13 102r11
+. 104r13 107r9 109r9 111r9 113r9 114r17 115r13 117r13 119r9 121r14 123r17
+. 124r22 125r13 126r17 128r9 131r14
+X 27 ncurses2-flushinp_test.adb
+46U14 Continue 48b14 55r8 55t16 121r4 131r4
+46M24 win 48b24 51r20 52r12 53r16 54r16
+57i4 h 64m19 67r10 68r44
+57i7 by 65m30 68r39
+57i11 sh 67m4 68r31 68r48
+58i4 w 64m22 66r10 68r61
+58i7 bx 65m34 68r56
+58i11 sw 66m4 68r35 68r65
+60M4 subWin 68m4 72r26 77r30 79r9 80r9 93r20 94r12 95r12 96r16 101m12
+92i8 i 95r42
+X 28 ncurses2-util.ads
+44K18*util 27|42r15 42r34 28|78e18
+59U14*Getchar 27|54r7 117r4
+X 43 terminal_interface.ads
+41K9*Terminal_Interface 26|41r6 43r41 27|41r6 41r37 43|46e23
+X 44 terminal_interface-curses.ads
+48K28*Curses 26|41r25 43r60 27|41r25 41r56 44|1933e30
+56M9*Window 26|43r67 27|44r41 46r30 48r30 60r13
+59I9*Line_Position 27|57r16
+60I9*Column_Position 27|58r16
+288i4*Blue 27|71r27
+290i4*Cyan 27|71r21
+349r4*Normal_Video 27|74r56
+351R9*Attributed_Character 27|73r26 44|356e17
+504U14*Move_Cursor 27|51r7 93r7 114r4 123r4 126r4
+581U14*Delete 27|101r4
+587V13*Sub_Window 27|68r14
+646U14*Add 27|94r7 95r7 128r4
+647s19 Str 27|94r20 95r20
+655U14*Add 27|52r7 80r4 84r4 86r4 87r4 107r4 109r4 111r4 113r4 119r4
+658s19 Str 27|108r9
+713U14*Box 27|79r4
+810U14*Set_Character_Attributes 27|77r4
+868U14*Flash_Screen 27|103r4
+879U14*Set_Cbreak_Mode 27|83r4 133r4
+891U14*Set_Echo_Mode 27|50r7 116r4
+1038U14*Refresh 27|53r7 81r4 90r4 96r7 104r4 115r4 125r4
+1067U14*Erase 27|102r4
+1073U14*Clear 27|63r4
+1087U14*Clear_To_End_Of_Line 27|127r4
+1109U14*Change_Background 27|72r7
+1221U14*Get_Size 27|64r4
+1229U14*Get_Window_Position 27|65r4
+1327U14*Delete_Character 27|124r4
+1631U14*Flush_Input 27|98r7 118r4
+1705U14*Init_Pair 27|71r7
+1719V13*Has_Colors 27|70r7
+1799U14*Nap_Milli_Seconds 27|97r7 105r4
+

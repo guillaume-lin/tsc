@@ -1,0 +1,47 @@
+如何进行ncurses编程
+
+下面主要描述如何使用ncurses的C++封装进行编程。
+1。类简介
+ncurses的C++封装主要包含如下类:
+
+NCursesApplication
+	应用类
+NCursesMenu
+	菜单类，包含菜单项
+NCursesMenuItem
+	菜单项
+NCursesForm
+	框体，包含字段
+NCursesFormField
+	字段，可以用来显示文字，获取用户输入
+
+2。程序框架
+用C++编写ncurses程序的框架如下：
+首先从NCursesApplication里面继承一个新类，重载NCursesApplication的run方法。
+在run方法里面创建NCursesMenu的菜单实例，在每个菜单项的动作处理程序里面创建
+NCursesForm的实例，NCursesForm的实例则通过创建NCursesFormField的实例来提供
+类似mfc的label,edit control的显示，输入字段。用户就可以在字段里进行输入操
+作。
+3。事件处理
+ncurses的事件处理包括鼠标事件和键盘事件。此处只讲键盘输入的处理。
+如果用户要处理菜单的键盘事件，那就要在NCureseMenu的子类里面重载virtualize(int c)
+函数，在应用程序收到一个按键的时候，都会调用virtualize(int c)函数。对于NCursesForm
+也是一样，子类可以通过重载virtualize(int c)来进行按键处理。
+
+4。函数halfdelay(int t)
+函数halfdelay用来设定等待按键事件的超时值，单位为十分之一秒。当按键超时发生时，
+virtualize(int c)函数中的参数c的值将为ERR，表示一个按键超时发生。用户程序可以
+通过这个函数设定一个超时值，用来定时处理事务。
+
+5。汉字显示处理
+ncurese由于在显示字符的时候通过标准c的函数isprint判断字符是否可以显示，这样导致
+汉字被认为是不可显示字符，菜单项和字段里有汉字时，ncurese会抛出异常。解决方法是
+找到相应的源代码，注释掉可打印字符的判断，重新编译整个库。可以考虑向ncurese的维护
+者反映这个问题，以期得到解决。
+
+具体位置为（所给文件路径相对于ncurses的源代码目录树)
+1. menu/m_item_new.c :void Is_Printable_String(const char *s)
+   这里面判断菜单标题是否为可打印字符，汉字被认为不可打印2. form/frm_driver.c : void set_field_buffer
+(FIELD * field, int buffer, const char * value)
+   这里面判断字段值是否为可大印字符
+

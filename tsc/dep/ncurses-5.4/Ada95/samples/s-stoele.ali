@@ -1,0 +1,55 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnn
+
+U system.storage_elements%b  s-stoele.adb	a4e49d90 NE PK
+W system%s		system.ads		system.ali
+W unchecked_conversion%s
+
+U system.storage_elements%s  s-stoele.ads	84c47094 NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stoele.adb		20020507105159 792079f8
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 system.ads
+41K9*System 150e11 2|26r9 91r5 3|37r14 88r5
+67M9*Address 2|49r25 49r65 54r49 54r65 59r25 59r65 64r32 70r15 81r57 86r33
+. 3|41r69 42r53 46r25 46r65 51r49 51r65 56r25 56r65 61r32 66r27 70r33 70r51
+. 72r34 72r52 78r57 80r14 83r33
+70N4*Storage_Unit 2|40r37 41r33 45r41
+72N4*Memory_Size 2|79r32
+X 2 s-stoele.ads
+26K16*Storage_Elements 27r14 91r12 91e28 3|37b21 88r12 88t28
+31I9*Storage_Offset 38r29 38r55 44r13 49r42 54r25 59r42 64r48 71r15 72r15
+. 3|41r53 42r62 46r42 51r25 56r42 61r48 66r44 67r13 70r17 72r18
+38I12*Storage_Count
+40M9*Storage_Element 41r8 44r49
+43A9*Storage_Array 45r8
+49V13*"+" 3|46b13
+49M18 Left 3|46b18 48r14
+49i34 Right 3|46b34 48r33
+54V13*"+" 3|51b13
+54i18 Left 3|51b18 53r26
+54M41 Right 3|51b41 53r34
+59V13*"-" 3|56b13
+59M18 Left 3|56b18 58r14
+59i34 Right 3|56b34 58r33
+64V13*"-" 3|61b13
+64M18 Left 3|61b18 63r25
+64M24 Right 3|61b24 63r32
+69V13*"mod" 3|66b13
+70M7 Left 3|66b20 70r42 72r43
+71i7 Right 3|66b36 69r10 70r60 72r62
+79M9*Integer_Address 81r33 86r49 3|78r33 83r49 85r14
+81V13*To_Address 82r34 83r19 84r26 3|78b13 81r8 81t18
+81m25 Value 3|78b25 80r23
+86V13*To_Integer 87r34 88r19 89r26 3|83b13 86r8 86t18
+86M25 Value 3|83b25 85r31
+X 3 s-stoele.adb
+41V13 To_Address 48r21 53r14 58r21
+42V13 To_Offset 63r14
+X 4 unchconv.ads
+22v10*Unchecked_Conversion 3|36r6 41r31 42r31
+

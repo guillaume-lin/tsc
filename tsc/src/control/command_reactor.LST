@@ -1,0 +1,685 @@
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE COMMAND_REACTOR
+OBJECT MODULE PLACED IN command_reactor.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE command_reactor.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * command_reactor.c
+   3           * 
+   4            * 
+   5           * 
+   6          * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-08 09:46:21 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "string.h"
+  15          #include "command_reactor.h"
+  16          #include "kernel.h"
+  17          #include "codec.h"
+  18          #include "io.h"
+  19          #include "util.h"
+  20          
+  21          //w
+  22          extern int save_green_conflict();
+  23          //w
+  24          
+  25          #ifdef __C51__
+  26          extern bit f_buzz;              
+  27          #endif
+  28          
+  29          command_reactor_t g_command_reactor2,g_command_reactor7,g_command_reactor8, g_command_reactor128;       //added 
+             -by kuilin 加入sock通讯支持
+  30          typedef int (*command_handler_t)(command_reactor_t* self);
+  31          typedef struct {
+  32                  byte m_cmd;
+  33                  command_handler_t m_handler;
+  34          } command_handler_entry_t;
+  35          
+  36          /**
+  37           * 未知命令的处理函数
+  38           */
+  39          static int handle_unsupport_command(command_reactor_t* self)
+  40          {
+  41   1              self->m_frame.m_command = 0x00;
+  42   1              frame_set_data_len(&self->m_frame,0);
+  43   1              return 0;
+  44   1      }
+  45          
+  46          int handle_set_system_time(command_reactor_t* self);
+  47          int handle_set_system_param(command_reactor_t* self);
+  48          int handle_set_lamp_group_setting(command_reactor_t* self);
+  49          int handle_set_detector_setting(command_reactor_t* self);
+  50          int handle_set_phase_plan(command_reactor_t* self);
+  51          int handle_set_timming_plan(command_reactor_t* self);
+  52          int handle_set_schedule_plan(command_reactor_t* self);
+  53          int handle_set_special_day_table(command_reactor_t* self);
+  54          int handle_set_current_control_mode(command_reactor_t* self);
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 2   
+
+  55          int handle_set_multiple_schedule_control_param(command_reactor_t* self);
+  56          int handle_set_comm_param(command_reactor_t* self);
+  57          int handle_set_actuate_control_param(command_reactor_t* self);
+  58          int handle_set_cordless_coordinate_control_param(command_reactor_t* self);
+  59          
+  60          int handle_get_system_time(command_reactor_t* self);
+  61          int handle_get_system_param(command_reactor_t* self);
+  62          int handle_get_lamp_group_setting(command_reactor_t* self);
+  63          int handle_get_detector_setting(command_reactor_t* self);
+  64          int handle_get_phase_plan(command_reactor_t* self);
+  65          int handle_get_timming_plan(command_reactor_t* self);
+  66          int handle_get_schedule_plan(command_reactor_t* self);
+  67          int handle_get_special_day_table(command_reactor_t* self);
+  68          int handle_get_machine_status(command_reactor_t* self);
+  69          int handle_get_current_control_mode(command_reactor_t* self);
+  70          int handle_get_multiple_schedule_control_param(command_reactor_t* self);
+  71          int handle_get_comm_param(command_reactor_t* self);
+  72          int handle_get_detector_counter(command_reactor_t* self);
+  73          int handle_get_detector_status(command_reactor_t* self);
+  74          int handle_get_detector_health(command_reactor_t* self);
+  75          int handle_get_lamp_health(command_reactor_t* self);
+  76          int handle_get_volume_occupy(command_reactor_t* self);
+  77          int handle_get_actuate_control_param(command_reactor_t* self);
+  78          int handle_get_cordless_coordinate_control_param(command_reactor_t* self);
+  79          
+  80          int handle_do_step_forward(command_reactor_t* self);
+  81          int handle_do_step_keep(command_reactor_t* self);
+  82          int handle_mcu_send_key(command_reactor_t* self);
+  83          int handle_get_key_val(command_reactor_t* self);
+  84          
+  85          int handle_get_green_conflict(command_reactor_t* self);
+  86          int handle_set_green_conflict(command_reactor_t* self);
+  87          
+  88          /**
+  89           * 命令处理函数数组
+  90           */
+  91          static 
+  92          #ifdef __C51__
+  93          code            // C51需要把下面的表定义到code里面,要不然find_handler没法找到handler
+  94          #endif
+  95          command_handler_entry_t command_handler_map[] = 
+  96          {
+  97                  {CMD_SET_SYSTEM_TIME,handle_set_system_time},
+  98                  {CMD_SET_SYSTEM_PARAM,handle_set_system_param},
+  99                  {CMD_SET_LAMP_GROUP_SETTING,handle_set_lamp_group_setting},
+ 100                  {CMD_SET_DETECTOR_SETTING,handle_set_detector_setting},
+ 101                  {CMD_SET_PHASE_PLAN,handle_set_phase_plan},
+ 102                  {CMD_SET_TIMMING_PLAN,handle_set_timming_plan},
+ 103                  {CMD_SET_SCHEDULE_PLAN,handle_set_schedule_plan},
+ 104                  {CMD_SET_SPECIAL_DAY_TABLE,handle_set_special_day_table},
+ 105                  {CMD_SET_CURRENT_CONTROL_MODE,handle_set_current_control_mode},
+ 106                  {CMD_SET_MULTIPLE_SCHEDULE_CONTROL_PARAM,handle_set_multiple_schedule_control_param},
+ 107                  {CMD_SET_COMM_PARAM,handle_set_comm_param},
+ 108                  {CMD_SET_ACTUATE_CONTROL_PARAM,handle_set_actuate_control_param},
+ 109                  {CMD_SET_CORDLESS_COORDINATE_CONTROL_PARAM,handle_set_cordless_coordinate_control_param},
+ 110                          
+ 111                  {CMD_GET_SYSTEM_TIME,handle_get_system_time},
+ 112                  {CMD_GET_SYSTEM_PARAM,handle_get_system_param},
+ 113                  {CMD_GET_LAMP_GROUP_SETTING,handle_get_lamp_group_setting},
+ 114                  {CMD_GET_DETECTOR_SETTING,handle_get_detector_setting},
+ 115                  {CMD_GET_PHASE_PLAN,handle_get_phase_plan},
+ 116                  {CMD_GET_TIMMING_PLAN,handle_get_timming_plan},
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 3   
+
+ 117                  {CMD_GET_SCHEDULE_PLAN,handle_get_schedule_plan},
+ 118                  {CMD_GET_SPECIAL_DAY_TABLE,handle_get_special_day_table},
+ 119                  {CMD_GET_MACHINE_STATUS,handle_get_machine_status},
+ 120                  {CMD_GET_CURRENT_CONTROL_MODE,handle_get_current_control_mode},
+ 121                  {CMD_GET_MULTIPLE_SCHEDULE_CONTROL_PARAM,handle_get_multiple_schedule_control_param},
+ 122                  {CMD_GET_COMM_PARAM,handle_get_comm_param},
+ 123                  {CMD_GET_DETECTOR_COUNTER,handle_get_detector_counter},
+ 124                  {CMD_GET_DETECTOR_STATUS,handle_get_detector_status},
+ 125                  {CMD_GET_DETECTOR_HEALTH,handle_get_detector_health},
+ 126                  {CMD_GET_LAMP_HEALTH,handle_get_lamp_health},
+ 127                  {CMD_GET_VOLUME_OCCUPY,handle_get_volume_occupy},
+ 128                  {CMD_GET_ACTUATE_CONTROL_PARAM,handle_get_actuate_control_param},
+ 129                  {CMD_GET_CORDLESS_COORDINATE_CONTROL_PARAM,handle_get_cordless_coordinate_control_param},
+ 130          
+ 131                  {CMD_DO_STEP_FORWARD,handle_do_step_forward},
+ 132                  {CMD_DO_STEP_KEEP, handle_do_step_keep},
+ 133                  {CMD_MCU_SEND_KEY, handle_mcu_send_key},
+ 134                  {CMD_GET_KEY_VAL,handle_get_key_val},
+ 135                  {CMD_GET_GREEN_CONFLICT,handle_get_green_conflict},
+ 136                  {CMD_SET_GREEN_CONFLICT,handle_set_green_conflict},
+ 137          };
+ 138          
+ 139          static command_handler_t find_handler(byte cmd)
+ 140          {
+ 141   1              int i;
+ 142   1              for(i=0; i<sizeof(command_handler_map)/sizeof(command_handler_entry_t);
+ 143   1                              i++){
+ 144   2                      if(command_handler_map[i].m_cmd == cmd)
+ 145   2                              return command_handler_map[i].m_handler;
+ 146   2              }
+ 147   1              return handle_unsupport_command;
+ 148   1      }
+ 149          
+ 150          /**
+ 151           * 初始化
+ 152           */
+ 153          int init_command_reactor(command_reactor_t* self)
+ 154          {
+ 155   1              self->m_fd = -1;
+ 156   1              init_frame(&self->m_frame,&self->m_frame_data);
+ 157   1              init_key_buffer(&self->m_key_buffer);
+ 158   1              return 0;
+ 159   1      }
+ 160          
+ 161          // 处理通信命令
+ 162          int reactor_handle_command(command_reactor_t* self)
+ 163          {
+ 164   1              int ret;
+ 165   1              int fd = self->m_fd;
+ 166   1      
+ 167   1              ret = read_frame(fd,&self->m_frame);
+ 168   1      
+ 169   1              if(ret > 0){
+ 170   2      //              byte temp[5];
+ 171   2                      
+ 172   2                      byte cmd = self->m_frame.m_command;
+ 173   2                      command_handler_t handler;
+ 174   2                      // 调用命令处理函数, cmd 即为命令ID
+ 175   2                      handler = find_handler(cmd);
+ 176   2      //              display_status(cmd,cmd);
+ 177   2      
+ 178   2      #ifdef __C51__
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 4   
+
+ 179   2                      if ((self->m_frame.m_reserve & 0x01) == 0x01) {
+ 180   3      //                      *temp = self->m_frame.m_header;
+ 181   3      //                      *(temp+1) = self->m_frame.m_command;
+ 182   3      //                      *(temp+2) = self->m_frame.m_reserve;
+ 183   3      //                      *(temp+3) = self->m_frame.m_data_len;
+ 184   3      //                      *(temp+4) = self->m_frame.m_checksum;
+ 185   3      //                      write_comm(2,temp,5);
+ 186   3                              f_buzz = 1;
+ 187   3                              }
+ 188   2      #endif
+ 189   2              
+ 190   2                      handler(self);
+ 191   2                      ret = write_frame(fd,&self->m_frame);
+ 192   2              }
+ 193   1      
+ 194   1              return ret;
+ 195   1      }
+ 196          
+ 197          /**
+ 198           * 填充接收正确的应答
+ 199           */
+ 200          static int fill_ok_response(frame_t* frame)
+ 201          {
+ 202   1              frame->m_command = get_response_cmd(frame->m_command);
+ 203   1              frame_set_data_len(frame,0);
+ 204   1              return 0;
+ 205   1      }
+ 206          /**
+ 207           * 填充接收错误的应答
+ 208           */
+ 209          static int fill_error_response(frame_t* frame)
+ 210          {
+ 211   1              frame->m_command = 0x00;
+ 212   1              frame_set_data_len(frame,0);
+ 213   1              return 0;
+ 214   1      }
+ 215          
+ 216          /**
+ 217           * 系统时间
+ 218           */
+ 219          int handle_set_system_time(command_reactor_t* self)
+ 220          {
+ 221   1              date_time_t dt;
+ 222   1              decode_set_system_time_req(&dt,&self->m_frame);
+ 223   1      
+ 224   1              // 设置系统时间
+ 225   1              if(set_system_time(&dt) == 0)
+ 226   1                      fill_ok_response(&self->m_frame);
+ 227   1              else
+ 228   1                      fill_error_response(&self->m_frame);
+ 229   1      
+ 230   1              return 0;
+ 231   1      }
+ 232          int handle_get_system_time(command_reactor_t* self)
+ 233          {
+ 234   1              date_time_t dt;
+ 235   1              dt.m_year[0]  = g_controller_status.m_year[0];
+ 236   1              dt.m_year[1] = g_controller_status.m_year[1];
+ 237   1              dt.m_month = g_controller_status.m_month;
+ 238   1              dt.m_day   = g_controller_status.m_day;
+ 239   1              dt.m_hour  = g_controller_status.m_hour;
+ 240   1              dt.m_minute = g_controller_status.m_minute;
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 5   
+
+ 241   1              dt.m_second = g_controller_status.m_second;
+ 242   1              dt.m_weekday = g_controller_status.m_week;
+ 243   1              encode_get_system_time_res(&dt,&self->m_frame);
+ 244   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 245   1      
+ 246   1              return 0;
+ 247   1      }
+ 248          
+ 249          int handle_set_system_param(command_reactor_t* self)
+ 250          {
+ 251   1              decode_set_system_param_req(&g_config.m_system_param,&self->m_frame);
+ 252   1              save_system_param();
+ 253   1              fill_ok_response(&self->m_frame);
+ 254   1              return 0;
+ 255   1      }
+ 256          int handle_get_system_param(command_reactor_t* self)
+ 257          {
+ 258   1              encode_get_system_param_res(&g_config.m_system_param,&self->m_frame);
+ 259   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 260   1              return 0;
+ 261   1      }
+ 262          
+ 263          int handle_set_lamp_group_setting(command_reactor_t* self)
+ 264          {
+ 265   1              decode_set_lamp_group_setting_req(&g_config.m_lamp_group_setting,&self->m_frame);
+ 266   1      //0921  init_special_schedule_data();
+ 267   1              save_lamp_group_setting();
+ 268   1              fill_ok_response(&self->m_frame);
+ 269   1              return 0;
+ 270   1      }
+ 271          int handle_get_lamp_group_setting(command_reactor_t* self)
+ 272          {
+ 273   1              encode_get_lamp_group_setting_res(&g_config.m_lamp_group_setting,&self->m_frame);
+ 274   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 275   1              return 0;
+ 276   1      }
+ 277          int handle_set_detector_setting(command_reactor_t* self)
+ 278          {
+ 279   1              decode_set_detector_setting_req(&g_config.m_detector_setting,&self->m_frame);
+ 280   1              save_detector_setting();
+ 281   1              fill_ok_response(&self->m_frame);
+ 282   1              return 0;
+ 283   1      }
+ 284          int handle_get_detector_setting(command_reactor_t* self)
+ 285          {
+ 286   1              encode_get_detector_setting_res(&g_config.m_detector_setting,&self->m_frame);
+ 287   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 288   1              return 0;
+ 289   1      }
+ 290          
+ 291          /**
+ 292           *  设置相位方案
+ 293           */
+ 294          int handle_set_phase_plan(command_reactor_t* self)
+ 295          {
+ 296   1      //w     static phase_plan_t phase_plan;
+ 297   1              int plan_no;
+ 298   1              int step_count;
+ 299   1              int step;
+ 300   1              stage_t phase;
+ 301   1              decode_set_phase_plan_req(&plan_no,&step_count,&step,&phase,&self->m_frame);
+ 302   1      
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 6   
+
+ 303   1              g_config.m_phase_table[plan_no-1].m_stage_count = step_count;
+ 304   1              g_config.m_phase_table[plan_no-1].m_stage[step-1] = phase;
+ 305   1      
+ 306   1              /*
+ 307   1              phase_plan.m_step = step_count;
+ 308   1              phase_plan.m_phase[step-1] = phase;
+ 309   1      
+ 310   1              if(step_count == step){
+ 311   1                      // 设置完了最后一步
+ 312   1                      // TODO: 验证相位方案
+ 313   1                      g_config.m_phase_table[plan_no-1] = phase_plan;
+ 314   1                      save_phase_plan(plan_no);
+ 315   1              }
+ 316   1              */
+ 317   1              save_phase_plan(plan_no,step);
+ 318   1              fill_ok_response(&self->m_frame);
+ 319   1              return 0;
+ 320   1      }
+ 321          int handle_get_phase_plan(command_reactor_t* self)
+ 322          {
+ 323   1              int plan_no;
+ 324   1              int step;
+ 325   1              stage_plan_t* phase_plan;
+ 326   1              decode_get_phase_plan_req(&plan_no,&step,&self->m_frame);
+ 327   1      
+ 328   1              if(plan_no > MAX_PHASE_PLAN_COUNT || step > MAX_STEP_COUNT){
+ 329   2                      fill_error_response(&self->m_frame);
+ 330   2                      return 0;
+ 331   2              }
+ 332   1              phase_plan = &g_config.m_phase_table[plan_no - 1];
+ 333   1              /*
+ 334   1              if(g_config.m_phase_table[plan_no - 1].m_step < step){
+ 335   1                      fill_error_response(&self->m_frame);
+ 336   1                      return 0;
+ 337   1              }
+ 338   1              */
+ 339   1      
+ 340   1              phase_plan = &g_config.m_phase_table[plan_no -1 ];
+ 341   1              encode_get_phase_plan_res(phase_plan->m_stage_count,
+ 342   1                                        &phase_plan->m_stage[step -1],&self->m_frame);
+ 343   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 344   1              return 0;
+ 345   1      }
+ 346          
+ 347          int handle_set_timming_plan(command_reactor_t* self)
+ 348          {
+ 349   1              int plan_no;
+ 350   1              timming_plan_t timming;
+ 351   1              decode_set_timming_plan_req(&plan_no,&timming,&self->m_frame);
+ 352   1      
+ 353   1              if(plan_no < 1 || plan_no > MAX_TIMMING_PLAN_COUNT){
+ 354   2                      fill_error_response(&self->m_frame);
+ 355   2                      return 0;
+ 356   2              }
+ 357   1      
+ 358   1              g_config.m_timming_table[plan_no - 1] = timming;
+ 359   1              save_timming_plan(plan_no);
+ 360   1              fill_ok_response(&self->m_frame);
+ 361   1              return 0;
+ 362   1      }
+ 363          int handle_get_timming_plan(command_reactor_t* self)
+ 364          {
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 7   
+
+ 365   1              int plan_no;
+ 366   1              decode_get_timming_plan_req(&plan_no,&self->m_frame);
+ 367   1      
+ 368   1              if(plan_no < 1 || plan_no > MAX_TIMMING_PLAN_COUNT){
+ 369   2                      fill_error_response(&self->m_frame);
+ 370   2                      return 0;
+ 371   2              }
+ 372   1              encode_get_timming_plan_res(&g_config.m_timming_table[plan_no-1],&self->m_frame);
+ 373   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 374   1              return 0;
+ 375   1      }
+ 376          int handle_set_schedule_plan(command_reactor_t* self)
+ 377          {
+ 378   1              int plan_no;
+ 379   1              schedule_plan_t schedule;
+ 380   1              decode_set_schedule_plan_req(&plan_no,&schedule,&self->m_frame);
+ 381   1              g_config.m_schedule_table[plan_no-1] = schedule;
+ 382   1              save_schedule_plan(plan_no);
+ 383   1              fill_ok_response(&self->m_frame);
+ 384   1              return 0;
+ 385   1      }
+ 386          int handle_get_schedule_plan(command_reactor_t* self)
+ 387          {
+ 388   1              int plan_no;
+ 389   1              decode_get_schedule_plan_req(&plan_no,&self->m_frame);
+ 390   1              encode_get_schedule_plan_res(&g_config.m_schedule_table[plan_no-1],&self->m_frame);
+ 391   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 392   1              return 0;
+ 393   1      }
+ 394          int handle_set_special_day_table(command_reactor_t* self)
+ 395          {
+ 396   1              decode_set_special_day_table_req(&g_config.m_special_day_table,&self->m_frame);
+ 397   1              save_special_day();
+ 398   1              fill_ok_response(&self->m_frame);
+ 399   1              return 0;
+ 400   1      }
+ 401          int handle_get_special_day_table(command_reactor_t* self)
+ 402          {
+ 403   1              encode_get_special_day_table_res(&g_config.m_special_day_table,&self->m_frame);
+ 404   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 405   1              return 0;
+ 406   1      }
+ 407          int handle_set_comm_param(command_reactor_t* self)
+ 408          {
+ 409   1              int port_no;
+ 410   1              comm_param_t param;
+ 411   1              decode_set_comm_param_req(&port_no,&param,&self->m_frame);
+ 412   1              if(port_no < 1 || port_no > MAX_COMM_COUNT){
+ 413   2                      fill_error_response(&self->m_frame);
+ 414   2                      return 0;
+ 415   2              }
+ 416   1              g_config.m_comm_param[port_no - 1] = param;
+ 417   1              save_comm_param(port_no);
+ 418   1              fill_ok_response(&self->m_frame);
+ 419   1              return 0;
+ 420   1      }
+ 421          
+ 422          int handle_get_comm_param(command_reactor_t* self)
+ 423          {
+ 424   1              int port_no;
+ 425   1      
+ 426   1              decode_get_comm_param_req(&port_no,&self->m_frame);
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 8   
+
+ 427   1              if(port_no < 1 || port_no > MAX_COMM_COUNT){
+ 428   2                      fill_error_response(&self->m_frame);
+ 429   2              }
+ 430   1              encode_get_comm_param_res(&g_config.m_comm_param[port_no-1],&self->m_frame);
+ 431   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 432   1              return 0;
+ 433   1      }
+ 434          
+ 435          int handle_get_machine_status(command_reactor_t* self)
+ 436          {
+ 437   1              machine_status_t status;
+ 438   1              machine_status_t* s1;
+ 439   1              controller_status_t* s2;
+ 440   1              s1 = &status;
+ 441   1              s2 = &g_controller_status;
+ 442   1      
+ 443   1              // 从g_controller_status组装machine_status_t
+ 444   1              s1->m_is_degraded = s2->m_is_degraded;
+ 445   1              s1->m_second      = s2->m_second;
+ 446   1              s1->m_minute      = s2->m_minute;
+ 447   1              s1->m_hour        = s2->m_hour;
+ 448   1              s1->m_week        = s2->m_week;
+ 449   1              s1->m_day         = s2->m_day;
+ 450   1              s1->m_month       = s2->m_month;
+ 451   1              s1->m_year[0]     = s2->m_year[0];
+ 452   1              s1->m_year[1]     = s2->m_year[1];
+ 453   1              s1->m_designate_control_mode = s2->m_designate_control_mode;
+ 454   1              s1->m_actual_control_mode = s2->m_actual_control_mode;
+ 455   1              s1->m_schedule    =     s2->m_schedule;
+ 456   1              s1->m_timming     =     s2->m_timming;
+ 457   1              s1->m_phase       =     s2->m_phase;
+ 458   1              s1->m_step        =     s2->m_step;
+ 459   1              s1->m_elapse_time       = s2->m_elapse_time;
+ 460   1              s1->m_assign_time       = s2->m_assign_time;
+ 461   1              s1->m_remain_time       = s2->m_remain_time;
+ 462   1              
+ 463   1              s1->m_current_lamp_status = s2->m_current_lamp_status;
+ 464   1              get_detector_status(&s1->m_current_detector_status);
+ 465   1              get_detector_counter(&s1->m_current_detector_counter);
+ 466   1      
+ 467   1              get_detector_health(&s1->m_detector_health);
+ 468   1              get_lamp_health(&s1->m_lamp_health);
+ 469   1      
+ 470   1              s1->m_command   = s2->m_command;
+ 471   1              s1->m_error = s2->m_error;
+ 472   1      
+ 473   1              s1->m_temperature_integer = s2->m_temperature/10;
+ 474   1              s1->m_temperature_decimal = s2->m_temperature%10;
+ 475   1      
+ 476   1              encode_get_machine_status_res(&status,&self->m_frame);
+ 477   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 478   1              return 0;
+ 479   1      }
+ 480          
+ 481          int handle_set_current_control_mode(command_reactor_t* self)
+ 482          {
+ 483   1              decode_set_current_control_mode_req(&g_config.m_control_mode_selection,&self->m_frame);
+ 484   1              save_control_mode_selection();
+ 485   1              fill_ok_response(&self->m_frame);
+ 486   1              return 0;
+ 487   1      }
+ 488          int handle_get_current_control_mode(command_reactor_t* self)
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 9   
+
+ 489          {
+ 490   1              encode_get_current_control_mode_res(&g_config.m_control_mode_selection,&self->m_frame);
+ 491   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 492   1              return 0;
+ 493   1      }
+ 494          int handle_set_multiple_schedule_control_param(command_reactor_t* self)
+ 495          {
+ 496   1              multiple_schedule_control_param_t* param;
+ 497   1              param = &g_config.m_multiple_schedule_control_param;
+ 498   1              decode_set_multiple_schedule_control_param_req(param,&self->m_frame);
+ 499   1              save_multiple_schedule_control_param();
+ 500   1              fill_ok_response(&self->m_frame);
+ 501   1              return 0;
+ 502   1      }
+ 503          int handle_get_multiple_schedule_control_param(command_reactor_t* self)
+ 504          {
+ 505   1              encode_get_multiple_schedule_control_param_res(&g_config.m_multiple_schedule_control_param,&self->m_frame
+             -);
+ 506   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 507   1              return 0;
+ 508   1      }
+ 509          
+ 510          // 步进
+ 511          int handle_do_step_forward(command_reactor_t* self)
+ 512          {
+ 513   1              g_controller_status.m_command = STEP_FORWARD;
+ 514   1              g_controller_status.m_step_forward_button_state = 1;
+ 515   1              fill_ok_response(&self->m_frame);
+ 516   1              return 0;
+ 517   1      }
+ 518          // 保持
+ 519          int handle_do_step_keep(command_reactor_t* self)
+ 520          {
+ 521   1              g_controller_status.m_command = STEP_KEEP;
+ 522   1              fill_ok_response(&self->m_frame);
+ 523   1              return 0;
+ 524   1      }
+ 525          // 强制灯色
+ 526          int handle_do_lamp_status(command_reactor_t* self)
+ 527          {
+ 528   1              g_controller_status.m_command = DIRECT_PHASE;
+ 529   1      
+ 530   1              decode_do_lamp_status_req(&g_controller_status.m_direct_phase,&self->m_frame);
+ 531   1              fill_ok_response(&self->m_frame);
+ 532   1              return 0;
+ 533   1      }
+ 534          int handle_get_detector_counter(command_reactor_t* self)
+ 535          {
+ 536   1              detector_counter_t counter;
+ 537   1              get_detector_counter(&counter);
+ 538   1              encode_get_detector_counter_res(&counter,&self->m_frame);
+ 539   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 540   1              return 0;
+ 541   1      }
+ 542          int handle_get_detector_status(command_reactor_t* self)
+ 543          {
+ 544   1              detector_status_t status;
+ 545   1              get_detector_status(&status);
+ 546   1              encode_get_detector_status_res(&status,&self->m_frame);
+ 547   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 548   1              return 0;
+ 549   1      }
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 10  
+
+ 550          int handle_get_detector_health(command_reactor_t* self)
+ 551          {
+ 552   1              detector_health_t health;
+ 553   1              get_detector_health(&health);
+ 554   1              encode_get_detector_health_res(&health,&self->m_frame);
+ 555   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 556   1              return 0;
+ 557   1      }
+ 558          int handle_get_lamp_health(command_reactor_t* self)
+ 559          {
+ 560   1              lamp_health_t health;
+ 561   1              get_lamp_health(&health);
+ 562   1              encode_get_lamp_health_res(&health,&self->m_frame);
+ 563   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 564   1              return 0;
+ 565   1      }
+ 566          int handle_get_volume_occupy(command_reactor_t* self)
+ 567          {
+ 568   1              encode_get_volume_occupy_res(&g_volume_occupy,&self->m_frame);
+ 569   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 570   1              return 0;
+ 571   1      }
+ 572          
+ 573          int handle_set_actuate_control_param(command_reactor_t* self)
+ 574          {
+ 575   1              decode_set_actuate_control_param_req(&g_config.m_actuate_control_param,&self->m_frame);
+ 576   1              save_actuate_control_param();
+ 577   1              fill_ok_response(&self->m_frame);
+ 578   1              return 0;
+ 579   1      }
+ 580          int handle_get_actuate_control_param(command_reactor_t* self)
+ 581          {
+ 582   1              encode_get_actuate_control_param_res(&g_config.m_actuate_control_param,&self->m_frame);
+ 583   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 584   1              return 0;
+ 585   1      }
+ 586          
+ 587          int handle_set_cordless_coordinate_control_param(command_reactor_t* self)
+ 588          {
+ 589   1              decode_set_cordless_coordinate_control_param_req(&g_config.m_cordless_coordinate_control_param,&self->m_f
+             -rame);
+ 590   1              save_cordless_coordinate_control_param();
+ 591   1              fill_ok_response(&self->m_frame);
+ 592   1              return 0;
+ 593   1      }
+ 594          int handle_get_cordless_coordinate_control_param(command_reactor_t* self)
+ 595          {
+ 596   1              encode_get_cordless_coordinate_control_param_res(&g_config.m_cordless_coordinate_control_param,&self->m_f
+             -rame);
+ 597   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 598   1              return 0;
+ 599   1      }
+ 600          int handle_mcu_send_key(command_reactor_t* self)
+ 601          {
+ 602   1              // 如果缓冲区满了,丢弃掉最早的缓冲区
+ 603   1              if(is_buffer_full(&self->m_key_buffer))
+ 604   1                      get_buffer_key(&self->m_key_buffer);
+ 605   1      
+ 606   1              put_buffer_key(&self->m_key_buffer,self->m_frame.m_data_p->m_data[0]);
+ 607   1      
+ 608   1              fill_ok_response(&self->m_frame);
+ 609   1      
+C51 COMPILER V7.09   COMMAND_REACTOR                                                       04/25/2008 16:22:11 PAGE 11  
+
+ 610   1              return 0;
+ 611   1      }
+ 612          
+ 613          int handle_get_key_val(command_reactor_t* self)
+ 614          {
+ 615   1              if (key_count!=0x00) {
+ 616   2                      self->m_frame.m_data_p->m_data[0] = key_buf[key_count-1];
+ 617   2                      key_count--;
+ 618   2                      }
+ 619   1              else self->m_frame.m_data_p->m_data[0] = 0x00;
+ 620   1              frame_set_data_len(&self->m_frame,1);
+ 621   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 622   1              return 0;       
+ 623   1      }
+ 624          
+ 625          int handle_get_green_conflict(command_reactor_t* self)
+ 626          {
+ 627   1              memcpy(self->m_frame.m_data_p->m_data,&g_config.m_green_conflict,sizeof(green_conflict_t));
+ 628   1              frame_set_data_len(&self->m_frame,sizeof(green_conflict_t));
+ 629   1              self->m_frame.m_command = get_response_cmd(self->m_frame.m_command);
+ 630   1              return 0;
+ 631   1      }
+ 632          int handle_set_green_conflict(command_reactor_t* self)
+ 633          {
+ 634   1              memcpy(&g_config.m_green_conflict,self->m_frame.m_data_p->m_data,sizeof(green_conflict_t));
+ 635   1              save_green_conflict();
+ 636   1              fill_ok_response(&self->m_frame);
+ 637   1              return 0;
+ 638   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   5483    ----
+   CONSTANT SIZE    =    152    ----
+   XDATA SIZE       =   2116     466
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

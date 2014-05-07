@@ -1,0 +1,32 @@
+   type Field_Option_Set is
+      record
+         Visible     : Boolean;
+         Active      : Boolean;
+         Public      : Boolean;
+         Edit        : Boolean;
+         Wrap        : Boolean;
+         Blank       : Boolean;
+         Auto_Skip   : Boolean;
+         Null_Ok     : Boolean;
+         Pass_Ok     : Boolean;
+         Static      : Boolean;
+      end record;
+   pragma Pack (Field_Option_Set);
+   pragma Convention (C, Field_Option_Set);
+
+   for Field_Option_Set use
+      record
+         Visible     at 0 range  0 ..  0;
+         Active      at 0 range  1 ..  1;
+         Public      at 0 range  2 ..  2;
+         Edit        at 0 range  3 ..  3;
+         Wrap        at 0 range  4 ..  4;
+         Blank       at 0 range  5 ..  5;
+         Auto_Skip   at 0 range  6 ..  6;
+         Null_Ok     at 0 range  7 ..  7;
+         Pass_Ok     at 0 range  8 ..  8;
+         Static      at 0 range  9 ..  9;
+      end record;
+   for Field_Option_Set'Size use 32;
+   --  Please note: this rep. clause is generated and may be
+   --               different on your system.

@@ -1,0 +1,217 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnvnnnnnvvvvnvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U sample.keyboard_handler%b  sample-keyboard_handler.adb  2a47a56e NE PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+W ada.strings.maps.constants%s  a-stmaco.ads	a-stmaco.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W sample%s		sample.adb		sample.ali
+W sample.form_demo%s	sample-form_demo.adb	sample-form_demo.ali
+W sample.form_demo.aux%s  sample-form_demo-aux.adb  sample-form_demo-aux.ali
+W sample.form_demo.handler%s  sample-form_demo-handler.adb  sample-form_demo-handler.ali
+W sample.header_handler%s  sample-header_handler.adb  sample-header_handler.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+W terminal_interface.curses.forms.field_types.enumeration%s  terminal_interface-curses-forms-field_types-enumeration.adb  terminal_interface-curses-forms-field_types-enumeration.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+U sample.keyboard_handler%s  sample-keyboard_handler.ads  86d35ea6 EE NE PK
+W sample%s		sample.adb		sample.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chahan.adb		20020507104823 7da8cef0
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-stmaco.ads		20020507104844 8b7c2e37
+D a-tags.ads		20020507104854 bc792b69
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D sample.ads		20031025153918 f29d090b
+D sample-form_demo.ads	20031025153918 c5c3149c
+D sample-form_demo-aux.ads  20031025153918 2d67eb44
+D sample-form_demo-handler.ads  20031025153918 7e1e7470
+D sample-form_demo-handler.adb  20031025153918 0142c71f
+D sample-header_handler.ads  20031025153918 2c0afe4c
+D sample-keyboard_handler.ads  20031025153918 c5f0a79f
+D sample-keyboard_handler.adb  20031025153918 77c2ff35
+D sample-manifest.ads	20031025153918 448d6845
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms.adb  20031025153918 04e92484
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-enumeration.ads  20031025153918 7ed009d9
+D terminal_interface-curses-forms-field_types-enumeration.adb  20031025153918 312b64e5
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 30|41r6 41r23 42r6 42r29 43r6 43r38 44r6 44r34 45r6 45r35
+X 2 a-charac.ads
+19K13*Characters 22e19 30|44r10 44r38 45r10 45r39
+X 3 a-chahan.ads
+41K24*Handling 136e28 30|45r21 45r50
+70V13*To_Upper 30|114r36
+X 5 a-chlat1.ads
+18K24*Latin_1 297e27 30|44r21 44r49
+35e4*LF 30|105r25
+38e4*CR 30|105r41
+X 10 a-string.ads
+18K13*Strings 32e16 30|41r10 41r27 42r10 42r33 43r10 43r42
+30n24*Left 30|112r39 135r31
+X 11 a-strfix.ads
+43K21*Fixed 256e22 30|42r18 42r41
+120U14*Translate 30|136r13
+199U14*Trim 30|112r25 135r13
+X 12 a-strmap.ads
+42K21*Maps 424e21 30|43r18 43r50
+X 14 a-stmaco.ads
+42K26*Constants 918e31 30|43r23 43r55
+60A4*Upper_Case_Map 30|136r36
+X 23 sample.ads
+41K9*Sample 43e11 29|47r9 55r5 30|52r6 52r33 53r6 53r32 54r6 54r27 55r6 62r14
+. 78r28 191r5
+X 24 sample-form_demo.ads
+41K16*Form_Demo 45e21 30|53r13 53r39 55r13 78r35
+X 25 sample-form_demo-aux.ads
+45K26*Aux 92e25 30|53r23 53r49
+73V13*Make 30|85r13
+78V13*Make 30|86r13
+79i20 Width 30|86r40
+80i20 Top 30|86r19
+81i20 Left 30|86r29
+X 26 sample-form_demo-handler.ads
+52k26*Handler 64e29 30|55r23 78r45
+54U14 Drive_Me 30|160r19
+60U14 Drive_Me 30|160r19
+X 28 sample-header_handler.ads
+45K16*Header_Handler 53e26 30|52r13 52r40
+50U14*Update_Header_Window 30|175r13
+X 29 sample-keyboard_handler.ads
+47K16*Keyboard_Handler 55r12 55e28 30|62b21 191r12 191t28
+49V13*Get_Key 30|66b13 184r8 184t15
+49M22 Win 30|66b22 171r25 173r30
+52U14*Init_Keyboard_Handler 30|186b14 189r8 189t29
+X 30 sample-keyboard_handler.adb
+64b4 In_Command 132m10 166m10 176r35
+68i7 K 173m10 174r13 176r16 177m13 178r23 183r14
+70V16 Command 73b16 168r11 168t18 177r18
+75V19 My_Driver 78r54 92b19 129r14 129t23
+75M30 F 92b30 99r27 106r30
+76i30 C 93b30 98r16 98r50 103r19 104r37
+77M30 P 94b30
+78K18 Fh 160r16
+80A15 Label_Array 82r19
+82a10 Labels 115r37 116r41 134m36 135m19 136m24 137r16 151r22 152r57
+84p10 FA 111r44 147r38 157r32 158r32 165m16
+89i10 K 100m19 117m34 167r17
+90i10 N 138m16 138r21 141r13 143r49
+96e13 Ch 104m16 105r20 105r36
+108a25 Buffer 111m59 112m31 113r28 114r46
+109a25 Cmdc 114m28 114r54 116r34
+115i32 I 116r49 118r58
+133i14 I 134r33 134r44 135r27 136r32 137r24
+143r16 Enum_Info 145r32 152m22 156r38
+144r16 Enum_Field 156m16 157r40
+145i16 J 152r39 153m22 153r27
+147M16 Frm 160r29 161m24
+150i20 I 151r30 152r65
+X 31 sample-manifest.ads
+43K16*Manifest 30|54r13 54r34 31|67e20
+45i4*QUIT 30|98r54
+X 45 terminal_interface.ads
+41K9*Terminal_Interface 29|41r6 41r37 30|47r6 47r44 48r6 48r43 49r6 50r6
+. 45|46e23
+X 46 terminal_interface-curses.ads
+48K28*Curses 29|41r25 41r56 30|47r25 47r63 48r25 48r62 49r25 50r25 46|1933e30
+56M9*Window 29|49r28 30|66r28
+67I9*Key_Code 30|76r34 93r34
+71I12*Real_Key_Code 29|49r62 30|66r62 68r11 70r31 73r31 89r15
+80I12*Normal_Key_Code 30|103r24
+86i4*Key_None 30|89r32 100r24 174r17 178r28
+208I12*User_Key_Code 30|98r21
+349r4*Normal_Video 30|158r40
+411V13*Lines 30|160r34
+414V13*Columns 30|86r49 108r57
+474V13*Standard_Window 29|49r38 30|66r38
+744V13*Get_Keystroke 30|173r15
+771I12*Function_Key_Number 30|118r37
+779V13*Function_Key_Code 30|117r39
+942n50*Delayed 30|171r30
+945U14*Set_Timeout_Mode 30|171r7
+1033U14*Update_Screen 30|162r31
+1488I9*Label_Number 30|80r37 133r19 150r25
+1515U14*Get_Soft_Label_Key 30|134r13
+X 49 terminal_interface-curses-forms.ads
+48K35*Forms 30|48r32 48r69 49r32 50r32 49|782e36
+56M9*Form 30|75r34 92r34 147r22
+58M4*Null_Field 30|87r13
+132A9*Field_Array 30|84r41
+135P9*Field_Array_Access 30|84r15
+137U14*Free 30|165r10
+208i4*F_Validate_Field 30|99r30 106r33
+364U14*Get_Buffer 30|111r25
+365M7 Fld 30|111r37
+367s7 Str 30|111r52
+448U14*Set_Background 30|158r16
+625V13*Create 30|147r30
+636U14*Delete 30|161r16
+707n27*Form_Ok 30|99r50 106r53
+713V13*Driver 30|99r19 106r22
+X 51 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 30|49r38 50r38 51|239e48
+X 52 terminal_interface-curses-forms-field_types-enumeration.ads
+43K53*Enumeration 30|49r50 50r50 52|98e60
+55R9*Enumeration_Info 30|143r31 52|60e17
+62R9*Enumeration_Field 30|144r31
+64V13*Create 30|156r30
+84U14*Set_Field_Type 30|157r16
+X 54 terminal_interface-curses-panels.ads
+43K35*Panels 30|47r32 47r70 54|146e37
+48M9*Panel 30|77r34 94r34
+91U14*Update_Panels 30|162r16
+

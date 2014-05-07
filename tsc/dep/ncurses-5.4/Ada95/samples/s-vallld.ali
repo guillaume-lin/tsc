@@ -1,0 +1,37 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnnnnnn
+
+U system.val_lld%b	s-vallld.adb		f05e5964 NE PK
+W system%s		system.ads		system.ali
+W system.exn_llf%s	s-exnllf.ads		s-exnllf.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+
+U system.val_lld%s	s-vallld.ads		dfdc8c92 NE PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-exngen.ads		20020507105103 8326a4b5
+D s-exnllf.ads		20020507105103 9339715f
+D s-vallld.ads		20020507105212 9da60cab
+D s-vallld.adb		20020507105212 edc5038d
+D s-valrea.ads		20020507105213 803d5642
+X 1 system.ads
+41K9*System 150e11 4|40r9 87r5 5|36r6 36r27 38r14 77r5
+X 4 s-vallld.ads
+40K16*Val_LLD 41r14 87r12 87e19 5|38b21 77r12 77t19
+43V13*Scan_Long_Long_Decimal 5|48b13 60r8 60t30
+44s7 Str 5|49b7 58r25
+45p7 Ptr 5|50b7 58r30
+46i7 Max 5|51b7 58r35
+47i7 Scale 5|52b7 59r47
+76V13*Value_Long_Long_Decimal 5|68b13 75r8 75t31
+77s7 Str 5|69b7 74r45
+78i7 Scale 5|70b7 74r60
+X 5 s-vallld.adb
+55f7 Val 58m7 59r33
+X 6 s-valrea.ads
+36K16*Val_Real 5|36r13 36r34 6|75e20
+39V13*Scan_Real 5|58r14
+69V13*Value_Real 5|74r33
+

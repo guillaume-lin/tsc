@@ -1,0 +1,156 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvvnnnnnnnnnnvnnnnnnnvnvnn
+
+U ncurses2.genericputs%b  ncurses2-genericputs.adb  67a69f44 NE PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+
+U ncurses2.genericputs%s  ncurses2-genericputs.ads  7b74f593 EE NE PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-genericputs.ads  20001202223139 4ea315f2
+D ncurses2-genericputs.adb  20001202223138 f3d62840
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 24|42r6 42r23 43r6 44r5 56r6 25|41r6 41r23 42r6 42r31 92r18
+. 92r40
+X 9 a-string.ads
+18K13*Strings 32e16 24|43r10 44r9 56r10 25|42r10 42r35 92r22 92r44
+30E9*Trim_End 25|92r30
+30n24*Left 25|92r52
+X 10 a-strbou.ads
+42K21*Bounded 467e24 24|43r18 44r17 56r18 25|42r18 42r43
+49k12*Generic_Bounded_Length 465e30 24|56r26
+51i7 Max_Length 25|64r38 65r27 69r15 71r14 88r29 111r13
+53R12 Bounded_String 24|62r34 65r34 70r30 72r61 25|54r34 84r35 95r30 102r40
+55R7 Null_Bounded_String 25|121r17
+65V16 To_Bounded_String 25|79r14 91r14 118r20
+70V16 To_String 25|97r19
+357U17 Trim 25|92r7
+X 15 a-textio.ads
+51K13*Text_IO 442e16 24|42r10 42r27 25|41r10 41r27
+81I12*Number_Base 24|67r31 25|86r35
+X 17 a-tiinio.ads
+49k21*Integer_IO 88e27 25|87r29
+79U14 Put 25|90r7
+X 19 interfac.ads
+23K9*Interfaces 168e15 24|45r6 45r24 46r6 46r32 25|47r6 47r24 48r6 48r32
+. 74r18
+X 20 i-c.ads
+20K20*C 140e17 24|45r17 45r35 46r17 46r43 25|47r17 47r35 48r17 48r43 74r29
+33I9*int 25|60r32 60r44
+54M9*size_t 25|64r30
+66E9*char 25|74r31
+73A9*char_array 25|59r32 64r13
+94U14*To_Ada 25|78r7
+X 21 i-cstrin.ads
+42K22*Strings 105e25 24|46r19 46r45 25|48r19 48r45
+47M9*chars_ptr 24|72r37 25|101r37
+51M4*Null_Ptr 25|109r16
+73V13*Value 25|117r18
+80V13*Strlen 25|110r26
+X 23 ncurses2.ads
+42K9*ncurses2 44e13 24|54r9 73r5 25|51r14 126r5
+X 24 ncurses2-genericputs.ads
+51i4 Max 56r50
+54k18*genericPuts 73r14 73e25 25|51b23 126r14 126t25
+55K12 BS 57r8 62r31 65r31 70r27 72r58 25|54r31 57r11 84r32 88r26 95r27 102r37
+60U14 myGet 25|53b14 80r8 80t13
+60M21 Win 25|53b21 75r20
+62R21 Str 25|54b21 79m7
+63i21 Len 25|55b21 63r29
+65U14 myPut 25|84b14 93r8 93t13
+65R21 Str 25|84b21 91m7 92m13
+66i21 i 25|85b21 90r17
+67i21 Base 25|86b21 90r20
+70U14 myAdd 25|95b14 98r8 98t13
+70R21 Str 25|95b21 97r30
+72U14 Fill_String 25|101b14 124r8 124t19
+72M27 Cp 25|101b27 109r10 110r34 117r25
+72R48 Str 25|102b27 118m13 121m10
+X 25 ncurses2-genericputs.adb
+58V16*Wgetnstr 61m25 75r10
+58M26 Win
+59a26 Str
+60i26 Len
+63i7 N 68r10 69m10 71r10 75r37
+64a7 Txt 74m7 75r25 78r15
+65a7 xStr 78m20 79r33
+66i7 Cnt 78m26 79r44
+87K15 Int_IO 87r55
+88a7 tmp 90m12 91r33
+107i7 Len 110m10 111r26 115r30
+115a13 S 117m13 118r39
+X 39 terminal_interface.ads
+41K9*Terminal_Interface 24|47r6 60r31 61r26 25|44r6 44r37 45r6 45r41 39|46e23
+X 40 terminal_interface-curses.ads
+48K28*Curses 24|47r25 60r50 61r45 25|44r25 44r56 45r25 45r60 40|1933e30
+56M9*Window 24|60r57 25|53r31 58r32
+382X4*Curses_Exception 25|76r16
+474V13*Standard_Window 24|61r52 25|53r41
+646U14*Add 25|97r7
+647s19 Str 25|97r12
+X 41 terminal_interface-curses-aux.ads
+50K35*Aux 25|45r32 45r67 41|124e34
+55I12*C_Int 25|75r30
+72i4*Curses_Err 25|75r43
+

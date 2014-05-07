@@ -1,0 +1,925 @@
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE KERNEL
+OBJECT MODULE PLACED IN kernel.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE kernel.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * kernel.c
+   3           * 
+   4           * Ö÷¿ØÖÆÑ­»·ÊµÏÖÎÄ¼þ
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(ÁÖ¾°ÏÍ)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-06-25 10:16:00 ÖÐ¹ú±ê×¼Ê±¼ä
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          //#include <intrins.h>
+  15          #include <string.h>
+  16          #include <assert.h>
+  17          #include "datastruct.h"
+  18          #include "io.h"
+  19          #include "kernel.h"
+  20          #include "util.h"
+  21          #include "command_reactor.h"            // ´¦ÀíÍ¨ÐÅ
+  22          #include "vm.h"
+  23          #include "multiple_schedule_control.h"
+  24          #include "actuate_control.h"
+  25          #include "cordless_coordinate_control.h"
+  26          #include "executive_machine_control.h"
+  27          #include "manual_control.h"
+  28          
+  29          
+  30          // ¶¨ÒåÒªÓÃµ½µÄÈ«¾ÖÊý¾Ý½á¹¹
+  31          system_config_t g_config;       // ÅäÖÃÊý¾Ý
+  32          
+  33          volume_occupy_t g_volume_occupy;
+  34          
+  35          stage_plan_t g_special_phase_plan;
+  36          lamp_status_t g_special_phase;
+  37          timming_plan_t g_special_phase_timming_plan;
+  38          
+  39          // ÐÅºÅ»úµÄÈ«¾Ö×´Ì¬
+  40          controller_status_t g_controller_status;
+  41          #ifndef __C51__
+              typedef byte bit;
+              #endif
+  44          
+  45          
+  46          extern void wait_for_10ms(void);
+  47          
+  48          /**
+  49           *  ³õÊ¼»¯ÌØÊâ¶à¶Î²ÎÊý
+  50           *
+  51           */
+  52          //0921 int init_special_schedule_data()
+  53          
+  54          int init_special_schedule_data(unsigned char ctemp)
+  55          {
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 2   
+
+  56   1              int i;
+  57   1      
+  58   1              // °ÑÈý¸öÌØÊâÏàÎ»ÇåÁã
+  59   1              for(i=0; i<MAX_TERMINAL_COUNT; i++)
+  60   1              {
+  61   2                      g_special_phase.m_output[i] = 0;
+  62   2              }
+  63   1              // ÉèÖÃÏàÎ»Öµ
+  64   1              g_special_phase_plan.m_stage_count=1;
+  65   1              for(i=0;i<MAX_STAGE_COUNT;i++)
+  66   1              {
+  67   2                      g_special_phase_plan.m_stage[0].m_phase[i]=0;
+  68   2              }
+  69   1              // ³õÊ¼»¯ÌØÊâÅäÊ±
+  70   1              g_special_phase_timming_plan.m_step = 1;                        // ÈÏÎªÌØÊâÏàÎ»Ö»ÓÐ1²½
+  71   1              for(i=0; i<MAX_STAGE_COUNT; i++)
+  72   1              {
+  73   2                      if (ctemp == ALL_RED_CONTROL)                           // ³õÊ¼»¯È«ºìÏàÎ»
+  74   2                      {
+  75   3                              g_special_phase_timming_plan.m_greentimming[i] = 0; // Ã¿²½Ö»ÓÐ3Ãë
+  76   3                              g_special_phase_timming_plan.m_greenflashtimming[i]=0;
+  77   3                              g_special_phase_timming_plan.m_yellowtimming[i]=0;
+  78   3                              g_special_phase_timming_plan.m_redtimming[i]=3;
+  79   3                      }
+  80   2                      else  if (ctemp == YELLOW_FLASH_CONTROL)
+  81   2                      {
+  82   3                              g_special_phase_timming_plan.m_greentimming[i] = 0; // Ã¿²½Ö»ÓÐ3Ãë
+  83   3                              g_special_phase_timming_plan.m_greenflashtimming[i]=0;
+  84   3                              g_special_phase_timming_plan.m_yellowtimming[i]=3;
+  85   3                              g_special_phase_timming_plan.m_redtimming[i]=0;
+  86   3                      }
+  87   2                      else if(ctemp ==ALL_OFF_CONTROL)
+  88   2                      {
+  89   3                              g_special_phase_timming_plan.m_greentimming[i] = 0; // Ã¿²½Ö»ÓÐ3Ãë
+  90   3                              g_special_phase_timming_plan.m_greenflashtimming[i]=0;
+  91   3                              g_special_phase_timming_plan.m_yellowtimming[i]=0;
+  92   3                              g_special_phase_timming_plan.m_redtimming[i]=0;
+  93   3                      }
+  94   2              }
+  95   1      
+  96   1              for(i=0;i<MAX_LAMP_GROUP_COUNT;i++){
+  97   2                      int r,y;
+  98   2                      if (ctemp == YELLOW_FLASH_CONTROL) {                                    // ³õÊ¼»¯»ÆÉÁÏàÎ»
+  99   3                              y = g_config.m_lamp_group_setting.m_lamp_group[i][YELLOW];
+ 100   3                              if(y > 0){
+ 101   4                                      // ½«¸Ã¶Ë×ÓÊä³öÉèÎªÉÁ
+ 102   4                                      int p = (y-1)/4;                // ¶Ë×ÓËùÔÚµÄ×Ö½Ú
+ 103   4                                      int offset = (y-1)%4;           // ×Ö½ÚÀïÃæµÄÆ«ÒÆ0-3
+ 104   4                                      //0921                          byte* b = &g_yellow_flash_phase_plan.m_phase[0].m_output[p];
+ 105   4                                      byte* b = &g_special_phase.m_output[p];
+ 106   4                                      byte flash = 0x02 << 2*(3 - offset);
+ 107   4                                      *b &= ~(0x03 << 2*(3 - offset)); //ÏÈÇåÁã
+ 108   4                                      *b |= flash;                    // ºó¸³Öµ
+ 109   4                              }
+ 110   3                      }
+ 111   2                      if (ctemp == ALL_RED_CONTROL) {                                 // ³õÊ¼»¯È«ºìÏàÎ»
+ 112   3                              r = g_config.m_lamp_group_setting.m_lamp_group[i][RED];
+ 113   3                              if(r > 0){
+ 114   4                                      // ½«¸Ã¶Ë×ÓÉèÎªÁÁ
+ 115   4                                      int p = (r-1)/4;
+ 116   4                                      int offset = (r-1)%4;
+ 117   4                                      //0921                          byte* b = &g_all_red_phase_plan.m_phase[0].m_output[p];
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 3   
+
+ 118   4                                      byte* b = &g_special_phase.m_output[p];
+ 119   4                                      byte on = 0x01 << 2*(3 - offset);
+ 120   4                                      *b &= ~(0x03 << 2*(3- offset)); // ÏÈÇåÁã
+ 121   4                                      *b |= on;                       // ºó¸³Öµ
+ 122   4                              }
+ 123   3                      }
+ 124   2              }
+ 125   1              return 0;
+ 126   1      }
+ 127          
+ 128          
+ 129          /**
+ 130           * ÅÐ¶Ï½ñÈÕÊÇ·ñÎªÌØÊâÈÕ
+ 131           * Èç¹ûÊÇµÄ»°,·µ»Ø¸ÃÈÕÓ¦µ±ÔËÐÐµÄÊ±¶Î·½°¸
+ 132           */
+ 133          static int is_today_special_day()
+ 134          {
+ 135   1              int i;
+ 136   1              for(i=0; i<MAX_SPECIAL_DAY_COUNT; i++){
+ 137   2                      special_day_t sday;
+ 138   2                      
+ 139   2                      int month = g_controller_status.m_month;
+ 140   2                      int day = g_controller_status.m_day;
+ 141   2                      sday = g_config.m_special_day_table.m_day[i];
+ 142   2                      if(sday.m_start_month > month)
+ 143   2                              continue;
+ 144   2                      if((sday.m_start_month == month) && (sday.m_start_day > day))
+ 145   2                              continue;
+ 146   2                      if(sday.m_end_month < month)
+ 147   2                              continue;
+ 148   2                      if((month == sday.m_end_month) && (sday.m_end_day < day))
+ 149   2                              continue;
+ 150   2      
+ 151   2                      return sday.m_schedule;
+ 152   2              }
+ 153   1      
+ 154   1              return 0;
+ 155   1      }
+ 156          
+ 157          // È·¶¨¶àÊ±¶Î×´Ì¬ÏÂÃæÓ¦¸Ã×ßµÄÏàÎ»·½°¸ºÍÅäÊ±·½°¸
+ 158          int get_current_schedule(byte* schedule,byte* phase,byte* timming)
+ 159          {
+ 160   1              int time,count;
+ 161   1              int i,plan;
+ 162   1              schedule_plan_t schedule_plan;
+ 163   1      
+ 164   1              // Ê×ÏÈÅÐ¶ÏÒªÊ¹ÓÃÄÄ¸öÊ±¶Î·½°¸
+ 165   1              // 1. ÊÇ·ñÊ¹ÓÃÌØ¶¨µÄÊ±¶Î·½°¸
+ 166   1              if(g_config.m_multiple_schedule_control_param.m_schedule_plan > 7){
+ 167   2                      int p = g_config.m_multiple_schedule_control_param.m_schedule_plan;
+ 168   2                      schedule_plan = g_config.m_schedule_table[p-1];
+ 169   2                      *schedule = p;
+ 170   2              // 2. ÊÇ·ñÆôÓÃÌØÊâÈÕ¿ØÖÆ
+ 171   2              }else if(g_config.m_multiple_schedule_control_param.m_enable_special &&
+ 172   1                              (plan = is_today_special_day()) > 0){
+ 173   2                      *schedule = plan;
+ 174   2                      schedule_plan = g_config.m_schedule_table[plan-1]; 
+ 175   2              }
+ 176   1              // 3. °´È±Ê¡·½Ê½Ñ¡ÔñÊ±¶Î·½°¸
+ 177   1              else{
+ 178   2                      int t = g_controller_status.m_week;
+ 179   2                      if(t == 0)
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 4   
+
+ 180   2                              t = 7;          // ÐÇÆÚÈÕÊ¹ÓÃÊ±¶Î·½°¸7
+ 181   2      
+ 182   2                      schedule_plan = g_config.m_schedule_table[t-1];
+ 183   2                      *schedule = t;
+ 184   2              }
+ 185   1      
+ 186   1              // ¸ù¾ÝÈ·¶¨Ê±¶Î£¬Ñ¡ÔñÏàÎ»ÒÔ¼°ÅäÊ± 
+ 187   1              
+ 188   1              time = g_controller_status.m_hour*60 + g_controller_status.m_minute;
+ 189   1      
+ 190   1          count = 0;
+ 191   1          for(i=0; i<MAX_TIME_SEGMENT_COUNT; i++){
+ 192   2              if(schedule_plan.m_phase[i] == 0)
+ 193   2                      break;
+ 194   2              count++;
+ 195   2                      
+ 196   2          }
+ 197   1              *phase   = 0;
+ 198   1              *timming = 0;   
+ 199   1      
+ 200   1              if(count == 0)
+ 201   1                      return 0;
+ 202   1      
+ 203   1              *phase = schedule_plan.m_phase[count-1];
+ 204   1              *timming = schedule_plan.m_timming[count-1];
+ 205   1      
+ 206   1              for(i=0; i<count-1 ;i++){
+ 207   2                      
+ 208   2                      int t1 = schedule_plan.m_hour[i]*60 + schedule_plan.m_minute[i];
+ 209   2                      int t2 = schedule_plan.m_hour[i+1]*60 + schedule_plan.m_minute[i+1];
+ 210   2                      if( time >= t1 && time < t2 ){
+ 211   3                              *phase   = schedule_plan.m_phase[i];
+ 212   3                              *timming = schedule_plan.m_timming[i];
+ 213   3                              break;
+ 214   3                      }
+ 215   2              }
+ 216   1      
+ 217   1              return 0;
+ 218   1      }
+ 219          
+ 220          /**
+ 221           *  ÔØÈëµ±Ç°Ê¹ÓÃµÄÏàÎ»·½°¸ºÍÅäÊ±·½°¸
+ 222           */
+ 223          int load_current_schedule(byte schedule,byte phase, byte timming)
+ 224          {
+ 225   1              g_controller_status.m_schedule = schedule;
+ 226   1              g_controller_status.m_phase = phase;
+ 227   1              g_controller_status.m_timming = timming;
+ 228   1      
+ 229   1              g_controller_status.m_current_timming_plan_p = &g_special_phase_timming_plan;
+ 230   1              if ((phase == PHASE_YELLOW_FLASH) || (phase == PHASE_ALL_RED) || (phase == PHASE_ALL_OFF)) {
+ 231   2                              g_controller_status.m_current_phase_plan_p=&g_special_phase_plan;
+ 232   2                              g_controller_status.m_current_timming_plan_p=&g_special_phase_timming_plan;
+ 233   2                              g_controller_status.m_current_lamp_status = g_special_phase;
+ 234   2                      }
+ 235   1              else {
+ 236   2                      g_controller_status.m_current_phase_plan_p = &g_config.m_phase_table[g_controller_status.m_phase - 1];
+ 237   2                      g_controller_status.m_current_timming_plan_p = &g_config.m_timming_table[g_controller_status.m_timming -
+             - 1];
+ 238   2              }
+ 239   1      
+ 240   1              return 0;
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 5   
+
+ 241   1      }
+ 242          int is_schedule_valid(byte phase,byte timming)
+ 243          {
+ 244   1              byte ps,ts;
+ 245   1              if(phase == PHASE_YELLOW_FLASH ||
+ 246   1                 phase == PHASE_ALL_RED ||
+ 247   1                 phase == PHASE_ALL_OFF){
+ 248   2                      return 1;
+ 249   2                      }
+ 250   1      
+ 251   1              if(phase == 0 || timming == 0) return 0;                                        // Èô²é±íµÃµ½µÄÏàÎ»·½°¸»òÅäÊ±·½°¸ºÅÎª 0 Ê±£¬±íÊ¾²»ºÏ·¨
+ 252   1              
+ 253   1              ps = g_config.m_phase_table[phase-1].m_stage_count;
+ 254   1              ts = g_config.m_timming_table[timming-1].m_step;
+ 255   1              if(ps <= 0 || ts <= 0 || ps != ts) return 0;                            // Èô²é±íµÃµ½µÄÏàÎ»·½°¸»òÅäÊ±·½°¸ºÅµÄ×Ü²½Êý²»Ò»ÖÂ»òÎª 0 Ê
+             -±£¬±íÊ¾²»ºÏ·¨
+ 256   1      //w
+ 257   1              if(phase > 6 || timming > 32) {                                                         // 
+ 258   2                      if(phase == 253) return 1;                                                              // ÏàÎ»·½°¸»òÅäÊ±·½°¸Îª 253 Ê±£¬·µ»Ø 1£¬±íÊ¾ºÏ·¨
+ 259   2                      else return 0;                                                                                  // ·ñÔò·µ»Ø 0£¬±íÊ¾²»ºÏ·¨
+ 260   2                      }
+ 261   1      //w
+ 262   1              return 1;
+ 263   1      }
+ 264          // ÅÐ¶Ïµ±Ç°²½ÊÇ·ñÊÇ×îºóÒ»²½
+ 265          int is_last_step()
+ 266          {
+ 267   1              // ²éÕÒµ±Ç°ÏàÎ»µÄ²½·¥Êý£¬ÅÐ¶ÏÊÇ·ñÒÑ¾­ÔËÐÐµ½×î´ó²½·¥Êý
+ 268   1              if(g_controller_status.m_stage >= g_controller_status.m_current_phase_plan_p->m_stage_count)
+ 269   1                      if(g_controller_status.m_step>=4)
+ 270   1                              return 1;
+ 271   1              return 0;
+ 272   1      }
+ 273          
+ 274          // ÅÐ¶Ïµ±Ç°²½ÊÇ·ñÒÑ¾­×ßÍê
+ 275          int is_step_end()
+ 276          {
+ 277   1              if(g_controller_status.m_remain_time > 0)
+ 278   1                      return 0;
+ 279   1              else
+ 280   1                      return 1;
+ 281   1      
+ 282   1      }
+ 283          //ÉèÖÃµ±Ç°µÄ½×¶ÎÊýºÍ¶ÔÓ¦µÄÏàÎ»Êý
+ 284          int  set_current_stage()
+ 285          {
+ 286   1              if(is_last_step())
+ 287   1              {
+ 288   2                      g_controller_status.m_step = 1;
+ 289   2                      g_controller_status.m_stage=1;
+ 290   2                      if(g_controller_status.m_current_phase_plan_p->m_stage_count==1)
+ 291   2                              g_controller_status.m_next_stage=1;
+ 292   2                      else
+ 293   2                              g_controller_status.m_next_stage=2;
+ 294   2              }
+ 295   1              else
+ 296   1              {
+ 297   2                      if(g_controller_status.m_step<4)
+ 298   2                              g_controller_status.m_step++;
+ 299   2                      else
+ 300   2                      {
+ 301   3                              g_controller_status.m_stage++;
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 6   
+
+ 302   3                              g_controller_status.m_step=1;
+ 303   3                              if(g_controller_status.m_current_phase_plan_p->m_stage_count==g_controller_status.m_stage)
+ 304   3                                      g_controller_status.m_next_stage=1;
+ 305   3                              else
+ 306   3                                      g_controller_status.m_next_stage++;
+ 307   3                      }
+ 308   2              }
+ 309   1              return 0;
+ 310   1      }
+ 311          
+ 312          // ÅÐ¶ÏÊÇ·ñÒ»¸öÖÜÆÚÔËÐÐ½áÊø
+ 313          //w     int is_cycle_end()
+ 314          //w     {
+ 315          //w             return is_last_step() && is_step_end();
+ 316          //w     }
+ 317          
+ 318          // ¸ù¾ÝÈ«¾Ö×´Ì¬ÖÐµÄ²½ºÅ, Êä³öµ±Ç°²½
+ 319          int run_current_step()
+ 320          {
+ 321   1              memset(&g_controller_status.m_current_lamp_status,0,sizeof(lamp_status_t));
+ 322   1              // ¸üÐÂÊ±¼ä
+ 323   1              g_controller_status.m_elapse_time = 0;
+ 324   1              // È·¶¨ÐÂ²½µÄÅäÊ±
+ 325   1              set_phase_time();
+ 326   1              if(g_controller_status.m_remain_time>0)
+ 327   1              {
+ 328   2                      // È·¶¨ÐÂµÄÏàÎ»
+ 329   2                      set_phase_state(&g_controller_status.m_current_lamp_status);    
+ 330   2                      // ÉèÖÃÐÂµÄµÆ×´Ì¬
+ 331   2                      set_term_status(&g_controller_status.m_current_lamp_status);
+ 332   2              }
+ 333   1              return 0;
+ 334   1      }
+ 335          /**
+ 336           * »ÆÉÁ¿ØÖÆ
+ 337           */
+ 338          int yellow_flash_control(int mode_switch, int timer)
+ 339          {
+ 340   1              // ÉèÖÃµÆÉ«Îª»ÆÉÁ
+ 341   1              if(mode_switch){
+ 342   2                      init_special_schedule_data(3);
+ 343   2                      load_current_schedule(0,PHASE_YELLOW_FLASH,TIMMING_SPECIAL_PHASE);
+ 344   2                      g_controller_status.m_step = 1;
+ 345   2                      g_controller_status.m_stage=1;
+ 346   2                      g_controller_status.m_next_stage=1;
+ 347   2                      // ¸üÐÂÊ±¼ä
+ 348   2                      g_controller_status.m_elapse_time = 0;
+ 349   2                      g_controller_status.m_remain_time = 
+ 350   2                              g_controller_status.m_assign_time = timer;
+ 351   2                      // ÉèÖÃÐÂµÄµÆ×´Ì¬
+ 352   2                      set_term_status(&g_controller_status.m_current_lamp_status);
+ 353   2              }
+ 354   1              return 0;
+ 355   1      }
+ 356          /**
+ 357           * ËÄÃæºì¿ØÖÆ
+ 358           */
+ 359          int all_red_control(int mode_switch, int timer)
+ 360          {
+ 361   1              // ÉèÖÃµÆÉ«ÎªËÄÃæºì
+ 362   1              if(mode_switch){
+ 363   2                      init_special_schedule_data(2);
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 7   
+
+ 364   2                      load_current_schedule(0,PHASE_ALL_RED,TIMMING_SPECIAL_PHASE);
+ 365   2                      g_controller_status.m_step = 1;
+ 366   2                      g_controller_status.m_stage=1;
+ 367   2                      g_controller_status.m_next_stage=1;
+ 368   2                      // ¸üÐÂÊ±¼ä
+ 369   2                      g_controller_status.m_elapse_time = 0;
+ 370   2                      g_controller_status.m_remain_time = 
+ 371   2                              g_controller_status.m_assign_time = timer;
+ 372   2                      // ÉèÖÃÐÂµÄµÆ×´Ì¬
+ 373   2                      set_term_status(&g_controller_status.m_current_lamp_status);
+ 374   2              }
+ 375   1              return 0;
+ 376   1      }
+ 377          /**
+ 378           * ÃðµÆ¿ØÖÆ
+ 379           */
+ 380          int all_off_control(int mode_switch, int timer)
+ 381          {
+ 382   1              if(mode_switch){
+ 383   2                      init_special_schedule_data(1);
+ 384   2                      load_current_schedule(0,PHASE_ALL_OFF,TIMMING_SPECIAL_PHASE);
+ 385   2                      g_controller_status.m_step = 1;
+ 386   2                      g_controller_status.m_stage=1;
+ 387   2                      g_controller_status.m_next_stage=1;
+ 388   2                      // ¸üÐÂÊ±¼ä
+ 389   2                      g_controller_status.m_elapse_time = 0;
+ 390   2                      g_controller_status.m_remain_time = 
+ 391   2                              g_controller_status.m_assign_time = timer;
+ 392   2                      // ÉèÖÃÐÂµÄµÆ×´Ì¬
+ 393   2                      set_term_status(&g_controller_status.m_current_lamp_status);
+ 394   2              }
+ 395   1              return 0;
+ 396   1      }
+ 397          
+ 398          /**
+ 399           * ¸ù¾Ýµ±Ç°Ê±¶ÎµÄÅäÊ±£¬ÔËÐÐÍêµ±Ç°ÖÜÆÚ
+ 400           * ·µ»Ø 1 ±íÊ¾¹ý¶ÉÍê±Ï
+ 401           * 
+ 402           */
+ 403          int switching_with_multiple_schedule(int mode_switch, int timer)
+ 404          {
+ 405   1              if(timer == 0){
+ 406   2                      if(is_step_end() && is_last_step()){
+ 407   3                              // Ò»¸öÖÜÆÚÒÑ¾­ÔËÐÐÍê±Ï
+ 408   3                              // ¸ù¾ÝÐèÒªÔËÐÐÐÂµÄÊ±¶Î
+ 409   3                              return 1;
+ 410   3                      }
+ 411   2                      // ½ö½öµ±Ç°²½ÔËÐÐÍê±Ï
+ 412   2                      else if(is_step_end()){
+ 413   3                              // ¸üÐÂ²½ºÅ
+ 414   3                              if(is_last_step())
+ 415   3                                      return 1;
+ 416   3                              else {
+ 417   4                                      set_current_stage();
+ 418   4                                      run_current_step();
+ 419   4                              }
+ 420   3                      }
+ 421   2      
+ 422   2              }
+ 423   1              return 0;
+ 424   1      }
+*** WARNING C280 IN LINE 403 OF KERNEL.C: 'mode_switch': unreferenced local variable
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 8   
+
+ 425          /**
+ 426           * ²ÉÓÃÏÈ»ÆÉÁºóËÄÃæºìµÄ·½Ê½½øÐÐ¹ý¶É
+ 427           * ·µ»Ø1±íÊ¾¹ý¶ÉÍê±Ï
+ 428           */
+ 429          int switching_with_yellow_flash_all_red(int mode_switch, int yellow, int red, int timer)
+ 430          {
+ 431   1              static int stage = 0;
+ 432   1              static int yellow_time = 0;
+ 433   1              static int red_time = 0;
+ 434   1      
+ 435   1              if(mode_switch){
+ 436   2                      yellow_time = yellow;
+ 437   2                      red_time = red;
+ 438   2                      yellow_flash_control(1,0);      
+ 439   2                      stage = 1;      // ½øÈë»ÆÉÁ
+ 440   2              }
+ 441   1      
+ 442   1      
+ 443   1              switch(stage){
+ 444   2                      case 1: // »ÆÉÁ
+ 445   2                              if(yellow_time == 0){
+ 446   3                                      // ½øÈëËÄÃæºì
+ 447   3                                      all_red_control(1,0);
+ 448   3                                      stage = 2;
+ 449   3                              }
+ 450   2                              if(timer == 0)
+ 451   2                                      yellow_time--;
+ 452   2                              break;
+ 453   2                      case 2: // ËÄÃæºì
+ 454   2      
+ 455   2                              if(red_time == 0){
+ 456   3                                      // ½áÊøËÄÃæºì
+ 457   3                                      return 1;
+ 458   3                              }
+ 459   2                              if(timer == 0)
+ 460   2                                      red_time--;
+ 461   2                              break;
+ 462   2                      default:
+ 463   2                              break;
+ 464   2              }
+ 465   1              return 0;
+ 466   1      }
+ 467          
+ 468          typedef struct {
+ 469                  // ¿ØÖÆÄ£Ê½´úÂë
+ 470                  byte m_mode;
+ 471                  // ¿ØÖÆÄ£Ê½
+ 472                  control_mode_t m_control_mode;
+ 473                  // ½µ¼¶ÓÃµÄ¿ØÖÆÄ£Ê½
+ 474                  control_mode_t m_backup_control_mode;
+ 475          }control_mode_entry_t;
+ 476          
+ 477          /**
+ 478           * ¿ØÖÆ²ßÂÔ¼¯ºÏ
+ 479           */
+ 480          static 
+ 481          #ifdef __C51__  // C51±àÒëÆ÷Ï£Íû±í¸ñÓÃcodeÀ´ÐÞÊÎ
+ 482          code
+ 483          #endif
+ 484          control_mode_entry_t control_mode_table[] = {
+ 485                  // ÃðµÆ
+ 486                  {ALL_OFF_CONTROL,all_off_control,all_off_control,},
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 9   
+
+ 487                  // È«ºì
+ 488                  {ALL_RED_CONTROL,all_red_control,all_off_control,},
+ 489                  // »ÆÉÁ
+ 490                  {YELLOW_FLASH_CONTROL,yellow_flash_control,all_off_control,},
+ 491                  // ¶à¶Î
+ 492                  {MULTIPLE_SCHEDULE_CONTROL,multiple_schedule_control,yellow_flash_control,},
+ 493                  // ¸ÐÓ¦
+ 494                  {ACTUATE_CONTROL,actuate_control,multiple_schedule_control},
+ 495                  
+ 496                  // ÎÞÏßÀÂÐ­µ÷¿ØÖÆ
+ 497                  {CORDLESS_COORDINATE_CONTROL,cordless_coordinate_control,actuate_control,},
+ 498          
+ 499                  // Áª»úÐ­µ÷¿ØÖÆ
+ 500                  // {ONLINE_HARMONY_CONTROL,actuate_control,},
+ 501                  // Ö´ÐÐ»ú¿ØÖÆ
+ 502                  {EXECUTIVE_MACHINE_CONTROL,executive_machine_control,actuate_control,},
+ 503          
+ 504                  // ÊÖ¶¯¿ØÖÆ
+ 505                  {MANUAL_CONTROL,manual_control,multiple_schedule_control,},
+ 506          };
+ 507          static int get_mode(control_mode_t control_mode)
+ 508          {
+ 509   1      //      int i;
+ 510   1              unsigned char i;
+ 511   1      //      int count = sizeof(control_mode_table)/sizeof(control_mode_entry_t);
+ 512   1              unsigned char count = sizeof(control_mode_table)/sizeof(control_mode_entry_t);
+ 513   1              int mode = -1;
+ 514   1              for(i=0; i<count; i++){
+ 515   2                      if(control_mode_table[i].m_control_mode == control_mode){
+ 516   3                              mode = control_mode_table[i].m_mode;
+ 517   3                              break;
+ 518   3                      }
+ 519   2              }
+ 520   1              
+ 521   1              return mode;
+ 522   1      }
+ 523          /**
+ 524           *  »ñÈ¡Ö¸¶¨¿ØÖÆÄ£Ê½µÄ¿ØÖÆ×Ó³ÌÐò
+ 525           *
+ 526           */
+ 527          static control_mode_t get_control_mode(int mode)
+ 528          {
+ 529   1              int i;
+ 530   1              int count = sizeof(control_mode_table)/sizeof(control_mode_entry_t);
+ 531   1              control_mode_t control_mode = 0;
+ 532   1              for(i=0; i<count; i++){
+ 533   2                      if(control_mode_table[i].m_mode == mode){
+ 534   3                              control_mode = control_mode_table[i].m_control_mode;
+ 535   3                              break;
+ 536   3                      }
+ 537   2              }
+ 538   1              
+ 539   1              if(control_mode == 0)
+ 540   1                      control_mode = multiple_schedule_control;
+ 541   1      
+ 542   1              return control_mode;
+ 543   1      }
+ 544          /**
+ 545           * »ñÈ¡Ö¸¶¨¿ØÖÆÄ£Ê½µÄ½µ¼¶¿ØÖÆ×Ó³ÌÐò
+ 546           *
+ 547           */
+ 548          static control_mode_t get_backup_control_mode(int mode)
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 10  
+
+ 549          {
+ 550   1              int i;
+ 551   1              int count = sizeof(control_mode_table)/sizeof(control_mode_entry_t);
+ 552   1              
+ 553   1              control_mode_t control_mode = 0;
+ 554   1              for(i=0;i<count;i++){
+ 555   2                      if(control_mode_table[i].m_mode == mode){
+ 556   3                              control_mode = control_mode_table[i].m_backup_control_mode;
+ 557   3                              break;
+ 558   3                      }
+ 559   2              }
+ 560   1      
+ 561   1              if(control_mode == 0)
+ 562   1                      control_mode = multiple_schedule_control;
+ 563   1      
+ 564   1              return control_mode;
+ 565   1      }
+ 566          
+ 567          /**
+ 568           * È·¶¨ÏÂÒ»¸öÊ±ÖÓàÖàªÒªÔËÐÐµÄ¿ØÖÆÄ£Ê½
+ 569           *
+ 570           */
+ 571          static control_mode_t do_schedule(int control_result,control_mode_t last_control)
+ 572          {
+ 573   1              control_mode_t control_mode;
+ 574   1              int mode;
+ 575   1              unsigned char i;
+ 576   1              bit run_mode;
+ 577   1              mode = g_controller_status.m_designate_control_mode;
+ 578   1      
+ 579   1              if(is_manual_control_state()){                                                                                                                                  // ÏÈÅÐ¶ÏÊÇ·ñÊÇÊÖ¶¯¿ØÖÆ
+ 580   2                      g_controller_status.m_designate_control_mode = MANUAL_CONTROL;
+ 581   2              }                                                                                               
+ 582   1              else {
+ 583   2                      run_mode=get_run_mode();                                                                //ÊÇ·ñ°´ÕÕÐÅºÅ»ú
+             -Ç°Ãæ°åÉè¶¨µÄ¹¤×÷Ä£Ê½£¬1£­ÊÇ
+ 584   2                      if (run_mode) {                                                                                                                                                 // °´ÕÕÐÅºÅ»úÇ°Ãæ°åÉÏµÄÉè¶¨ÔËÐÐ
+ 585   3                              i = get_front_panel_control_mode();
+ 586   3                              if (i!=0x00) // ÐÅºÅ»úÇ°Ãæ°åÉÏµÄÉè¶¨ÓÐÐ§Ê±£¬ÒÔÇ°Ãæ°åÉÏµÄÉè¶¨ÔËÐÐ
+ 587   3                                      g_controller_status.m_designate_control_mode = i;
+ 588   3                              
+ 589   3                              else 
+ 590   3                                      g_controller_status.m_designate_control_mode = g_config.m_control_mode_selection.m_control_mode;
+ 591   3                      }
+ 592   2                      else 
+ 593   2                              g_controller_status.m_designate_control_mode = g_config.m_control_mode_selection.m_control_mode;
+ 594   2              }
+ 595   1              if(mode != g_controller_status.m_designate_control_mode)
+ 596   1                      // ¿ØÖÆÄ£Ê½¸Ä±ä£¬Çå¿Õ½µ¼¶±êÖ¾
+ 597   1                      g_controller_status.m_is_degraded = 0;
+ 598   1      
+ 599   1              control_mode = last_control;
+ 600   1              mode = get_mode(last_control);
+ 601   1              if(mode != g_controller_status.m_designate_control_mode && 
+ 602   1                      !g_controller_status.m_is_degraded){
+ 603   2      
+ 604   2                              // ÐÂµÄ¿ØÖÆÄ£Ê½
+ 605   2                              control_mode = get_control_mode(g_controller_status.m_designate_control_mode);
+ 606   2                              g_controller_status.m_is_degraded = 0;
+ 607   2      
+ 608   2                      }else if(control_result != 0){
+ 609   2      
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 11  
+
+ 610   2                              // ½µ¼¶ÔËÐÐ
+ 611   2                              control_mode = get_backup_control_mode(mode);
+ 612   2                              g_controller_status.m_is_degraded = 1;
+ 613   2                      }
+ 614   1              return control_mode;
+ 615   1      }
+ 616          
+ 617          /**
+ 618           * @desc µÈ´ýÖ¸¶¨µÄÃëÊý
+ 619           * @param sec ÒªµÈ´ýµÄÃëÊý
+ 620           */
+ 621          static void do_wait(int sec)
+ 622          {
+ 623   1              while(sec-->0){
+ 624   2                      int t=10;
+ 625   2                      while(t-->0)
+ 626   2                              wait_for_100ms();
+ 627   2                      g_controller_status.m_elapse_time++;
+ 628   2              }
+ 629   1      }
+ 630          
+ 631          /**
+ 632           * Ö÷¿ØÖÆ³ÌÐò
+ 633           *
+ 634           */
+ 635          int controller_main()
+ 636          {
+ 637   1              unsigned char timer = 0;
+ 638   1              int control_result = 0;
+ 639   1              int mode_switch = 0;
+ 640   1      
+ 641   1              control_mode_t current_control = 0;
+ 642   1      
+ 643   1              
+ 644   1              set_init_state();
+ 645   1              
+ 646   1              // ³õÊ¼»¯Í¨ÐÅ
+ 647   1      //      init_command_reactor(&g_command_reactor1);
+ 648   1      //      g_command_reactor1.m_fd = open_comm(1);
+ 649   1      
+ 650   1              init_command_reactor(&g_command_reactor2);
+ 651   1              g_command_reactor2.m_fd = open_comm(2);
+ 652   1              
+ 653   1              init_command_reactor(&g_command_reactor128);    //added by kuilin Ê¹ÓÃsockÀ´´úÌæ´®¿Ú½øÐÐÍ¨Ñ¶
+ 654   1              g_command_reactor128.m_fd = open_comm(128);     
+ 655   1              
+ 656   1              init_command_reactor(&g_command_reactor7);
+ 657   1              g_command_reactor7.m_fd = open_comm(7);
+ 658   1      
+ 659   1              init_command_reactor(&g_command_reactor8);
+ 660   1              g_command_reactor8.m_fd = open_comm(8);
+ 661   1      
+ 662   1              g_controller_status.m_timer = 0;
+ 663   1              g_controller_status.m_restart = 0;
+ 664   1              
+ 665   1              // ½øÈëÔ¤¶¨µÄ¿ØÖÆÄ£Ê½
+ 666   1              while(!g_controller_status.m_restart){
+ 667   2                      // ¸ù¾ÝÉÏ´ÎµÄÔËÐÐ½á¹ûÒÔ¼°ÆäËüÐÅÏ¢ÅÐ¶ÏÊÇ·ñÒªÇÐ»»¿ØÖÆÄ£Ê½
+ 668   2                      control_mode_t new_control_mode = do_schedule(control_result,current_control);
+ 669   2                      if(new_control_mode == current_control){
+ 670   3                              mode_switch = 0;
+ 671   3                              }
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 12  
+
+ 672   2                      else{
+ 673   3                              current_control = new_control_mode;
+ 674   3                              mode_switch = 1;
+ 675   3                              // ¸üÐÂÊµ¼ÊµÄ¿ØÖÆÄ£Ê½×´Ì¬
+ 676   3      //060607                        g_controller_status.m_actual_control_mode = get_mode(current_control);
+ 677   3                              }
+ 678   2                      g_controller_status.m_actual_control_mode = get_mode(current_control);
+ 679   2      
+ 680   2                      // ÔËÐÐµ±Ç°µÄ¿ØÖÆÄ£Ê½
+ 681   2                      control_result = current_control(mode_switch,timer);
+ 682   2                      
+ 683   2                      
+ 684   2                      // Í¨ÐÅ´¦Àí
+ 685   2                      reactor_handle_command(&g_command_reactor2);
+ 686   2                      reactor_handle_command(&g_command_reactor128);//added by kuilin Ê¹ÓÃsockÀ´´úÌæ´®¿Ú½øÐÐÍ¨Ñ¶
+ 687   2                      
+ 688   2                      // ÔËÐÐÆäËüÀýÐÐ×Ó³ÌÐò(³µÁ÷¼ÆÊýµÈ)
+ 689   2              
+ 690   2                      // µÈ´ýÏÂÒ»´ÎÔËÐÐ
+ 691   2                      wait_for_100ms();
+ 692   2                      timer++;
+ 693   2                      if(timer >= 10)
+ 694   2                              timer = 0;
+ 695   2      
+ 696   2                      g_controller_status.m_timer = timer;
+ 697   2              
+ 698   2                      if(timer == 0){
+ 699   3                              // ¸üÐÂÁ÷ÊÅÊ±¼ä
+ 700   3                              g_controller_status.m_elapse_time++;
+ 701   3                              // ¸üÐÂÊ£ÓàÊ±¼ä
+ 702   3                              if(g_controller_status.m_remain_time > 0)
+ 703   3                                      g_controller_status.m_remain_time--;
+ 704   3      
+ 705   3                              if(g_controller_status.m_is_config_updated){
+ 706   4                                      save_config_data();
+ 707   4                                      g_controller_status.m_is_config_updated = 0;
+ 708   4                              }
+ 709   3      
+ 710   3                              // Ò»ÃëÖÓ¸üÐÂÒ»´ÎÎÂ¶È
+ 711   3                              g_controller_status.m_temperature = get_temperature();
+ 712   3      
+ 713   3                              if(is_door_illegal_open())
+ 714   3                                      g_controller_status.m_error.m_is_door_illegal_open = 1;
+ 715   3                              else
+ 716   3                                      g_controller_status.m_error.m_is_door_illegal_open = 0;
+ 717   3      
+ 718   3                      }
+ 719   2              }
+ 720   1              return 0;
+ 721   1      }
+ 722          //ÉèÖÃ³õÊ¼×´Ì¬
+ 723          //ÏÈ»ÆÉÁ3Ãë,ÔÙÈ«ºìÈýÃë
+ 724          void set_init_state()
+ 725          {
+ 726   1              int i;
+ 727   1              //»ÆÉÁ
+ 728   1              memset(&g_special_phase_plan,0,sizeof(stage_plan_t));
+ 729   1              yellow_flash_control(1,3);
+ 730   1              // ÉèÖÃÏàÎ»Öµ
+ 731   1              g_special_phase_plan.m_stage_count=1;
+ 732   1              for(i=0;i<MAX_PHASE_COUNT;i++)
+ 733   1              {
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 13  
+
+ 734   2                      g_special_phase_plan.m_stage[0].m_phase[i]=0;
+ 735   2              }
+ 736   1              // ³õÊ¼»¯ÌØÊâÅäÊ±
+ 737   1              g_special_phase_timming_plan.m_step = 1;
+ 738   1              //È«ºì
+ 739   1              g_special_phase_timming_plan.m_greentimming[1] = g_config.m_system_param.m_initial_all_red_time; 
+ 740   1              g_special_phase_timming_plan.m_greenflashtimming[1]=0;
+ 741   1              g_special_phase_timming_plan.m_yellowtimming[1]=0;
+ 742   1              g_special_phase_timming_plan.m_redtimming[1]=0;
+ 743   1              load_current_schedule(0,PHASE_ALL_RED,TIMMING_SPECIAL_PHASE);
+ 744   1              return;
+ 745   1      }
+ 746          //ÉèÖÃµÆµÄ×´Ì¬  state 0- Ãð£¬1£­ÁÁ 2£­ÉÁ
+ 747          void set_lamp_state(lamp_status_t *phase,int termial,int state)
+ 748          {
+ 749   1              if(termial> 0)
+ 750   1              {
+ 751   2                      // ½«¸Ã¶Ë×ÓÊä³öÉèÎªÁÁ
+ 752   2                      int p = (termial-1)/4;          // ¶Ë×ÓËùÔÚµÄ×Ö½Ú
+ 753   2                      int offset = (termial-1)%4;             // ×Ö½ÚÀïÃæµÄÆ«ÒÆ0-3
+ 754   2                      byte* b = &phase->m_output[p];
+ 755   2                      byte on = state << 2*(3 - offset);
+ 756   2                      *b &= ~(0x03 << 2*(3 - offset)); //ÏÈÇåÁã
+ 757   2                      *b |= on;                       // ºó¸³Öµ
+ 758   2              }
+ 759   1      }
+ 760          //ÉèÖÃÐÂµÄÏàÎ»
+ 761          int set_phase_state(lamp_status_t* phase)
+ 762          {
+ 763   1              int i=0;
+ 764   1              int lamp_group=0;
+ 765   1              int m_lamp_group[MAX_LAMP_GROUP_COUNT];
+ 766   1              memset(&m_lamp_group,0,sizeof(int)*MAX_LAMP_GROUP_COUNT);
+ 767   1              for(i=0;i<MAX_PHASE_COUNT;i++)
+ 768   1              {
+ 769   2                      lamp_group=g_controller_status.m_current_phase_plan_p->m_stage[g_controller_status.m_stage-1].m_phase[i]
+             -;
+ 770   2                      if(lamp_group<=g_config.m_lamp_group_setting.m_lamp_group_count&&lamp_group>0)//µ±Ç°µÆ×é´óÓÚ×Ü×éÊý
+ 771   2                              m_lamp_group[lamp_group-1]=1;           
+ 772   2              }
+ 773   1              for(i=0;i<g_config.m_lamp_group_setting.m_lamp_group_count;i++)
+ 774   1              {
+ 775   2                      if(m_lamp_group[i])
+ 776   2                      {
+ 777   3                              if(find_lamp_group(i+1))//ÏÂ¸ö½×¶Î¼ÌÐøÁÁÂÌµÆ
+ 778   3                              {
+ 779   4                                      set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][GREEN],ON);
+ 780   4                              }
+ 781   3                              else //ÏÂ¸ö½×¶ÎÁÁºìµÆ
+ 782   3                              {
+ 783   4                                      if(g_controller_status.m_step==1)//µÚÒ»²½£¬ÁÁÂÌµÆ
+ 784   4                                      {
+ 785   5                                              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][GREEN],ON);
+ 786   5                                      }
+ 787   4                                      else if(g_controller_status.m_step==2)//µÚ¶þ²½£¬ÁÁÂÌÉÁ
+ 788   4                                      {
+ 789   5                                              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][GREEN],FLASH);
+ 790   5                                      }
+ 791   4                                      else if(g_controller_status.m_step==3)//µÚÈý²½£¬ÁÁ»ÆµÆ
+ 792   4                                      {
+ 793   5                                              if(g_config.m_lamp_group_setting.m_lamp_group[i][YELLOW])//»ÆµÆ´æÔÚ
+ 794   5                                                      set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][YELLOW],FLASH);
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 14  
+
+ 795   5                                              else
+ 796   5                                                      set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],ON);                                    
+ 797   5                                      }
+ 798   4                                      else if(g_controller_status.m_step==4)//µÚËÄ²½£¬ÁÁºìµÆ
+ 799   4                                      {
+ 800   5                                              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],ON);                                    
+ 801   5                                      }
+ 802   4                              }
+ 803   3                      }
+ 804   2                      else
+ 805   2                      {
+ 806   3                              //if(find_lamp_group(i))//ÏÂ¸ö½×¶ÎÁÁÂÌµÆ
+ 807   3                              //{
+ 808   3                              //      if(g_controller_status.m_step==1)
+ 809   3                              //              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],ON);
+ 810   3                              //      else if(g_controller_status.m_step==2&&g_config.m_timming_table[g_controller_status.m_stage-1].m_yel
+             -lowtimming[g_controller_status.m_step-1]!=0)
+ 811   3                              //                      set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],ON);
+ 812   3                              //      else
+ 813   3                              //              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],FLASH);
+ 814   3                              //
+ 815   3                              //}
+ 816   3                              //else
+ 817   3                              set_lamp_state(phase,g_config.m_lamp_group_setting.m_lamp_group[i][RED],ON);
+ 818   3                      }
+ 819   2              }
+ 820   1              return 0;
+ 821   1      }
+ 822          void set_phase_time()
+ 823          {
+ 824   1              if(g_controller_status.m_step==1)
+ 825   1              {
+ 826   2                      g_controller_status.m_remain_time = 
+ 827   2                              g_controller_status.m_assign_time = 
+ 828   2                              g_controller_status.m_current_timming_plan_p->m_greentimming[g_controller_status.m_stage-1];
+ 829   2              }
+ 830   1              else if(g_controller_status.m_step==2)
+ 831   1              {
+ 832   2                      g_controller_status.m_remain_time = 
+ 833   2                              g_controller_status.m_assign_time = 
+ 834   2                              g_controller_status.m_current_timming_plan_p->m_greenflashtimming[g_controller_status.m_stage-1];
+ 835   2              }
+ 836   1              else if(g_controller_status.m_step==3)
+ 837   1              {
+ 838   2                      g_controller_status.m_remain_time = 
+ 839   2                              g_controller_status.m_assign_time = 
+ 840   2                              g_controller_status.m_current_timming_plan_p->m_yellowtimming[g_controller_status.m_stage-1];
+ 841   2              }
+ 842   1              else if(g_controller_status.m_step==4)
+ 843   1              {
+ 844   2                      g_controller_status.m_remain_time = 
+ 845   2                              g_controller_status.m_assign_time = 
+ 846   2                              g_controller_status.m_current_timming_plan_p->m_redtimming[g_controller_status.m_stage-1];
+ 847   2              }
+ 848   1      }
+ 849          //²éÕÒµ±Ç°µÆ×éÔÚÏÂÒ»¸ö½×¶ÎÖÐÊÇ·ñÁÁÂÌµÆ
+ 850          int find_lamp_group(int lamp_group)
+ 851          {
+ 852   1              int i=0;
+ 853   1              int m_stage=0;
+ 854   1              ////ÅÐ¶ÏÏÂÒ»½×¶ÎÊÇÄÇ¸ö½×¶Î
+ 855   1              //if(g_controller_status.m_stage==g_controller_status.m_current_phase_plan_p->m_stage_count)
+C51 COMPILER V7.09   KERNEL                                                                04/25/2008 16:22:06 PAGE 15  
+
+ 856   1              //      m_stage=1;
+ 857   1              //else
+ 858   1              //      m_stage=g_controller_status.m_stage+1;
+ 859   1              m_stage=g_controller_status.m_next_stage;
+ 860   1              //²éÕÒµ±Ç°µÆ×éÊÇ·ñÔÚÏÂÒ»½×¶ÎÖÐ
+ 861   1              for(i=0;i<MAX_PHASE_COUNT;i++)
+ 862   1              {
+ 863   2                      if(g_controller_status.m_current_phase_plan_p->m_stage[m_stage-1].m_phase[i]==lamp_group)
+ 864   2                              return 1;
+ 865   2              }
+ 866   1              return 0;
+ 867   1      }
+ 868          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   4800    ----
+   CONSTANT SIZE    =     56    ----
+   XDATA SIZE       =   4205     276
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

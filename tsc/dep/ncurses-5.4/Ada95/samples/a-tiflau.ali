@@ -1,0 +1,122 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.text_io.float_aux%b  a-tiflau.adb		54a5224e NE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.generic_aux%s  a-tigeau.adb	a-tigeau.ali
+W system%s		system.ads		system.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.val_real%s	s-valrea.adb		s-valrea.ali
+
+U ada.text_io.float_aux%s  a-tiflau.ads		225b124c NE PK
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiflau.ads		20020507104858 ba8cb130
+D a-tiflau.adb		20020507104858 5f829bc6
+D a-tigeau.ads		20020507104900 f602cde1
+D interfac.ads		20020507105017 6e859da6
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgrea.ads		20020507105118 c794931b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D s-valrea.ads		20020507105213 803d5642
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 9|44r17 76r5 10|36r6 36r35 41r14 231r5
+X 8 a-textio.ads
+51K13*Text_IO 442e16 9|44r21 76r9 10|36r10 36r39 41r18 231r9
+54P9*File_Type 9|47r17 54r18 59r17 10|48r18 96r17 187r17
+76I12*Field 9|56r18 61r17 62r17 63r17 73r17 74r17 10|50r18 52r27 189r17 190r17
+. 191r17 193r30 208r17 209r17 211r30
+295X4*Data_Error 10|88r16
+296X4*Layout_Error 10|218r16
+X 9 a-tiflau.ads
+44K29*Float_Aux 76r17 76e26 10|41b26 231r17 231t26
+46U14*Load_Real 10|61r10 95b14 180r8 180t17
+47P7 File 10|96b7 105r18 106r13 110r13 113r23 124r23 134r16 140r19 143r38
+. 148r38 149r22 152r41 158r22 164r19 167r29 174r13 177r16 178r23
+48s7 Buf 10|97b7 106m19 110m19 113m29 124m29 134m22 140m25 143m44 148m44
+. 149m28 152m47 158m28 164m25 167m35 174m19 177m22 178m29
+49i7 Ptr 10|98b7 106m24 110m24 113m34 124m34 134m27 140m30 143m49 148m49
+. 149m33 152m52 158m33 164m30 167m40 174m24 177m27 178m34
+53U14*Get 10|47b14 67r8 67t11
+54P7 File 10|48b7 58r22 61r21 66r27
+55f7 Item 10|49b7 64m7
+56i7 Width 10|50b7 57r10 58r28 66r49
+58U14*Put 10|186b14 199r8 199t11
+59P7 File 10|187b7 198r17
+60f7 Item 10|188b7 197r23
+61i7 Fore 10|189b7 197r39
+62i7 Aft 10|190b7 197r45
+63i7 Exp 10|191b7 197r50
+65U14*Gets 10|73b14 89r8 89t12
+66s7 From 10|74b7 81r20 82r26 82r44
+67f7 Item 10|75b7 82m7
+68i7 Last 10|76b7 83m7 87m10
+70U14*Puts 10|205b14 229r8 229t12
+71s7 To 10|206b7 217r16 222m13 222r17 225r19 225r31 226m13
+72f7 Item 10|207b7 215r23
+73i7 Aft 10|208b7 215r57
+74i7 Exp 10|209b7 215r69
+X 10 a-tiflau.adb
+52a7 Buf 58m35 59r23 61m27 64r26 66r33
+53i7 Stop 58m40 61m32 64r43 66r38
+54i7 Ptr 59m28 64m31 66r44
+78i7 Pos 81m26 82m32 83r15 87r18
+100b7 Loaded 110m34 112r10 113m39 117r17 124m39 128r17 134m42 136r13 140m40
+. 142r16 149m43 151r19 164m40 166r16 174m39 176r10
+193a7 Buf 197m29 198r23
+194i7 Ptr 197m34 198r33
+211a7 Buf 215m29 222r39
+212i7 Ptr 215m34 217r10 221r24 222r27 225r41
+221i14 J 222r33 222r44
+225i14 J 226r17
+X 11 a-tigeau.ads
+39K29*Generic_Aux 10|36r18 36r47 11|191e28
+48U14*Check_End_Of_Field 10|66r7
+84U14*Load_Width 10|58r10
+91U14*Load_Skip 10|105r7
+96U14*Load 10|110r7 140r13 149r16 164r13
+112U14*Load 10|134r10 174r7
+123U14*Load 10|106r7 158r16 177r10
+131U14*Load_Digits 10|113r10 124r10
+139U14*Load_Digits 10|167r16 178r10
+152U14*Load_Extended_Digits 10|143r16 148r16 152r19
+162U14*Put_Item 10|198r7
+176U14*String_Skip 10|59r10 81r7
+X 14 system.ads
+41K9*System 10|38r6 38r28 39r6 39r28 14|150e11
+X 19 s-imgrea.ads
+38K16*Img_Real 10|38r13 38r35 19|73e20
+59U14*Set_Image_Real 10|197r7 215r7
+63i7 Fore 10|215r39
+64i7 Aft 10|215r50
+65i7 Exp 10|215r62
+X 28 s-valrea.ads
+36K16*Val_Real 10|39r13 39r35 28|75e20
+39V13*Scan_Real 10|64r15 82r15
+

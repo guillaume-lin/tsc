@@ -1,0 +1,32 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnn
+
+U system.img_lli%b	s-imglli.adb		f02ff885 NE PK
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U system.img_lli%s	s-imglli.ads		1bdc5928 NE PR PK
+W system%s		system.ads		system.ali
+
+D system.ads		20020507104801 427a8039
+D s-imglli.ads		20020507105117 59a6d911
+D s-imglli.adb		20020507105117 a9892194
+D s-secsta.ads		20020507105154 e384df23
+D s-stoele.ads		20020507105159 c6bef0ad
+X 1 system.ads
+41K9*System 150e11 2|40r9 57r5 3|36r14 99r5
+X 2 s-imglli.ads
+40K16*Img_LLI 41r22 57r12 57e19 3|36b21 99r12 99t19
+43V13*Image_Long_Long_Integer 3|42b13 56r8 56t31
+43i38 V 3|42b38 47r10 54r36
+46U14*Set_Image_Long_Long_Integer 3|54r7 62b14 97r8 97t35
+47i7 V 3|63b7 88r10 89r23 94r22
+48s7 S 3|64b7 77m13 81m13 93m10
+49i7 P 3|65b7 76m13 76r18 77r16 80m13 80r18 81r16 92m10 92r15 93r13
+X 3 s-imglli.adb
+43i7 P 48m10 49r13 51m10 54m42 55r22
+44a7 S 49m10 54m39 55r14
+67U17 Set_Digits 72b17 75r13 83r11 83t21 89r10 94r10
+67i29 T 72b29 74r13 75r25 77r43 81r42
+

@@ -1,0 +1,16 @@
+2014-5-1
+1. add /bin/fbshowbmp16bit to show startup logo
+   source: tsc/src/frame-buffer/show_bmp_16bit.c (please find dependency in the same dir)
+2. add /bin/setscreen to disable frame buffer screen scroll 
+   source: tsc/src/frame-buffer/setscreen.c (please find dependency in the same dir)
+3. modify /bin/tsc_ui shell script to clear screen (please see DOC-img/bin/tsc_ui)
+4. the modified ncurses-5.4 please see tsc/dep/ncurses-5.4
+   the modification is  replacing isprint() with  myisprint(){ return 1; }
+   because chinese character is not visible when test with isprint.
+5. tsc/dep/zhcon is not used
+6.  other doc refer to tsc/src/ncurses/ncurses_programming_howto.txt
+    tsc/src/frame-buffer/frame-buffer-programming-howto.txt
+7.  to install 64M DOC image, just boot with CF card ,
+    and issue command:
+     #cp DOC64M.img /dev/fla 
+      this will install the full img to /dev/fla

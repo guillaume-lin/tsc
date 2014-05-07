@@ -1,0 +1,117 @@
+C51 COMPILER V7.09   MULTIPLE_SCHEDULE_CONTROL                                             04/25/2008 16:22:07 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE MULTIPLE_SCHEDULE_CONTROL
+OBJECT MODULE PLACED IN multiple_schedule_control.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE multiple_schedule_control.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           *  多段控制
+   3           *
+   4           *  Company: Xiamen Uni-Creative Information Technology Corporation
+   5           *  Author:  Lin Jingxian
+   6           *  E-Mail:  cckk_lin@yahoo.ie
+   7           *  Date:    2005-06-30 
+   8           * 
+   9           *  $log$
+  10           *
+  11           */
+  12          #include "kernel.h"
+  13          #include "error_code.h"
+  14          #include "multiple_schedule_control.h"
+  15          #include "io.h"
+  16          
+  17          
+  18          static int s_is_mode_switching;
+  19          /**
+  20           *  多段控制算法
+  21           *
+  22           */
+  23          int multiple_schedule_control(int mode_switch, int timer)
+  24          {
+  25   1              //如果是刚切换到该控制模式
+  26   1              if(mode_switch){
+  27   2                      s_is_mode_switching = 1;
+  28   2              }
+  29   1      
+  30   1              // 如果是处于过渡状态
+  31   1              if(s_is_mode_switching){
+  32   2                      // 运行过渡算法
+  33   2                      int ret = switching_with_multiple_schedule(mode_switch,timer);
+  34   2                      if(ret == 1){
+  35   3                              // 过渡结束
+  36   3                              s_is_mode_switching = 0;
+  37   3                              return 0;
+  38   3                      }
+  39   2                      return ret;
+  40   2              }
+  41   1              
+  42   1      
+  43   1              
+  44   1              if(timer == 0) {
+  45   2                      if(is_step_end() && is_last_step()){
+  46   3                              byte s,p,t;
+  47   3                              // 一个周期已经运行完毕
+  48   3                              // 根据需要运行新的时段
+  49   3                              get_current_schedule(&s,&p,&t);
+  50   3                              // 检查当前相位和配时是否合法
+  51   3                              if(!is_schedule_valid(p,t)){
+  52   4                                      // 时段数据不合法
+  53   4                                      set_error(INVALID_PHASE,&g_controller_status.m_error.m_soft_error);
+  54   4                                      set_error(INVALID_TIMMING,&g_controller_status.m_error.m_soft_error);
+  55   4                                                      
+C51 COMPILER V7.09   MULTIPLE_SCHEDULE_CONTROL                                             04/25/2008 16:22:07 PAGE 2   
+
+  56   4                                      return -1;
+  57   4                              }
+  58   3                              else {
+  59   4                                      clear_error(INVALID_PHASE,&g_controller_status.m_error.m_soft_error);
+  60   4                                      clear_error(INVALID_TIMMING,&g_controller_status.m_error.m_soft_error);
+  61   4                                      } 
+  62   3      
+  63   3                              load_current_schedule(s,p,t);
+  64   3                              g_controller_status.m_step=1;
+  65   3                              g_controller_status.m_stage = 1;
+  66   3                              if(g_controller_status.m_current_phase_plan_p->m_stage_count>1)
+  67   3                                      g_controller_status.m_next_stage=2;
+  68   3                              else
+  69   3                                      g_controller_status.m_next_stage=1;
+  70   3                              run_current_step();
+  71   3                      }
+  72   2                      // 仅仅当前步运行完毕
+  73   2                      else if(is_step_end()){
+  74   3                              // 更新步号
+  75   3                              set_current_stage();
+  76   3                              run_current_step();
+  77   3                      }
+  78   2      
+  79   2              }
+  80   1              
+  81   1              if(timer == 9){
+  82   2                      // 检查系统的错误状态
+  83   2                      // 如果错误导致不能正常运行本控制模式，则要求降级
+  84   2                      if(get_lamp_health(&g_controller_status.m_lamp_health) != 0)
+  85   2                              return 0;
+  86   2                      
+  87   2              }
+  88   1      
+  89   1              // 否则正常返回
+  90   1              return 0;
+  91   1      
+  92   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    302    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2       5
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

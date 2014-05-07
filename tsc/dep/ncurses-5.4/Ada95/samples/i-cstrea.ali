@@ -1,0 +1,185 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnvnnnn
+
+U interfaces.c_streams%b  i-cstrea.adb		cf1b6eec NE PK
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W unchecked_conversion%s
+
+U interfaces.c_streams%s  i-cstrea.ads		9dcf6698 EB EE PK
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W unchecked_conversion%s
+
+D interfac.ads		20020507105017 6e859da6
+D i-cstrea.ads		20020507105014 00323eb8
+D i-cstrea.adb		20020507105014 d4534491
+D system.ads		20020507104801 427a8039
+D s-parame.ads		20020507105150 e802d143
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 interfac.ads
+23K9*Interfaces 168e15 2|44r9 346r5 3|42r14 147r5
+38M9*Unsigned_8 3|87r63
+X 2 i-cstrea.ads
+44K20*C_Streams 45r24 346r16 346e25 3|42b25 147r16 147t25
+50M12*chars 118r42 128r28 128r67 132r31 132r45 141r28 164r18 165r18 186r33
+. 193r16 198r31 207r32 218r33 241r31 241r47 3|130r16 137r19
+53M12*FILEs 75r27 98r27 99r27 100r27 114r33 116r30 118r56 120r28 122r30 124r30
+. 126r29 128r53 130r30 132r59 139r38 141r44 147r16 155r16 166r18 167r18 170r16
+. 175r29 181r16 189r31 192r16 203r28 205r39 343r27 3|52r16 59r19 76r16 83r19
+. 109r16 116r19 129r16 136r19
+56M12*voids 144r16 151r16 178r16 3|49r16 56r19 72r16 80r19 94r58 106r16 113r19
+59I12*int 82r19 85r21 86r21 87r21 90r24 93r24 94r24 95r24 116r44 118r30 120r42
+. 122r44 124r44 126r43 128r39 130r44 139r24 139r52 141r58 172r16 173r16 184r30
+. 184r42 194r16 196r16 205r25 205r53 207r46 218r47 221r39 221r51 234r40 235r40
+. 305r26 307r26 308r26 309r26 311r26 312r26 313r26 315r26 330r24 331r24 332r24
+. 333r24 334r24 335r24 336r24 337r24 3|131r16 133r16 138r19 140r19
+67I9*long 171r16 175r43
+73M9*size_t 145r16 146r16 148r16 152r16 153r16 154r16 156r16 179r16 180r16
+. 182r16 195r16 3|50r16 51r16 53r16 57r19 58r19 60r19 73r16 74r16 75r16 77r16
+. 81r19 82r19 84r19 87r39 107r16 108r16 110r16 114r19 115r19 117r19 132r16
+. 139r19
+75M4*NULL_Stream 343c4
+82i4*EOF 330c4
+85i4*IOFBF 331c4
+86i4*IOLBF 332c4
+87i4*IONBF 333c4
+90i4*L_tmpnam 337c4
+93i4*SEEK_CUR 334c4
+94i4*SEEK_END 335c4
+95i4*SEEK_SET 336c4
+98V13*stdin 327m22
+99V13*stdout 328m22
+100V13*stderr 326m22
+114U14*clearerr 264m22
+114M24 stream
+116V13*fclose 265m22
+116M21 stream
+118V13*fdopen 266m22
+118i21 handle
+118M35 mode
+120V13*feof 296m22
+120M19 stream
+122V13*ferror 297m22
+122M21 stream
+124V13*fflush 267m22
+124M21 stream
+126V13*fgetc 268m22
+126M20 stream
+128V13*fgets 269m22
+128M20 strng
+128i35 n
+128M44 stream
+130V13*fileno 298m22
+130M21 stream
+132V13*fopen 270m22
+132M20 filename
+132M38 Mode
+139V13*fputc 271m22
+139i20 C
+139M29 stream
+141V13*fputs 272m22
+141M20 Strng
+141M35 Stream
+143V13*fread 3|48b13 65r8 65t13
+144M7 buffer 3|49b7 64r23
+145m7 size 3|50b7 64r31
+146m7 count 3|51b7 64r37
+147M7 stream 3|52b7 64r44
+150V13*fread 3|71b13 99r8 99t13
+151M7 buffer 3|72b7 98r24
+152m7 index 3|73b7 98r33
+153m7 size 3|74b7 98r41 98r56
+154m7 count 3|75b7 98r62
+155M7 stream 3|76b7 98r69
+163V13*freopen 273m22
+164M7 filename
+165M7 mode
+166M7 stream
+169V13*fseek 274m22
+170M7 stream
+171i7 offset
+172i7 origin
+175V13*ftell 275m22
+175M20 stream
+177V13*fwrite 258r19 3|105b13 122r8 122t14
+178M7 buffer 3|106b7 121r24
+179m7 size 3|107b7 121r32
+180m7 count 3|108b7 121r38
+181M7 stream 3|109b7 121r45
+184V13*isatty 276m22
+184i21 handle
+186U14*mktemp 277m22
+186M22 template
+189U14*rewind 278m22
+189M22 stream
+191V13*setvbuf 259r19 3|128b13 145r8 145t15
+192M7 stream 3|129b7 144r25
+193M7 buffer 3|130b7 144r33
+194i7 mode 3|131b7 144r41
+195m7 size 3|132b7 144r47
+198U14*tmpnam 279m22
+198M22 string
+203V13*tmpfile 280m22
+205V13*ungetc 281m22
+205i21 c
+205M30 stream
+207V13*unlink 282m22
+207M21 filename
+218V13*file_exists 284m22
+218M26 name
+221V13*is_regular_file 285m22
+221i30 handle
+234U14*set_binary_mode 287m22
+234i31 handle
+235U14*set_text_mode 288m22
+235i31 handle
+241U14*full_name 291m22
+241M25 nam
+241M38 buffer
+249i4*max_path_len 290m22
+305i4 c_constant_EOF 317m22 330r31
+307i4 c_constant_IOFBF 318m22 331r31
+308i4 c_constant_IOLBF 319m22 332r31
+309i4 c_constant_IONBF 320m22 333r31
+311i4 c_constant_SEEK_CUR 321m22 334r31
+312i4 c_constant_SEEK_END 322m22 335r31
+313i4 c_constant_SEEK_SET 323m22 336r31
+315i4 c_constant_L_tmpnam 324m22 337r31
+339P9 Dummy 340r53 343r48
+340V13 To_Address 343r36
+X 3 i-cstrea.adb
+55V16*C_fread 61m25 64r14
+56M10 buffer
+57m10 size
+58m10 count
+59M10 stream
+79V16*C_fread 85m25 97r14
+80M10 buffer
+81m10 size
+82m10 count
+83M10 stream
+87A12 Byte_Buffer 92r36
+92P12 Acc_Bytes 94r65
+94V16 To_Acc_Bytes 98r10
+112V16*C_fwrite 118m25 121r14
+113M10 buffer
+114m10 size
+115m10 count
+116M10 stream
+135V16*C_setvbuf 141m25 144r14
+136M10 stream
+137M10 buffer
+138i10 mode
+139m10 size
+X 4 system.ads
+41K9*System 2|42r6 50r21 53r21 56r21 67r31 68r18 340r60 4|150e11
+67M9*Address 2|50r28 53r28 56r28 340r67
+X 5 s-parame.ads
+54K16*Parameters 2|42r13 67r38 68r25 5|136e22
+108N4*long_bits 2|67r49 68r36
+X 6 unchconv.ads
+22v10*Unchecked_Conversion 2|41r6 340r31 3|40r6 94r36
+

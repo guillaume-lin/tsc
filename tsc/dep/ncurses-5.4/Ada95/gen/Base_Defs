@@ -1,0 +1,4 @@
+--  curses binding.
+--  This module is generated. Please don't change it manually!
+--  Run the generator instead.
+--  |define(`M4_BIT_ORDER',`Low_Order_First')define(`M4_KEY_MAX',`8#777#')define(`M4_SPECIAL_FIRST',`8#400#')

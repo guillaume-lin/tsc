@@ -1,0 +1,265 @@
+V "GNAT Lib v3.15a"
+M P W=b
+P
+R nnvvnnnvnnnnnvvvvvvnnvvnnnnnnnnvnvnnnnnnnvvvnn
+
+U ncurses2.trace_set%b	ncurses2-trace_set.adb	cebe8ead NE SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+W ncurses2.util%s	ncurses2-util.adb	ncurses2-util.ali
+W system%s		system.ads		system.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.string_ops%s	s-strops.adb		s-strops.ali
+W system.string_ops_concat_3%s  s-sopco3.adb	s-sopco3.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+W terminal_interface.curses.trace%s  terminal_interface-curses-trace.adb  terminal_interface-curses-trace.ali
+
+U ncurses2.trace_set%s	ncurses2-trace_set.ads	f21d178b EE NE SU IL
+W ncurses2%s		ncurses2.ads		ncurses2.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-string.ads		20020507104847 6440c304
+D a-strbou.ads		20020507104845 a85cb7da
+D a-strbou.adb		20020507104845 cdfe14ea
+D a-strfix.ads		20020507104846 2228ddca
+D a-strmap.ads		20020507104847 e6fc9a3a
+D a-strmap.adb		20020507104847 998c4cc1
+D a-strsea.ads		20020507104847 691214ed
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tiinau.ads		20020507104900 b66fa990
+D a-tiinio.ads		20020507104900 d2c49634
+D a-tiinio.adb		20020507104900 2c7ab314
+D a-unccon.ads		20020507104903 5b55fe29
+D a-uncdea.ads		20020507104903 5a774be9
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cpoint.ads		20020507105013 fc961354
+D i-cpoint.adb		20020507105013 22760490
+D i-cstrin.ads		20020507105014 1be20329
+D i-cstrea.ads		20020507105014 00323eb8
+D ncurses2.ads		20001202223108 51f7f9f4
+D ncurses2-trace_set.ads  20001202223107 a3eaee7f
+D ncurses2-trace_set.adb  20001202223107 fcaf0e6a
+D ncurses2-util.ads	20001202223108 df9e0a6e
+D system.ads		20020507104801 427a8039
+D s-bitops.ads		20020507105100 0c033dfd
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-imgint.ads		20020507105116 f1ba8463
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-strops.ads		20020507105201 1d376900
+D s-sopco3.ads		20020507105157 fb5c3964
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses.adb  20031025153918 67f72bc1
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-menus.adb  20031025153918 c955c37c
+D terminal_interface-curses-trace.ads  20140426095555 252eac1e
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 32|46r6 127r22
+X 10 a-string.ads
+18K13*Strings 32e16 32|46r10 127r26
+X 11 a-strbou.ads
+42K21*Bounded 467e24 32|46r18 127r34
+49k12*Generic_Bounded_Length 465e30 32|127r42
+53R12 Bounded_String 32|245r13
+59V16 Length 32|348r27 349r23 349r41
+65V16 To_Bounded_String 32|245r31
+70V16 To_String 32|348r10 352r14
+106U17 Append 32|251r10 257r13 258r13 263r13 264r13 269r13 270r13 276r13
+. 277r13 283r13 284r13 289r13 290r13 295r13 296r13 302r13 303r13 309r13 310r13
+. 316r13 317r13 323r13 324r13 330r13 331r13 337r13 338r13 343r13 344r13
+343U17 Delete 32|349r10
+X 30 ncurses2.ads
+42K9*ncurses2 44e13 31|41r11 32|41r6 41r25 50r11 481r5
+X 31 ncurses2-trace_set.ads
+41U20*trace_set 32|50b20 481r14 481t23
+X 32 ncurses2-trace_set.adb
+52V13 menu_virtualize 59b13 84r8 84t23 363r15
+52i30 c 59b30 61r12 79r20 82r20
+53V13 subset 130b13 150r8 150t14 255r13 261r13 267r13 273r13 280r13 287r13
+. 293r13 299r13 306r13 313r13 320r13 327r13 334r13 341r13 445r13
+53r21 super 130b21 133r10 134r10 135r10 136r10 137r10 138r10 139r10 140r10
+. 141r10 142r10 143r10 144r10 445r34
+53r28 sub 130b28 133r29 134r29 135r30 136r35 137r40 138r29 139r36 140r36
+. 141r33 142r38 143r39 144r40 445r21
+54V13 trace_or 152b13 169r8 169t16 459r22
+54r23 a 152b23 155r24 156r24 157r25 158r30 159r35 160r24 161r31 162r31 163r28
+. 164r33 165r34 166r35
+54r26 b 152b26 155r35 156r35 157r37 158r47 159r57 160r35 161r49 162r49 163r43
+. 164r53 165r55 166r57
+55V13 trace_num 174b13 239r8 239t17 415r9
+55r24 tlevel 174b24 179r10 184r10 189r10 194r10 199r10 204r10 209r10 214r10
+. 219r10 224r10 229r10 234r10
+56V13 tracetrace 242b13 353r8 353t18 414r16 465r15 469r16
+56r25 tlevel 242b25 250r10 255r21 261r21 267r21 273r21 280r21 287r21 293r21
+. 299r21 306r21 313r21 320r21 327r21 334r21 341r21
+57V13 run_trace_menu 355b13 391r8 391t22 450r10
+57M29 m 355b29 362r36 364r23 368r30 369r36 378r40 380r49
+87P9 string_a 89r14
+88R9 tbl_entry 91e14 93r50
+89p7 name 421r42
+90r7 mask 442r25 458r28
+93a4 t_tbl 370r28 370r47 377r28 377r47 396r22 396r37 420r13 421r32 423r13
+. 440r13 442r15 455r13 458r18
+127K12 BS 244r11
+153r7 retval 155m7 156m7 157m7 158m7 159m7 160m7 161m7 162m7 163m7 164m7
+. 165m7 166m7 168r14
+175i7 result 180m10 180r20 185m10 185r20 190m10 190r20 195m10 195r20 200m10
+. 200r20 205m10 205r20 210m10 210r20 215m10 215r20 220m10 220r20 225m10 225r20
+. 230m10 230r20 235m10 235r20 238r14
+176i7 m 180r29 182m7 182r12 185r29 187m7 187r12 190r29 192m7 192r12 195r29
+. 197m7 197r12 200r29 202m7 202r12 205r29 207m7 207r12 210r29 212m7 212r12
+. 215r29 217m7 217r12 220r29 222m7 222r12 225r29 227m7 227r12 230r29 232m7
+. 232r12 235r29 237m7 237r12
+245R7 buf 251m18 257m21 258m21 263m21 264m21 269m21 270m21 276m21 277m21
+. 283m21 284m21 289m21 290m21 295m21 296m21 302m21 303m21 309m21 310m21 316m21
+. 317m21 323m21 324m21 330m21 331m21 337m21 338m21 343m21 344m21 348r21 348r35
+. 349m18 349r31 349r49 352r25
+356M7 i 368m16 369r19 371r32 372r36
+356M10 p 378m22 379r32
+357b7 changed 361m10 373m25 381m25 386r23
+358i7 c 362m10 363r32
+358i10 v 363m10 364r26
+370i23 n
+377i23 n 378r43
+393r4*nc_tracing 394m22 414r28 415r20 444r25 445r43 465r27 469r28
+393r16 mask 442m7 443r10 445r28 458m10 459r42
+395p4 items_a 421m7 423m4 425r19
+397i4 mrows 428m14 431r27 436r48
+398i4 mcols 428m21 431r38 436r55
+399M4 menuwin 431m4 432r19 433r21 434r9 436r39 476m15
+400i4 menu_y 431r49
+401i4 menu_x 431r57
+402M4 ip 441m7 444r21 446r21 456m7 457r17
+403M4 m 425m4 427r16 428r11 430r20 432r16 436r20 438r10 441r20 450r26 456r20
+. 473r10
+404r4 newtrace 454m4 459m10 459r32 463r14
+420i8 n 421r16 421r39
+440i8 n 441r23 442r22
+455i8 n 456r23 458r25
+X 33 ncurses2-util.ads
+44K18*util 32|41r15 41r34 33|78e18
+51e4*newl 32|62r30 470r15
+57V13*Getchar 32|362r15
+61U14*Pause 32|471r4
+X 51 terminal_interface.ads
+41K9*Terminal_Interface 32|42r6 42r37 43r6 43r43 44r6 44r43 51|46e23
+X 52 terminal_interface-curses.ads
+48K28*Curses 32|42r25 42r56 43r25 43r62 44r25 44r62 52|1933e30
+56M9*Window 32|399r14
+59I9*Line_Position 32|400r22
+60I9*Column_Position 32|401r22
+62I12*Line_Count 32|397r12
+64I12*Column_Count 32|398r12
+67I9*Key_Code 32|52r34 59r34 358r14
+90i4*Key_Cursor_Down 32|72r37
+91i4*Key_Cursor_Up 32|74r37
+131i4*Key_Next_Page 32|68r37
+132i4*Key_Previous_Page 32|70r37
+154i4*Key_Exit 32|62r38
+202i4*Key_Mouse 32|78r15
+382X4*Curses_Exception 32|477r19
+411V13*Lines 32|467r25
+504U14*Move_Cursor 32|467r4
+505i27 Line 32|467r17
+506i27 Column 32|467r36
+521U14*Add 32|416r4 470r4
+522e19 Ch 32|416r9 470r9
+572V13*New_Window 32|431r15
+581U14*Delete 32|476r7
+597V13*Derived_Window 32|436r23
+646U14*Add 32|414r4 468r4 469r4
+647s19 Str 32|414r9 468r9 469r9
+655U14*Add 32|406r4 407r4 409r4 411r4 413r4
+656i19 Line 32|406r9 407r9 409r9 411r9 413r9
+657i19 Column 32|406r20 407r20 409r20 411r20 413r20
+658s19 Str 32|406r33 408r9 410r9 412r9 413r33
+713U14*Box 32|434r4
+863U14*Beep 32|81r13
+903U14*Set_KeyPad_Mode 32|433r4
+904b31 SwitchOn 32|433r30
+1038U14*Refresh 32|418r4
+X 55 terminal_interface-curses-menus.ads
+48K35*Menus 32|44r32 44r69 369r23 378r27 380r36 55|676e36
+55M9*Item 32|356r14 402r9
+56M9*Menu 32|57r33 355r33 403r8
+61M4*Null_Item 32|423r32
+64I12*Menu_Request_Code 32|52r51 59r51 63r20
+72i4*M_ScrollUp_Line 32|65r20
+73i4*M_ScrollDown_Line 32|67r20
+74i4*M_ScrollDown_Page 32|71r20
+75i4*M_ScrollUp_Page 32|69r20
+78i4*M_Next_Item 32|73r20
+79i4*M_Previous_Item 32|75r20
+80i4*M_Toggle_Item 32|77r20
+176A9*Item_Array 32|396r10
+179P9*Item_Array_Access 32|395r14
+198V13*New_Item 32|421r22
+213U14*Set_Value 32|372r25 380r25 444r10 446r10
+219V13*Value 32|371r25 379r25 457r10
+295V13*Current 32|368r21
+323U14*Post 32|438r4 473r4
+340U14*Switch_Options 32|430r4
+342b30 On 32|430r62
+362U14*Set_Window 32|432r4
+368V13*Get_Window 32|362r24
+373U14*Set_Sub_Window 32|436r4
+384U14*Scale 32|428r4
+538U14*Set_Format 32|427r4
+624V13*Items 32|369r29 378r33 380r42 441r13 456r13
+643V13*New_Menu 32|425r9
+657n27*Unknown_Request 32|365r18
+661V13*Driver 32|364r15
+X 57 terminal_interface-curses-trace.ads
+42K35*Trace 32|43r32 43r69 57|113e36
+46R9*Trace_Attribute_Set 32|53r34 54r30 54r58 55r33 56r34 90r14 98r8 100r8
+. 102r8 104r8 106r8 110r8 112r8 114r8 116r8 118r8 120r8 122r8 130r34 152r30
+. 152r58 153r16 174r33 242r34 256r21 262r21 268r21 274r21 281r21 294r21 300r21
+. 307r21 314r21 321r21 328r21 335r21 393r23 404r15 57|60e17
+48b10*Times 32|133r16 133r33 155r14 155r26 155r37 179r17
+49b10*Tputs 32|134r16 134r33 156r14 156r26 156r37 184r17
+50b10*Update 32|135r16 135r34 157r14 157r27 157r39 189r17
+51b10*Cursor_Move 32|136r16 136r39 158r14 158r32 158r49 194r17
+52b10*Character_Output 32|137r16 137r44 159r14 159r37 159r59 199r17
+53b10*Calls 32|138r16 138r33 160r14 160r26 160r37 204r17
+54b10*Virtual_Puts 32|139r16 139r40 161r14 161r33 161r51 209r17
+55b10*Input_Events 32|140r16 140r40 162r14 162r33 162r51 214r17
+56b10*TTY_State 32|141r16 141r37 163r14 163r30 163r45 219r17
+57b10*Internal_Calls 32|142r16 142r42 164r14 164r35 164r55 224r17
+58b10*Character_Calls 32|143r16 143r43 165r14 165r36 165r57 229r17
+59b10*Termcap_TermInfo 32|144r16 144r44 166r14 166r37 166r59 234r17
+85r4*Trace_Disable 32|96r8 153r39 250r19 443r17 444r38 454r16
+87r4*Trace_Ordinary 32|108r8 288r21
+94r4*Trace_Maximum 32|124r8 342r21
+103U14*Trace_On 32|463r4
+107U14*Trace_Put 32|464r4
+

@@ -1,0 +1,427 @@
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ACTUATE_CONTROL
+OBJECT MODULE PLACED IN actuate_control.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE actuate_control.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * actuate_control.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-14 15:26:10 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include "kernel.h"
+  15          #include "io.h"
+  16          #include "util.h"
+  17          #include "detector_set.h"
+  18          #include "actuate_control.h"
+  19          #ifndef __C51__
+              typedef byte bit;
+              #endif
+  22          bit f_actuate_control,f_temp;
+  23          /**
+  24           * 判断当前步是不是相位步
+  25           */
+  26          int is_phase_step()
+  27          {
+  28   1              int i;
+  29   1              stage_t* p = &g_controller_status.m_current_phase_plan_p->m_stage[g_controller_status.m_stage-1];
+  30   1              for(i=0; i<MAX_PHASE_COUNT; i++) {
+  31   2      //061010                if(is_term_connect_to_green(i+1) && 
+  32   2      //061010                                decode_term_status(p, i+1) == ON){
+  33   2      //061010                        // 有绿灯亮,判断为相位步
+  34   2      //061010                        return 1;
+  35   2      //061010                };
+  36   2      //061010        端子 9 18 27 36 可固定常绿，对感应控制没影响
+  37   2      //      if(is_term_connect_to_green(i+1) && (decode_term_status(p, i+1) == ON) && ((i+1)%9!=0x00)) {
+  38   2                      if(p->m_phase[i])
+  39   2                      {
+  40   3                              // 有绿灯亮,判断为相位步
+  41   3                              return 1;
+  42   3                      };
+  43   2      //061010                
+  44   2              }
+  45   1      
+  46   1              return 0;
+  47   1      }
+  48          int simple_full_actuate_control(int mode_switch, int timer);
+  49          int simple_half_actuate_control(int mode_switch, int timer);
+  50          int actuate_control(int mode_switch,int timer)
+  51          {
+  52   1              //static int is_switching;
+  53   1              //if(mode_switch){
+  54   1              //      if (!f_return_actuate_control) is_switching = 1;                // 由手动返回则不经过黄闪、全红阶段
+  55   1              //      else f_return_actuate_control = 0;
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 2   
+
+  56   1              //}
+  57   1              //
+  58   1              //if(is_switching){
+  59   1              //      int ret = switching_with_yellow_flash_all_red(mode_switch,5,5,timer);
+  60   1              //      if(ret == 1){
+  61   1              //              is_switching = 0;       // switching done
+  62   1              //              mode_switch = 1;
+  63   1              //      }
+  64   1              //      else
+  65   1              //              return 0;
+  66   1              //}
+  67   1      
+  68   1      
+  69   1              switch(g_config.m_actuate_control_param.m_strategy){
+  70   2                      case STRATEGY_FULL_ACTUATE:                                                                                     // 2
+  71   2                              // 全感应控制
+  72   2                              return simple_full_actuate_control(mode_switch,timer);
+  73   2                              break;
+  74   2                      case STRATEGY_HALF_ACTUATE:                                                                                     // 1
+  75   2                              // 半感应控制
+  76   2                              return simple_half_actuate_control(mode_switch,timer);
+  77   2                              break;
+  78   2                      default:
+  79   2                              break;
+  80   2              }
+  81   1      
+  82   1              return -1;
+  83   1      }
+  84          
+  85          // 检测器集
+  86          //detector_set_t set;
+  87          
+  88          // 
+  89          // 简单的全感应控制
+  90          // 给相应的相位一个最小绿，如果持续有车的话，就增加相位时间，一直到最大绿
+  91          //
+  92          int simple_full_actuate_control(int mode_switch, int timer)
+  93          {
+  94   1              static byte min_green;
+  95   1              static byte max_green;
+  96   1              static byte adjustment;
+  97   1              static byte vehicle_gap;
+  98   1              static byte phase;
+  99   1              static byte timming;
+ 100   1      //w
+ 101   1              detector_counter_t detector_count_bak1;
+ 102   1              static detector_counter_t detector_count_bak2; 
+ 103   1      //w
+ 104   1              static byte no_car_arrive_time;
+ 105   1              static byte is_in_phase_step;
+ 106   1              static detector_set_t set;
+ 107   1              if(mode_switch){
+ 108   2                      // 初始化
+ 109   2                      byte ps,ts;
+ 110   2                      min_green = g_config.m_actuate_control_param.m_minmum_green;
+ 111   2                      max_green = g_config.m_actuate_control_param.m_maximum_green;
+ 112   2                      adjustment = g_config.m_actuate_control_param.m_adjust_quantum;
+ 113   2                      vehicle_gap = g_config.m_actuate_control_param.m_vehicle_gap;
+ 114   2                      phase = g_config.m_actuate_control_param.m_phase;
+ 115   2                      timming = g_config.m_actuate_control_param.m_timming;
+ 116   2      //w             
+ 117   2                      ps = g_config.m_phase_table[phase-1].m_stage_count;                                                     
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 3   
+
+             -                                 
+ 118   2                      ts = g_config.m_timming_table[timming-1].m_step;                                                        
+             -                          
+ 119   2                      if(ps <= 0 || ts <= 0 || ps != ts) return -1;                           // 若查表得到的相位方案或配时方案号的总步数不一致或为 0
+             - 时，表示不合法。直接返回
+ 120   2      //w             
+ 121   2                      load_current_schedule(0,phase,timming);
+ 122   2                      no_car_arrive_time = 0;
+ 123   2                      is_in_phase_step = 0;
+ 124   2                      empty_set(&set);
+ 125   2                      }
+ 126   1      
+ 127   1              no_car_arrive_time++;
+ 128   1      
+ 129   1              if(timer == 0 && is_step_end()) {
+ 130   2                      // 更新步伐
+ 131   2                      set_current_stage();
+ 132   2                      run_current_step();     
+ 133   2                      if(is_phase_step()) {
+ 134   3                              no_car_arrive_time = 0;
+ 135   3                              is_in_phase_step = 1;
+ 136   3                              // 是相位步, 需要根据情况给定初始配时
+ 137   3                              // 根据此前计算的该相位方向的被阻车辆数，给定一个起始绿灯时间
+ 138   3                              g_controller_status.m_remain_time = 
+ 139   3                                      g_controller_status.m_assign_time = min_green;
+ 140   3                              // 获取相位相关检测器
+ 141   3                              empty_set(&set);
+ 142   3                              get_phase_detector(
+ 143   3                                              &g_controller_status.m_current_lamp_status,
+ 144   3                                              &set);
+ 145   3      
+ 146   3                      }
+ 147   2                      else
+ 148   2                              is_in_phase_step = 0;
+ 149   2      //w     
+ 150   2              f_actuate_control = 0;
+ 151   2      //w
+ 152   2              }
+ 153   1              
+ 154   1              if(timer == 5 && is_in_phase_step) {
+ 155   2                      int i,v;
+ 156   2                      // 判断是否有检测器故障
+ 157   2                      detector_health_t st;
+ 158   2                      get_detector_health(&st);
+ 159   2                      for(i=0; i<MAX_DETECTOR_COUNT; i++){
+ 160   3                              if(!is_in_set(i+1,&set))
+ 161   3                                      continue;
+ 162   3                              v = get_bit_value(st.m_health,(i+1),1);
+ 163   3                              if(v > 0)
+ 164   3                                      return -1;
+ 165   3                      }
+ 166   2              }
+ 167   1      
+ 168   1              if(timer == 8 && is_in_phase_step) {
+ 169   2                      int i;
+ 170   2                      // 检查检测器状态
+ 171   2                      // 只检查相位相关检测器
+ 172   2                      detector_status_t st;
+ 173   2                      get_detector_status(&st);
+ 174   2      
+ 175   2                      for(i=0; i<MAX_DETECTOR_COUNT; i++){
+ 176   3                              int v;
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 4   
+
+ 177   3                              if(!is_in_set(i+1,&set))
+ 178   3                                      continue;
+ 179   3      
+ 180   3      //w                     
+ 181   3                              f_actuate_control = 1;                                                                                  // 该相位步有对应的检测器
+ 182   3      //w                     
+ 183   3                              v = get_bit_value(st.m_status,(i+1),1);
+ 184   3                              if(v > 0){                                                                                                              // 当前相位对应的检测器有输出表示正有车通过
+ 185   4                                      no_car_arrive_time = 0;                                                                         
+ 186   4                                      break;
+ 187   4                                      }
+ 188   3                              }
+ 189   2      //w                     相位结束的前 5 秒,读出各检测器的计数值
+ 190   2                      if (f_actuate_control && (g_controller_status.m_remain_time == 5)) get_detector_counter(&detector_count_
+             -bak2);
+ 191   2      //w             
+ 192   2                      }
+ 193   1      
+ 194   1              if(timer == 9 && is_in_phase_step){
+ 195   2                      // 判断是不是相位结束的前三秒且当前步是不是通行步
+ 196   2                      // 如果是的话，根据检测器情况决定要不要延时
+ 197   2                      int i;
+ 198   2                      if(g_controller_status.m_remain_time != 3 )     return 0;       
+ 199   2      //w             
+ 200   2                      if (!f_actuate_control) return 0;                                                                       // 该相位步无对应检测器直接返回
+ 201   2                      else {
+ 202   3                              f_temp = 0;
+ 203   3                              f_actuate_control = 0;
+ 204   3                              get_detector_counter(&detector_count_bak1);
+ 205   3                              for(i=0; i<MAX_DETECTOR_COUNT; i++) {
+ 206   4                                      if(!is_in_set(i+1,&set)) continue;
+ 207   4                                      if (detector_count_bak1.m_counter[i] != detector_count_bak2.m_counter[i]) {             // 对应检测器的计数值不一
+             -样，表示当前
+ 208   5                                              f_temp = 1;                                                                                             // 正有车通过，需延时
+ 209   5                                              break;
+ 210   5                                              }
+ 211   4                                      }
+ 212   3                              if (!f_temp && (no_car_arrive_time > vehicle_gap)) return 0;
+ 213   3                              }
+ 214   2      //w             
+ 215   2      //w             if(no_car_arrive_time > vehicle_gap)
+ 216   2      //w                     return 0;       // 检测器检测到超过一定的时间没车了
+ 217   2      
+ 218   2                      if(g_controller_status.m_assign_time > max_green)
+ 219   2                              return 0;                                                                                                               // 已经超过最大绿了
+ 220   2      
+ 221   2                      // 延时
+ 222   2                      g_controller_status.m_assign_time += adjustment;
+ 223   2                      g_controller_status.m_remain_time += adjustment;
+ 224   2      
+ 225   2              }
+ 226   1      
+ 227   1              return 0;
+ 228   1      }
+ 229          
+ 230          /**
+ 231           * 计算当前运行的相位表的总相位数
+ 232           */
+ 233          unsigned char phase_count()
+ 234          {
+ 235   1              unsigned char  i,j;
+ 236   1              stage_t* p = &g_controller_status.m_current_phase_plan_p->m_stage[g_controller_status.m_stage-1];
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 5   
+
+ 237   1              j = 0x00;
+ 238   1              for(i=0; i<MAX_PHASE_COUNT; i++)
+ 239   1              {
+ 240   2      //              if(is_term_connect_to_green(i+1) && decode_term_status(p, i+1) == ON) j++;
+ 241   2                      if(p->m_phase[i])
+ 242   2                              j++;
+ 243   2              }
+ 244   1              return j;
+ 245   1      }
+ 246          
+ 247          /**
+ 248           *  半感应控制
+ 249           *  只在次相位的方向上安装检测器
+ 250           */
+ 251          int simple_half_actuate_control(int mode_switch, int timer)
+ 252          {
+ 253   1              static byte min_green;
+ 254   1              static byte max_green;
+ 255   1              static byte adjustment;
+ 256   1              static byte vehicle_gap;
+ 257   1              static byte phase;
+ 258   1              static byte timming;
+ 259   1      //w
+ 260   1              detector_counter_t detector_count_bak1;
+ 261   1              static detector_counter_t detector_count_bak2; 
+ 262   1      //w
+ 263   1              static byte no_car_arrive_time;
+ 264   1              static byte is_in_phase_step;
+ 265   1              static detector_set_t set;
+ 266   1              if(mode_switch){
+ 267   2                      // 初始化 10531515
+ 268   2                      byte ps,ts;
+ 269   2                      min_green = g_config.m_actuate_control_param.m_minmum_green;
+ 270   2                      max_green = g_config.m_actuate_control_param.m_maximum_green;
+ 271   2                      adjustment = g_config.m_actuate_control_param.m_adjust_quantum;
+ 272   2                      vehicle_gap = g_config.m_actuate_control_param.m_vehicle_gap;
+ 273   2                      phase = g_config.m_actuate_control_param.m_phase;
+ 274   2                      timming = g_config.m_actuate_control_param.m_timming;
+ 275   2      //w             
+ 276   2                      ps = g_config.m_phase_table[phase-1].m_stage_count;                                                     
+             -                                 
+ 277   2                      ts = g_config.m_timming_table[timming-1].m_step;                                                        
+             -                          
+ 278   2                      if(ps <= 0 || ts <= 0 || ps != ts) return -1;                           // 若查表得到的相位方案或配时方案号的总步数不一致或为 0
+             - 时，表示不合法。直接返回
+ 279   2                      if (phase_count() != 0x02) return -1;                                           // 运行的相位表的总相位数不为 2，则返回
+ 280   2      //w             
+ 281   2                      load_current_schedule(0,phase,timming);
+ 282   2                      no_car_arrive_time = 0;
+ 283   2                      is_in_phase_step = 0;
+ 284   2                      empty_set(&set);
+ 285   2                      }
+ 286   1      
+ 287   1              no_car_arrive_time++;
+ 288   1      
+ 289   1              if(timer == 0 && is_step_end()) {
+ 290   2                      // 更新步伐
+ 291   2                      int i;
+ 292   2                      set_current_stage();            
+ 293   2                      run_current_step();     
+ 294   2                      
+ 295   2                      if(is_phase_step()) {
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 6   
+
+ 296   3                              no_car_arrive_time = 0;
+ 297   3                              is_in_phase_step = 1;
+ 298   3                              // 是相位步, 需要根据情况给定初始配时
+ 299   3                              // 根据此前计算的该相位方向的被阻车辆数，给定一个起始绿灯时间
+ 300   3      //                      g_controller_status.m_remain_time = g_controller_status.m_assign_time = min_green;
+ 301   3                              // 获取相位相关检测器
+ 302   3                              empty_set(&set);
+ 303   3                              get_phase_detector(&g_controller_status.m_current_lamp_status,&set);
+ 304   3                              
+ 305   3                              f_actuate_control = 0;
+ 306   3                              for(i=0; i<MAX_DETECTOR_COUNT; i++) {
+ 307   4                                      if(!is_in_set(i+1,&set)) continue;
+ 308   4                                      f_actuate_control = 1;                                                  // 该相位步有对应的检测器，为次相位
+ 309   4                                      break;
+ 310   4                                      }
+ 311   3                              if (f_actuate_control) {                                                        // 初始化次相位最大最小时间
+ 312   4      //                              max_green = max_green + 10;
+ 313   4                                      g_controller_status.m_remain_time = g_controller_status.m_assign_time = min_green;
+ 314   4                                      }
+ 315   3                              else {                                                                                          // 初始化主相位最大最小时间
+ 316   4                                      max_green = max_green + 20;
+ 317   4                                      g_controller_status.m_remain_time = g_controller_status.m_assign_time = min_green + 10;
+ 318   4                                      }
+ 319   3                              }
+ 320   2                      else is_in_phase_step = 0;
+ 321   2                      }
+ 322   1              
+ 323   1              if(timer == 5 && is_in_phase_step) {
+ 324   2                      int i,v;
+ 325   2                      // 判断是否有检测器故障
+ 326   2                      detector_health_t st;
+ 327   2                      get_detector_health(&st);
+ 328   2                      for(i=0; i<MAX_DETECTOR_COUNT; i++){
+ 329   3                              v = get_bit_value(st.m_health,(i+1),1);
+ 330   3                              if(v > 0) return -1;
+ 331   3                              }
+ 332   2                      }
+ 333   1      
+ 334   1              if(timer == 8 && is_in_phase_step) {
+ 335   2                      int i;
+ 336   2                      // 检查检测器状态
+ 337   2                      // 检查所有检测器
+ 338   2                      detector_status_t st;
+ 339   2                      get_detector_status(&st);
+ 340   2      
+ 341   2                      for(i=0; i<MAX_DETECTOR_COUNT; i++) {
+ 342   3                              int v;
+ 343   3                              v = get_bit_value(st.m_status,(i+1),1);                                                 // 读取当前相位对应的车辆检测器状态
+ 344   3                              if(v > 0){                                                                                                              // 有车
+ 345   4                                      no_car_arrive_time = 0;
+ 346   4                                      break;
+ 347   4                                              }
+ 348   3                                      }
+ 349   2      //w                     相位结束的前 5 秒,读出各检测器的计数值
+ 350   2                      if (g_controller_status.m_remain_time == 5) 
+ 351   2                              get_detector_counter(&detector_count_bak2);
+ 352   2      //w             
+ 353   2              }
+ 354   1      
+ 355   1              if(timer == 9 && is_in_phase_step){
+ 356   2                      // 判断是不是相位结束的前三秒且当前步是不是通行步
+ 357   2                      // 如果是的话，根据检测器情况决定要不要延时
+C51 COMPILER V7.09   ACTUATE_CONTROL                                                       04/25/2008 16:22:10 PAGE 7   
+
+ 358   2                      int i;
+ 359   2                      if(g_controller_status.m_remain_time != 3 )     return 0;       
+ 360   2      //w             
+ 361   2                      f_temp = 0;
+ 362   2                      get_detector_counter(&detector_count_bak1);
+ 363   2                      for(i=0; i<MAX_DETECTOR_COUNT; i++) {
+ 364   3                              if (detector_count_bak1.m_counter[i] != detector_count_bak2.m_counter[i]) {                     // 对应检测器的计数值不一
+             -样，表示当前
+ 365   4                                      f_temp = 1;                                                                                                     // 正有车通过，需延时
+ 366   4                                      break;
+ 367   4                                      }
+ 368   3                              }
+ 369   2                      
+ 370   2                      if (!f_actuate_control) {                                                                                       // 主相位（未装车辆检测器）
+ 371   3                              if (f_temp | (no_car_arrive_time < vehicle_gap)) return 0;              // 车辆检测器检测到次相位有车
+ 372   3                              }                                                                       
+ 373   2                      else {                                                                                                                          // 次相位（装有车辆检测器）
+ 374   3                              if (!f_temp && (no_car_arrive_time > vehicle_gap)) return 0;    // 车辆检测器没检测到次相位有车 
+ 375   3                              }
+ 376   2                      if(g_controller_status.m_assign_time > max_green) return 0;                                                                                                             // 已经超过最大绿了
+ 377   2                      // 延时
+ 378   2                      g_controller_status.m_assign_time += adjustment;
+ 379   2                      g_controller_status.m_remain_time += adjustment;
+ 380   2                      }
+ 381   1              return 0;
+ 382   1              }
+ 383          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1790    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     88      94
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,11 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U gnat%s		gnat.ads		6380ea48 NE PU PK
+
+D gnat.ads		20011002141535 6380ea48
+D system.ads		20020507104801 427a8039
+X 1 gnat.ads
+38K9*GNAT 39r14 41r5 41e9
+

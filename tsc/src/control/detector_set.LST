@@ -1,0 +1,78 @@
+C51 COMPILER V7.09   DETECTOR_SET                                                          04/25/2008 16:22:17 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE DETECTOR_SET
+OBJECT MODULE PLACED IN detector_set.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE detector_set.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2           * detector_set.c
+   3           * 
+   4           * 
+   5           * 
+   6           * Company: Xiamen Uni-Creative Technology Corporation
+   7           * Author:  Lin Jingxian(林景贤)
+   8           * E-Mail:  cckk_lin@yahoo.ie
+   9           * Date:    2005-07-18 16:37:25 中国标准时间
+  10           * 
+  11           * $log$
+  12           *
+  13           */
+  14          #include <assert.h>
+  15          #include <string.h>
+  16          #include "detector_set.h"
+  17          
+  18          // 清空检测器集合
+  19          int empty_set(detector_set_t* set)
+  20          {
+  21   1              memset(set->m_bits,0,4);
+  22   1              return 0;
+  23   1      }
+  24          // 新增一个检测器到集合
+  25          int add_set(int detector,detector_set_t* set)
+  26          {
+  27   1              unsigned char b,off;
+  28   1              assert(detector >= 1 && detector <= MAX_SET_ELEMENT_COUNT);
+  29   1              b = (detector-1) / 8;
+  30   1              off = (detector-1) % 8;
+  31   1              set->m_bits[b] |= 0x80 >> off;
+  32   1              return 0;
+  33   1      }
+  34          // 从集合中删除一个检测器
+  35          int del_set(int detector,detector_set_t* set)
+  36          {
+  37   1              unsigned char b,off;
+  38   1              assert(detector >= 1 && detector <= MAX_SET_ELEMENT_COUNT);
+  39   1              b = (detector-1) / 8;
+  40   1              off = (detector-1) % 8;
+  41   1              set->m_bits[b] &= ~ (0x80 >> off);
+  42   1              return 0;
+  43   1      }
+  44          // 判断检测器是否在集合中
+  45          int is_in_set(int detector,detector_set_t* set)
+  46          {       
+  47   1              unsigned char b,off;
+  48   1              assert(detector >= 1 && detector <= MAX_SET_ELEMENT_COUNT);
+  49   1              b = (detector-1) / 8;
+  50   1              off = (detector-1) % 8;
+  51   1              return set->m_bits[b] & (0x80 >> off);
+  52   1      }
+  53          
+
+
+C51 COMPILER V7.09   DETECTOR_SET                                                          04/25/2008 16:22:17 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    500    ----
+   CONSTANT SIZE    =    100    ----
+   XDATA SIZE       =   ----      18
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

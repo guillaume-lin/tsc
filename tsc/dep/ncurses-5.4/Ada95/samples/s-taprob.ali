@@ -1,0 +1,100 @@
+V "GNAT Lib v3.15a"
+P
+R nnvvnnnnnnnnnnvvvnvnvvvnnnnnnnnnnvnnnnnnvnnvnn
+
+U system.tasking.protected_objects%b  s-taprob.adb  cfbeb3fc NE PK
+W system%s		system.ads		system.ali
+W system.task_primitives%s  s-taspri.ads	s-taspri.ali
+W system.task_primitives.operations%s  s-taprop.adb  s-taprop.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+
+U system.tasking.protected_objects%s  s-taprob.ads  3ff3c931 EB NE PK
+W system%s		system.ads		system.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-intman.ads		20020507105121 e6cbadb4
+D s-inmaop.ads		20020507105121 bb5e23d2
+D s-osinte.ads		20020507104759 8f433951
+D s-osinte.adb		20011011175953 ee9233b2
+D s-osprim.ads		20020507105124 171b3898
+D s-parame.ads		20020507105150 e802d143
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-tasinf.ads		20020507105203 bbbd2b69
+D s-taspri.ads		20020507104759 26c755ad
+D s-taprop.ads		20020507105202 157f77e3
+D s-taprop.adb		20011218002815 cec3b385
+D s-taskin.ads		20020507105204 36912069
+D s-tasdeb.ads		20020507105203 0206f9fb
+D s-taprob.ads		20020507105202 0962e958
+D s-taprob.adb		20011221170142 d3a32d47
+D unchconv.ads		20020507105303 1b7a14c5
+D unchdeal.ads		20020507105303 8ac9d15e
+X 5 system.ads
+41K9*System 150e11 23|52r9 135r16 145r13 146r13 212r17 224r5 24|41r6 45r14
+. 47r8 69r28 73r25 123r5
+67M9*Address 23|135r23 145r20 146r20
+100I12*Any_Priority 23|212r24 24|73r32
+103I12*Priority 24|69r35
+X 18 s-taspri.ads
+49K16*Task_Primitives 98e27 23|211r25 24|41r13 47r15
+51R9*Lock 77e14 23|211r41
+X 19 s-taprop.ads
+48K32*Operations 475e38 24|41r29 47r31
+148U14*Initialize_Lock 24|72r7
+171U14*Finalize_Lock 24|55r7
+177U14*Write_Lock 24|93r7
+200U14*Read_Lock 24|107r7
+222U14*Unlock 24|120r7
+X 21 s-taskin.ads
+59K16*Tasking 982e19 23|52r16 224r12 24|45r21 123r12
+223N4*Null_Entry 23|126r39
+225N4*Max_Entry 23|128r38
+231I9*Entry_Index 23|130r38
+589i4*Unspecified_Priority 24|68r26
+X 23 s-taprob.ads
+52K24*Protected_Objects 224r20 224e37 24|45b29 123r20 123t37
+126N4*Null_Protected_Entry 131r12
+128N4*Max_Protected_Entry 131r36
+130I9*Protected_Entry_Index<21|231I9> 136r16 147r13
+133P9*Barrier_Function_Pointer 155r17
+135M9 O
+136i9 E
+143P9*Entry_Action_Pointer 156r17
+145M9 O
+146M9 P
+147i9 E
+154R9*Entry_Body 157e14 161r41
+155p7*Barrier
+156p7*Action
+161P9*Entry_Body_Access
+163R9*Protection 173r41 210c9 213e14 214r21 215r8 219r51 24|53r51
+173P9*Protection_Access 175r23 178r26 183r29 189r39 201r31 24|63r26 80r29
+. 104r39 118r31
+175p4*Null_PO
+177U14*Initialize_Protection 24|62b14 74r8 74t29
+178p7 Object 24|63b7 72m39 73m7
+179i7 Ceiling_Priority 24|64b7 66r34
+183U14*Lock 24|80b14 98r8 98t12
+183p20 Object 24|80b20 93m19
+189U14*Lock_Read_Only 24|104b14 112r8 112t22
+189p30 Object 24|104b30 107m18
+201U14*Unlock 24|118b14 121r8 121t14
+201p22 Object 24|118b22 120m15
+211R7*L 24|55r29 72r46 93r26 107r25 120r22
+212i7*Ceiling 24|73r14
+219U14 Finalize_Protection 24|53b14 56r8 56t27
+219R35 Object 24|53b35 55m22
+X 24 s-taprob.adb
+66i7 Init_Priority 68r10 69m10 72r24 73r46
+81b7 Ceiling_Violation 93m36 95r10
+105b7 Ceiling_Violation 107m35 109r10
+

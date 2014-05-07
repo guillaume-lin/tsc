@@ -1,0 +1,71 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvnvnnvnnnnnnnnnnnvnnnnnnnnnnnn
+
+U ada.finalization%b	a-finali.adb		78cccf5d NE PK
+W ada%s			ada.ads			ada.ali
+W system%s		system.ads		system.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+
+U ada.finalization%s	a-finali.ads		0af0a97f EE PR PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-finali.adb		20020507104831 d22ce6a1
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-memory.ads		20020507105124 0df2d6b0
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stalib.adb		20020507105158 0eac5a67
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 3|42r9 68r5 4|38r14 86r5
+X 3 a-finali.ads
+42K13*Finalization 43r22 68r9 68e21 4|38b18 86r9 86t21
+45R9*Controlled 47r42 48r42 49r42 59c9 61r25 4|44r25 53r38 62r40 76r42
+47U14*Initialize 4|76b14 79r8 79t18
+47r26 Object 4|76b26
+48U14*Adjust 4|53b14 56r8 56t14
+48r26 Object 4|53b22
+49U14*Finalize 4|62b14 65r8 65t16
+49r26 Object 4|62b24
+51R9*Limited_Controlled 53r42 54r42 65c9 4|67r40 81r42
+53U14*Initialize 4|81b14 84r8 84t18
+53r26 Object 4|81b26
+54U14*Finalize 4|67b14 70r8 70t16
+54r26 Object 4|67b24
+57K12 SFR 59r36 66r19
+61V13 "=" 4|44b13
+61r18 A 4|44b18 46r37
+61r21 B 4|44b21 46r65
+X 10 system.ads
+41K9*System 3|40r6 57r24 4|36r6 36r36 10|150e11
+X 13 s-finroo.ads
+36K16*Finalization_Root 3|40r13 57r31 4|36r13 36r43 13|62e29
+39R9*Root_Controlled 3|59r40 66r23
+43R9*Empty_Root_Controlled 4|46r14 46r42
+

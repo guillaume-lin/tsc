@@ -1,0 +1,16 @@
+#
+# Jamfile for comm_driver
+#
+
+CC	    	= gcc ;
+CCFLAGS   	= -g -Wall ;
+LINK      	= gcc ;
+LOCATE_TARGET 	= build ;
+CHMOD = ;
+
+
+Object cpld.o : cpld.c ; 
+
+Object cpld_fifo.o : cpld_fifo.c ;
+
+Object rs485.o : rs485.c ;

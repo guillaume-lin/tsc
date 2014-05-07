@@ -1,0 +1,104 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnvnnvvvvvvnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U terminal_interface.curses.text_io.enumeration_io%b  terminal_interface-curses-text_io-enumeration_io.adb  366d36bf NE PK GE
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+W terminal_interface.curses.text_io.aux%s  terminal_interface-curses-text_io-aux.adb  terminal_interface-curses-text_io-aux.ali
+
+U terminal_interface.curses.text_io.enumeration_io%s  terminal_interface-curses-text_io-enumeration_io.ads  1245ab88 EE NE PK GE
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.text_io%s  terminal_interface-curses-text_io.adb  terminal_interface-curses-text_io.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chahan.ads		20020507104823 e0cd8545
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-textio.ads		20020507104856 98d7a37c
+D a-tienau.ads		20020507104858 a07287f1
+D a-tienio.ads		20020507104858 18c7435c
+D a-tienio.adb		20020507104858 69ccfdaa
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrea.ads		20020507105014 00323eb8
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-ficobl.ads		20020507105110 14416104
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-text_io.ads  20031025153918 6bbbacd2
+D terminal_interface-curses-text_io-aux.ads  20031025153918 e6e3fe4e
+D terminal_interface-curses-text_io-enumeration_io.ads  20031025153918 79fe075a
+D terminal_interface-curses-text_io-enumeration_io.adb  20031025153918 d16ae992
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 35|41r6 42r6 42r35 48r23 57r14 60r18 62r18
+X 2 a-charac.ads
+19K13*Characters 22e19 35|42r10 42r39
+X 3 a-chahan.ads
+41K24*Handling 136e28 35|42r21 42r50
+66V13*To_Upper 35|66r29
+X 10 a-textio.ads
+51K13*Text_IO 442e16 35|41r10 48r27 57r18 60r22 62r22
+83E9*Type_Set 35|57r26 60r30
+83n22*Lower_Case 35|62r30
+X 12 a-tienio.ads
+50k21*Enumeration_IO 79e31 35|48r35
+74U14 Put 35|64r11
+X 30 terminal_interface.ads
+41K9*Terminal_Interface 46e23 34|44r9 63r5 35|43r6 45r14 47r24 80r5
+X 31 terminal_interface-curses.ads
+48K28*Curses 1933e30 34|44r28 63r24 35|43r25 45r33 47r43 80r24
+56M9*Window 34|50r18 35|51r18
+X 32 terminal_interface-curses-text_io.ads
+44K35*Text_IO 136e38 34|44r35 63r31 35|43r32 45r40 47r50 80r31
+50I12*Field 34|46r20 52r18 57r18 35|53r18 56r27 73r18
+53E9*Type_Set 34|47r22 53r18 58r18 35|54r18 60r44 74r18
+53n46*Mixed_Case 34|47r34 35|59r17 65r16
+62V13*Get_Window 35|77r12
+X 33 terminal_interface-curses-text_io-aux.ads
+41K51*Aux 54e42 35|43r40 47r58
+47U14*Put_Buf 35|68r11
+X 34 terminal_interface-curses-text_io-enumeration_io.ads
+42E9 Enum 51r18 56r18 35|48r51 52r18 72r18
+44k43*Enumeration_IO 63r39 63e53 35|45b48 80r39 80t53
+46i4 Default_Width 52r27 57r27 35|53r27 73r27
+47e4 Default_Setting 53r30 58r30 35|54r30 74r30
+49U14 Put 35|50b14 69r8 69t11 77r7
+50M7 Win 35|51b7 68r20
+51e7 Item 35|52b7 64r21
+52i7 Width 35|53b7 68r30
+53e7 Set 35|54b7 59r10 60r58 65r10
+55U14 Put 35|71b14 78r8 78t11
+56e7 Item 35|72b7 77r24
+57i7 Width 35|73b7 77r30
+58e7 Set 35|74b7 77r37
+X 35 terminal_interface-curses-text_io-enumeration_io.adb
+47K12 Aux 68r7
+48K12 EIO 64r7
+56a7 Buf 64m16 66m10 66r15 66r39 66r44 68r25
+57e7 Tset 60m10 62m10 64r27
+

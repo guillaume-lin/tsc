@@ -1,0 +1,86 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U interfaces%s		interfac.ads		6e859da6 NE PU PK
+
+D interfac.ads		20020507105017 6e859da6
+D system.ads		20020507104801 427a8039
+X 1 interfac.ads
+23K9*Interfaces 24r14 168r5 168e15
+26I9*Integer_8 27r8
+29I9*Integer_16 30r8
+32I9*Integer_32 33r8
+35I9*Integer_64 36r8
+38M9*Unsigned_8 39r8 51r16 53r16 56r16 58r16 61r16 63r16 66r16 68r16 71r16
+. 73r16
+41M9*Unsigned_16 42r8 76r16 78r16 81r16 83r16 86r16 88r16 91r16 93r16 96r16
+. 98r16
+44M9*Unsigned_32 45r8 101r16 103r16 106r16 108r16 111r16 113r16 116r16 118r16
+. 121r16 123r16
+47M9*Unsigned_64 48r8 126r16 128r16 131r16 133r16 136r16 138r16 141r16 143r16
+. 146r16 148r16
+50V13*Shift_Left
+51m7 Value
+52i7 Amount
+55V13*Shift_Right
+56m7 Value
+57i7 Amount
+60V13*Shift_Right_Arithmetic
+61m7 Value
+62i7 Amount
+65V13*Rotate_Left
+66m7 Value
+67i7 Amount
+70V13*Rotate_Right
+71m7 Value
+72i7 Amount
+75V13*Shift_Left
+76m7 Value
+77i7 Amount
+80V13*Shift_Right
+81m7 Value
+82i7 Amount
+85V13*Shift_Right_Arithmetic
+86m7 Value
+87i7 Amount
+90V13*Rotate_Left
+91m7 Value
+92i7 Amount
+95V13*Rotate_Right
+96m7 Value
+97i7 Amount
+100V13*Shift_Left
+101m7 Value
+102i7 Amount
+105V13*Shift_Right
+106m7 Value
+107i7 Amount
+110V13*Shift_Right_Arithmetic
+111m7 Value
+112i7 Amount
+115V13*Rotate_Left
+116m7 Value
+117i7 Amount
+120V13*Rotate_Right
+121m7 Value
+122i7 Amount
+125V13*Shift_Left 150m30
+126m7 Value
+127i7 Amount
+130V13*Shift_Right 151m30
+131m7 Value
+132i7 Amount
+135V13*Shift_Right_Arithmetic 152m30
+136m7 Value
+137i7 Amount
+140V13*Rotate_Left 153m30
+141m7 Value
+142i7 Amount
+145V13*Rotate_Right 154m30
+146m7 Value
+147i7 Amount
+164F9*IEEE_Float_32
+165F9*IEEE_Float_64
+166F9*IEEE_Extended_Float
+

@@ -1,0 +1,247 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U ada.characters.latin_1%s  a-chlat1.ads	a0be30a8 NE PU PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D system.ads		20020507104801 427a8039
+X 1 ada.ads
+18K9*Ada 21e8 3|18r9 297r5
+X 2 a-charac.ads
+19K13*Characters 22e19 3|18r13 297r9
+X 3 a-chlat1.ads
+18K24*Latin_1 19r14 297r20 297e27
+25e4*NUL
+26e4*SOH
+27e4*STX
+28e4*ETX
+29e4*EOT
+30e4*ENQ
+31e4*ACK
+32e4*BEL
+33e4*BS
+34e4*HT
+35e4*LF
+36e4*VT
+37e4*FF
+38e4*CR
+39e4*SO
+40e4*SI
+42e4*DLE
+43e4*DC1
+44e4*DC2
+45e4*DC3
+46e4*DC4
+47e4*NAK
+48e4*SYN
+49e4*ETB
+50e4*CAN
+51e4*EM
+52e4*SUB
+53e4*ESC
+54e4*FS 137r28
+55e4*GS 138r28
+56e4*RS 139r28
+57e4*US 140r28
+63e4*Space
+64e4*Exclamation
+65e4*Quotation
+66e4*Number_Sign
+67e4*Dollar_Sign
+68e4*Percent_Sign
+69e4*Ampersand
+70e4*Apostrophe
+71e4*Left_Parenthesis
+72e4*Right_Parenthesis
+73e4*Asterisk
+74e4*Plus_Sign
+75e4*Comma
+76e4*Hyphen 77r45
+77e4*Minus_Sign
+78e4*Full_Stop
+79e4*Solidus
+83e4*Colon
+84e4*Semicolon
+85e4*Less_Than_Sign
+86e4*Equals_Sign
+87e4*Greater_Than_Sign
+88e4*Question
+90e4*Commercial_At
+94e4*Left_Square_Bracket
+95e4*Reverse_Solidus
+96e4*Right_Square_Bracket
+97e4*Circumflex
+98e4*Low_Line
+100e4*Grave
+101e4*LC_A
+102e4*LC_B
+103e4*LC_C
+104e4*LC_D
+105e4*LC_E
+106e4*LC_F
+107e4*LC_G
+108e4*LC_H
+109e4*LC_I
+110e4*LC_J
+111e4*LC_K
+112e4*LC_L
+113e4*LC_M
+114e4*LC_N
+115e4*LC_O
+116e4*LC_P
+117e4*LC_Q
+118e4*LC_R
+119e4*LC_S
+120e4*LC_T
+121e4*LC_U
+122e4*LC_V
+123e4*LC_W
+124e4*LC_X
+125e4*LC_Y
+126e4*LC_Z
+127e4*Left_Curly_Bracket
+128e4*Vertical_Line
+129e4*Right_Curly_Bracket
+130e4*Tilde
+131e4*DEL
+137e4*IS4
+138e4*IS3
+139e4*IS2
+140e4*IS1
+142e4*Reserved_128
+143e4*Reserved_129
+144e4*BPH
+145e4*NBH
+146e4*Reserved_132
+147e4*NEL
+148e4*SSA
+149e4*ESA
+150e4*HTS
+151e4*HTJ
+152e4*VTS
+153e4*PLD
+154e4*PLU
+155e4*RI
+156e4*SS2
+157e4*SS3
+159e4*DCS
+160e4*PU1
+161e4*PU2
+162e4*STS
+163e4*CCH
+164e4*MW
+165e4*SPA
+166e4*EPA
+168e4*SOS
+169e4*Reserved_153
+170e4*SCI
+171e4*CSI
+172e4*ST
+173e4*OSC
+174e4*PM
+175e4*APC
+183e4*No_Break_Space 184r52
+184e4*NBSP
+185e4*Inverted_Exclamation
+186e4*Cent_Sign
+187e4*Pound_Sign
+188e4*Currency_Sign
+189e4*Yen_Sign
+190e4*Broken_Bar
+191e4*Section_Sign
+192e4*Diaeresis
+193e4*Copyright_Sign
+194e4*Feminine_Ordinal_Indicator
+195e4*Left_Angle_Quotation
+196e4*Not_Sign
+197e4*Soft_Hyphen
+198e4*Registered_Trade_Mark_Sign
+199e4*Macron
+203e4*Degree_Sign 204r52
+204e4*Ring_Above
+205e4*Plus_Minus_Sign
+206e4*Superscript_Two
+207e4*Superscript_Three
+208e4*Acute
+209e4*Micro_Sign
+210e4*Pilcrow_Sign 211r52
+211e4*Paragraph_Sign
+212e4*Middle_Dot
+213e4*Cedilla
+214e4*Superscript_One
+215e4*Masculine_Ordinal_Indicator
+216e4*Right_Angle_Quotation
+217e4*Fraction_One_Quarter
+218e4*Fraction_One_Half
+219e4*Fraction_Three_Quarters
+220e4*Inverted_Question
+224e4*UC_A_Grave
+225e4*UC_A_Acute
+226e4*UC_A_Circumflex
+227e4*UC_A_Tilde
+228e4*UC_A_Diaeresis
+229e4*UC_A_Ring
+230e4*UC_AE_Diphthong
+231e4*UC_C_Cedilla
+232e4*UC_E_Grave
+233e4*UC_E_Acute
+234e4*UC_E_Circumflex
+235e4*UC_E_Diaeresis
+236e4*UC_I_Grave
+237e4*UC_I_Acute
+238e4*UC_I_Circumflex
+239e4*UC_I_Diaeresis
+243e4*UC_Icelandic_Eth
+244e4*UC_N_Tilde
+245e4*UC_O_Grave
+246e4*UC_O_Acute
+247e4*UC_O_Circumflex
+248e4*UC_O_Tilde
+249e4*UC_O_Diaeresis
+250e4*Multiplication_Sign
+251e4*UC_O_Oblique_Stroke
+252e4*UC_U_Grave
+253e4*UC_U_Acute
+254e4*UC_U_Circumflex
+255e4*UC_U_Diaeresis
+256e4*UC_Y_Acute
+257e4*UC_Icelandic_Thorn
+258e4*LC_German_Sharp_S
+262e4*LC_A_Grave
+263e4*LC_A_Acute
+264e4*LC_A_Circumflex
+265e4*LC_A_Tilde
+266e4*LC_A_Diaeresis
+267e4*LC_A_Ring
+268e4*LC_AE_Diphthong
+269e4*LC_C_Cedilla
+270e4*LC_E_Grave
+271e4*LC_E_Acute
+272e4*LC_E_Circumflex
+273e4*LC_E_Diaeresis
+274e4*LC_I_Grave
+275e4*LC_I_Acute
+276e4*LC_I_Circumflex
+277e4*LC_I_Diaeresis
+280e4*LC_Icelandic_Eth
+281e4*LC_N_Tilde
+282e4*LC_O_Grave
+283e4*LC_O_Acute
+284e4*LC_O_Circumflex
+285e4*LC_O_Tilde
+286e4*LC_O_Diaeresis
+287e4*Division_Sign
+288e4*LC_O_Oblique_Stroke
+289e4*LC_U_Grave
+290e4*LC_U_Acute
+291e4*LC_U_Circumflex
+292e4*LC_U_Diaeresis
+293e4*LC_Y_Acute
+294e4*LC_Icelandic_Thorn
+295e4*LC_Y_Diaeresis
+

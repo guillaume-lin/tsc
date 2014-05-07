@@ -1,0 +1,124 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnvnnnnnnnnnvnn
+
+U sample.menu_demo.handler%b  sample-menu_demo-handler.adb  022d795f NE PK GE
+W sample%s		sample.adb		sample.ali
+W sample.manifest%s	sample-manifest.ads	sample-manifest.ali
+W sample.menu_demo%s	sample-menu_demo.adb	sample-menu_demo.ali
+W sample.menu_demo.aux%s  sample-menu_demo-aux.adb  sample-menu_demo-aux.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.mouse%s  terminal_interface-curses-mouse.adb  terminal_interface-curses-mouse.ali
+
+U sample.menu_demo.handler%s  sample-menu_demo-handler.ads  655f7de3 EE NE PK GE
+W sample%s		sample.adb		sample.ali
+W sample.menu_demo%s	sample-menu_demo.adb	sample-menu_demo.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.menus%s  terminal_interface-curses-menus.adb  terminal_interface-curses-menus.ali
+W terminal_interface.curses.panels%s  terminal_interface-curses-panels.adb  terminal_interface-curses-panels.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D sample.ads		20031025153918 f29d090b
+D sample-manifest.ads	20031025153918 448d6845
+D sample-menu_demo.ads	20031025153918 08e34ec6
+D sample-menu_demo-aux.ads  20031025153918 51f435a8
+D sample-menu_demo-handler.ads  20031025153918 25531d72
+D sample-menu_demo-handler.adb  20031025153918 41bcb03b
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-menus.ads  20140426095555 72a98f20
+D terminal_interface-curses-mouse.ads  20140426095555 73bb89fb
+D terminal_interface-curses-panels.ads  20140426095555 8bf85145
+D unchconv.ads		20020507105303 1b7a14c5
+X 6 sample.ads
+41K9*Sample 43e11 10|52r9 64r5 11|41r6 42r6 42r27 45r14 47r24 107r5
+X 7 sample-manifest.ads
+43K16*Manifest 67e20 11|42r13 42r34
+46i4*SELECT_ITEM 11|88r30 91r29
+X 8 sample-menu_demo.ads
+41K16*Menu_Demo 45e21 10|52r16 64r12 11|41r13 45r21 47r31 107r12
+X 9 sample-menu_demo-aux.ads
+45K26*Aux 71e25 11|41r23 47r41
+47U14*Geometry 11|57r11
+55V13*Create 11|68r27
+62U14*Destroy 11|104r11
+67V13*Get_Request 11|77r33
+X 10 sample-menu_demo-handler.ads
+49V19 My_Driver 11|94r28
+49M30 Men
+50i30 K
+51M30 Pan
+52k26*Handler 64r22 64e29 11|45b31 107r22 107t29
+54U14 Drive_Me 11|58r7 61b14 105r8 105t16
+54M24 M 11|61b24 68r35 77r46 78r42 84r52 94r39 104r20
+55i24 Lin 11|62b24 68r45
+56i24 Col 11|63b24 68r50
+57s24 Title 11|64b24 68r38
+60U14 Drive_Me 11|49b14 59r8 59t16
+60M24 M 11|49b24 57r21 58r17
+61s24 Title 11|50b24 58r26
+X 11 sample-menu_demo-handler.adb
+47K12 Aux 57r7 68r23 77r29 104r7
+52i7 L 57m24
+53i7 C 57m27
+54i7 Y 57m30 58r20
+55i7 X 57m33 58r23
+66M7 Mask 72m53 73r27
+67M7 Old 73m7 103r18
+68M7 Pan 77r49 94r45 104m23
+69e7 V 74m30
+77i13 K 78r45 87r25 88m25 91r25 94r42
+78e13 R 80r18
+84M22 I 90r35
+85r22 O 90m38 91r54
+X 18 terminal_interface.ads
+41K9*Terminal_Interface 10|41r6 42r6 43r6 44r6 45r6 46r6 11|43r6 43r44 18|46e23
+X 19 terminal_interface-curses.ads
+48K28*Curses 10|41r25 42r25 43r25 44r25 45r25 46r25 11|43r25 43r63 19|1933e30
+59I9*Line_Position 10|55r35 11|54r11 62r35
+60I9*Column_Position 10|56r35 11|55r11 63r35
+62I12*Line_Count 11|52r11
+64I12*Column_Count 11|53r11
+67I9*Key_Code 10|50r36 11|77r17
+202i4*Key_Mouse 11|87r29
+863U14*Beep 11|92r25 99r31
+1791E9*Cursor_Visibility 11|69r14
+1791n31*Invisible 11|69r35
+1794U14*Set_Cursor_Visibility 11|74r7
+X 20 terminal_interface-curses-menus.ads
+48K35*Menus 10|45r32 46r32 20|676e36
+55M9*Item 11|84r35
+56M9*Menu 10|49r36 54r35 60r35 11|49r35 61r35
+153R9*Item_Option_Set 11|85r26 20|156e17
+155b10*Selectable 11|91r56
+252U14*Get_Options 11|90r22
+295V13*Current 11|84r43
+655E9*Driver_Result 11|78r17
+655n27*Menu_Ok 11|81r21
+657n27*Unknown_Request 11|82r21
+661V13*Driver 11|78r34
+X 21 terminal_interface-curses-mouse.ads
+47K35*Mouse 11|43r32 43r70 21|230e36
+63M9*Event_Mask 11|66r14 67r14
+64M4*No_Events 11|66r28
+67n26*Left 11|72r35
+87a4*All_Clicks 11|72r41
+109U14*Register_Reportable_Events 11|72r7
+122V13*Start_Mouse 11|73r14
+127U14*End_Mouse 11|103r7
+X 22 terminal_interface-curses-panels.ads
+43K35*Panels 10|43r32 44r32 22|146e37
+48M9*Panel 10|51r36 11|68r14
+

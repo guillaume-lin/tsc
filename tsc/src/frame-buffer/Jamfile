@@ -1,0 +1,16 @@
+#
+# Jamfile for frame buffer
+#
+
+CC	    = gcc ;
+CCFLAGS   = -g -Wall ;
+LINK      = gcc ;
+LOCATE_TARGET = build ;
+LINKLIBS = /usr/lib/libncurses++.a /usr/lib/libform.a /usr/lib/libpanel.a /usr/lib/libmenu.a /usr/lib/libncurses.a ;
+CHMOD = ;
+Main fbshowbmp.exe :	fb_util.c
+		show_bmp.t.c
+		gdi.c
+		zk.c
+		show_bmp.c
+		;

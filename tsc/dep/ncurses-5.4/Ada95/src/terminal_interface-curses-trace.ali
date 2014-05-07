@@ -1,0 +1,52 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnvnnnnnnnnnvnn
+
+U terminal_interface.curses.trace%b  terminal_interface-curses-trace.adb  b46c4566 NE PK
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+U terminal_interface.curses.trace%s  terminal_interface-curses-trace.ads  94905c2c NE PR PK
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-parame.ads		20020507105150 e802d143
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-trace.ads  20140426095555 252eac1e
+D terminal_interface-curses-trace.adb  20140426095556 9142e978
+D unchconv.ads		20020507105303 1b7a14c5
+X 8 terminal_interface.ads
+41K9*Terminal_Interface 46e23 10|42r9 43r25 113r5 11|42r14 54r5
+X 9 terminal_interface-curses.ads
+48K28*Curses 1933e30 10|42r28 43r44 113r24 11|42r33 54r24
+X 10 terminal_interface-curses-trace.ads
+42K35*Trace 43r51 113r31 113e36 11|42b40 54r31 54t36
+46R9*Trace_Attribute_Set 60e17 61r17 62r26 64r8 79r8 85r30 87r30 94r29 103r28
+. 110r28 11|44r28
+48b10*Times
+49b10*Tputs
+50b10*Update
+51b10*Cursor_Move
+52b10*Character_Output
+53b10*Calls
+54b10*Virtual_Puts
+55b10*Input_Events
+56b10*TTY_State
+57b10*Internal_Calls
+58b10*Character_Calls
+59b10*Termcap_TermInfo
+85r4*Trace_Disable
+87r4*Trace_Ordinary
+94r4*Trace_Maximum
+103U14*Trace_On 11|44b14 47r8 47t16
+103r24 x 11|44b24
+107U14*Trace_Put 11|49b14 52r8 52t17
+107s25 str 11|49b25
+110r4*Current_Trace_Setting 111m22
+

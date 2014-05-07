@@ -1,0 +1,3 @@
+libggi.o libggi.o: libggi.cpp ../../config.h
+
+../../config.h:

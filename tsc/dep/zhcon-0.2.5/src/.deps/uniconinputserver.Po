@@ -1,0 +1,4 @@
+uniconinputserver.o uniconinputserver.o: uniconinputserver.cpp \
+  ../config.h
+
+../config.h:

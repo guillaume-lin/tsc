@@ -1,0 +1,114 @@
+C51 COMPILER V7.09   ISR_INT0                                                              04/25/2008 16:22:14 PAGE 1   
+
+
+C51 COMPILER V7.09, COMPILATION OF MODULE ISR_INT0
+OBJECT MODULE PLACED IN isr_int0.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE isr_int0.C LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "isr_int0.h"
+   2          
+   3          /*********************************************************************************************
+   4          *       原型：void int0_isr(void) interrupt 0 using 1
+   5          *       功能: 外部中断 0 子程序，接收由 PC104 发送过来的数据
+   6          *       说明：无
+   7          *       参数：无
+   8          *       返回：无
+   9          *********************************************************************************************/
+  10          void int0_isr(void) interrupt 0 using 1
+  11          {
+  12   1      bit f_receiveed;
+  13   1      unsigned char buffer,i;
+  14   1      unsigned char xdata * data pchar;
+  15   1              pchar = ADDRESS_PC_STATUS;
+  16   1              buffer = *pchar;                                                                                
+  17   1              f_receiveed = 0;
+  18   1              if ((buffer & 0x04) != 0x00) {                                                  // CPLD 端口 0
+  19   2                      pchar = ADDRESS_PC_RD0A;
+  20   2                      uart0_receive_buffer[6][g_in_write_p[6]++] = *pchar;
+  21   2                      if(g_in_write_p[6] == uart0_trans_max)  g_in_write_p[6] = 0;
+  22   2                      
+  23   2                      pchar = ADDRESS_PC_RD1A;
+  24   2                      i = *pchar;
+  25   2                      f_receiveed = 1;
+  26   2                      }
+  27   1              if ((buffer & 0x08) != 0x00) {                                                  // CPLD 端口 1
+  28   2                      pchar = ADDRESS_PC_RD0B;
+  29   2                      uart0_receive_buffer[7][g_in_write_p[7]++] = *pchar;;
+  30   2                      if(g_in_write_p[7] == uart0_trans_max)  g_in_write_p[7] = 0;
+  31   2      
+  32   2                      pchar = ADDRESS_PC_RD1B;
+  33   2                      i = *pchar;
+  34   2                      f_receiveed = 1;
+  35   2                      }
+  36   1              if (!f_receiveed) {
+  37   2                      pchar = ADDRESS_PC_RD0A;
+  38   2                      i = *pchar;
+  39   2                      pchar = ADDRESS_PC_RD1A;
+  40   2                      i = *pchar;
+  41   2                      
+  42   2                      pchar = ADDRESS_PC_RD0B;
+  43   2                      i = *pchar;
+  44   2                      pchar = ADDRESS_PC_RD1B;
+  45   2                      i = *pchar;
+  46   2                      }
+  47   1              }
+  48          /*********************************************************************************************
+  49          *       原型：void int6_isr(void) interrupt 18 using 1
+  50          *       功能: 外部中断 6 子程序，向 PC104 发送数据
+  51          *       说明：无
+  52          *       参数：无
+  53          *       返回：无
+  54          *********************************************************************************************/
+  55          void int6_isr(void) interrupt 18 using 2
+C51 COMPILER V7.09   ISR_INT0                                                              04/25/2008 16:22:14 PAGE 2   
+
+  56          {
+  57   1      
+  58   1      unsigned char ctemp;
+  59   1      unsigned char xdata * data pchar;  
+  60   1              P3IF = P3IF & 0xbf;
+  61   1              pchar = ADDRESS_PC_STATUS;
+  62   1              ctemp = *pchar;
+  63   1              f_cpld_trans_ed = 0;
+  64   1              if ((ctemp & 0x01) == 0x01) {
+  65   2                      if(g_out_read_p[6] != g_out_write_p[6]) {
+  66   3                              pchar = ADDRESS_PC_WR0;
+  67   3                              cpld_trans_bak = uart0_trans_buffer[6][g_out_read_p[6]++];
+  68   3                              *pchar = cpld_trans_bak;
+  69   3                              if(g_out_read_p[6] == uart0_trans_max)  g_out_read_p[6] = 0;
+  70   3                              f_cpld_trans_ed = 1;
+  71   3                              f_cpld_trans_num = 1;
+  72   3      
+  73   3                              }               
+  74   2                      else f_cpld_chanl0_using = 0;
+  75   2                      cpld_count = 0x00;
+  76   2      //              return;
+  77   2                      }
+  78   1              if (!f_cpld_trans_ed && ((ctemp & 0x02) == 0x02)) {
+  79   2                      if(g_out_read_p[7] != g_out_write_p[7]) {
+  80   3                              pchar = ADDRESS_PC_WR1;
+  81   3                              f_cpld_trans_num = 0;
+  82   3                              cpld_trans_bak = uart0_trans_buffer[7][g_out_read_p[7]++];
+  83   3                              *pchar = cpld_trans_bak;
+  84   3                              if(g_out_read_p[7] == uart0_trans_max)  g_out_read_p[7] = 0;
+  85   3                              }               
+  86   2                      else f_cpld_chanl1_using = 0;
+  87   2                      cpld_count = 0x00;
+  88   2                      }
+  89   1              }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    483    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

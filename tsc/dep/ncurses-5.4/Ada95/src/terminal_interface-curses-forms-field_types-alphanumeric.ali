@@ -1,0 +1,99 @@
+V "GNAT Lib v3.15a"
+P
+R nnvnnnnvnnnnnvvvvnvnnvnnnnnnnnnnnvnnnnnnnvnvnn
+
+U terminal_interface.curses.forms.field_types.alphanumeric%b  terminal_interface-curses-forms-field_types-alphanumeric.adb  cc55f636 NE PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.aux%s  terminal_interface-curses-aux.adb  terminal_interface-curses-aux.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+U terminal_interface.curses.forms.field_types.alphanumeric%s  terminal_interface-curses-forms-field_types-alphanumeric.ads  ddb55450 EE PR PK
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W terminal_interface%s	terminal_interface.ads	terminal_interface.ali
+W terminal_interface.curses%s  terminal_interface-curses.adb  terminal_interface-curses.ali
+W terminal_interface.curses.forms%s  terminal_interface-curses-forms.adb  terminal_interface-curses-forms.ali
+W terminal_interface.curses.forms.field_types%s  terminal_interface-curses-forms-field_types.adb  terminal_interface-curses-forms-field_types.ali
+
+D ada.ads		20020507104909 a0108083
+D a-charac.ads		20020507104824 a61fb5a9
+D a-chlat1.ads		20020507104824 06a18501
+D a-except.ads		20020507104830 a9cbab76
+D a-finali.ads		20020507104831 d4be2e87
+D a-filico.ads		20020507104831 83058640
+D a-ioexce.ads		20020507104832 d52e128a
+D a-stream.ads		20020507104845 90e5c6f7
+D a-tags.ads		20020507104854 bc792b69
+D a-tags.adb		20020507104853 ba1f778b
+D gnat.ads		20011002141535 6380ea48
+D g-htable.ads		20011002141531 88a5f4ba
+D interfac.ads		20020507105017 6e859da6
+D i-c.ads		20020507105012 fef7fe28
+D i-cstrin.ads		20020507105014 1be20329
+D system.ads		20020507104801 427a8039
+D s-exctab.ads		20020507105103 52f2ffc0
+D s-finimp.ads		20020507105115 ef65ab1e
+D s-finroo.ads		20020507105115 7e5e077b
+D s-parame.ads		20020507105150 e802d143
+D s-secsta.ads		20020507105154 e384df23
+D s-soflin.ads		20020507105157 b5cab736
+D s-stache.ads		20020507105158 8fc58eaa
+D s-stalib.ads		20020507105159 76713122
+D s-stoele.ads		20020507105159 c6bef0ad
+D s-stratt.ads		20020507105159 9fdf8f81
+D s-stratt.adb		20020507105159 5475baa8
+D s-unstyp.ads		20020507105208 05ad3732
+D terminal_interface.ads  20031025153918 a3b0a934
+D terminal_interface-curses.ads  20140426095555 b1bef032
+D terminal_interface-curses-aux.ads  20140426095555 bef3bb63
+D terminal_interface-curses-forms.ads  20140426095555 7ddb9cd8
+D terminal_interface-curses-forms-field_types.ads  20140426095555 025d8204
+D terminal_interface-curses-forms-field_types-alphanumeric.ads  20031025153918 dfe8d654
+D terminal_interface-curses-forms-field_types-alphanumeric.adb  20031025153918 53b96529
+D unchconv.ads		20020507105303 1b7a14c5
+X 13 interfac.ads
+23K9*Interfaces 168e15 35|41r6 46r13
+X 14 i-c.ads
+20K20*C 140e17 35|41r17 46r24
+33I9*int 35|46r26
+X 29 terminal_interface.ads
+41K9*Terminal_Interface 46e23 34|41r9 43r7 54r5 35|42r6 42r41 44r14 68r5
+X 30 terminal_interface-curses.ads
+48K28*Curses 1933e30 34|41r28 43r26 54r24 35|42r25 42r60 44r33 68r24
+X 31 terminal_interface-curses-aux.ads
+50K35*Aux 124e34 35|42r32 42r67
+78I12*Eti_Error 35|59r13
+80i4*E_Ok 35|62r17
+96U14*Eti_Exception 35|63r10
+X 32 terminal_interface-curses-forms.ads
+48K35*Forms 782e36 34|41r35 43r33 54r31 35|44r40 68r31
+55M9*Field 34|50r39 35|48r39 54r37
+X 33 terminal_interface-curses-forms-field_types.ads
+43K41*Field_Types 239e48 34|41r41 43r39 54r37 35|44r46 68r37
+46I12*C_Int 35|56r37 56r51 61r36
+52R9*Field_Type 34|45r35
+132P9 C_Field_Type 35|51r35 55r37
+151U14 Wrap_Builtin 35|65r7
+X 34 terminal_interface-curses-forms-field_types-alphanumeric.ads
+41K53*AlphaNumeric 43r51 54r49 54e61 35|44b58 68r49 68t61
+45R9*AlphaNumeric_Field<33|52R9> 51r39 35|49r39
+47i9*Minimum_Field_Width 35|61r47
+50U14*Set_Field_Type 35|48b14 66r8 66t22
+50M30 Fld 35|48b30 54r46 65r21
+51r30 Typ 35|49b30 61r43 65r26
+X 35 terminal_interface-curses-forms-field_types-alphanumeric.adb
+51p7*C_AlphaNumeric_Field_Type 52m25 55r53
+54V16*Set_Fld_Type 57m25 61r14
+54M30 F
+55p30 Cft
+56i30 Arg1 61r28
+59i7 Res 61m7 62r10 63r25
+

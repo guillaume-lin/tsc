@@ -1,0 +1,68 @@
+V "GNAT Lib v3.15a"
+P
+R nnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnvnnnnnnnvnnnn
+
+U system.exceptions%s	s-except.ads		bbfe2e15 EE PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W system%s		system.ads		system.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W unchecked_conversion%s
+
+D ada.ads		20020507104909 a0108083
+D a-except.ads		20020507104830 a9cbab76
+D system.ads		20020507104801 427a8039
+D s-except.ads		20020507105102 7f3ea084
+D s-stalib.ads		20020507105159 76713122
+D unchconv.ads		20020507105303 1b7a14c5
+X 1 ada.ads
+18K9*Ada 21e8 4|42r6 52r24
+X 2 a-except.ads
+47K13*Exceptions 346e19 4|42r10 52r28
+49P9*Exception_Id 4|82r60 85r29 90r33 102r16
+X 3 system.ads
+41K9*System 150e11 4|44r6 45r6 49r9 51r24 63r27 68r24 120r36 131r47 205r5
+67M9*Address 4|63r34 68r31 120r43
+68M4*Null_Address 4|131r54
+X 4 s-except.ads
+49K16*Exceptions 205r12 205e22
+51K12*SSL 82r32 84r37 89r41
+52K12*AEX 82r56 85r25 90r29 102r12
+63M12*Handler_Loc 105r17
+68M12*Code_Loc 96r12 97r12 141r14
+81V13*To_Exception_Id 86r18 91r22
+84r4*Others_Dummy_Exception 86m35
+85P4*Others_Id
+89r4*All_Others_Dummy_Exception 91m39
+90P4*All_Others_Id
+95R9*Handler_Record 107e14 109r42
+96M7*Lo
+97M7*Hi
+102P7*Id
+105M7*Handler
+109P9*Handler_Record_Ptr 110r60
+110A9*Handler_Record_List 155r25
+120M12*Subprogram_Info_Type 131r23 149r25
+131M4*No_Info
+140R9*Subprogram_Descriptor 160e14 162r39 163r39 164r39 165r39 168r49
+140i32*Num_Handlers 155r51
+141M7*Code
+149M7*Subprogram_Info
+155a7*Handler_Records
+162R12*Subprogram_Descriptor_0
+163R12*Subprogram_Descriptor_1
+164R12*Subprogram_Descriptor_2
+165R12*Subprogram_Descriptor_3
+168P9*Subprogram_Descriptor_Ptr 171r37
+170A9*Subprogram_Descriptor_List 174r15
+173R9*Subprogram_Descriptors_Record 175e14 178r17
+173i40*Count 174r48
+174a7*SDesc
+177P9*Subprogram_Descriptors_Ptr
+X 5 s-stalib.ads
+58K16*Standard_Library 4|45r13 51r31 5|250e28
+95R9*Exception_Data 4|84r41 89r45
+96P9*Exception_Data_Ptr 4|82r36
+X 6 unchconv.ads
+22v10*Unchecked_Conversion 4|47r6 82r10
+
